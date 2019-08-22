@@ -1,0 +1,28 @@
+<aura:component
+    controller="apexController"
+    abstract="false">
+
+    <aura:attribute name="happy" type="integer" default="true" required="true"/>
+
+    <div class="{!v.happy ? 'slds-m-none happy' : 'slds-m-none not-happy'}">
+        <aura:if isTrue="{!v.happy > 6}">
+            <span>Mood</span><span>Happy</span>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!v.happy < 5}">
+                    <span>Mood</span><span>Sad</span>
+                </aura:if>
+            </aura:set>
+        </aura:if>
+        <div aura:id="test"
+        <!-- class="slds-truncate"/> -->
+        ></div>
+    </div>
+
+    <tr class="itemRow">
+    	<td class="name">
+    		<span>Testing Table</span>
+        </td>
+    	<td class="type">{!v.typeLabel}</td>
+	</tr>
+
+</aura:component>

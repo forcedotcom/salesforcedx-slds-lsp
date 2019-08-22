@@ -1,0 +1,33 @@
+﻿<aura:component description="A component">
+
+    <aura:attribute name="record" type="Object" description="an object"/>
+
+    <aura:method name="dance" action="{!c.dance}" />
+    <div class="slds-media__body">
+        <div class="slds-grid slds-wrap slds-p-horizontal--small slds-p-vertical--xx-small">
+
+
+            <div class=" slds-size--1-of-2 slds-p-vertical--xx-small ">
+                <div class="slds-text-title slds-truncate" title="{!$Label.activity.fun}">{!$Label.activity.fun}</div>
+                <div class="slds-item--detail slds-truncate">
+                </div>
+             </div>
+
+             <div class="slds-size--1-of-2  slds-p-vertical--xx-small">
+                <div class="slds-text-title slds-truncate" title="{!$Label.activity.fun}">{!$Label.activity.fun}</div>
+                <div class="slds-item--detail slds-truncate date">
+                    <span aura:id="dueDate"
+                    />
+                </div>
+            </div>
+
+
+            <div class="{!and(v.record.Name!=null,v.record.Name.length>0)? 'slds-size--2-of-2  slds-p-vertical--xx-small': 'slds-hide'}">
+                <div class="slds-text-title slds-truncate" title="{!$Label.activity.fun}">{!$Label.activity.fun}</div>
+             </div>
+
+        </div>
+    </div>
+
+</aura:component>
+

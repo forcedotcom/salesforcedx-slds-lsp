@@ -1,0 +1,15 @@
+.THIS thead,
+.THIS .hideSpinner {
+    display: none;
+}
+
+.THIS .doubleDeclaration {
+    padding: t(spacingXSmall) 0 t(spacingXSmall) t(spacingMedium);
+    border-bottom: t(borderWidthThin) solid t(colorBorderInput);
+}
+
+.THIS { padding: 0 }
+
+.THIS .brackets {
+    width: 20px;
+} .THIS .testing { height: 200px; }

@@ -1,0 +1,31 @@
+<aura:component
+ description="Example Component">
+    <!--Attributes-->
+    <aura:attribute name="toys" type="Object[]" description="The list of objects"/>
+    <aura:attribute name="description" type="String" description="A string"/>
+    <aura:attribute name="sad" type="Boolean"/>
+
+    <!--Events-->
+    <aura:registerEvent name="change" type="ui:change"/>
+
+	<div>
+		<div aura:id="div" class="{!'slds-m-right--x-small ' + (v.sad ? 'crying' : ' jumping')}">
+		<!-- Some markup comment -->
+			<aura:renderIf isTrue="{!!v.sad}">
+                <aura:iteration items="{!v.toys}" var="toy">
+                    <span>Playing with {!toy}</span>
+                </aura:iteration>
+				<aura:set attribute="else">
+					<span>
+						<a onclick="{!c.tryAgainAction}">
+							{!$Label.Testing.Component}
+						</a>
+					</span>
+				</aura:set>
+			</aura:renderIf>
+        </div>
+		<div tabIndex="-1">
+            {!$Label.Testing.Component}
+		</div>
+	</div>
+</aura:component>

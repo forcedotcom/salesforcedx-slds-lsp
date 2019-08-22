@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-grid slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+            <test-photo imgurl={imgUrl} tooltip="TODO"/>
+            <img src={imgURL}>
+        </div>
+        <hr>
+        </br>
+        <div class="slds-media__body">
+            <div class="slds-grid slds-grid_align-spread">
+                <h3 class="slds-col">Recipient</h3>
+                <div class="slds-col send-later-delete">
+                    <lightning-button-icon
+                            size="medium"
+                            icon-name="utility:delete"
+                            variant="bare"
+                            onclick={handleDeleteClick}>
+                    </lightning-button-icon>
+                </div>
+            </div>
+            <hr class="hr-class">
+            <div class="slds-text-body_small slds-text-color_weak">Subject</div>
+        </div>
+    </div>
+</template>

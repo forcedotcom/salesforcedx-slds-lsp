@@ -1,0 +1,51 @@
+items:
+  - name: "full-spacing"
+    tokenType: TOKEN
+    #exact matches are expected
+    category: "spacing"
+    properties:
+      - "margin"
+      - "padding"
+    tokens:
+      varSpacingXxxSmall: "spacingXxxSmall"
+      varSpacingXxSmall: "spacingXxSmall"
+      varSpacingXSmall: "spacingXSmall"
+      varSpacingSmall: "spacingSmall"
+      varSpacingMedium: "spacingMedium"
+      varSpacingLarge: "spacingLarge"
+      varSpacingXLarge: "spacingXLarge"
+      varSpacingXxLarge: "spacingXxLarge"
+  - name: "vertical-spacing"
+    tokenType: TOKEN
+    category: "spacing"
+    properties:
+      - "padding-top"
+      - "padding-bottom"
+      - "margin-top"
+      - "margin-bottom"
+    tokens:
+      varSpacingVerticalXxxSmall: "spacingXxxSmall"
+      varSpacingVerticalXxSmall: "spacingXxSmall"
+      varSpacingVerticalXSmall: "spacingXSmall"
+      varSpacingVerticalSmall: "spacingSmall"
+      varSpacingVerticalMedium: "spacingMedium"
+      varSpacingVerticalLarge: "spacingLarge"
+      varSpacingVerticalXLarge: "spacingXLarge"
+      varSpacingVerticalXxLarge: "spacingXxLarge"
+  - name: "horizontal-spacing"
+    tokenType: TOKEN
+    category: "spacing"
+    properties:
+      - "padding-left"
+      - "padding-right"
+      - "margin-left"
+      - "margin-right"
+    tokens:
+      varSpacingHorizontalXxxSmall: "spacingXxxSmall"
+      varSpacingHorizontalXxSmall: "spacingXxSmall"
+      varSpacingHorizontalXSmall: "spacingXSmall"
+      varSpacingHorizontalSmall: "spacingSmall"
+      varSpacingHorizontalMedium: "spacingMedium"
+      varSpacingHorizontalLarge: "spacingLarge"
+      varSpacingHorizontalXLarge: "spacingXLarge"
+      varSpacingHorizontalXxLarge: "spacingXxLarge"

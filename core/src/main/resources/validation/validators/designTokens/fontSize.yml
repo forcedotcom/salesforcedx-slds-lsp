@@ -1,0 +1,14 @@
+items:
+  - name: "font-size"
+    tokenType: TOKEN
+    category: "*"
+    properties:
+      - "*"
+    tokens:
+      fontSize1: fontSizeXSmall
+      fontSize2: fontSizeSmall
+      fontSize3: fontSizeMedium
+      fontSize4: fontSizeMediumA
+      fontSize5: fontSizeLarge
+      fontSize7: fontSizeXLarge
+      fontSize9: fontSizeXXLarge
