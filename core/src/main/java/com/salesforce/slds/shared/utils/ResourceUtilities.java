@@ -27,13 +27,18 @@ public class ResourceUtilities {
                 if (resource.getProtocol().contentEquals("file") &&
                         resource.toString().endsWith(".jar") == false) {
                     Path root = Paths.get(resource.toURI());
+                    String[] resourcePart = resourceName.split("/");
+
+                    final String fileSeparator = System.getProperty("file.separator");
+                    String systemDependedResourcePath = String.join(fileSeparator, resourcePart);
 
                     Stream<Path> walk = Files.walk(root);
                     walk.filter(path -> path.toFile().isFile())
-                            .map(path -> "/" + root.relativize(path).toString())
-                            .filter(path -> path.contains(resourceName))
+                            .map(path -> fileSeparator + root.relativize(path).toString())
+                            .filter(path -> path.contains(systemDependedResourcePath))
                             .forEachOrdered(path ->
-                                    files.add(path)
+                                files.add(fileSeparator.contentEquals("/") ?
+                                        path : path.replaceAll("\\" + fileSeparator , "/"))
                             );
 
                     return files;

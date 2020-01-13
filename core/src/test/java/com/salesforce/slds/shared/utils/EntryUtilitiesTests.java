@@ -17,6 +17,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class EntryUtilitiesTests {
 
     private static final String COMPONENT_NAME = "component";
+
+    static String generatePath(String ... parts) {
+        return String.join(File.separator, parts);
+    }
 
     @Nested
     @DisplayName("GetComponentName for Other Entity Type")
@@ -37,13 +42,13 @@ public class EntryUtilitiesTests {
 
         @Test
         void dotPath() {
-            verify("e", "file:/a.c/b/c/d/e/" + COMPONENT_NAME + ".app");
+            verify("e", generatePath("file:",  "a.c", "b", "c", "d", "e", COMPONENT_NAME + ".app"));
         }
 
         @Test
         void randomPath() {
             verify(COMPONENT_NAME + "-NAMESPACE",
-                    "/" + COMPONENT_NAME + "-NAMESPACE/" +COMPONENT_NAME + ".cmp");
+                    File.separator + generatePath(COMPONENT_NAME + "-NAMESPACE",  COMPONENT_NAME + ".cmp"));
         }
 
         private void verify(String expected, String path) {
@@ -75,7 +80,7 @@ public class EntryUtilitiesTests {
                     Lists.newArrayList("<template></template>")));
 
             Entry entry = Entry.builder().inputs(inputs).entityType(Entry.EntityType.LWC)
-                    .path("/" + COMPONENT_NAME + "/test.html").build();
+                    .path(File.separator + generatePath(COMPONENT_NAME, "test.html")).build();
 
             assertThat(EntryUtilities.getComponentName(entry), Matchers.is(COMPONENT_NAME));
         }
@@ -86,7 +91,8 @@ public class EntryUtilitiesTests {
             inputs.addAll(MarkupParser.parse( "/" + COMPONENT_NAME + "/test.html",
                     Lists.newArrayList("<template></template>")));
 
-            Entry bundledEntry = Entry.builder().inputs(inputs).path("/" + COMPONENT_NAME + "/test.html").build();
+            Entry bundledEntry = Entry.builder().inputs(inputs).path(File.separator +
+                    generatePath(COMPONENT_NAME, "test.html")).build();
 
             Bundle bundle = new Bundle(bundledEntry);
             Entry entry = Entry.builder().inputs(new ArrayList<>()).entityType(Entry.EntityType.LWC).build();

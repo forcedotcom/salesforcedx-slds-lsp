@@ -73,8 +73,9 @@ public class Diagnoser {
     }
 
     public Entry createEntry(TextDocumentItem item) {
+        //item.getText() uses "\n" as LineSeparator regardless as OS
         return createEntry(item.getUri(),
-                    Arrays.asList(StringUtils.delimitedListToStringArray(item.getText(), System.lineSeparator())));
+                    Arrays.asList(StringUtils.delimitedListToStringArray(item.getText(), "\n")));
     }
 
     private Entry createEntry(String path, List<String> rawContents) {
