@@ -1,18 +1,19 @@
 [ {
   "description" : "",
   "annotations" : {
-    "base" : "true",
-    "name" : "accordion",
-    "selector" : ".slds-accordion",
-    "support" : "dev-ready",
-    "category" : "experience",
-    "type" : "expandable-panel",
     "layout" : "responsive",
-    "synonyms" : "expando collapso, expandable sections, toggle visibility"
+    "name" : "accordion",
+    "support" : "dev-ready",
+    "base" : "true",
+    "lwc" : "true",
+    "synonyms" : "expando collapso, expandable sections, toggle visibility",
+    "type" : "expandable-panel",
+    "category" : "experience",
+    "selector" : ".slds-accordion"
   },
   "id" : "accordion",
   "docPath" : "./ui/components/accordion/docs.mdx",
-  "selectors" : [ ".slds-accordion", ".slds-accordion__content", ".slds-accordion__list-item", ".slds-accordion__section", ".slds-accordion__summary", ".slds-accordion__summary-action", ".slds-accordion__summary-action-icon", ".slds-accordion__summary-heading", ".slds-is-open" ],
+  "selectors" : [ ".slds-accordion", ".slds-accordion__content", ".slds-accordion__list-item", ".slds-accordion__section", ".slds-accordion__summary", ".slds-accordion__summary-action", ".slds-accordion__summary-action-icon", ".slds-accordion__summary-content", ".slds-accordion__summary-heading", ".slds-is-open" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -76,6 +77,18 @@
               "restrict" : ".slds-accordion__summary-action svg"
             },
             "id" : ".slds-accordion__summary-action-icon",
+            "docPath" : null,
+            "selectors" : null,
+            "restrictees" : [ ],
+            "tokens" : { }
+          }, {
+            "description" : "",
+            "annotations" : {
+              "summary" : "Text of summary title for each expandable panel inside of an accordion",
+              "selector" : ".slds-accordion__summary-content",
+              "restrict" : ".slds-accordion__summary-action span"
+            },
+            "id" : ".slds-accordion__summary-content",
             "docPath" : null,
             "selectors" : null,
             "restrictees" : [ ],
@@ -145,6 +158,15 @@
       "sassTokenName" : "$color-border",
       "value" : "#dddbda",
       "yamlTokenName" : "COLOR_BORDER",
+      "scope" : null
+    },
+    "lineHeightButton" : {
+      "auraTokenName" : "lineHeightButton",
+      "cssProperties" : [ "line-height" ],
+      "cssSelectors" : [ ".slds-button.slds-accordion__summary-action" ],
+      "sassTokenName" : "$line-height-button",
+      "value" : "1.875rem",
+      "yamlTokenName" : "LINE_HEIGHT_BUTTON",
       "scope" : null
     },
     "lineHeightHeading" : {
@@ -733,7 +755,7 @@
       "cssProperties" : [ "border-color" ],
       "cssSelectors" : [ ".slds-app-launcher__tile_small:hover .slds-app-launcher__tile-figure_small, .slds-app-launcher__tile_small:hover .slds-app-launcher__tile-figure--small, .slds-app-launcher__tile_small:focus .slds-app-launcher__tile-figure_small, .slds-app-launcher__tile_small:focus .slds-app-launcher__tile-figure--small, .slds-app-launcher__tile--small:hover .slds-app-launcher__tile-figure_small, .slds-app-launcher__tile--small:hover .slds-app-launcher__tile-figure--small, .slds-app-launcher__tile--small:focus .slds-app-launcher__tile-figure_small, .slds-app-launcher__tile--small:focus .slds-app-launcher__tile-figure--small" ],
       "sassTokenName" : "$color-border-selection-hover",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BORDER_SELECTION_HOVER",
       "scope" : null
     },
@@ -795,14 +817,15 @@
 }, {
   "description" : "An avatar can be circular or a rounded rectangle, depending on usage. The\ndefault is a rounded rectangle and requires `.slds-avatar` as the base class.\nUse a circle for all people-oriented objects that could potentially render\nas avatars. For a fully round avatar, add the `.slds-avatar_circle` class.\nFour additional classes are available for sizing.\n\nIf an image is unavailable, up to two letters can be used instead. If the\nrecord name contains two words, like first and last name, use the first\ncapitalized letter of each. For records that only have a single word name,\nuse the first two letters of that word using one capital and one lower case\nletter. If either an image or initials are unavailable, use the object icon as a fallback.",
   "annotations" : {
-    "base" : "true",
-    "name" : "avatar",
-    "selector" : ".slds-avatar",
-    "support" : "dev-ready",
-    "category" : "base",
-    "type" : "data-display",
     "layout" : "responsive",
-    "synonyms" : "identity"
+    "name" : "avatar",
+    "support" : "dev-ready",
+    "base" : "true",
+    "lwc" : "true",
+    "synonyms" : "identity",
+    "type" : "data-display",
+    "category" : "base",
+    "selector" : ".slds-avatar"
   },
   "id" : "avatar",
   "docPath" : "./ui/components/avatar/docs.mdx",
@@ -1406,13 +1429,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "Badges are labels which hold small amounts of information.",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "badges",
-    "selector" : ".slds-badge",
     "support" : "dev-ready",
-    "category" : "base",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "data-display",
-    "layout" : "responsive"
+    "category" : "base",
+    "selector" : ".slds-badge"
   },
   "id" : "badges",
   "docPath" : "./ui/components/badges/docs.mdx",
@@ -1916,13 +1940,14 @@
   "description" : "Breadcrumbs are typically constructed with an `ol` because their order\nmatters. You mark up breadcrumbs with classes from the horizontal list\nutility. When you add the `.slds-breadcrumb` class, the separators are\nautomatically generated.\n\n**Overflow Menu Variant**\n\nThe overflow menu breadcrumbs variant is a composition of the overflow menu with actions example of the menus component and breadcrumbs component. To implement this, include the overflow menu as the first `<li>` in the breadcrumb component. In order to vertically align all of the breadcrumb items to the center, add the `.slds-grid_vertical-align-center` class to the `<ol>`.\n\n#### Accessibility\n\nPlace the breadcrumb in a `nav` element with `role=\"navigation\"`.\nThe `nav` element is also marked-up with `aria-label=\"Breadcrumbs\"` to\ndescribe the type of navigation.",
   "annotations" : {
     "summary" : "Use breadcrumbs to note the path of a record and help the user to navigate back to the parent.",
-    "base" : "true",
     "name" : "breadcrumbs",
-    "selector" : ".slds-breadcrumb",
     "support" : "dev-ready",
-    "category" : "base",
+    "base" : "true",
+    "role" : "navigation",
+    "lwc" : "true",
     "type" : "navigation",
-    "role" : "navigation"
+    "category" : "base",
+    "selector" : ".slds-breadcrumb"
   },
   "id" : "breadcrumbs",
   "docPath" : "./ui/components/breadcrumbs/docs.mdx",
@@ -2242,6 +2267,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "button",
+    "lwc" : "true",
     "type" : "action",
     "category" : "base",
     "selector" : ".slds-button-group, .slds-button-group-list, .slds-button-group-row"
@@ -2311,7 +2337,8 @@
       "selector" : ".slds-button-group-row",
       "restrict" : "div, ul",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "row",
     "docPath" : null,
@@ -2387,6 +2414,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "button",
+    "lwc" : "true",
     "type" : "action",
     "category" : "base",
     "selector" : ".slds-button_icon, .slds-button_icon-brand, .slds-button_icon-container, .slds-button_icon-border, .slds-button_icon-border-filled, .slds-button_icon-inverse, .slds-button_icon-border-inverse"
@@ -2601,7 +2629,8 @@
         "selector" : ".slds-is-selected",
         "restrict" : ".slds-button_icon",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "stateful",
       "docPath" : null,
@@ -2704,8 +2733,8 @@
   "tokens" : {
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
-      "cssProperties" : [ "fill" ],
-      "cssSelectors" : [ ".slds-button_icon-more:hover .slds-button__icon, .slds-button_icon-more:focus .slds-button__icon, .slds-button--icon-more:hover .slds-button__icon, .slds-button--icon-more:focus .slds-button__icon" ],
+      "cssProperties" : [ "background-color", "border-color", "fill" ],
+      "cssSelectors" : [ ".slds-button_icon-container.slds-is-selected, .slds-button--icon-container.slds-is-selected, .slds-button_icon-border.slds-is-selected, .slds-button--icon-border.slds-is-selected, .slds-button_icon-border-filled.slds-is-selected, .slds-button_icon-border-inverse.slds-is-selected", ".slds-button_icon-more:hover .slds-button__icon, .slds-button_icon-more:focus .slds-button__icon, .slds-button--icon-more:hover .slds-button__icon, .slds-button--icon-more:focus .slds-button__icon" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0070d2",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -2713,8 +2742,8 @@
     },
     "brandAccessibleActive" : {
       "auraTokenName" : "brandAccessibleActive",
-      "cssProperties" : [ "fill" ],
-      "cssSelectors" : [ ".slds-button_icon-more:active .slds-button__icon, .slds-button--icon-more:active .slds-button__icon" ],
+      "cssProperties" : [ "background-color", "border-color", "fill" ],
+      "cssSelectors" : [ ".slds-button_icon-container.slds-is-selected:active, .slds-button--icon-container.slds-is-selected:active, .slds-button_icon-border.slds-is-selected:active, .slds-button--icon-border.slds-is-selected:active, .slds-button_icon-border-filled.slds-is-selected:active, .slds-button_icon-border-inverse.slds-is-selected:active", ".slds-button_icon-container.slds-is-selected:hover, .slds-button_icon-container.slds-is-selected:focus, .slds-button--icon-container.slds-is-selected:hover, .slds-button--icon-container.slds-is-selected:focus, .slds-button_icon-border.slds-is-selected:hover, .slds-button_icon-border.slds-is-selected:focus, .slds-button--icon-border.slds-is-selected:hover, .slds-button--icon-border.slds-is-selected:focus, .slds-button_icon-border-filled.slds-is-selected:hover, .slds-button_icon-border-filled.slds-is-selected:focus, .slds-button_icon-border-inverse.slds-is-selected:hover, .slds-button_icon-border-inverse.slds-is-selected:focus", ".slds-button_icon-more:active .slds-button__icon, .slds-button--icon-more:active .slds-button__icon" ],
       "sassTokenName" : "$brand-accessible-active",
       "value" : "#005fb2",
       "yamlTokenName" : "BRAND_ACCESSIBLE_ACTIVE",
@@ -2799,6 +2828,15 @@
       "sassTokenName" : "$color-border-icon-inverse-hint-hover",
       "value" : "rgba(255, 255, 255, 0.75)",
       "yamlTokenName" : "COLOR_BORDER_ICON_INVERSE_HINT_HOVER",
+      "scope" : null
+    },
+    "colorTextBrandPrimary" : {
+      "auraTokenName" : "colorTextBrandPrimary",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-button_icon-container.slds-is-selected, .slds-button--icon-container.slds-is-selected, .slds-button_icon-border.slds-is-selected, .slds-button--icon-border.slds-is-selected, .slds-button_icon-border-filled.slds-is-selected, .slds-button_icon-border-inverse.slds-is-selected", ".slds-button_icon-container.slds-is-selected:hover, .slds-button_icon-container.slds-is-selected:focus, .slds-button--icon-container.slds-is-selected:hover, .slds-button--icon-container.slds-is-selected:focus, .slds-button_icon-border.slds-is-selected:hover, .slds-button_icon-border.slds-is-selected:focus, .slds-button--icon-border.slds-is-selected:hover, .slds-button--icon-border.slds-is-selected:focus, .slds-button_icon-border-filled.slds-is-selected:hover, .slds-button_icon-border-filled.slds-is-selected:focus, .slds-button_icon-border-inverse.slds-is-selected:hover, .slds-button_icon-border-inverse.slds-is-selected:focus", ".slds-button_icon-container.slds-is-selected:link, .slds-button_icon-container.slds-is-selected:visited, .slds-button_icon-container.slds-is-selected:active, .slds-button--icon-container.slds-is-selected:link, .slds-button--icon-container.slds-is-selected:visited, .slds-button--icon-container.slds-is-selected:active, .slds-button_icon-border.slds-is-selected:link, .slds-button_icon-border.slds-is-selected:visited, .slds-button_icon-border.slds-is-selected:active, .slds-button--icon-border.slds-is-selected:link, .slds-button--icon-border.slds-is-selected:visited, .slds-button--icon-border.slds-is-selected:active, .slds-button_icon-border-filled.slds-is-selected:link, .slds-button_icon-border-filled.slds-is-selected:visited, .slds-button_icon-border-filled.slds-is-selected:active, .slds-button_icon-border-inverse.slds-is-selected:link, .slds-button_icon-border-inverse.slds-is-selected:visited, .slds-button_icon-border-inverse.slds-is-selected:active" ],
+      "sassTokenName" : "$color-text-brand-primary",
+      "value" : "#FFFFFF",
+      "yamlTokenName" : "COLOR_TEXT_BRAND_PRIMARY",
       "scope" : null
     },
     "colorTextButtonBrand" : {
@@ -2946,13 +2984,14 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "button",
+    "lwc" : "true",
     "type" : "action",
     "category" : "base",
     "selector" : ".slds-button, .slds-button_stateful, .slds-button_dual-stateful, .slds-button_reset"
   },
   "id" : "buttons",
   "docPath" : "./ui/components/buttons/docs.mdx",
-  "selectors" : [ ".slds-button", ".slds-button, .slds-button_stateful, .slds-button_dual-stateful, .slds-button_reset", ".slds-button__icon", ".slds-button__icon_large", ".slds-button__icon_left", ".slds-button__icon_right", ".slds-button__icon_small", ".slds-button__icon_x-small", ".slds-button_brand", ".slds-button_destructive", ".slds-button_dual-stateful", ".slds-button_first", ".slds-button_full-width", ".slds-button_inverse", ".slds-button_last", ".slds-button_middle", ".slds-button_neutral", ".slds-button_outline-brand", ".slds-button_stateful", ".slds-button_stretch", ".slds-button_success", ".slds-button_text-destructive", ".slds-icon_x-small", ".slds-is-pressed", ".slds-is-selected", ".slds-is-selected-clicked", ".slds-not-selected", ".slds-text-not-pressed", ".slds-text-not-selected", ".slds-text-pressed", ".slds-text-selected", ".slds-text-selected-focus" ],
+  "selectors" : [ ".slds-button", ".slds-button, .slds-button_stateful, .slds-button_dual-stateful, .slds-button_reset", ".slds-button__icon", ".slds-button__icon_large", ".slds-button__icon_left", ".slds-button__icon_right", ".slds-button__icon_small", ".slds-button__icon_x-small", ".slds-button_brand", ".slds-button_destructive", ".slds-button_dual-stateful", ".slds-button_first", ".slds-button_full-width", ".slds-button_inverse", ".slds-button_last", ".slds-button_middle", ".slds-button_neutral", ".slds-button_outline-brand", ".slds-button_stateful", ".slds-button_stretch", ".slds-button_success", ".slds-button_text-destructive", ".slds-icon_x-small", ".slds-input__button_decrement", ".slds-input__button_increment", ".slds-is-pressed", ".slds-is-selected", ".slds-is-selected-clicked", ".slds-not-selected", ".slds-text-not-pressed", ".slds-text-not-selected", ".slds-text-pressed", ".slds-text-selected", ".slds-text-selected-focus" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -3221,13 +3260,37 @@
     }, {
       "description" : "",
       "annotations" : {
-        "summary" : "Creates a button style for 100% width that maintains current styling",
+        "summary" : "Creates a button style for 100% width with centered text that maintains current styling",
         "selector" : ".slds-button_stretch",
         "restrict" : ".slds-button",
         "modifier" : "true",
         "group" : "size"
       },
       "id" : ".slds-button_stretch",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
+      "description" : "",
+      "annotations" : {
+        "summary" : "Positions decrement button within counter input field",
+        "selector" : ".slds-input__button_decrement",
+        "restrict" : " .slds-button"
+      },
+      "id" : ".slds-input__button_decrement",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
+      "description" : "",
+      "annotations" : {
+        "summary" : "Positions increment button within counter input field",
+        "selector" : ".slds-input__button_increment",
+        "restrict" : ".slds-button"
+      },
+      "id" : ".slds-input__button_increment",
       "docPath" : null,
       "selectors" : null,
       "restrictees" : [ ],
@@ -3296,7 +3359,8 @@
       "selector" : ".slds-button_stateful",
       "restrict" : "button",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "stateful",
     "docPath" : null,
@@ -3439,15 +3503,6 @@
       "yamlTokenName" : "BUTTON_COLOR_BORDER_PRIMARY",
       "scope" : null
     },
-    "buttonLineHeightTouch" : {
-      "auraTokenName" : "buttonLineHeightTouch",
-      "cssProperties" : [ "line-height" ],
-      "cssSelectors" : [ ".slds-button" ],
-      "sassTokenName" : "$button-line-height-touch",
-      "value" : "2.65rem",
-      "yamlTokenName" : "BUTTON_LINE_HEIGHT_TOUCH",
-      "scope" : null
-    },
     "colorBackgroundButtonDefaultActive" : {
       "auraTokenName" : "colorBackgroundButtonDefaultActive",
       "cssProperties" : [ "background-color" ],
@@ -3469,7 +3524,7 @@
     "colorBackgroundButtonDefaultHover" : {
       "auraTokenName" : "colorBackgroundButtonDefaultHover",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-button_neutral.slds-is-selected:hover:not([disabled]), .slds-button_neutral.slds-is-selected:focus:not([disabled]), .slds-button--neutral.slds-is-selected:hover:not([disabled]), .slds-button--neutral.slds-is-selected:focus:not([disabled])" ],
+      "cssSelectors" : [ ".slds-button_inverse:hover, .slds-button_inverse:focus, .slds-button--inverse:hover, .slds-button--inverse:focus", ".slds-button_neutral.slds-is-selected:hover:not([disabled]), .slds-button_neutral.slds-is-selected:focus:not([disabled]), .slds-button--neutral.slds-is-selected:hover:not([disabled]), .slds-button--neutral.slds-is-selected:focus:not([disabled])" ],
       "sassTokenName" : "$color-background-button-default-hover",
       "value" : "#F4F6F9",
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_HOVER",
@@ -3638,6 +3693,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "article",
+    "lwc" : "true",
     "type" : "data-display, layout",
     "category" : "base, structure",
     "selector" : ".slds-card, .slds-card-wrapper"
@@ -3830,7 +3886,7 @@
     "cardFontWeight" : {
       "auraTokenName" : "cardFontWeight",
       "cssProperties" : [ "font-weight" ],
-      "cssSelectors" : [ ".slds-card__header-link" ],
+      "cssSelectors" : [ ".slds-card__header-link", ".slds-card__header-title" ],
       "sassTokenName" : "$card-font-weight",
       "value" : "700",
       "yamlTokenName" : "CARD_FONT_WEIGHT",
@@ -3899,6 +3955,15 @@
       "yamlTokenName" : "VAR_FONT_SIZE_5",
       "scope" : null
     },
+    "varFontSize6" : {
+      "auraTokenName" : "varFontSize6",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ ".slds-card__header-title" ],
+      "sassTokenName" : "$var-font-size-6",
+      "value" : "1.125rem",
+      "yamlTokenName" : "VAR_FONT_SIZE_6",
+      "scope" : null
+    },
     "varSpacingHorizontalMedium" : {
       "auraTokenName" : "varSpacingHorizontalMedium",
       "cssProperties" : [ "padding" ],
@@ -3940,13 +4005,14 @@
   "description" : "A Carousel can accept a maximum number of 5 panels where only 1 panel is visible at a time.\n\nYou are able to navigate between panels by interacting with the `slds-carousel__indicator` elements that sit below the panel.\n\nA panel becomes visible by toggling the `slds-hide` class with the `slds-show` class on the `slds-carousel__panel` element.\n\nWhen making the `slds-carousel__panel` active, the indicator should be updated with the `slds-is-active` class. This provides visual feedback showing which carousel panel is active.\n\n### Accessibility\n\nA Carousel is built using a tabbed UI specification and requires the following to meet accessibility requirements:\n\n- The tab list, which should have `role=\"tablist\"`\n- The tabs in that list, which should each be an `<a role=\"tab\">` anchor wrapped in a `<li role=\"presentation\">` list item\n- The tab panels, which display each tab’s content and should each have `role=\"tabpanel\"`\n\n**Expected markup:**\n\n- Selected tab’s anchor has `aria-selected=\"true\"`, all other tabs’ anchors have `aria-selected=\"false\"`\n- Selected tab’s anchor has `tabindex=\"0\"`, all other tabs have `tabindex=\"-1\"`\n- Each tab’s anchor has an `aria-controls` attribute whose value is the id of the associated `<div role=\"tabpanel\">`\n- Each tab panel has an `aria-labelledby` attribute whose value is the id of its associated `<a role=\"tab\">`\n- When the Carousel is set to auto-play, the HTML for the pause button is required to precede the HTML of the tab set\n\n**Expected keyboard interactions:**\n\n- Arrow keys, when focus is on selected tab, cycle selection to the next or previous tab\n- Tab key, when focus is before the tab list, moves focus to the selected tab panel\n- Tab key, when focus is on selected tabpanel, moves focus into the selected tabpanel's associated tab or to the next focusable element on the page if that panel has no focusable elements\n- Shift+Tab keys, when focus is on first element in a tab panel, move focus focus entirely from tabset",
   "annotations" : {
     "summary" : "A carousel allows multiple pieces of featured content to occupy an allocated amount of space.",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "carousel",
-    "selector" : ".slds-carousel",
     "support" : "dev-ready",
-    "category" : "experience",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "navigation, data-display",
-    "layout" : "responsive"
+    "category" : "experience",
+    "selector" : ".slds-carousel"
   },
   "id" : "carousel",
   "docPath" : "./ui/components/carousel/docs.mdx",
@@ -4591,7 +4657,8 @@
             "annotations" : {
               "summary" : "Used to style the horizontal rules on an event",
               "selector" : ".slds-chat-event__rule",
-              "restrict" : ".slds-chat-event div"
+              "restrict" : ".slds-chat-event div",
+              "deprecated" : "true"
             },
             "id" : ".slds-chat-event__rule",
             "docPath" : null,
@@ -4859,8 +4926,8 @@
     },
     "colorTextWeak" : {
       "auraTokenName" : "colorTextWeak",
-      "cssProperties" : [ "color", "fill" ],
-      "cssSelectors" : [ ".slds-chat-avatar__intials", ".slds-chat-avatar__intials.slds-chat-avatar__intials:hover", ".slds-chat-bookend", ".slds-chat-event", ".slds-chat-icon", ".slds-chat-message__meta", ".slds-icon" ],
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-chat-avatar__intials", ".slds-chat-avatar__intials.slds-chat-avatar__intials:hover", ".slds-chat-bookend", ".slds-chat-event", ".slds-chat-message__meta" ],
       "sassTokenName" : "$color-text-weak",
       "value" : "#3e3e3c",
       "yamlTokenName" : "COLOR_TEXT_WEAK",
@@ -4931,8 +4998,8 @@
     },
     "spacingSmall" : {
       "auraTokenName" : "spacingSmall",
-      "cssProperties" : [ "margin-bottom", "margin-top", "padding" ],
-      "cssSelectors" : [ ".slds-chat", ".slds-chat-list", ".slds-chat-listitem" ],
+      "cssProperties" : [ "margin-bottom", "margin-left", "margin-right", "margin-top", "padding" ],
+      "cssSelectors" : [ ".slds-chat", ".slds-chat-bookend", ".slds-chat-list", ".slds-chat-listitem", ".slds-chat-listitem_bookend" ],
       "sassTokenName" : "$spacing-small",
       "value" : "0.75rem",
       "yamlTokenName" : "SPACING_SMALL",
@@ -4993,6 +5060,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "checkbox",
+    "lwc" : "true",
     "type" : "data-entry",
     "category" : "base",
     "selector" : ".slds-checkbox"
@@ -5062,7 +5130,8 @@
         "selector" : ".slds-checkbox_standalone",
         "restrict" : ".slds-checkbox",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "form-element",
       "docPath" : "./ui/components/form-element/docs.mdx",
@@ -5328,7 +5397,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button .slds-checkbox_faux, .slds-checkbox_add-button .slds-checkbox--faux, .slds-checkbox--add-button .slds-checkbox_faux, .slds-checkbox--add-button .slds-checkbox--faux", ".slds-checkbox_add-button .slds-checkbox_faux:hover:not([disabled]), .slds-checkbox_add-button .slds-checkbox_faux:focus:not([disabled]), .slds-checkbox_add-button .slds-checkbox--faux:hover:not([disabled]), .slds-checkbox_add-button .slds-checkbox--faux:focus:not([disabled]), .slds-checkbox--add-button .slds-checkbox_faux:hover:not([disabled]), .slds-checkbox--add-button .slds-checkbox_faux:focus:not([disabled]), .slds-checkbox--add-button .slds-checkbox--faux:hover:not([disabled]), .slds-checkbox--add-button .slds-checkbox--faux:focus:not([disabled])" ],
+      "cssSelectors" : [ ".slds-checkbox-button", ".slds-checkbox_add-button .slds-checkbox_faux, .slds-checkbox_add-button .slds-checkbox--faux, .slds-checkbox--add-button .slds-checkbox_faux, .slds-checkbox--add-button .slds-checkbox--faux", ".slds-checkbox_add-button .slds-checkbox_faux:hover:not([disabled]), .slds-checkbox_add-button .slds-checkbox_faux:focus:not([disabled]), .slds-checkbox_add-button .slds-checkbox--faux:hover:not([disabled]), .slds-checkbox_add-button .slds-checkbox--faux:focus:not([disabled]), .slds-checkbox--add-button .slds-checkbox_faux:hover:not([disabled]), .slds-checkbox--add-button .slds-checkbox_faux:focus:not([disabled]), .slds-checkbox--add-button .slds-checkbox--faux:hover:not([disabled]), .slds-checkbox--add-button .slds-checkbox--faux:focus:not([disabled])" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -5343,6 +5412,24 @@
       "yamlTokenName" : "BRAND_ACCESSIBLE",
       "scope" : null
     },
+    "buttonBorderRadius" : {
+      "auraTokenName" : "buttonBorderRadius",
+      "cssProperties" : [ "border-radius" ],
+      "cssSelectors" : [ ".slds-checkbox-button" ],
+      "sassTokenName" : "$button-border-radius",
+      "value" : ".25rem",
+      "yamlTokenName" : "BUTTON_BORDER_RADIUS",
+      "scope" : null
+    },
+    "buttonColorBorderPrimary" : {
+      "auraTokenName" : "buttonColorBorderPrimary",
+      "cssProperties" : [ "border", "border-color" ],
+      "cssSelectors" : [ ".slds-checkbox-button", ".slds-checkbox-button_is-disabled" ],
+      "sassTokenName" : "$button-color-border-primary",
+      "value" : "#dddbda",
+      "yamlTokenName" : "BUTTON_COLOR_BORDER_PRIMARY",
+      "scope" : null
+    },
     "colorBackgroundAlt" : {
       "auraTokenName" : "colorBackgroundAlt",
       "cssProperties" : [ "background", "background-color" ],
@@ -5355,7 +5442,7 @@
     "colorBackgroundButtonBrandDisabled" : {
       "auraTokenName" : "colorBackgroundButtonBrandDisabled",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-disabled.slds-checkbox-button_is-checked", ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
       "sassTokenName" : "$color-background-button-brand-disabled",
       "value" : "#E0E5EE",
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_BRAND_DISABLED",
@@ -5368,6 +5455,15 @@
       "sassTokenName" : "$color-background-button-default-active",
       "value" : "#EEF1F6",
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_ACTIVE",
+      "scope" : null
+    },
+    "colorBackgroundButtonDefaultDisabled" : {
+      "auraTokenName" : "colorBackgroundButtonDefaultDisabled",
+      "cssProperties" : [ "background-color" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-disabled" ],
+      "sassTokenName" : "$color-background-button-default-disabled",
+      "value" : "#FFFFFF",
+      "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_DISABLED",
       "scope" : null
     },
     "colorBackgroundButtonDefaultHover" : {
@@ -5388,19 +5484,10 @@
       "yamlTokenName" : "COLOR_BACKGROUND_INPUT",
       "scope" : null
     },
-    "colorBackgroundSuccess" : {
-      "auraTokenName" : "colorBackgroundSuccess",
-      "cssProperties" : [ "background" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button [type=\"checkbox\"]:checked ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked + .slds-checkbox--faux" ],
-      "sassTokenName" : "$color-background-success",
-      "value" : "#4BCA81",
-      "yamlTokenName" : "COLOR_BACKGROUND_SUCCESS",
-      "scope" : null
-    },
     "colorBorderButtonBrandDisabled" : {
       "auraTokenName" : "colorBorderButtonBrandDisabled",
       "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-disabled.slds-checkbox-button_is-checked", ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
       "sassTokenName" : "$color-border-button-brand-disabled",
       "value" : "transparent",
       "yamlTokenName" : "COLOR_BORDER_BUTTON_BRAND_DISABLED",
@@ -5418,10 +5505,19 @@
     "colorBorderInputActive" : {
       "auraTokenName" : "colorBorderInputActive",
       "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button [type=\"checkbox\"]:focus ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus + .slds-checkbox--faux" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-focused", ".slds-checkbox_add-button [type=\"checkbox\"]:focus ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:focus + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:focus + .slds-checkbox--faux" ],
       "sassTokenName" : "$color-border-input-active",
       "value" : "#1589EE",
       "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
+      "scope" : null
+    },
+    "colorBrandDarker" : {
+      "auraTokenName" : "colorBrandDarker",
+      "cssProperties" : [ "background", "background-color", "color" ],
+      "cssSelectors" : [ ".slds-checkbox-button", ".slds-checkbox-button_is-checked", ".slds-checkbox_add-button [type=\"checkbox\"]:checked ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"]:checked + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"]:checked + .slds-checkbox--faux" ],
+      "sassTokenName" : "$color-brand-darker",
+      "value" : "#005FB2",
+      "yamlTokenName" : "COLOR_BRAND_DARKER",
       "scope" : null
     },
     "colorGray8" : {
@@ -5433,13 +5529,31 @@
       "yamlTokenName" : "COLOR_GRAY_8",
       "scope" : null
     },
+    "colorTextBrandPrimary" : {
+      "auraTokenName" : "colorTextBrandPrimary",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-checked" ],
+      "sassTokenName" : "$color-text-brand-primary",
+      "value" : "#FFFFFF",
+      "yamlTokenName" : "COLOR_TEXT_BRAND_PRIMARY",
+      "scope" : null
+    },
     "colorTextButtonBrandDisabled" : {
       "auraTokenName" : "colorTextButtonBrandDisabled",
       "cssProperties" : [ "color" ],
-      "cssSelectors" : [ ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-disabled.slds-checkbox-button_is-checked", ".slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox_add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] ~ .slds-checkbox--faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox_faux, .slds-checkbox--add-button [type=\"checkbox\"][disabled] + .slds-checkbox--faux" ],
       "sassTokenName" : "$color-text-button-brand-disabled",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_BUTTON_BRAND_DISABLED",
+      "scope" : null
+    },
+    "colorTextIconDefaultDisabled" : {
+      "auraTokenName" : "colorTextIconDefaultDisabled",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-disabled" ],
+      "sassTokenName" : "$color-text-icon-default-disabled",
+      "value" : "#dddbda",
+      "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT_DISABLED",
       "scope" : null
     }
   }
@@ -5514,7 +5628,7 @@
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-radius" ],
-      "cssSelectors" : [ ".slds-checkbox_button-group, .slds-checkbox--button-group", ".slds-checkbox_button:first-child > .slds-checkbox_faux, .slds-checkbox_button:first-child > .slds-checkbox--faux, .slds-checkbox_button:first-child > .slds-checkbox_button__label, .slds-checkbox_button:first-child > .slds-checkbox--button__label, .slds-checkbox--button:first-child > .slds-checkbox_faux, .slds-checkbox--button:first-child > .slds-checkbox--faux, .slds-checkbox--button:first-child > .slds-checkbox_button__label, .slds-checkbox--button:first-child > .slds-checkbox--button__label", ".slds-checkbox_button:last-child > .slds-checkbox_faux, .slds-checkbox_button:last-child > .slds-checkbox--faux, .slds-checkbox_button .slds-button_last > .slds-checkbox_faux, .slds-checkbox_button .slds-button--last > .slds-checkbox--faux, .slds-checkbox_button:last-child > .slds-checkbox_button__label, .slds-checkbox_button:last-child > .slds-checkbox--button__label, .slds-checkbox--button:last-child > .slds-checkbox_faux, .slds-checkbox--button:last-child > .slds-checkbox--faux, .slds-checkbox--button .slds-button_last > .slds-checkbox_faux, .slds-checkbox--button .slds-button--last > .slds-checkbox--faux, .slds-checkbox--button:last-child > .slds-checkbox_button__label, .slds-checkbox--button:last-child > .slds-checkbox--button__label" ],
+      "cssSelectors" : [ ".slds-checkbox_button-group .slds-checkbox_button:first-child > .slds-checkbox_button__label, .slds-checkbox_button-group .slds-checkbox--button:first-child > .slds-checkbox--button__label, .slds-checkbox--button-group .slds-checkbox_button:first-child > .slds-checkbox_button__label, .slds-checkbox--button-group .slds-checkbox--button:first-child > .slds-checkbox--button__label", ".slds-checkbox_button-group .slds-checkbox_button:last-child > .slds-checkbox_button__label, .slds-checkbox_button-group .slds-checkbox--button:last-child > .slds-checkbox--button__label, .slds-checkbox--button-group .slds-checkbox_button:last-child > .slds-checkbox_button__label, .slds-checkbox--button-group .slds-checkbox--button:last-child > .slds-checkbox--button__label", ".slds-checkbox_button-group, .slds-checkbox--button-group", ".slds-checkbox_button:first-child > .slds-checkbox_faux, .slds-checkbox_button:first-child > .slds-checkbox--faux, .slds-checkbox_button:first-child > .slds-checkbox_button__label, .slds-checkbox_button:first-child > .slds-checkbox--button__label, .slds-checkbox--button:first-child > .slds-checkbox_faux, .slds-checkbox--button:first-child > .slds-checkbox--faux, .slds-checkbox--button:first-child > .slds-checkbox_button__label, .slds-checkbox--button:first-child > .slds-checkbox--button__label", ".slds-checkbox_button:last-child > .slds-checkbox_faux, .slds-checkbox_button:last-child > .slds-checkbox--faux, .slds-checkbox_button .slds-button_last > .slds-checkbox_faux, .slds-checkbox_button .slds-button--last > .slds-checkbox--faux, .slds-checkbox_button:last-child > .slds-checkbox_button__label, .slds-checkbox_button:last-child > .slds-checkbox--button__label, .slds-checkbox--button:last-child > .slds-checkbox_faux, .slds-checkbox--button:last-child > .slds-checkbox--faux, .slds-checkbox--button .slds-button_last > .slds-checkbox_faux, .slds-checkbox--button .slds-button--last > .slds-checkbox--faux, .slds-checkbox--button:last-child > .slds-checkbox_button__label, .slds-checkbox--button:last-child > .slds-checkbox--button__label" ],
       "sassTokenName" : "$border-radius-medium",
       "value" : "0.25rem",
       "yamlTokenName" : "BORDER_RADIUS_MEDIUM",
@@ -5522,8 +5636,8 @@
     },
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
-      "cssProperties" : [ "border", "border-left" ],
-      "cssSelectors" : [ ".slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button + .slds-checkbox--button, .slds-checkbox--button + .slds-checkbox_button, .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group, .slds-checkbox--button-group" ],
+      "cssProperties" : [ "border", "border-left", "border-top" ],
+      "cssSelectors" : [ ".slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button + .slds-checkbox--button, .slds-checkbox--button + .slds-checkbox_button, .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group .slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button-group .slds-checkbox--button + .slds-checkbox--button, .slds-checkbox--button-group .slds-checkbox_button + .slds-checkbox_button, .slds-checkbox--button-group .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group, .slds-checkbox--button-group" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -5594,8 +5708,8 @@
     },
     "colorBorder" : {
       "auraTokenName" : "colorBorder",
-      "cssProperties" : [ "border", "border-left" ],
-      "cssSelectors" : [ ".slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button + .slds-checkbox--button, .slds-checkbox--button + .slds-checkbox_button, .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group, .slds-checkbox--button-group" ],
+      "cssProperties" : [ "border", "border-left", "border-top" ],
+      "cssSelectors" : [ ".slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button + .slds-checkbox--button, .slds-checkbox--button + .slds-checkbox_button, .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group .slds-checkbox_button + .slds-checkbox_button, .slds-checkbox_button-group .slds-checkbox--button + .slds-checkbox--button, .slds-checkbox--button-group .slds-checkbox_button + .slds-checkbox_button, .slds-checkbox--button-group .slds-checkbox--button + .slds-checkbox--button", ".slds-checkbox_button-group, .slds-checkbox--button-group" ],
       "sassTokenName" : "$color-border",
       "value" : "#dddbda",
       "yamlTokenName" : "COLOR_BORDER",
@@ -6464,6 +6578,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "combobox",
+    "lwc" : "true",
     "scroller" : "true",
     "type" : "user-input",
     "category" : "experience",
@@ -7005,7 +7120,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-combobox_object-switcher .slds-combobox__input" ],
       "sassTokenName" : "$color-text-placeholder",
-      "value" : "#3e3e3c",
+      "value" : "#706e6b",
       "yamlTokenName" : "COLOR_TEXT_PLACEHOLDER",
       "scope" : null
     },
@@ -7093,7 +7208,7 @@
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
       "cssProperties" : [ "margin-left", "margin-right", "margin-top", "padding", "right" ],
-      "cssSelectors" : [ ".slds-has-inline-listbox .slds-listbox_object-switcher ~ .slds-listbox_inline, .slds-has-inline-listbox .slds-listbox--object-switcher ~ .slds-listbox--inline, .slds-has-inline-listbox .slds-combobox_container__icon ~ .slds-listbox_inline, .slds-has-inline-listbox .slds-combobox_container__icon ~ .slds-listbox--inline, .slds-has-object-switcher .slds-listbox_object-switcher ~ .slds-listbox_inline, .slds-has-object-switcher .slds-listbox--object-switcher ~ .slds-listbox--inline, .slds-has-object-switcher .slds-combobox_container__icon ~ .slds-listbox_inline, .slds-has-object-switcher .slds-combobox_container__icon ~ .slds-listbox--inline", ".slds-has-inline-listbox.slds-has-icon_left .slds-combobox_container__icon, .slds-has-object-switcher.slds-has-icon_left .slds-combobox_container__icon", ".slds-listbox_selection-group .slds-listbox-toggle", ".slds-listbox_vertical .slds-listbox__option_entity .slds-media__figure, .slds-listbox_vertical .slds-listbox__option--entity .slds-media__figure, .slds-listbox--vertical .slds-listbox__option_entity .slds-media__figure, .slds-listbox--vertical .slds-listbox__option--entity .slds-media__figure", ".slds-listbox_vertical .slds-listbox__option_plain, .slds-listbox_vertical .slds-listbox__option--plain, .slds-listbox--vertical .slds-listbox__option_plain, .slds-listbox--vertical .slds-listbox__option--plain", ".slds-listbox_vertical .slds-listbox__option_term, .slds-listbox--vertical .slds-listbox__option_term", ".slds-media__figure" ],
+      "cssSelectors" : [ ".slds-has-inline-listbox .slds-listbox_object-switcher ~ .slds-listbox_inline, .slds-has-inline-listbox .slds-listbox--object-switcher ~ .slds-listbox--inline, .slds-has-inline-listbox .slds-combobox_container__icon ~ .slds-listbox_inline, .slds-has-inline-listbox .slds-combobox_container__icon ~ .slds-listbox--inline, .slds-has-object-switcher .slds-listbox_object-switcher ~ .slds-listbox_inline, .slds-has-object-switcher .slds-listbox--object-switcher ~ .slds-listbox--inline, .slds-has-object-switcher .slds-combobox_container__icon ~ .slds-listbox_inline, .slds-has-object-switcher .slds-combobox_container__icon ~ .slds-listbox--inline", ".slds-has-inline-listbox.slds-has-icon_left .slds-combobox_container__icon, .slds-has-object-switcher.slds-has-icon_left .slds-combobox_container__icon", ".slds-listbox_selection-group .slds-listbox-toggle", ".slds-listbox_vertical .slds-listbox__option_entity .slds-media__figure, .slds-listbox_vertical .slds-listbox__option--entity .slds-media__figure, .slds-listbox--vertical .slds-listbox__option_entity .slds-media__figure, .slds-listbox--vertical .slds-listbox__option--entity .slds-media__figure", ".slds-listbox_vertical .slds-listbox__option_plain .slds-media__figure, .slds-listbox_vertical .slds-listbox__option--plain .slds-media__figure, .slds-listbox--vertical .slds-listbox__option_plain .slds-media__figure, .slds-listbox--vertical .slds-listbox__option--plain .slds-media__figure", ".slds-listbox_vertical .slds-listbox__option_plain, .slds-listbox_vertical .slds-listbox__option--plain, .slds-listbox--vertical .slds-listbox__option_plain, .slds-listbox--vertical .slds-listbox__option--plain", ".slds-listbox_vertical .slds-listbox__option_term, .slds-listbox--vertical .slds-listbox__option_term" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -7128,6 +7243,48 @@
     }
   }
 }, {
+  "description" : "",
+  "annotations" : {
+    "summary" : "A number input that is increased or decrease by companion buttons",
+    "layout" : "responsive",
+    "name" : "counter",
+    "support" : "dev-ready",
+    "base" : "true",
+    "role" : "counter",
+    "type" : "data-entry",
+    "category" : "base",
+    "selector" : ".slds-input_counter"
+  },
+  "id" : "counter",
+  "docPath" : "./ui/components/counter/docs.mdx",
+  "selectors" : [ ".slds-input_counter" ],
+  "restrictees" : [ {
+    "description" : "",
+    "annotations" : {
+      "summary" : "Variant for number input with increment and decrement buttons",
+      "name" : "base",
+      "selector" : ".slds-input_counter",
+      "restrict" : ".slds-input",
+      "variant" : "true"
+    },
+    "id" : "base",
+    "docPath" : null,
+    "selectors" : null,
+    "restrictees" : [ ],
+    "tokens" : { }
+  } ],
+  "tokens" : {
+    "spacingXxLarge" : {
+      "auraTokenName" : "spacingXxLarge",
+      "cssProperties" : [ "padding" ],
+      "cssSelectors" : [ ".slds-input_counter" ],
+      "sassTokenName" : "$spacing-xx-large",
+      "value" : "3rem",
+      "yamlTokenName" : "SPACING_XX_LARGE",
+      "scope" : null
+    }
+  }
+}, {
   "description" : "To initialize a data table, apply the `slds-table` class to the\n`table` element. This class creates a `table`\nwith formatted cells and allows you to use data table utilities.\n\n#### Accessibility\nTo create an accessible table, the top row of column headers (`th`)\nare placed in a `thead`. Each one receives the `scope=\"col\"`\nattribute. The first non-actionable (meaning that doesn't contain a checkbox\nor menu) column in each row should be marked as a `th` with a\n`scope=\"row\"` attribute.",
   "annotations" : {
     "summary" : "Data tables are an enhanced version of an HTML table and are used to display tabular data.",
@@ -7136,6 +7293,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "grid",
+    "lwc" : "true",
     "type" : "data-display, data-entry, navigation",
     "category" : "structure",
     "s1" : "false",
@@ -7446,7 +7604,8 @@
         "selector" : ".slds-table_header-hidden",
         "restrict" : ".slds-table",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "hidden-header",
       "docPath" : null,
@@ -7461,7 +7620,8 @@
         "selector" : ".slds-table_edit",
         "restrict" : ".slds-table",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "inline-edit",
       "docPath" : null,
@@ -7594,7 +7754,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border-bottom", "border-left", "border-top", "box-shadow" ],
-      "cssSelectors" : [ ".slds-table_bordered tbody td, .slds-table_bordered tbody th, .slds-table--bordered tbody td, .slds-table--bordered tbody th", ".slds-table_bordered thead > tr + tr > th, .slds-table--bordered thead > tr + tr > th", ".slds-table_bordered, .slds-table--bordered", ".slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-is-selected)", ".slds-table_col-bordered td + td, .slds-table_col-bordered th + th, .slds-table_col-bordered th + td, .slds-table_col-bordered td + th, .slds-table--col-bordered td + td, .slds-table--col-bordered th + th, .slds-table--col-bordered th + td, .slds-table--col-bordered td + th", ".slds-table_header-fixed_container:before, .slds-table--header-fixed_container:before" ],
+      "cssSelectors" : [ ".slds-table_bordered tbody td, .slds-table_bordered tbody th, .slds-table--bordered tbody td, .slds-table--bordered tbody th", ".slds-table_bordered thead > tr + tr > th, .slds-table--bordered thead > tr + tr > th", ".slds-table_bordered, .slds-table--bordered", ".slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-has-focus)", ".slds-table_col-bordered td + td, .slds-table_col-bordered th + th, .slds-table_col-bordered th + td, .slds-table_col-bordered td + th, .slds-table--col-bordered td + td, .slds-table--col-bordered th + th, .slds-table--col-bordered th + td, .slds-table--col-bordered td + th", ".slds-table_header-fixed_container:before, .slds-table--header-fixed_container:before" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -7693,7 +7853,7 @@
     "colorBorder" : {
       "auraTokenName" : "colorBorder",
       "cssProperties" : [ "border-bottom", "border-left", "border-top", "box-shadow" ],
-      "cssSelectors" : [ ".slds-max-medium-table_stacked, .slds-max-medium-table--stacked", ".slds-max-medium-table_stacked-horizontal, .slds-max-medium-table--stacked-horizontal", ".slds-no-cell-focus .slds-has-focus.slds-is-resizable:hover .slds-th__action", ".slds-table_bordered tbody td, .slds-table_bordered tbody th, .slds-table--bordered tbody td, .slds-table--bordered tbody th", ".slds-table_bordered thead > tr + tr > th, .slds-table--bordered thead > tr + tr > th", ".slds-table_bordered, .slds-table--bordered", ".slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-is-selected), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-is-selected), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-is-selected)", ".slds-table_col-bordered td + td, .slds-table_col-bordered th + th, .slds-table_col-bordered th + td, .slds-table_col-bordered td + th, .slds-table--col-bordered td + td, .slds-table--col-bordered th + th, .slds-table--col-bordered th + td, .slds-table--col-bordered td + th", ".slds-table_header-fixed_container:before, .slds-table--header-fixed_container:before", "tr" ],
+      "cssSelectors" : [ ".slds-max-medium-table_stacked, .slds-max-medium-table--stacked", ".slds-max-medium-table_stacked-horizontal, .slds-max-medium-table--stacked-horizontal", ".slds-no-cell-focus .slds-has-focus.slds-is-resizable:hover .slds-th__action", ".slds-table_bordered tbody td, .slds-table_bordered tbody th, .slds-table--bordered tbody td, .slds-table--bordered tbody th", ".slds-table_bordered thead > tr + tr > th, .slds-table--bordered thead > tr + tr > th", ".slds-table_bordered, .slds-table--bordered", ".slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-has-focus), .slds-table_bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > td:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover > th:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > td:not(.slds-has-focus), .slds-table--bordered:not(.slds-no-row-hover) tbody tr:focus > th:not(.slds-has-focus)", ".slds-table_col-bordered td + td, .slds-table_col-bordered th + th, .slds-table_col-bordered th + td, .slds-table_col-bordered td + th, .slds-table--col-bordered td + td, .slds-table--col-bordered th + th, .slds-table--col-bordered th + td, .slds-table--col-bordered td + th", ".slds-table_header-fixed_container:before, .slds-table--header-fixed_container:before", "tr" ],
       "sassTokenName" : "$color-border",
       "value" : "#dddbda",
       "yamlTokenName" : "COLOR_BORDER",
@@ -7704,7 +7864,7 @@
       "cssProperties" : [ "box-shadow" ],
       "cssSelectors" : [ ".slds-table_edit_container:focus:before, .slds-table--edit_container:focus:before" ],
       "sassTokenName" : "$color-border-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BORDER_BRAND",
       "scope" : null
     },
@@ -7731,7 +7891,7 @@
       "cssProperties" : [ "fill" ],
       "cssSelectors" : [ ".slds-hint-parent .slds-cell-edit:hover .slds-button__icon_edit:hover, .slds-hint-parent .slds-cell-edit:hover .slds-button__icon_edit:focus, .slds-hint-parent .slds-cell-edit:hover .slds-button__icon--edit:hover, .slds-hint-parent .slds-cell-edit:hover .slds-button__icon--edit:focus, .slds-hint-parent .slds-cell-edit:focus .slds-button__icon_edit:hover, .slds-hint-parent .slds-cell-edit:focus .slds-button__icon_edit:focus, .slds-hint-parent .slds-cell-edit:focus .slds-button__icon--edit:hover, .slds-hint-parent .slds-cell-edit:focus .slds-button__icon--edit:focus", ".slds-table_edit .slds-button__icon_edit:focus, .slds-table_edit .slds-button__icon--edit:focus, .slds-table--edit .slds-button__icon_edit:focus, .slds-table--edit .slds-button__icon--edit:focus" ],
       "sassTokenName" : "$color-text-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_TEXT_BRAND",
       "scope" : null
     },
@@ -7809,8 +7969,8 @@
     },
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
-      "cssProperties" : [ "padding-left", "padding-right" ],
-      "cssSelectors" : [ ".slds-table_fixed-layout .slds-cell-shrink:first-child, .slds-table--fixed-layout .slds-cell-shrink:first-child", ".slds-table_fixed-layout .slds-cell-shrink:last-child, .slds-table--fixed-layout .slds-cell-shrink:last-child" ],
+      "cssProperties" : [ "margin-top", "padding-left", "padding-right" ],
+      "cssSelectors" : [ ".slds-table_fixed-layout .slds-cell-shrink:first-child, .slds-table--fixed-layout .slds-cell-shrink:first-child", ".slds-table_fixed-layout .slds-cell-shrink:last-child, .slds-table--fixed-layout .slds-cell-shrink:last-child", ".slds-th__action-button" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -7841,6 +8001,15 @@
       "sassTokenName" : "$square-icon-large-boundary",
       "value" : "3rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_BOUNDARY",
+      "scope" : null
+    },
+    "squareTappableXxSmall" : {
+      "auraTokenName" : "squareTappableXxSmall",
+      "cssProperties" : [ "height", "width" ],
+      "cssSelectors" : [ ".slds-th__action-button" ],
+      "sassTokenName" : "$square-tappable-xx-small",
+      "value" : "1.25rem",
+      "yamlTokenName" : "SQUARE_TAPPABLE_XX_SMALL",
       "scope" : null
     },
     "tableBorderRadius" : {
@@ -7921,7 +8090,7 @@
   },
   "id" : "datepickers",
   "docPath" : "./ui/components/datepickers/docs.mdx",
-  "selectors" : [ ".slds-datepicker", ".slds-datepicker__filter", ".slds-datepicker__month", ".slds-datepicker__month_filter", ".slds-day", ".slds-disabled-text", ".slds-has-multi-row-selection", ".slds-has-multi-selection", ".slds-is-selected", ".slds-is-selected-multi", ".slds-is-today" ],
+  "selectors" : [ ".slds-datepicker", ".slds-datepicker__filter", ".slds-datepicker__month", ".slds-datepicker__month_filter", ".slds-day", ".slds-day_adjacent-month", ".slds-disabled-text", ".slds-has-multi-row-selection", ".slds-has-multi-selection", ".slds-is-selected", ".slds-is-selected-multi", ".slds-is-today" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -7936,6 +8105,18 @@
     "docPath" : null,
     "selectors" : null,
     "restrictees" : [ {
+      "description" : "",
+      "annotations" : {
+        "selector" : ".slds-disabled-text",
+        "restrict" : ".slds-datepicker td",
+        "deprecated" : "true"
+      },
+      "id" : ".slds-disabled-text",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
       "description" : "",
       "annotations" : {
         "summary" : "Style for calendar days",
@@ -8005,19 +8186,19 @@
       "id" : ".slds-datepicker__month",
       "docPath" : null,
       "selectors" : null,
-      "restrictees" : [ ],
-      "tokens" : { }
-    }, {
-      "description" : "",
-      "annotations" : {
-        "summary" : "Indicates days that are in previous/next months",
-        "selector" : ".slds-disabled-text",
-        "restrict" : ".slds-datepicker td"
-      },
-      "id" : ".slds-disabled-text",
-      "docPath" : null,
-      "selectors" : null,
-      "restrictees" : [ ],
+      "restrictees" : [ {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Indicates days that are in previous/next months",
+          "selector" : ".slds-day_adjacent-month",
+          "restrict" : ".slds-datepicker__month td"
+        },
+        "id" : ".slds-day_adjacent-month",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      } ],
       "tokens" : { }
     }, {
       "description" : "If you desire a multi-select date range, the selected cell will need to have\n`.slds-is-selected-multi` applied to the `<td>`.\n\nIf you are selecting multiple dates within the same week, the class `slds-has-multi-selection`\nshould be added to the `<tr>`.\n\nIf you are selecting multiple dates spanning over two or more weeks, you will\nneed to add the class `.slds-has-multi-row-selection` to each `<tr>` that has\nselected dates.",
@@ -8150,6 +8331,15 @@
       "sassTokenName" : "$color-text-label",
       "value" : "#3e3e3c",
       "yamlTokenName" : "COLOR_TEXT_LABEL",
+      "scope" : null
+    },
+    "datepickerColorTextDayAdjacentMonth" : {
+      "auraTokenName" : "datepickerColorTextDayAdjacentMonth",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-day_adjacent-month" ],
+      "sassTokenName" : "$datepicker-color-text-day-adjacent-month",
+      "value" : "#706e6b",
+      "yamlTokenName" : "DATEPICKER_COLOR_TEXT_DAY_ADJACENT_MONTH",
       "scope" : null
     },
     "fontSize2" : {
@@ -8520,6 +8710,20 @@
           "description" : "",
           "annotations" : {
             "summary" : "Sets min-width of 25rem/400px",
+            "selector" : ".slds-dropdown_large",
+            "restrict" : ".slds-dropdown",
+            "modifier" : "true",
+            "group" : "width"
+          },
+          "id" : ".slds-dropdown_large",
+          "docPath" : null,
+          "selectors" : null,
+          "restrictees" : [ ],
+          "tokens" : { }
+        }, {
+          "description" : "",
+          "annotations" : {
+            "summary" : "Sets width equal to input",
             "selector" : ".slds-dropdown_large",
             "restrict" : ".slds-dropdown",
             "modifier" : "true",
@@ -9212,7 +9416,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-docked-composer__input" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -9525,7 +9729,7 @@
     },
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
-      "cssProperties" : [ "border", "border-right", "border-top", "margin-right" ],
+      "cssProperties" : [ "border", "border-left", "border-right", "border-top", "margin-right" ],
       "cssSelectors" : [ ".slds-utility-bar__item", ".slds-utility-bar__item_pop-out:after", ".slds-utility-bar__item_pop-out:before", ".slds-utility-panel" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
@@ -9597,7 +9801,7 @@
     },
     "colorTextDefault" : {
       "auraTokenName" : "colorTextDefault",
-      "cssProperties" : [ "border-right", "border-top", "color" ],
+      "cssProperties" : [ "border-left", "border-right", "border-top", "color" ],
       "cssSelectors" : [ ".slds-utility-bar__action", ".slds-utility-bar__item_pop-out:after", ".slds-utility-bar__item_pop-out:before" ],
       "sassTokenName" : "$color-text-default",
       "value" : "#080707",
@@ -9983,6 +10187,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "listbox",
+    "lwc" : "true",
     "scroller" : "true",
     "type" : "data-entry",
     "category" : "experience",
@@ -10203,7 +10408,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-picklist__item" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -10895,7 +11100,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-section-title > a:hover, .slds-section-title > a:focus" ],
       "sassTokenName" : "$color-text-link-hover",
-      "value" : "#005FB2",
+      "value" : "#005fb2",
       "yamlTokenName" : "COLOR_TEXT_LINK_HOVER",
       "scope" : null
     },
@@ -11345,7 +11550,7 @@
       "cssProperties" : [ "padding-top" ],
       "cssSelectors" : [ ".slds-expression__legend" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -11621,7 +11826,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-post__footer-action:hover, .slds-post__footer-action:focus, .slds-post__footer-action.slds-is-active" ],
       "sassTokenName" : "$color-text-link-hover",
-      "value" : "#005FB2",
+      "value" : "#005fb2",
       "yamlTokenName" : "COLOR_TEXT_LINK_HOVER",
       "scope" : null
     },
@@ -11729,13 +11934,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "The File selector component allows the user to select file(s) from a user’s file system. Either natively using an file input or drag and drop.",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "file-selector",
-    "selector" : ".slds-file-selector",
     "support" : "dev-ready",
-    "category" : "experience",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "user-input",
-    "layout" : "responsive"
+    "category" : "experience",
+    "selector" : ".slds-file-selector"
   },
   "id" : "file-selector",
   "docPath" : "./ui/components/file-selector/docs.mdx",
@@ -12000,7 +12206,7 @@
       "cssProperties" : [ "box-shadow" ],
       "cssSelectors" : [ ".slds-file-selector__dropzone_integrated.slds-has-drag-over, .slds-file-selector__dropzone--integrated.slds-has-drag-over" ],
       "sassTokenName" : "$color-border-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BORDER_BRAND",
       "scope" : null
     },
@@ -12124,7 +12330,7 @@
   },
   "id" : "files",
   "docPath" : "./ui/components/files/docs.mdx",
-  "selectors" : [ ".slds-file", ".slds-file-has-actions", ".slds-file__actions-menu", ".slds-file__crop", ".slds-file__crop_1-by-1", ".slds-file__crop_16-by-9", ".slds-file__crop_4-by-3", ".slds-file__external-icon", ".slds-file__figure", ".slds-file__figure_portrait", ".slds-file__icon", ".slds-file__loading-icon", ".slds-file__title", ".slds-file__title_card", ".slds-file__title_overlay", ".slds-file__title_scrim", ".slds-file_card", ".slds-file_center-icon", ".slds-file_loading", ".slds-file_overlay", ".slds-has-title" ],
+  "selectors" : [ ".slds-file", ".slds-file-has-actions", ".slds-file__actions-menu", ".slds-file__crop", ".slds-file__crop_1-by-1", ".slds-file__crop_16-by-9", ".slds-file__crop_4-by-3", ".slds-file__external-icon", ".slds-file__figure", ".slds-file__figure_portrait", ".slds-file__icon", ".slds-file__loading-icon", ".slds-file__text", ".slds-file__title", ".slds-file__title_card", ".slds-file__title_overlay", ".slds-file__title_scrim", ".slds-file_card", ".slds-file_center-icon", ".slds-file_loading", ".slds-file_overlay", ".slds-has-title" ],
   "restrictees" : [ {
     "description" : "A figure component is a self-contained unit of content, such as an image with an optional caption. The figure component should NOT be used with icons or logos. A figure can optionally be cropped to a specific ratio such as 16x9, 4x3 and 1x1 with the use of `.slds-image__crop` and passing in a ratio class such as `.slds-image__crop_16-by-9`.",
     "annotations" : {
@@ -12242,6 +12448,17 @@
       "docPath" : null,
       "selectors" : null,
       "restrictees" : [ {
+        "description" : "Text title for file name",
+        "annotations" : {
+          "selector" : ".slds-file__text",
+          "restrict" : ".slds-file__title span"
+        },
+        "id" : ".slds-file__text",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
         "description" : "Adds overlay to file",
         "annotations" : {
           "selector" : ".slds-file__title_overlay",
@@ -12400,7 +12617,7 @@
     "colorBackgroundImageOverlay" : {
       "auraTokenName" : "colorBackgroundImageOverlay",
       "cssProperties" : [ "background", "background-color" ],
-      "cssSelectors" : [ ".slds-image:not(.slds-file_loading) a:hover:before, .slds-image:not(.slds-file_loading) a:focus:before, .slds-file:not(.slds-file_loading) a:hover:before, .slds-file:not(.slds-file_loading) a:focus:before", ".slds-image_overlay, .slds-image--overlay, .slds-file_overlay, .slds-file--overlay" ],
+      "cssSelectors" : [ ".slds-image:not(.slds-file_loading) .slds-file__figure:hover:before, .slds-image:not(.slds-file_loading) .slds-file__figure:focus:before, .slds-image:not(.slds-file_loading) .slds-file__crop:hover:before, .slds-image:not(.slds-file_loading) .slds-file__crop:focus:before, .slds-file:not(.slds-file_loading) .slds-file__figure:hover:before, .slds-file:not(.slds-file_loading) .slds-file__figure:focus:before, .slds-file:not(.slds-file_loading) .slds-file__crop:hover:before, .slds-file:not(.slds-file_loading) .slds-file__crop:focus:before", ".slds-image_overlay, .slds-image--overlay, .slds-file_overlay, .slds-file--overlay" ],
       "sassTokenName" : "$color-background-image-overlay",
       "value" : "rgba(0, 0, 0, 0.60)",
       "yamlTokenName" : "COLOR_BACKGROUND_IMAGE_OVERLAY",
@@ -12411,7 +12628,7 @@
       "cssProperties" : [ "border" ],
       "cssSelectors" : [ ".slds-image:focus, .slds-file:focus" ],
       "sassTokenName" : "$color-border-brand-dark",
-      "value" : "#0070D2",
+      "value" : "#0070d2",
       "yamlTokenName" : "COLOR_BORDER_BRAND_DARK",
       "scope" : null
     },
@@ -12445,7 +12662,7 @@
     "filesZIndexHover" : {
       "auraTokenName" : "filesZIndexHover",
       "cssProperties" : [ "z-index" ],
-      "cssSelectors" : [ ".slds-image:not(.slds-file_loading) a:hover + .slds-file__title, .slds-image:not(.slds-file_loading) a:focus + .slds-file__title, .slds-file:not(.slds-file_loading) a:hover + .slds-file__title, .slds-file:not(.slds-file_loading) a:focus + .slds-file__title", ".slds-image:not(.slds-file_loading) a:hover:before, .slds-image:not(.slds-file_loading) a:hover:after, .slds-image:not(.slds-file_loading) a:focus:before, .slds-image:not(.slds-file_loading) a:focus:after, .slds-file:not(.slds-file_loading) a:hover:before, .slds-file:not(.slds-file_loading) a:hover:after, .slds-file:not(.slds-file_loading) a:focus:before, .slds-file:not(.slds-file_loading) a:focus:after", ".slds-image__actions-menu, .slds-file__actions-menu", ".slds-image__title, .slds-file__title" ],
+      "cssSelectors" : [ ".slds-image:not(.slds-file_loading) .slds-file__figure:hover + .slds-file__title, .slds-image:not(.slds-file_loading) .slds-file__figure:focus + .slds-file__title, .slds-image:not(.slds-file_loading) .slds-file__crop:hover + .slds-file__title, .slds-image:not(.slds-file_loading) .slds-file__crop:focus + .slds-file__title, .slds-file:not(.slds-file_loading) .slds-file__figure:hover + .slds-file__title, .slds-file:not(.slds-file_loading) .slds-file__figure:focus + .slds-file__title, .slds-file:not(.slds-file_loading) .slds-file__crop:hover + .slds-file__title, .slds-file:not(.slds-file_loading) .slds-file__crop:focus + .slds-file__title", ".slds-image:not(.slds-file_loading) .slds-file__figure:hover:before, .slds-image:not(.slds-file_loading) .slds-file__figure:hover:after, .slds-image:not(.slds-file_loading) .slds-file__figure:focus:before, .slds-image:not(.slds-file_loading) .slds-file__figure:focus:after, .slds-image:not(.slds-file_loading) .slds-file__crop:hover:before, .slds-image:not(.slds-file_loading) .slds-file__crop:hover:after, .slds-image:not(.slds-file_loading) .slds-file__crop:focus:before, .slds-image:not(.slds-file_loading) .slds-file__crop:focus:after, .slds-file:not(.slds-file_loading) .slds-file__figure:hover:before, .slds-file:not(.slds-file_loading) .slds-file__figure:hover:after, .slds-file:not(.slds-file_loading) .slds-file__figure:focus:before, .slds-file:not(.slds-file_loading) .slds-file__figure:focus:after, .slds-file:not(.slds-file_loading) .slds-file__crop:hover:before, .slds-file:not(.slds-file_loading) .slds-file__crop:hover:after, .slds-file:not(.slds-file_loading) .slds-file__crop:focus:before, .slds-file:not(.slds-file_loading) .slds-file__crop:focus:after", ".slds-image__actions-menu, .slds-file__actions-menu", ".slds-image__title, .slds-file__title" ],
       "sassTokenName" : "$files-z-index-hover",
       "value" : "5",
       "yamlTokenName" : "FILES_Z_INDEX_HOVER",
@@ -12535,7 +12752,7 @@
     "squareIconLargeContent" : {
       "auraTokenName" : "squareIconLargeContent",
       "cssProperties" : [ "height", "margin-top", "transform", "width" ],
-      "cssSelectors" : [ ".slds-image.slds-has-title a:hover:after, .slds-image.slds-has-title a:focus:after, .slds-file.slds-has-title a:hover:after, .slds-file.slds-has-title a:focus:after", ".slds-image:not(.slds-file_loading) a:hover:after, .slds-image:not(.slds-file_loading) a:focus:after, .slds-file:not(.slds-file_loading) a:hover:after, .slds-file:not(.slds-file_loading) a:focus:after", ".slds-image__icon, .slds-file__icon" ],
+      "cssSelectors" : [ ".slds-image.slds-has-title .slds-file__figure:hover:after, .slds-image.slds-has-title .slds-file__figure:focus:after, .slds-image.slds-has-title .slds-file__crop:hover:after, .slds-image.slds-has-title .slds-file__crop:focus:after, .slds-file.slds-has-title .slds-file__figure:hover:after, .slds-file.slds-has-title .slds-file__figure:focus:after, .slds-file.slds-has-title .slds-file__crop:hover:after, .slds-file.slds-has-title .slds-file__crop:focus:after", ".slds-image:not(.slds-file_loading) .slds-file__figure:hover:after, .slds-image:not(.slds-file_loading) .slds-file__figure:focus:after, .slds-image:not(.slds-file_loading) .slds-file__crop:hover:after, .slds-image:not(.slds-file_loading) .slds-file__crop:focus:after, .slds-file:not(.slds-file_loading) .slds-file__figure:hover:after, .slds-file:not(.slds-file_loading) .slds-file__figure:focus:after, .slds-file:not(.slds-file_loading) .slds-file__crop:hover:after, .slds-file:not(.slds-file_loading) .slds-file__crop:focus:after", ".slds-image__icon, .slds-file__icon" ],
       "sassTokenName" : "$square-icon-large-content",
       "value" : "2rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_CONTENT",
@@ -12546,13 +12763,14 @@
   "description" : "Error states alert the user when content in the form is invalid. The `.slds-has-error` class is placed on the `<div class=\"slds-form-element\">`. Place the error message for the user in a `<span>` with the `.slds-form-element__help` class.\n\nThe native form elements, `<input>`, `<textarea>`, `<select>`, `<input type='checkbox'>`, and `<input type='radio'>`, receive validation styling for `disabled`, `checked`, and `checked disabled`, if applicable.\n\nThe read-only state is for form elements that can’t be modified. It is used for small, non-editable form fields that sit next to inputs and allows the size and height to align. It is not meant for large paragraphs of text.\n\nBecause the read-only field state has no `<input>`, don’t use a `<label>` to provide better accessibility for screen readers and keyboard navigators. Instead, use a `<span>` with the `.slds-form-element__label` class. Instead of an `<input>`, use the `.slds-form-element__static` class inside the `.slds-form-element__control` wrapper.\n\n#### Accessibility\n\nEvery field requires an associated, non-empty `<label>` element. The label should have a `for` attribute that references the `id` of the field. For example, `<label for=\"emailAddress\">Enter email address:</label>` and `<input id=\"emailAddress\">`. This association ensures that assistive technology informs users what information to enter where.\n\nIf the field is required, the `<input>` element should have the HTML attribute `required` or `required=\"\"`. Similarily, if it is disabled, it should have the `disabled` or `disabled=\"\"` attribute. Do not use true/false values inside the `required` or `disabled` because the mere presence of these attributes signifies the field is required or disabled.\n\nIf the field is invalid and displays an error message, the `<input>` element should have an `aria-describedby` attribute that references the `id` of the error message. This configuration allows screen readers to read the associated error message when the invalid field is focused.",
   "annotations" : {
     "summary" : "An HTML form element contains a HTML label and element",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "form-element",
-    "selector" : ".slds-form-element, .slds-form",
     "support" : "dev-ready",
-    "category" : "structure",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "layout",
-    "layout" : "responsive"
+    "category" : "structure",
+    "selector" : ".slds-form-element, .slds-form"
   },
   "id" : "form-element",
   "docPath" : "./ui/components/form-element/docs.mdx",
@@ -12726,7 +12944,8 @@
         "selector" : ".slds-form-element_compound",
         "restrict" : ".slds-form-element",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "compound",
       "docPath" : null,
@@ -12756,7 +12975,8 @@
         "selector" : ".slds-form-element_horizontal",
         "restrict" : ".slds-form-element",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "horizontal",
       "docPath" : null,
@@ -12783,7 +13003,8 @@
         "selector" : ".slds-form-element_stacked",
         "restrict" : ".slds-form-element",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "stacked",
       "docPath" : null,
@@ -12920,7 +13141,8 @@
       "selector" : ".slds-form",
       "restrict" : "div, form",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "record-detail",
     "docPath" : null,
@@ -13182,8 +13404,8 @@
     },
     "squareTappable" : {
       "auraTokenName" : "squareTappable",
-      "cssProperties" : [ "width" ],
-      "cssSelectors" : [ ".slds-form-element_edit .slds-form-element__static, .slds-form-element--edit .slds-form-element__static" ],
+      "cssProperties" : [ "flex-basis", "max-width", "width" ],
+      "cssSelectors" : [ ".slds-form-element__label", ".slds-form-element_edit .slds-form-element__static, .slds-form-element--edit .slds-form-element__static", ".slds-form-element_horizontal, .slds-form_horizontal .slds-form-element, .slds-form_stacked .slds-form-element_horizontal" ],
       "sassTokenName" : "$square-tappable",
       "value" : "2.75rem",
       "yamlTokenName" : "SQUARE_TAPPABLE",
@@ -13643,7 +13865,7 @@
       "cssProperties" : [ "background", "color", "fill" ],
       "cssSelectors" : [ ".slds-global-header", ".slds-global-header__button_icon-actions, .slds-global-header__button--icon-actions", ".slds-global-header__button_icon-actions:hover, .slds-global-header__button_icon-actions:focus, .slds-global-header__button--icon-actions:hover, .slds-global-header__button--icon-actions:focus", ".slds-global-header__button_icon-favorites .slds-icon, .slds-global-header__button_icon-favorites .slds-button__icon, .slds-global-header__button--icon-favorites .slds-icon, .slds-global-header__button--icon-favorites .slds-button__icon", ".slds-global-header__button_icon-favorites.slds-is-selected .slds-icon, .slds-global-header__button_icon-favorites.slds-is-selected .slds-button__icon, .slds-global-header__button--icon-favorites.slds-is-selected .slds-icon, .slds-global-header__button--icon-favorites.slds-is-selected .slds-button__icon", ".slds-global-header__button_icon-favorites.slds-is-selected:active .slds-icon, .slds-global-header__button_icon-favorites.slds-is-selected:active .slds-button__icon, .slds-global-header__button--icon-favorites.slds-is-selected:active .slds-icon, .slds-global-header__button--icon-favorites.slds-is-selected:active .slds-button__icon", ".slds-global-header__button_icon-favorites.slds-is-selected:hover .slds-icon, .slds-global-header__button_icon-favorites.slds-is-selected:hover .slds-button__icon, .slds-global-header__button_icon-favorites.slds-is-selected:focus .slds-icon, .slds-global-header__button_icon-favorites.slds-is-selected:focus .slds-button__icon, .slds-global-header__button--icon-favorites.slds-is-selected:hover .slds-icon, .slds-global-header__button--icon-favorites.slds-is-selected:hover .slds-button__icon, .slds-global-header__button--icon-favorites.slds-is-selected:focus .slds-icon, .slds-global-header__button--icon-favorites.slds-is-selected:focus .slds-button__icon", ".slds-global-header__button_icon-favorites:hover .slds-icon, .slds-global-header__button_icon-favorites:hover .slds-button__icon, .slds-global-header__button_icon-favorites:focus .slds-icon, .slds-global-header__button_icon-favorites:focus .slds-button__icon, .slds-global-header__button--icon-favorites:hover .slds-icon, .slds-global-header__button--icon-favorites:hover .slds-button__icon, .slds-global-header__button--icon-favorites:focus .slds-icon, .slds-global-header__button--icon-favorites:focus .slds-button__icon", ".slds-global-header_container .slds-assistive-text_focus, .slds-global-header_container .slds-assistive-text--focus" ],
       "sassTokenName" : "$brand-header",
-      "value" : "#ffffff",
+      "value" : "#FFFFFF",
       "yamlTokenName" : "BRAND_HEADER",
       "scope" : null
     },
@@ -14285,7 +14507,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-indicator_unsaved, .slds-indicator--unsaved" ],
       "sassTokenName" : "$color-text-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_TEXT_BRAND",
       "scope" : null
     },
@@ -14424,7 +14646,8 @@
     "name" : "icons",
     "selector" : ".slds-icon_container",
     "support" : "dev-ready",
-    "layout" : "responsive"
+    "layout" : "responsive",
+    "lwc" : "true"
   },
   "id" : "icons",
   "docPath" : "./ui/components/icons/docs.mdx",
@@ -14883,13 +15106,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "Text inputs are used for freeform data entry",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "input",
-    "selector" : ".slds-input",
     "support" : "dev-ready",
-    "category" : "base",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "data-entry",
-    "layout" : "responsive"
+    "category" : "base",
+    "selector" : ".slds-input"
   },
   "id" : "input",
   "docPath" : "./ui/components/input/docs.mdx",
@@ -14910,6 +15134,20 @@
     "restrictees" : [ {
       "description" : "",
       "annotations" : {
+        "summary" : "Variant for number input with increment and decrement buttons",
+        "name" : "base",
+        "selector" : ".slds-input_counter",
+        "restrict" : ".slds-input",
+        "variant" : "true"
+      },
+      "id" : "base",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
+      "description" : "",
+      "annotations" : {
         "selector" : "[readonly]",
         "restrict" : ".slds-input"
       },
@@ -14926,19 +15164,6 @@
         "modifier" : "true"
       },
       "id" : ".slds-input_bare",
-      "docPath" : null,
-      "selectors" : null,
-      "restrictees" : [ ],
-      "tokens" : { }
-    }, {
-      "description" : "",
-      "annotations" : {
-        "summary" : "Modifier for number input with increment and decrement buttons",
-        "selector" : ".slds-input_counter",
-        "restrict" : ".slds-input, input",
-        "modifier" : "true"
-      },
-      "id" : ".slds-input_counter",
       "docPath" : null,
       "selectors" : null,
       "restrictees" : [ ],
@@ -15033,6 +15258,15 @@
       "yamlTokenName" : "HEIGHT_INPUT",
       "scope" : null
     },
+    "heightTappable" : {
+      "auraTokenName" : "heightTappable",
+      "cssProperties" : [ "height" ],
+      "cssSelectors" : [ ".slds-input[type='date'], .slds-input[type='datetime-local'], .slds-input[type='month'], .slds-input[type='time']" ],
+      "sassTokenName" : "$height-tappable",
+      "value" : "2.75rem",
+      "yamlTokenName" : "HEIGHT_TAPPABLE",
+      "scope" : null
+    },
     "inputReadonlyFontWeight" : {
       "auraTokenName" : "inputReadonlyFontWeight",
       "cssProperties" : [ "font-weight" ],
@@ -15107,8 +15341,8 @@
     },
     "spacingXxLarge" : {
       "auraTokenName" : "spacingXxLarge",
-      "cssProperties" : [ "padding", "padding-right" ],
-      "cssSelectors" : [ ".slds-input-has-icon_group-right .slds-input, .slds-input-has-icon_group-right .slds-input_bare, .slds-input-has-icon_group-right .slds-input--bare", ".slds-input_counter" ],
+      "cssProperties" : [ "padding-right" ],
+      "cssSelectors" : [ ".slds-input-has-icon_group-right .slds-input, .slds-input-has-icon_group-right .slds-input_bare, .slds-input-has-icon_group-right .slds-input--bare" ],
       "sassTokenName" : "$spacing-xx-large",
       "value" : "3rem",
       "yamlTokenName" : "SPACING_XX_LARGE",
@@ -15493,7 +15727,7 @@
       "cssProperties" : [ "line-height", "max-height" ],
       "cssSelectors" : [ ".slds-lookup__item > a, .slds-lookup__item > span, .slds-lookup__item > button", ".slds-lookup__item-action", ".slds-lookup__list" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -15555,14 +15789,15 @@
 }, {
   "description" : "",
   "annotations" : {
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "map",
-    "selector" : ".slds-map_container",
     "support" : "dev-ready",
-    "category" : "experience",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "data-display",
+    "category" : "experience",
     "s1" : "true",
-    "layout" : "responsive"
+    "selector" : ".slds-map_container"
   },
   "id" : "map",
   "docPath" : "./ui/components/map/docs.mdx",
@@ -15712,7 +15947,8 @@
       "selector" : ".slds-dropdown-trigger",
       "restrict" : "div, span, li",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "dropdown",
     "docPath" : null,
@@ -15868,6 +16104,20 @@
         "description" : "",
         "annotations" : {
           "summary" : "Sets min-width of 25rem/400px",
+          "selector" : ".slds-dropdown_large",
+          "restrict" : ".slds-dropdown",
+          "modifier" : "true",
+          "group" : "width"
+        },
+        "id" : ".slds-dropdown_large",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Sets width equal to input",
           "selector" : ".slds-dropdown_large",
           "restrict" : ".slds-dropdown",
           "modifier" : "true",
@@ -16675,7 +16925,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-dropdown__item" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -16736,7 +16986,7 @@
     "sizeXSmall" : {
       "auraTokenName" : "sizeXSmall",
       "cssProperties" : [ "min-width" ],
-      "cssSelectors" : [ ".slds-dropdown_x-small, .slds-dropdown--x-small" ],
+      "cssSelectors" : [ ".slds-dropdown_fluid, .slds-dropdown--fluid", ".slds-dropdown_x-small, .slds-dropdown--x-small" ],
       "sassTokenName" : "$size-x-small",
       "value" : "12rem",
       "yamlTokenName" : "SIZE_X_SMALL",
@@ -17532,7 +17782,7 @@
   },
   "id" : "page-headers",
   "docPath" : "./ui/components/page-headers/docs.mdx",
-  "selectors" : [ ".slds-page-header", ".slds-page-header__col_actions", ".slds-page-header__col_controls", ".slds-page-header__col_meta", ".slds-page-header__col_title", ".slds-page-header__control", ".slds-page-header__controls", ".slds-page-header__detail-block", ".slds-page-header__detail-item", ".slds-page-header__detail-list", ".slds-page-header__detail-row", ".slds-page-header__meta-text", ".slds-page-header__name", ".slds-page-header__name-meta", ".slds-page-header__name-switcher", ".slds-page-header__name-title", ".slds-page-header__row", ".slds-page-header__row_gutters", ".slds-page-header__title", ".slds-page-header_object-home", ".slds-page-header_record-home", ".slds-page-header_related-list", ".slds-page-header_vertical" ],
+  "selectors" : [ ".slds-page-header", ".slds-page-header__col-actions", ".slds-page-header__col-controls", ".slds-page-header__col-meta", ".slds-page-header__col-title", ".slds-page-header__control", ".slds-page-header__controls", ".slds-page-header__detail-block", ".slds-page-header__detail-item", ".slds-page-header__detail-list", ".slds-page-header__detail-row", ".slds-page-header__meta-text", ".slds-page-header__name", ".slds-page-header__name-meta", ".slds-page-header__name-switcher", ".slds-page-header__name-title", ".slds-page-header__row", ".slds-page-header__row_gutters", ".slds-page-header__title", ".slds-page-header_object-home", ".slds-page-header_record-home", ".slds-page-header_related-list", ".slds-page-header_vertical" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -19032,6 +19282,15 @@
       "yamlTokenName" : "HEIGHT_SALES_PATH",
       "scope" : null
     },
+    "heightTappable" : {
+      "auraTokenName" : "heightTappable",
+      "cssProperties" : [ "height" ],
+      "cssSelectors" : [ ".slds-path__item:after", ".slds-path__item:before", ".slds-path__link", ".slds-path__nav .slds-is-active:first-child .slds-path__link", ".slds-path__nav .slds-is-current:first-child .slds-path__link" ],
+      "sassTokenName" : "$height-tappable",
+      "value" : "2.75rem",
+      "yamlTokenName" : "HEIGHT_TAPPABLE",
+      "scope" : null
+    },
     "pathButtonWidthFixed" : {
       "auraTokenName" : "pathButtonWidthFixed",
       "cssProperties" : [ "min-width" ],
@@ -19235,7 +19494,8 @@
     "base" : "true",
     "name" : "pills",
     "selector" : ".slds-pill",
-    "support" : "dev-ready"
+    "support" : "dev-ready",
+    "lwc" : "true"
   },
   "id" : "pills",
   "docPath" : "./ui/components/pills/docs.mdx",
@@ -19491,7 +19751,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-pill" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -19565,7 +19825,7 @@
   },
   "id" : "popovers",
   "docPath" : "./ui/components/popovers/docs.mdx",
-  "selectors" : [ ".slds-form-element__label_edit", ".slds-nubbin_bottom", ".slds-nubbin_bottom-left", ".slds-nubbin_bottom-left-corner", ".slds-nubbin_bottom-right", ".slds-nubbin_bottom-right-corner", ".slds-nubbin_left", ".slds-nubbin_left-bottom", ".slds-nubbin_left-bottom-corner", ".slds-nubbin_left-top", ".slds-nubbin_left-top-corner", ".slds-nubbin_right", ".slds-nubbin_right-bottom", ".slds-nubbin_right-bottom-corner", ".slds-nubbin_right-top", ".slds-nubbin_right-top-corner", ".slds-nubbin_top", ".slds-nubbin_top-left", ".slds-nubbin_top-left-corner", ".slds-nubbin_top-right", ".slds-nubbin_top-right-corner", ".slds-popover", ".slds-popover__body", ".slds-popover__body_scrollable", ".slds-popover__body_small", ".slds-popover__close", ".slds-popover__footer", ".slds-popover__footer_form", ".slds-popover__header", ".slds-popover_edit", ".slds-popover_error", ".slds-popover_feature", ".slds-popover_full-width", ".slds-popover_hide", ".slds-popover_large", ".slds-popover_medium", ".slds-popover_panel", ".slds-popover_panel__label", ".slds-popover_small", ".slds-popover_walkthrough", ".slds-popover_walkthrough-alt", ".slds-popover_warning" ],
+  "selectors" : [ ".slds-form-element__label_edit", ".slds-nubbin_bottom", ".slds-nubbin_bottom-left", ".slds-nubbin_bottom-left-corner", ".slds-nubbin_bottom-right", ".slds-nubbin_bottom-right-corner", ".slds-nubbin_left", ".slds-nubbin_left-bottom", ".slds-nubbin_left-bottom-corner", ".slds-nubbin_left-top", ".slds-nubbin_left-top-corner", ".slds-nubbin_right", ".slds-nubbin_right-bottom", ".slds-nubbin_right-bottom-corner", ".slds-nubbin_right-top", ".slds-nubbin_right-top-corner", ".slds-nubbin_top", ".slds-nubbin_top-left", ".slds-nubbin_top-left-corner", ".slds-nubbin_top-right", ".slds-nubbin_top-right-corner", ".slds-popover", ".slds-popover__body", ".slds-popover__body_scrollable", ".slds-popover__body_small", ".slds-popover__close", ".slds-popover__footer", ".slds-popover__footer_form", ".slds-popover__header", ".slds-popover_edit", ".slds-popover_error", ".slds-popover_feature", ".slds-popover_full-width", ".slds-popover_hide", ".slds-popover_large", ".slds-popover_medium", ".slds-popover_panel", ".slds-popover_panel__label", ".slds-popover_prompt", ".slds-popover_prompt__action-link", ".slds-popover_prompt__heading", ".slds-popover_prompt_bottom", ".slds-popover_prompt_bottom-left", ".slds-popover_prompt_bottom-right", ".slds-popover_prompt_top", ".slds-popover_prompt_top-left", ".slds-popover_prompt_top-right", ".slds-popover_small", ".slds-popover_walkthrough", ".slds-popover_walkthrough-alt", ".slds-popover_warning" ],
   "restrictees" : [ {
     "description" : "A dialog popover, `.slds-popover`, can be applied to all variants of a dialog\npopover. It initiates the styles of the popover and enables `.slds-nubbin` to be applied.\n\nA dialog popover requires at least one focusable element.",
     "annotations" : {
@@ -20073,6 +20333,123 @@
       } ],
       "tokens" : { }
     }, {
+      "description" : "Prompt components are used to provide an interactive custom message.",
+      "annotations" : {
+        "summary" : "Initializes a prompt non-modal dialog",
+        "name" : "prompt",
+        "selector" : ".slds-popover_prompt",
+        "restrict" : ".slds-popover",
+        "support" : "dev-ready",
+        "variant" : "true"
+      },
+      "id" : "prompt",
+      "docPath" : "./ui/components/prompt/docs.mdx",
+      "selectors" : null,
+      "restrictees" : [ {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Applies styles for heading text of prompt",
+          "selector" : ".slds-popover_prompt__heading",
+          "restrict" : ".slds-popover_prompt .slds-media__body > h2"
+        },
+        "id" : ".slds-popover_prompt__heading",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Applies styles for the optional action link in the footer of prompt",
+          "selector" : ".slds-popover_prompt__action-link",
+          "restrict" : ".slds-popover_prompt .slds-popover__footer span"
+        },
+        "id" : ".slds-popover_prompt__action-link",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt top left",
+          "selector" : ".slds-popover_prompt_top-left",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_top-left",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt top center",
+          "selector" : ".slds-popover_prompt_top",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_top",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt top right",
+          "selector" : ".slds-popover_prompt_top-right",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_top-right",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt bottom left",
+          "selector" : ".slds-popover_prompt_bottom-left",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_bottom-left",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt bottom center",
+          "selector" : ".slds-popover_prompt_bottom",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_bottom",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      }, {
+        "description" : "",
+        "annotations" : {
+          "summary" : "Position Prompt bottom right",
+          "selector" : ".slds-popover_prompt_bottom-right",
+          "restrict" : ".slds-popover_prompt",
+          "modifier" : "true"
+        },
+        "id" : ".slds-popover_prompt_bottom-right",
+        "docPath" : null,
+        "selectors" : null,
+        "restrictees" : [ ],
+        "tokens" : { }
+      } ],
+      "tokens" : { }
+    }, {
       "description" : "Walkthrough components are used to provide an interactive and educational prospect experience for setup.",
       "annotations" : {
         "summary" : "Initializes a walkthrough non-modal dialog",
@@ -20148,6 +20525,15 @@
       "yamlTokenName" : "BORDER_RADIUS_SMALL",
       "scope" : null
     },
+    "borderWidthThick" : {
+      "auraTokenName" : "borderWidthThick",
+      "cssProperties" : [ "border-top" ],
+      "cssSelectors" : [ ".slds-popover_prompt .slds-popover__footer" ],
+      "sassTokenName" : "$border-width-thick",
+      "value" : "2px",
+      "yamlTokenName" : "BORDER_WIDTH_THICK",
+      "scope" : null
+    },
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border", "border-bottom", "border-top", "border-top-left-radius", "border-top-right-radius" ],
@@ -20155,6 +20541,15 @@
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
+      "scope" : null
+    },
+    "brandDark" : {
+      "auraTokenName" : "brandDark",
+      "cssProperties" : [ "border-top" ],
+      "cssSelectors" : [ ".slds-popover_prompt .slds-popover__footer" ],
+      "sassTokenName" : "$brand-dark",
+      "value" : "#182337",
+      "yamlTokenName" : "BRAND_DARK",
       "scope" : null
     },
     "colorBackground" : {
@@ -20209,6 +20604,42 @@
       "sassTokenName" : "$color-text-inverse",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_INVERSE",
+      "scope" : null
+    },
+    "fontSize5" : {
+      "auraTokenName" : "fontSize5",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ ".slds-popover_prompt__heading" ],
+      "sassTokenName" : "$font-size-5",
+      "value" : "1rem",
+      "yamlTokenName" : "FONT_SIZE_5",
+      "scope" : null
+    },
+    "fontSize7" : {
+      "auraTokenName" : "fontSize7",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ ".slds-popover_prompt__heading" ],
+      "sassTokenName" : "$font-size-7",
+      "value" : "1.25rem",
+      "yamlTokenName" : "FONT_SIZE_7",
+      "scope" : null
+    },
+    "fontWeightBold" : {
+      "auraTokenName" : "fontWeightBold",
+      "cssProperties" : [ "font-weight" ],
+      "cssSelectors" : [ ".slds-popover_prompt__heading" ],
+      "sassTokenName" : "$font-weight-bold",
+      "value" : "700",
+      "yamlTokenName" : "FONT_WEIGHT_BOLD",
+      "scope" : null
+    },
+    "lineHeightHeading" : {
+      "auraTokenName" : "lineHeightHeading",
+      "cssProperties" : [ "line-height" ],
+      "cssSelectors" : [ ".slds-popover_prompt__heading" ],
+      "sassTokenName" : "$line-height-heading",
+      "value" : "1.25",
+      "yamlTokenName" : "LINE_HEIGHT_HEADING",
       "scope" : null
     },
     "maxWidthActionOverflowMenu" : {
@@ -20294,8 +20725,8 @@
     },
     "sizeLarge" : {
       "auraTokenName" : "sizeLarge",
-      "cssProperties" : [ "min-width" ],
-      "cssSelectors" : [ ".slds-popover_large, .slds-popover--large" ],
+      "cssProperties" : [ "margin-left", "min-width", "width" ],
+      "cssSelectors" : [ ".slds-popover_large, .slds-popover--large", ".slds-popover_prompt", ".slds-popover_prompt_top, .slds-popover_prompt_bottom" ],
       "sassTokenName" : "$size-large",
       "value" : "25rem",
       "yamlTokenName" : "SIZE_LARGE",
@@ -20330,8 +20761,8 @@
     },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
-      "cssProperties" : [ "bottom", "padding" ],
-      "cssSelectors" : [ ".slds-nubbin_left-bottom:before, .slds-nubbin_left-bottom:after, .slds-nubbin--left-bottom:before, .slds-nubbin--left-bottom:after, .slds-nubbin_left-bottom-corner:before, .slds-nubbin_left-bottom-corner:after", ".slds-nubbin_right-bottom:before, .slds-nubbin_right-bottom:after, .slds-nubbin--right-bottom:before, .slds-nubbin--right-bottom:after, .slds-nubbin_right-bottom-corner:before, .slds-nubbin_right-bottom-corner:after", ".slds-popover_panel .slds-popover__body-list, .slds-popover--panel .slds-popover__body-list", ".slds-popover_walkthrough .slds-popover__body, .slds-popover_walkthrough .slds-popover__footer, .slds-popover--walkthrough .slds-popover__body, .slds-popover--walkthrough .slds-popover__footer", ".slds-popover_walkthrough .slds-popover__header, .slds-popover--walkthrough .slds-popover__header" ],
+      "cssProperties" : [ "bottom", "margin-right", "padding" ],
+      "cssSelectors" : [ ".slds-nubbin_left-bottom:before, .slds-nubbin_left-bottom:after, .slds-nubbin--left-bottom:before, .slds-nubbin--left-bottom:after, .slds-nubbin_left-bottom-corner:before, .slds-nubbin_left-bottom-corner:after", ".slds-nubbin_right-bottom:before, .slds-nubbin_right-bottom:after, .slds-nubbin--right-bottom:before, .slds-nubbin--right-bottom:after, .slds-nubbin_right-bottom-corner:before, .slds-nubbin_right-bottom-corner:after", ".slds-popover_panel .slds-popover__body-list, .slds-popover--panel .slds-popover__body-list", ".slds-popover_prompt .slds-popover__body", ".slds-popover_prompt__action-link", ".slds-popover_walkthrough .slds-popover__body, .slds-popover_walkthrough .slds-popover__footer, .slds-popover--walkthrough .slds-popover__body, .slds-popover--walkthrough .slds-popover__footer", ".slds-popover_walkthrough .slds-popover__header, .slds-popover--walkthrough .slds-popover__header" ],
       "sassTokenName" : "$spacing-medium",
       "value" : "1rem",
       "yamlTokenName" : "SPACING_MEDIUM",
@@ -20348,8 +20779,8 @@
     },
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
-      "cssProperties" : [ "margin-bottom", "padding" ],
-      "cssSelectors" : [ ".slds-popover__body, .slds-popover__header, .slds-popover__footer", ".slds-popover_walkthrough-alt .slds-text-heading_small, .slds-popover_feature .slds-text-heading_small" ],
+      "cssProperties" : [ "bottom", "left", "margin-bottom", "padding", "right", "top" ],
+      "cssSelectors" : [ ".slds-popover__body, .slds-popover__header, .slds-popover__footer", ".slds-popover_prompt_bottom, .slds-popover_prompt_bottom-right, .slds-popover_prompt_bottom-left", ".slds-popover_prompt_top, .slds-popover_prompt_top-right, .slds-popover_prompt_top-left", ".slds-popover_prompt_top-left, .slds-popover_prompt_bottom-left", ".slds-popover_prompt_top-right, .slds-popover_prompt_bottom-right", ".slds-popover_walkthrough-alt .slds-text-heading_small, .slds-popover_feature .slds-text-heading_small" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -20383,6 +20814,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "progressbar",
+    "lwc" : "true",
     "type" : "process",
     "category" : "base",
     "selector" : ".slds-progress-bar"
@@ -20506,7 +20938,8 @@
         "selector" : ".slds-progress-bar_vertical",
         "restrict" : ".slds-progress-bar",
         "support" : "dev-ready",
-        "variant" : "true"
+        "variant" : "true",
+        "lwc" : "true"
       },
       "id" : "vertical",
       "docPath" : null,
@@ -20772,7 +21205,7 @@
       "cssProperties" : [ "box-shadow" ],
       "cssSelectors" : [ ".slds-progress__item.slds-is-active .slds-progress__marker:focus", ".slds-progress_shade .slds-progress__item.slds-is-active .slds-progress__marker:focus, .slds-progress--shade .slds-progress__item.slds-is-active .slds-progress__marker:focus" ],
       "sassTokenName" : "$color-border-brand-dark",
-      "value" : "#0070D2",
+      "value" : "#0070d2",
       "yamlTokenName" : "COLOR_BORDER_BRAND_DARK",
       "scope" : null
     },
@@ -20815,7 +21248,7 @@
     "heightTappable" : {
       "auraTokenName" : "heightTappable",
       "cssProperties" : [ "height", "min-height" ],
-      "cssSelectors" : [ "&:before", ".slds-progress__item", ".slds-progress__item .slds-button" ],
+      "cssSelectors" : [ ".slds-progress__item", ".slds-progress__item .slds-button:before" ],
       "sassTokenName" : "$height-tappable",
       "value" : "2.75rem",
       "yamlTokenName" : "HEIGHT_TAPPABLE",
@@ -21356,7 +21789,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-publisher.slds-is-active .slds-publisher__input" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -21474,7 +21907,7 @@
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-radius" ],
-      "cssSelectors" : [ ".slds-radio_button-group, .slds-radio--button-group", ".slds-radio_button:first-child > .slds-radio_faux, .slds-radio_button:first-child > .slds-radio--faux, .slds-radio_button:first-child > .slds-radio_button__label, .slds-radio_button:first-child > .slds-radio--button__label, .slds-radio--button:first-child > .slds-radio_faux, .slds-radio--button:first-child > .slds-radio--faux, .slds-radio--button:first-child > .slds-radio_button__label, .slds-radio--button:first-child > .slds-radio--button__label", ".slds-radio_button:last-child > .slds-radio_faux, .slds-radio_button:last-child > .slds-radio--faux, .slds-radio_button .slds-button_last > .slds-radio_faux, .slds-radio_button .slds-button--last > .slds-radio--faux, .slds-radio_button:last-child > .slds-radio_button__label, .slds-radio_button:last-child > .slds-radio--button__label, .slds-radio--button:last-child > .slds-radio_faux, .slds-radio--button:last-child > .slds-radio--faux, .slds-radio--button .slds-button_last > .slds-radio_faux, .slds-radio--button .slds-button--last > .slds-radio--faux, .slds-radio--button:last-child > .slds-radio_button__label, .slds-radio--button:last-child > .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button-group .slds-radio_button:first-child > .slds-radio_button__label, .slds-radio_button-group .slds-radio--button:first-child > .slds-radio--button__label, .slds-radio--button-group .slds-radio_button:first-child > .slds-radio_button__label, .slds-radio--button-group .slds-radio--button:first-child > .slds-radio--button__label", ".slds-radio_button-group .slds-radio_button:last-child > .slds-radio_button__label, .slds-radio_button-group .slds-radio--button:last-child > .slds-radio--button__label, .slds-radio--button-group .slds-radio_button:last-child > .slds-radio_button__label, .slds-radio--button-group .slds-radio--button:last-child > .slds-radio--button__label", ".slds-radio_button-group, .slds-radio--button-group", ".slds-radio_button:first-child > .slds-radio_faux, .slds-radio_button:first-child > .slds-radio--faux, .slds-radio_button:first-child > .slds-radio_button__label, .slds-radio_button:first-child > .slds-radio--button__label, .slds-radio--button:first-child > .slds-radio_faux, .slds-radio--button:first-child > .slds-radio--faux, .slds-radio--button:first-child > .slds-radio_button__label, .slds-radio--button:first-child > .slds-radio--button__label", ".slds-radio_button:last-child > .slds-radio_faux, .slds-radio_button:last-child > .slds-radio--faux, .slds-radio_button .slds-button_last > .slds-radio_faux, .slds-radio_button .slds-button--last > .slds-radio--faux, .slds-radio_button:last-child > .slds-radio_button__label, .slds-radio_button:last-child > .slds-radio--button__label, .slds-radio--button:last-child > .slds-radio_faux, .slds-radio--button:last-child > .slds-radio--faux, .slds-radio--button .slds-button_last > .slds-radio_faux, .slds-radio--button .slds-button--last > .slds-radio--faux, .slds-radio--button:last-child > .slds-radio_button__label, .slds-radio--button:last-child > .slds-radio--button__label" ],
       "sassTokenName" : "$border-radius-medium",
       "value" : "0.25rem",
       "yamlTokenName" : "BORDER_RADIUS_MEDIUM",
@@ -21482,8 +21915,8 @@
     },
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
-      "cssProperties" : [ "border", "border-left" ],
-      "cssSelectors" : [ ".slds-radio_button + .slds-radio_button, .slds-radio_button + .slds-radio--button, .slds-radio--button + .slds-radio_button, .slds-radio--button + .slds-radio--button", ".slds-radio_button-group, .slds-radio--button-group" ],
+      "cssProperties" : [ "border", "border-left", "border-top" ],
+      "cssSelectors" : [ ".slds-radio_button + .slds-radio_button, .slds-radio_button + .slds-radio--button, .slds-radio--button + .slds-radio_button, .slds-radio--button + .slds-radio--button", ".slds-radio_button-group .slds-radio_button + .slds-radio_button, .slds-radio_button-group .slds-radio--button + .slds-radio--button, .slds-radio--button-group .slds-radio_button + .slds-radio_button, .slds-radio--button-group .slds-radio--button + .slds-radio--button", ".slds-radio_button-group, .slds-radio--button-group" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -21492,7 +21925,7 @@
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"]:checked + .slds-radio_faux, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--faux, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"]:checked + .slds-radio_button__label, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--button__label, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_faux, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--faux, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_button__label, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio']:checked + .slds-radio_faux, .slds-radio_button [type='radio']:checked + .slds-radio--faux, .slds-radio_button [type='radio']:checked ~ .slds-radio_faux, .slds-radio_button [type='radio']:checked ~ .slds-radio--faux, .slds-radio_button [type='radio']:checked + .slds-radio_button__label, .slds-radio_button [type='radio']:checked + .slds-radio--button__label, .slds-radio--button [type='radio']:checked + .slds-radio_faux, .slds-radio--button [type='radio']:checked + .slds-radio--faux, .slds-radio--button [type='radio']:checked ~ .slds-radio_faux, .slds-radio--button [type='radio']:checked ~ .slds-radio--faux, .slds-radio--button [type='radio']:checked + .slds-radio_button__label, .slds-radio--button [type='radio']:checked + .slds-radio--button__label" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0070d2",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -21501,7 +21934,7 @@
     "brandAccessibleActive" : {
       "auraTokenName" : "brandAccessibleActive",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"]:checked + .slds-radio_faux:hover, .slds-radio_button [type=\"radio\"]:checked + .slds-radio_faux:focus, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--faux:hover, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--faux:focus, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio_faux:hover, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio_faux:focus, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio--faux:hover, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio--faux:focus, .slds-radio_button [type=\"radio\"]:checked + .slds-radio_button__label:hover, .slds-radio_button [type=\"radio\"]:checked + .slds-radio_button__label:focus, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--button__label:hover, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--button__label:focus, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_faux:hover, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_faux:focus, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--faux:hover, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--faux:focus, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio_faux:hover, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio_faux:focus, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio--faux:hover, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio--faux:focus, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_button__label:hover, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_button__label:focus, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--button__label:hover, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--button__label:focus" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio']:checked + .slds-radio_faux:hover, .slds-radio_button [type='radio']:checked + .slds-radio_faux:focus, .slds-radio_button [type='radio']:checked + .slds-radio--faux:hover, .slds-radio_button [type='radio']:checked + .slds-radio--faux:focus, .slds-radio_button [type='radio']:checked ~ .slds-radio_faux:hover, .slds-radio_button [type='radio']:checked ~ .slds-radio_faux:focus, .slds-radio_button [type='radio']:checked ~ .slds-radio--faux:hover, .slds-radio_button [type='radio']:checked ~ .slds-radio--faux:focus, .slds-radio_button [type='radio']:checked + .slds-radio_button__label:hover, .slds-radio_button [type='radio']:checked + .slds-radio_button__label:focus, .slds-radio_button [type='radio']:checked + .slds-radio--button__label:hover, .slds-radio_button [type='radio']:checked + .slds-radio--button__label:focus, .slds-radio--button [type='radio']:checked + .slds-radio_faux:hover, .slds-radio--button [type='radio']:checked + .slds-radio_faux:focus, .slds-radio--button [type='radio']:checked + .slds-radio--faux:hover, .slds-radio--button [type='radio']:checked + .slds-radio--faux:focus, .slds-radio--button [type='radio']:checked ~ .slds-radio_faux:hover, .slds-radio--button [type='radio']:checked ~ .slds-radio_faux:focus, .slds-radio--button [type='radio']:checked ~ .slds-radio--faux:hover, .slds-radio--button [type='radio']:checked ~ .slds-radio--faux:focus, .slds-radio--button [type='radio']:checked + .slds-radio_button__label:hover, .slds-radio--button [type='radio']:checked + .slds-radio_button__label:focus, .slds-radio--button [type='radio']:checked + .slds-radio--button__label:hover, .slds-radio--button [type='radio']:checked + .slds-radio--button__label:focus" ],
       "sassTokenName" : "$brand-accessible-active",
       "value" : "#005fb2",
       "yamlTokenName" : "BRAND_ACCESSIBLE_ACTIVE",
@@ -21510,7 +21943,7 @@
     "brandDisabled" : {
       "auraTokenName" : "brandDisabled",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled]:checked ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled]:checked ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio_button__label, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio--button__label, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled]:checked ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled]:checked ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio_button__label, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio'][disabled]:checked + .slds-radio_faux, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio--faux, .slds-radio_button [type='radio'][disabled]:checked ~ .slds-radio_faux, .slds-radio_button [type='radio'][disabled]:checked ~ .slds-radio--faux, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio_button__label, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio--button__label, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio_faux, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio--faux, .slds-radio--button [type='radio'][disabled]:checked ~ .slds-radio_faux, .slds-radio--button [type='radio'][disabled]:checked ~ .slds-radio--faux, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio_button__label, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio--button__label" ],
       "sassTokenName" : "$brand-disabled",
       "value" : "#c9c7c5",
       "yamlTokenName" : "BRAND_DISABLED",
@@ -21528,7 +21961,7 @@
     "colorBackgroundButtonDefaultDisabled" : {
       "auraTokenName" : "colorBackgroundButtonDefaultDisabled",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"][disabled] + .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled] ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled] ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio_button__label, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio--button__label, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled] ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled] ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio_button__label, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio'][disabled] + .slds-radio_faux, .slds-radio_button [type='radio'][disabled] + .slds-radio--faux, .slds-radio_button [type='radio'][disabled] ~ .slds-radio_faux, .slds-radio_button [type='radio'][disabled] ~ .slds-radio--faux, .slds-radio_button [type='radio'][disabled] + .slds-radio_button__label, .slds-radio_button [type='radio'][disabled] + .slds-radio--button__label, .slds-radio--button [type='radio'][disabled] + .slds-radio_faux, .slds-radio--button [type='radio'][disabled] + .slds-radio--faux, .slds-radio--button [type='radio'][disabled] ~ .slds-radio_faux, .slds-radio--button [type='radio'][disabled] ~ .slds-radio--faux, .slds-radio--button [type='radio'][disabled] + .slds-radio_button__label, .slds-radio--button [type='radio'][disabled] + .slds-radio--button__label" ],
       "sassTokenName" : "$color-background-button-default-disabled",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_DISABLED",
@@ -21536,8 +21969,8 @@
     },
     "colorBorder" : {
       "auraTokenName" : "colorBorder",
-      "cssProperties" : [ "border", "border-left" ],
-      "cssSelectors" : [ ".slds-radio_button + .slds-radio_button, .slds-radio_button + .slds-radio--button, .slds-radio--button + .slds-radio_button, .slds-radio--button + .slds-radio--button", ".slds-radio_button-group, .slds-radio--button-group" ],
+      "cssProperties" : [ "border", "border-left", "border-top" ],
+      "cssSelectors" : [ ".slds-radio_button + .slds-radio_button, .slds-radio_button + .slds-radio--button, .slds-radio--button + .slds-radio_button, .slds-radio--button + .slds-radio--button", ".slds-radio_button-group .slds-radio_button + .slds-radio_button, .slds-radio_button-group .slds-radio--button + .slds-radio--button, .slds-radio--button-group .slds-radio_button + .slds-radio_button, .slds-radio--button-group .slds-radio--button + .slds-radio--button", ".slds-radio_button-group, .slds-radio--button-group" ],
       "sassTokenName" : "$color-border",
       "value" : "#dddbda",
       "yamlTokenName" : "COLOR_BORDER",
@@ -21546,7 +21979,7 @@
     "colorTextButtonBrand" : {
       "auraTokenName" : "colorTextButtonBrand",
       "cssProperties" : [ "color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"]:checked + .slds-radio_faux, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--faux, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"]:checked ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"]:checked + .slds-radio_button__label, .slds-radio_button [type=\"radio\"]:checked + .slds-radio--button__label, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_faux, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--faux, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"]:checked ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"]:checked + .slds-radio_button__label, .slds-radio--button [type=\"radio\"]:checked + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio']:checked + .slds-radio_faux, .slds-radio_button [type='radio']:checked + .slds-radio--faux, .slds-radio_button [type='radio']:checked ~ .slds-radio_faux, .slds-radio_button [type='radio']:checked ~ .slds-radio--faux, .slds-radio_button [type='radio']:checked + .slds-radio_button__label, .slds-radio_button [type='radio']:checked + .slds-radio--button__label, .slds-radio--button [type='radio']:checked + .slds-radio_faux, .slds-radio--button [type='radio']:checked + .slds-radio--faux, .slds-radio--button [type='radio']:checked ~ .slds-radio_faux, .slds-radio--button [type='radio']:checked ~ .slds-radio--faux, .slds-radio--button [type='radio']:checked + .slds-radio_button__label, .slds-radio--button [type='radio']:checked + .slds-radio--button__label" ],
       "sassTokenName" : "$color-text-button-brand",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_BUTTON_BRAND",
@@ -21555,7 +21988,7 @@
     "colorTextButtonBrandDisabled" : {
       "auraTokenName" : "colorTextButtonBrandDisabled",
       "cssProperties" : [ "color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled]:checked ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled]:checked ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio_button__label, .slds-radio_button [type=\"radio\"][disabled]:checked + .slds-radio--button__label, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled]:checked ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled]:checked ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio_button__label, .slds-radio--button [type=\"radio\"][disabled]:checked + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio'][disabled]:checked + .slds-radio_faux, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio--faux, .slds-radio_button [type='radio'][disabled]:checked ~ .slds-radio_faux, .slds-radio_button [type='radio'][disabled]:checked ~ .slds-radio--faux, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio_button__label, .slds-radio_button [type='radio'][disabled]:checked + .slds-radio--button__label, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio_faux, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio--faux, .slds-radio--button [type='radio'][disabled]:checked ~ .slds-radio_faux, .slds-radio--button [type='radio'][disabled]:checked ~ .slds-radio--faux, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio_button__label, .slds-radio--button [type='radio'][disabled]:checked + .slds-radio--button__label" ],
       "sassTokenName" : "$color-text-button-brand-disabled",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_BUTTON_BRAND_DISABLED",
@@ -21564,7 +21997,7 @@
     "colorTextButtonDefaultDisabled" : {
       "auraTokenName" : "colorTextButtonDefaultDisabled",
       "cssProperties" : [ "color" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"][disabled] + .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled] ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"][disabled] ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio_button__label, .slds-radio_button [type=\"radio\"][disabled] + .slds-radio--button__label, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled] ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"][disabled] ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio_button__label, .slds-radio--button [type=\"radio\"][disabled] + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio'][disabled] + .slds-radio_faux, .slds-radio_button [type='radio'][disabled] + .slds-radio--faux, .slds-radio_button [type='radio'][disabled] ~ .slds-radio_faux, .slds-radio_button [type='radio'][disabled] ~ .slds-radio--faux, .slds-radio_button [type='radio'][disabled] + .slds-radio_button__label, .slds-radio_button [type='radio'][disabled] + .slds-radio--button__label, .slds-radio--button [type='radio'][disabled] + .slds-radio_faux, .slds-radio--button [type='radio'][disabled] + .slds-radio--faux, .slds-radio--button [type='radio'][disabled] ~ .slds-radio_faux, .slds-radio--button [type='radio'][disabled] ~ .slds-radio--faux, .slds-radio--button [type='radio'][disabled] + .slds-radio_button__label, .slds-radio--button [type='radio'][disabled] + .slds-radio--button__label" ],
       "sassTokenName" : "$color-text-button-default-disabled",
       "value" : "#dddbda",
       "yamlTokenName" : "COLOR_TEXT_BUTTON_DEFAULT_DISABLED",
@@ -21591,7 +22024,7 @@
     "zIndexDefault" : {
       "auraTokenName" : "zIndexDefault",
       "cssProperties" : [ "z-index" ],
-      "cssSelectors" : [ ".slds-radio_button [type=\"radio\"]:focus + .slds-radio_faux, .slds-radio_button [type=\"radio\"]:focus + .slds-radio--faux, .slds-radio_button [type=\"radio\"]:focus ~ .slds-radio_faux, .slds-radio_button [type=\"radio\"]:focus ~ .slds-radio--faux, .slds-radio_button [type=\"radio\"]:focus + .slds-radio_button__label, .slds-radio_button [type=\"radio\"]:focus + .slds-radio--button__label, .slds-radio--button [type=\"radio\"]:focus + .slds-radio_faux, .slds-radio--button [type=\"radio\"]:focus + .slds-radio--faux, .slds-radio--button [type=\"radio\"]:focus ~ .slds-radio_faux, .slds-radio--button [type=\"radio\"]:focus ~ .slds-radio--faux, .slds-radio--button [type=\"radio\"]:focus + .slds-radio_button__label, .slds-radio--button [type=\"radio\"]:focus + .slds-radio--button__label" ],
+      "cssSelectors" : [ ".slds-radio_button [type='radio']:focus + .slds-radio_faux, .slds-radio_button [type='radio']:focus + .slds-radio--faux, .slds-radio_button [type='radio']:focus ~ .slds-radio_faux, .slds-radio_button [type='radio']:focus ~ .slds-radio--faux, .slds-radio_button [type='radio']:focus + .slds-radio_button__label, .slds-radio_button [type='radio']:focus + .slds-radio--button__label, .slds-radio--button [type='radio']:focus + .slds-radio_faux, .slds-radio--button [type='radio']:focus + .slds-radio--faux, .slds-radio--button [type='radio']:focus ~ .slds-radio_faux, .slds-radio--button [type='radio']:focus ~ .slds-radio--faux, .slds-radio--button [type='radio']:focus + .slds-radio_button__label, .slds-radio--button [type='radio']:focus + .slds-radio--button__label" ],
       "sassTokenName" : "$z-index-default",
       "value" : "1",
       "yamlTokenName" : "Z_INDEX_DEFAULT",
@@ -21602,17 +22035,18 @@
   "description" : "",
   "annotations" : {
     "summary" : "A select list that can have a single entry checked at any one time.",
-    "base" : "true",
     "name" : "radio-group",
-    "selector" : ".slds-radio",
     "support" : "dev-ready",
-    "category" : "base",
+    "base" : "true",
+    "role" : "radiogroup",
+    "lwc" : "true",
     "type" : "data-entry",
-    "role" : "radiogroup"
+    "category" : "base",
+    "selector" : ".slds-radio"
   },
   "id" : "radio-group",
   "docPath" : "./ui/components/radio-group/docs.mdx",
-  "selectors" : [ ".slds-radio", ".slds-radio__label" ],
+  "selectors" : [ ".slds-radio" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -21626,19 +22060,7 @@
     "id" : "base",
     "docPath" : null,
     "selectors" : null,
-    "restrictees" : [ {
-      "description" : "",
-      "annotations" : {
-        "summary" : "Label container of the text and faux radio",
-        "selector" : ".slds-radio__label",
-        "restrict" : ".slds-radio label"
-      },
-      "id" : ".slds-radio__label",
-      "docPath" : null,
-      "selectors" : null,
-      "restrictees" : [ ],
-      "tokens" : { }
-    } ],
+    "restrictees" : [ ],
     "tokens" : { }
   } ],
   "tokens" : {
@@ -21809,13 +22231,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "The Rich Text Editor is a textarea with added capabilities for use in various publishers.",
-    "base" : "true",
     "name" : "rich-text-editor",
-    "selector" : ".slds-rich-text-editor",
     "support" : "dev-ready",
-    "category" : "feature",
+    "base" : "true",
+    "role" : "textbox,toolbar",
+    "lwc" : "true",
     "type" : "data-entry",
-    "role" : "textbox,toolbar"
+    "category" : "feature",
+    "selector" : ".slds-rich-text-editor"
   },
   "id" : "rich-text-editor",
   "docPath" : "./ui/components/rich-text-editor/docs.mdx",
@@ -22069,6 +22492,24 @@
       "yamlTokenName" : "COLOR_TEXT_BUTTON_DEFAULT_DISABLED",
       "scope" : null
     },
+    "colorTextDestructive" : {
+      "auraTokenName" : "colorTextDestructive",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-rich-text-editor__textarea del, .slds-rich-text-editor__output del" ],
+      "sassTokenName" : "$color-text-destructive",
+      "value" : "#C23934",
+      "yamlTokenName" : "COLOR_TEXT_DESTRUCTIVE",
+      "scope" : null
+    },
+    "colorTextSuccess" : {
+      "auraTokenName" : "colorTextSuccess",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-rich-text-editor__textarea ins, .slds-rich-text-editor__output ins" ],
+      "sassTokenName" : "$color-text-success",
+      "value" : "#027E46",
+      "yamlTokenName" : "COLOR_TEXT_SUCCESS",
+      "scope" : null
+    },
     "fontSize2" : {
       "auraTokenName" : "fontSize2",
       "cssProperties" : [ "font-size" ],
@@ -22119,7 +22560,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-rich-text-editor__textarea, .slds-rich-text-editor__output" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -22541,7 +22982,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-tabs_scoped .slds-tabs__item > a:hover, .slds-tabs_scoped .slds-tabs__item > a:focus, .slds-tabs--scoped .slds-tabs__item > a:hover, .slds-tabs--scoped .slds-tabs__item > a:focus" ],
       "sassTokenName" : "$color-text-link-hover",
-      "value" : "#005FB2",
+      "value" : "#005fb2",
       "yamlTokenName" : "COLOR_TEXT_LINK_HOVER",
       "scope" : null
     },
@@ -22901,7 +23342,8 @@
     "selector" : ".slds-slider",
     "category" : "base",
     "type" : "user-input",
-    "support" : "dev-ready"
+    "support" : "dev-ready",
+    "lwc" : "true"
   },
   "id" : "slider",
   "docPath" : "./ui/components/slider/docs.mdx",
@@ -22984,6 +23426,15 @@
       "yamlTokenName" : "HEIGHT_INPUT",
       "scope" : null
     },
+    "heightTappableSmall" : {
+      "auraTokenName" : "heightTappableSmall",
+      "cssProperties" : [ "height", "left", "margin-left", "margin-top", "min-height", "width" ],
+      "cssSelectors" : [ ".slds-slider", ".slds-slider__range::-moz-range-thumb", ".slds-slider__range::-ms-thumb", ".slds-slider__range::-webkit-slider-thumb", ".slds-slider_vertical .slds-slider__range", ".slds-slider_vertical .slds-slider__value" ],
+      "sassTokenName" : "$height-tappable-small",
+      "value" : "2rem",
+      "yamlTokenName" : "HEIGHT_TAPPABLE_SMALL",
+      "scope" : null
+    },
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
       "cssProperties" : [ "box-shadow" ],
@@ -23022,8 +23473,8 @@
     },
     "sliderHandleSize" : {
       "auraTokenName" : "sliderHandleSize",
-      "cssProperties" : [ "height", "margin-top", "width" ],
-      "cssSelectors" : [ ".slds-slider__range::-moz-range-thumb", ".slds-slider__range::-ms-thumb", ".slds-slider__range::-webkit-slider-thumb", ".slds-slider_vertical .slds-slider__range" ],
+      "cssProperties" : [ "height", "left", "margin-left", "margin-top", "width" ],
+      "cssSelectors" : [ ".slds-slider__range::-moz-range-thumb", ".slds-slider__range::-ms-thumb", ".slds-slider__range::-webkit-slider-thumb", ".slds-slider_vertical .slds-slider__range", ".slds-slider_vertical .slds-slider__value" ],
       "sassTokenName" : "$slider-handle-size",
       "value" : "1rem",
       "yamlTokenName" : "SLIDER_HANDLE_SIZE",
@@ -23049,8 +23500,8 @@
     },
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
-      "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-slider__value" ],
+      "cssProperties" : [ "margin-top", "padding" ],
+      "cssSelectors" : [ ".slds-slider", ".slds-slider__value" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -23563,7 +24014,7 @@
       "cssProperties" : [ "background", "box-shadow" ],
       "cssSelectors" : [ ".slds-split-view__list-item .slds-indicator_unread, .slds-split-view__list-item .slds-indicator--unread", ".slds-split-view__list-item-action:focus" ],
       "sassTokenName" : "$color-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BRAND",
       "scope" : null
     },
@@ -23772,6 +24223,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "tablist",
+    "lwc" : "true",
     "type" : "navigation",
     "category" : "base",
     "selector" : ".slds-tabs_default, .slds-tabs-mobile__container"
@@ -24066,7 +24518,8 @@
       "selector" : ".slds-tabs-mobile__container",
       "restrict" : "div",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "mobile-stack",
     "docPath" : null,
@@ -24211,10 +24664,19 @@
       "yamlTokenName" : "COLOR_BACKGROUND_NOTIFICATION_NEW",
       "scope" : null
     },
+    "colorBackgroundRowActive" : {
+      "auraTokenName" : "colorBackgroundRowActive",
+      "cssProperties" : [ "background-color" ],
+      "cssSelectors" : [ ".slds-tabs-mobile__item:active" ],
+      "sassTokenName" : "$color-background-row-active",
+      "value" : "#ecebea",
+      "yamlTokenName" : "COLOR_BACKGROUND_ROW_ACTIVE",
+      "scope" : null
+    },
     "colorBackgroundRowHover" : {
       "auraTokenName" : "colorBackgroundRowHover",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-tabs-mobile__item:active", ".slds-tabs_mobile__item:active" ],
+      "cssSelectors" : [ ".slds-tabs_mobile__item:active" ],
       "sassTokenName" : "$color-background-row-hover",
       "value" : "#f3f2f2",
       "yamlTokenName" : "COLOR_BACKGROUND_ROW_HOVER",
@@ -24288,7 +24750,7 @@
       "cssProperties" : [ "background-color" ],
       "cssSelectors" : [ ".slds-tabs_default__item.slds-has-notification:hover:after, .slds-tabs--default__item.slds-has-notification:hover:after" ],
       "sassTokenName" : "$color-brand-dark",
-      "value" : "#0070D2",
+      "value" : "#0070d2",
       "yamlTokenName" : "COLOR_BRAND_DARK",
       "scope" : null
     },
@@ -24324,7 +24786,7 @@
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-tabs-mobile__item", ".slds-tabs_mobile__title" ],
       "sassTokenName" : "$color-text-tab-label",
-      "value" : "#16325C",
+      "value" : "#2B2826",
       "yamlTokenName" : "COLOR_TEXT_TAB_LABEL",
       "scope" : null
     },
@@ -24440,14 +24902,15 @@
 }, {
   "description" : "",
   "annotations" : {
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "textarea",
-    "selector" : ".slds-textarea",
     "support" : "dev-ready",
-    "category" : "base",
-    "type" : "data-entry",
+    "base" : "true",
     "role" : "textbox",
-    "layout" : "responsive"
+    "lwc" : "true",
+    "type" : "data-entry",
+    "category" : "base",
+    "selector" : ".slds-textarea"
   },
   "id" : "textarea",
   "docPath" : "./ui/components/textarea/docs.mdx",
@@ -24492,13 +24955,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "A tile is a grouping of related information associated with a record.",
-    "base" : "true",
+    "layout" : "responsive",
     "name" : "tiles",
-    "selector" : ".slds-tile",
     "support" : "dev-ready",
-    "category" : "structure",
+    "base" : "true",
+    "lwc" : "true",
     "type" : "data-display",
-    "layout" : "responsive"
+    "category" : "structure",
+    "selector" : ".slds-tile"
   },
   "id" : "tiles",
   "docPath" : "./ui/components/tiles/docs.mdx",
@@ -24638,7 +25102,7 @@
       "cssProperties" : [ "max-height" ],
       "cssSelectors" : [ ".slds-datepicker_time, .slds-datepicker--time" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -25021,6 +25485,7 @@
     "support" : "dev-ready",
     "base" : "true",
     "role" : "treegrid",
+    "lwc" : "true",
     "type" : "data-display, data-entry",
     "category" : "experience",
     "s1" : "false",
@@ -25156,7 +25621,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-table_tree .slds-tree__item, .slds-table--tree .slds-tree__item" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
@@ -25186,6 +25651,7 @@
     "name" : "trees",
     "support" : "dev-ready",
     "base" : "true",
+    "lwc" : "true",
     "scroller" : "true",
     "type" : "navigation",
     "category" : "experience",
@@ -25554,7 +26020,8 @@
       "selector" : ".slds-nav-vertical",
       "restrict" : "nav, fieldset",
       "support" : "dev-ready",
-      "variant" : "true"
+      "variant" : "true",
+      "lwc" : "true"
     },
     "id" : "list",
     "docPath" : null,
@@ -25870,13 +26337,14 @@
   "description" : "",
   "annotations" : {
     "summary" : "A component that shows groups of content, separated into tabs, and controlled by the tabs",
-    "base" : "true",
     "name" : "vertical-tabs",
-    "selector" : ".slds-vertical-tabs",
     "support" : "dev-ready",
-    "category" : "base",
+    "base" : "true",
+    "role" : "tablist",
+    "lwc" : "true",
     "type" : "navigation",
-    "role" : "tablist"
+    "category" : "base",
+    "selector" : ".slds-vertical-tabs"
   },
   "id" : "vertical-tabs",
   "docPath" : "./ui/components/vertical-tabs/docs.mdx",
@@ -26362,7 +26830,7 @@
       "cssProperties" : [ "border", "box-shadow" ],
       "cssSelectors" : [ ".slds-visual-picker input:checked ~ label .slds-visual-picker__icon", ".slds-visual-picker input:checked ~ label .slds-visual-picker__text", ".slds-visual-picker input:focus ~ label .slds-visual-picker__figure", ".slds-visual-picker input:not(:disabled) ~ label:hover .slds-visual-picker__figure", ".slds-visual-picker:active .slds-visual-picker__figure" ],
       "sassTokenName" : "$color-border-selection-hover",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BORDER_SELECTION_HOVER",
       "scope" : null
     },
@@ -26371,7 +26839,7 @@
       "cssProperties" : [ "background-color", "border-right-color", "border-top-color" ],
       "cssSelectors" : [ ".slds-visual-picker input:checked ~ label .slds-visual-picker__icon", ".slds-visual-picker input:checked ~ label .slds-visual-picker__text:after", ".slds-visual-picker__figure .slds-icon-action-check" ],
       "sassTokenName" : "$color-brand",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BRAND",
       "scope" : null
     },
@@ -26839,7 +27307,7 @@
       "cssProperties" : [ "box-shadow" ],
       "cssSelectors" : [ ".slds-welcome-mat__tile:not(.slds-welcome-mat__tile_complete):not(.slds-welcome-mat__tile_info-only):hover" ],
       "sassTokenName" : "$color-border-selection-hover",
-      "value" : "#1589EE",
+      "value" : "#1589ee",
       "yamlTokenName" : "COLOR_BORDER_SELECTION_HOVER",
       "scope" : null
     },
@@ -26893,7 +27361,7 @@
       "cssProperties" : [ "line-height" ],
       "cssSelectors" : [ ".slds-welcome-mat__tile-description" ],
       "sassTokenName" : "$line-height-text",
-      "value" : "1.375",
+      "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
