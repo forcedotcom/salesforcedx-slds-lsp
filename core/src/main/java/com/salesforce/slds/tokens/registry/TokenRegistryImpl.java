@@ -7,22 +7,32 @@
 
 package com.salesforce.slds.tokens.registry;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.salesforce.slds.shared.utils.ResourceUtilities;
 import com.salesforce.slds.tokens.models.ComponentBlueprint;
 import com.salesforce.slds.tokens.models.DesignToken;
+import com.salesforce.slds.tokens.models.TokenStatus;
 import com.salesforce.slds.tokens.models.UtilityClass;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Component
 @Lazy
-public class TokenRegistryImpl implements TokenRegistry {
+public class TokenRegistryImpl implements TokenRegistry, InitializingBean {
 
     @Override
     public Set<ComponentBlueprint> getComponentBlueprints() {
@@ -69,6 +79,14 @@ public class TokenRegistryImpl implements TokenRegistry {
         return new ArrayList<>(getDesignTokensInternal().values());
     }
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        SimpleModule module =
+                new SimpleModule("TokenStatusDeserializer",
+                        new Version(1, 0, 0, null, null, null));
+        module.addDeserializer(TokenStatus.class, new TokenStatusDeserializer());
+        mapper.registerModule(module);
+    }
 
     private static final String BASE_LOCATION = "/tokens/slds";
 
@@ -127,5 +145,19 @@ public class TokenRegistryImpl implements TokenRegistry {
         }
 
         return this.tokens;
+    }
+
+    private static class TokenStatusDeserializer extends StdDeserializer<TokenStatus> {
+
+        public TokenStatusDeserializer() {super(TokenStatus.class);}
+
+        @Override
+        public TokenStatus deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
+                throws IOException {
+            ObjectCodec codec = jsonParser.getCodec();
+            JsonNode node = codec.readTree(jsonParser);
+
+            return TokenStatus.fromValue(node.asText());
+        }
     }
 }
