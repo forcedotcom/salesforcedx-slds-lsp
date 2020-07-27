@@ -19,6 +19,6 @@ export default class App extends LightningElement {
     };
 
     get style() {
-        return 'slds-p-top_none';
+        return '.slds-p-top_none[data-selected=false], .slds-context-bar__item:not(.slds-item):hover';
     }
 }
