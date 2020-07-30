@@ -66,7 +66,7 @@ public class JavascriptValidationUtilities {
     }
 
     public Set<ProcessingItem> getStyleValues(Block block, List<String> rawContent) {
-        Pattern SLDS = Pattern.compile("slds-[^\\s\"\';\\.]*");
+        Pattern SLDS = Pattern.compile("slds-[^\\s\"\';\\.,:\\)\\[]*");
         Matcher matcher = SLDS.matcher(block.getValue());
 
         Set<String> styles = new LinkedHashSet<>();
