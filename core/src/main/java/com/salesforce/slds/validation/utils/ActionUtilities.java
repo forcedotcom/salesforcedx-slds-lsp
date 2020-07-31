@@ -7,6 +7,9 @@
 
 package com.salesforce.slds.validation.utils;
 
+import com.salesforce.slds.shared.RegexPattern;
+import com.salesforce.slds.shared.models.context.ContextKey;
+import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.recommendation.Action;
@@ -16,6 +19,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Component
@@ -39,6 +44,25 @@ public class ActionUtilities {
                 .range(range)
                 .description(token.getComment())
                 .actionType(ActionType.REPLACE).build();
+    }
+
+    public Action converts(Entry.EntityType entityType, DesignToken token, Range range) {
+        Action.ActionBuilder actionBuilder = Action.builder().name(token.getName());
+
+        if (entityType == Entry.EntityType.LWC) {
+            actionBuilder.value("var(--lwc-" + token.getName() +", " + token.getValue()+")");
+        } else if (entityType == Entry.EntityType.AURA) {
+            actionBuilder.value("t(" + token.getName() + ")");
+        } else {
+            actionBuilder.value(token.getName());
+        }
+
+        return actionBuilder
+                .cssProperties(token.getCssProperties())
+                .actionType(ActionType.REPLACE)
+                .range(range)
+                .description(token.getComment())
+                .build();
     }
 
 }

@@ -318,7 +318,8 @@ public class CSSValidationTest {
 
         Action deprecatedAction = deprecateTokenActions.iterator().next();
         assertThat(deprecatedAction.getActionType(), Matchers.is(ActionType.REPLACE));
-        assertThat(deprecatedAction.getName(), Matchers.is("fontSize2"));
+        assertThat(deprecatedAction.getName(), Matchers.is("fontSizeSmall"));
+        assertThat(deprecatedAction.getValue(), Matchers.is("t(fontSize2)"));
 
         Set<Action> invalidTokenActions =
                 extractActions(groupedRecommendation.get("t(blah) t(bleh)"));
@@ -337,7 +338,7 @@ public class CSSValidationTest {
         Set<Action> deprecateTokenActions = extractActions(groupedRecommendation.get("var(--lwc-fontSizeSmall)"));
         Action action = deprecateTokenActions.iterator().next();
         assertThat(action.getActionType(), Matchers.is(ActionType.REPLACE));
-        assertThat(action.getName(), Matchers.is("var(--lwc-fontSize2)"));
+        assertThat(action.getName(), Matchers.is("fontSize2"));
     }
 
     @Test
@@ -368,7 +369,7 @@ public class CSSValidationTest {
         assertThat(actions, Matchers.iterableWithSize(2));
 
         actions.forEach(action -> {
-            assertThat(action.getValue(), Matchers.is("0"));
+            assertThat(action.getValue(), Matchers.is("spacingNone"));
             assertThat(action.getRange().getStart().getColumn(), Matchers.greaterThan(100));
         });
     }

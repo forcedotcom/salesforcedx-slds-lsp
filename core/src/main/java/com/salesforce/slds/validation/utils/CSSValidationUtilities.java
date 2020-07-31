@@ -8,6 +8,7 @@
 package com.salesforce.slds.validation.utils;
 
 import com.salesforce.slds.shared.converters.Converter;
+import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.Style;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
@@ -36,7 +37,7 @@ public class CSSValidationUtilities {
         this.actionUtilities = actionUtilities;
     }
 
-    public Recommendation match(Style style, List<DesignToken> tokens, List<String> rawContent, Boolean hasRange) {
+    public Recommendation match(Style style, List<DesignToken> tokens, Entry.EntityType entityType, List<String> rawContent) {
         if (style.validate() == false) {
             return null;
         }
@@ -78,18 +79,18 @@ public class CSSValidationUtilities {
                             Location end = new Location(style.getRange().getStart().getLine(),
                                     startIndex + location.getEnd());
 
+                            Range range = new Range(start, end);
+                            String content = originalValue.substring(location.getStart(), location.getEnd());
 
-                            Range range = hasRange ? style.getRange() : new Range(start, end);
-
-                            items.add(new Item(originalValue.substring(location.getStart(), location.getEnd()),
-                                    actionUtilities.converts(token, range)));
+                            items.add(new Item(content,
+                                    actionUtilities.converts(entityType, token, range)));
                         }
 
                         return items;
                     }
 
                     if (possibleValues.contains(token.getValue())) {
-                        items.add(new Item(originalValue, actionUtilities.converts(token,
+                        items.add(new Item(originalValue, actionUtilities.converts(entityType, token,
                                 getValueSpecificRange(originalValue, style, rawContent))));
 
                         return items;
@@ -144,23 +145,6 @@ public class CSSValidationUtilities {
                 start.getColumn() + originalValue.length());
 
         return new Range(start, end);
-    }
-
-    /**
-     * Return design token based on name
-     * @param name
-     * @param tokens
-     * @return
-     */
-    public DesignToken getDesignTokenByName(String name, List<DesignToken> tokens){
-
-        for (DesignToken token: tokens){
-            if(token.getName().equals(name)){
-                return token;
-            }
-        }
-
-        return null;
     }
 
     public Set<DesignToken> getApplicableTokens(Style style, List<DesignToken> tokens) {

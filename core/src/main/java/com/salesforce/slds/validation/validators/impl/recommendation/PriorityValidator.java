@@ -66,20 +66,20 @@ public class PriorityValidator implements RecommendationValidator, InitializingB
         }
 
         return entry.getInputs().stream()
-                .map(input -> process(input, entry.getRawContent(), tokens))
+                .map(input -> process(input, entry.getEntityType(), entry.getRawContent(), tokens))
                 .flatMap(List::stream)
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
-    protected List<Recommendation> process(Input input, List<String> rawContents, List<DesignToken> tokens) {
+    protected List<Recommendation> process(Input input, Entry.EntityType entityType, List<String> rawContents, List<DesignToken> tokens) {
         List<Recommendation> result = new ArrayList<>();
 
         Input.Type type = input.getType();
 
         if (type == Input.Type.STYLE) {
             result.addAll(input.asRuleSet().getStylesWithAnnotationType().stream()
-                    .map(style -> cssValidationUtilities.match(style, tokens, rawContents, false))
+                    .map(style -> cssValidationUtilities.match(style, tokens, entityType, rawContents))
                     .collect(Collectors.toList()));
         }
 
