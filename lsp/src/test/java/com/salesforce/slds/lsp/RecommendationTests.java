@@ -32,7 +32,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class RecommendationTests {
 
     static final String DEFAULT_URI = "1234";
-    static final Position START = new Position(0,0);
+    static final Range RANGE = new Range(new Position(0,19), new Position(0, 20));
 
     @Autowired
     ValidateRunner runner;
@@ -59,26 +59,24 @@ public class RecommendationTests {
         @Test
         void deprecatedTokens() {
             StringBuilder builder = new StringBuilder();
-            builder.append(".THIS {font-size: var(--lwc-fontSizeSmall);}");
+            builder.append(".clazz {font-size: var(--lwc-fontSizeSmall);}");
             Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Update token to 'fontSize2'", "var(--lwc-fontSize2)");
         }
 
         @Test
         void staticValueToDesignToken() {
             StringBuilder builder = new StringBuilder();
-            builder.append(".THIS {font-size: 0.75rem;}");
+            builder.append(".clazz {font-size: 0.75rem;}");
             Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Update token to 'fontSize2'",
                     "var(--lwc-fontSize2, 0.75rem)");
         }
@@ -86,13 +84,12 @@ public class RecommendationTests {
         @Test
         void invalidDesignToken() {
             StringBuilder builder = new StringBuilder();
-            builder.append(".THIS {font-size: var(--lwc-testing, 0.6rem)}");
+            builder.append(".clazz {font-size: var(--lwc-testing, 0.6rem)}");
             Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "0.6rem");
         }
     }
@@ -106,9 +103,8 @@ public class RecommendationTests {
             Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Update token to 'fontSize2'", "t(fontSize2)");
         }
 
@@ -119,9 +115,8 @@ public class RecommendationTests {
             Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Update token to 'fontSize2'", "t(fontSize2)");
         }
 
@@ -132,9 +127,8 @@ public class RecommendationTests {
             Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = createRange(builder.toString());
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "");
         }
     }
@@ -146,10 +140,6 @@ public class RecommendationTests {
 
         assertThat(edits, Matchers.hasSize(1));
         assertThat(edits.get(0).getNewText(), Matchers.is(expectedNewText));
-    }
-
-    private Range createRange(String content) {
-        return new Range(START, new Position(0, content.length()));
     }
 
     private CodeAction getCodeAction(Range range, List<DiagnosticResult> diagnosticResults) {
