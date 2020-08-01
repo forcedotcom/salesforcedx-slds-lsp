@@ -318,7 +318,7 @@ public class CSSValidationTest {
 
         Action deprecatedAction = deprecateTokenActions.iterator().next();
         assertThat(deprecatedAction.getActionType(), Matchers.is(ActionType.REPLACE));
-        assertThat(deprecatedAction.getName(), Matchers.is("fontSizeSmall"));
+        assertThat(deprecatedAction.getName(), Matchers.is("fontSize2"));
         assertThat(deprecatedAction.getValue(), Matchers.is("t(fontSize2)"));
 
         Set<Action> invalidTokenActions =
@@ -333,7 +333,7 @@ public class CSSValidationTest {
     void deprecatedDesignTokenFromResource() {
         StringBuilder builder = new StringBuilder();
         builder.append(".THIS {font-size: var(--lwc-fontSizeSmall);}");
-        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+        Map<String, List<Recommendation>> groupedRecommendation = processAsLWC(builder.toString());
 
         Set<Action> deprecateTokenActions = extractActions(groupedRecommendation.get("var(--lwc-fontSizeSmall)"));
         Action action = deprecateTokenActions.iterator().next();
@@ -345,7 +345,7 @@ public class CSSValidationTest {
     void lwcVarToken() {
         StringBuilder builder = new StringBuilder();
         builder.append(".cssClazz {background: var(--lwc-document, #BAAC93) var(--lwc-iText, #BAAC93);}");
-        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+        Map<String, List<Recommendation>> groupedRecommendation = processAsLWC(builder.toString());
 
         List<Recommendation> recommendations = groupedRecommendation.get("var(--lwc-document, #BAAC93) var(--lwc-iText, #BAAC93)");
 
@@ -360,7 +360,7 @@ public class CSSValidationTest {
     void lwcVarTokenWithDuplicate() {
         StringBuilder builder = new StringBuilder();
         builder.append(".cssClazz {border-radius: var(--lwc-borderRadiusMedium, 0.25rem) var(--lwc-borderRadiusMedium, 0.25rem) 0 0;}");
-        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+        Map<String, List<Recommendation>> groupedRecommendation = processAsLWC(builder.toString());
 
         List<Recommendation> recommendations = groupedRecommendation.get("var(--lwc-borderRadiusMedium, 0.25rem) var(--lwc-borderRadiusMedium, 0.25rem) 0 0");
         assertThat(recommendations, Matchers.iterableWithSize(1));
@@ -369,18 +369,26 @@ public class CSSValidationTest {
         assertThat(actions, Matchers.iterableWithSize(2));
 
         actions.forEach(action -> {
-            assertThat(action.getValue(), Matchers.is("spacingNone"));
+            assertThat(action.getValue(), Matchers.is("var(--lwc-spacingNone, 0)"));
             assertThat(action.getRange().getStart().getColumn(), Matchers.greaterThan(100));
         });
     }
 
     private Entry createEntry(String path, String content) {
-        return Entry.builder().path(path).rawContent(
+        return createEntry(path, Entry.EntityType.AURA, content);
+    }
+
+    private Entry createEntry(String path, Entry.EntityType type, String content) {
+        return Entry.builder().path(path).entityType(type).rawContent(
                 Arrays.asList(StringUtils.delimitedListToStringArray(content, System.lineSeparator()))).build();
     }
 
+    private Map<String, List<Recommendation>> processAsLWC(String content) {
+        return process(createEntry(CSS_PATH, Entry.EntityType.LWC, content));
+    }
+
     private Map<String, List<Recommendation>> process(String content) {
-        return process(createEntry(CSS_PATH, content));
+        return process(createEntry(CSS_PATH, Entry.EntityType.AURA, content));
     }
 
     private Map<String, List<Recommendation>> process(Entry entry) {

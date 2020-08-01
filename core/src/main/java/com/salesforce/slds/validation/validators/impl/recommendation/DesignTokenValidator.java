@@ -147,7 +147,7 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
                                     : entityType == Entry.EntityType.AURA ? "t(" + updatedToken.get().getName() +")" :
                                     updatedToken.get().getName();
 
-                            actionBuilder.name(value).value(updatedValue)
+                            actionBuilder.name(updatedToken.get().getName()).value(updatedValue)
                                     .description(updatedToken.get().getComment())
                                     .actionType(ActionType.REPLACE);
                         }
