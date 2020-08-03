@@ -9,7 +9,7 @@
     <groupId>com.salesforce.slds</groupId>
     <artifactId>common</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <modules>
         <module>core</module>
