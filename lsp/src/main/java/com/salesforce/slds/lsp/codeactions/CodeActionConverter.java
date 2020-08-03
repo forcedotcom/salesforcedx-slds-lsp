@@ -130,7 +130,7 @@ public class CodeActionConverter {
                     codeAction.setKind(CodeActionKind.QuickFix);
                     codeAction.setDiagnostics(Lists.newArrayList(diagnosticResult.getDiagnostic()));
 
-                    TextEdit edit = new TextEdit(diagnosticResult.getDiagnostic().getRange(), replacement);
+                    TextEdit edit = new TextEdit(diagnosticResult.getDiagnostic().getRange(), action.getValue());
                     WorkspaceEdit workspaceEdit = new WorkspaceEdit();
 
                     Map<String, List<TextEdit>> changes = Maps.newLinkedHashMap();

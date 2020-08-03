@@ -76,8 +76,13 @@ public class ValidateRunner implements Runnable {
     }
 
     protected void setupContext() {
-        entry.setComponentName(getComponentName(entry));
-        entry.setEntityType(getType(entry));
+        if (entry.getComponentName() == null) {
+            entry.setComponentName(getComponentName(entry));
+        }
+
+        if (entry.getEntityType() == null) {
+            entry.setEntityType(getType(entry));
+        }
     }
 
     protected void setupBundle() {

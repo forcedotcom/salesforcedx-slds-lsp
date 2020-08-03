@@ -70,7 +70,7 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
                 List<Style> styles = input.asRuleSet().getStyles();
 
                 recommendations.addAll(styles.stream()
-                        .map(style -> process(style, context, entry.getRawContent()))
+                        .map(style -> process(style, context, entry.getEntityType(), entry.getRawContent()))
                         .filter(Objects::nonNull)
                         .collect(Collectors.toList()));
             }
@@ -85,8 +85,8 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
      * @param rawContents
      * @return Recommendation
      */
-    private Recommendation process(Style style, Context context, List<String> rawContents) {
-        Set<Item> items = provideRecommendations(style, context, rawContents);
+    private Recommendation process(Style style, Context context, Entry.EntityType entityType, List<String> rawContents) {
+        Set<Item> items = provideRecommendations(style, context, entityType, rawContents);
         if (items.isEmpty() == false) {
             Recommendation.RecommendationBuilder builder = Recommendation.builder();
             builder.input(style).items(items);
@@ -101,7 +101,7 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
      * @param rawContents
      * @return
      */
-    private Set<Item> provideRecommendations(Style style, Context context, List<String> rawContents) {
+    private Set<Item> provideRecommendations(Style style, Context context, Entry.EntityType entityType, List<String> rawContents) {
         Set<Item> items = new LinkedHashSet<>();
 
         TypeConverters converters = new TypeConverters(TokenType.get());
@@ -112,10 +112,11 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
 
             for (String value : values) {
 
-                if (!VALID_DESIGN_TOKEN_NAMES.contains(value)) {
+                DesignToken designToken = DESIGN_TOKENS.get(value);
+                if (designToken == null || designToken.getDeprecated() != null) {
                     Range range = cssValidationUtilities.getValueSpecificRange(originalValue, style, rawContents);
                     Action.ActionBuilder actionBuilder = Action.builder().range(range).fileType(Input.Type.STYLE);
-                    Optional<String> updatedToken = getUpdatedToken(value);
+                    Optional<DesignToken> updatedToken = getUpdatedToken(value);
 
                     Matcher varFunctionMatcher = VAR_FUNCTION_PATTERN.matcher(originalValue);
 
@@ -123,29 +124,37 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
                         if (context.isEnabled(ContextKey.DEPRECATED) && updatedToken.isPresent()) {
                             StringBuilder builder = new StringBuilder();
                             builder.append(originalValue, 0, varFunctionMatcher.start("token"));
-                            builder.append(updatedToken.get());
+                            builder.append(updatedToken.get().getName());
                             builder.append(originalValue.substring(varFunctionMatcher.end("token")));
 
-                            actionBuilder.name(builder.toString()).actionType(ActionType.REPLACE);
+                            actionBuilder.name(updatedToken.get().getName()).value(builder.toString())
+                                    .description(updatedToken.get().getComment())
+                                    .actionType(ActionType.REPLACE);
                         }
 
                         if (context.isEnabled(ContextKey.INVALID) && updatedToken.isPresent() == false) {
                             String fallback = varFunctionMatcher.group("fallback");
 
-                            actionBuilder.name(value).value(fallback == null ? null : "")
+                            actionBuilder.name(value).value(fallback == null ? null : fallback)
                                     .actionType(ActionType.REMOVE);
                         }
 
                     } else {
 
                         if (context.isEnabled(ContextKey.DEPRECATED) && updatedToken.isPresent()) {
-                            actionBuilder.name(updatedToken.get()).actionType(ActionType.REPLACE);
+                            String updatedValue = entityType == Entry.EntityType.LWC ?
+                                    "var(--lwc-"+updatedToken.get().getName()+", " + updatedToken.get().getValue()+")"
+                                    : entityType == Entry.EntityType.AURA ? "t(" + updatedToken.get().getName() +")" :
+                                    updatedToken.get().getName();
+
+                            actionBuilder.name(updatedToken.get().getName()).value(updatedValue)
+                                    .description(updatedToken.get().getComment())
+                                    .actionType(ActionType.REPLACE);
                         }
 
                         if (context.isEnabled(ContextKey.INVALID) && updatedToken.isPresent() == false) {
                             actionBuilder.name(value).actionType(ActionType.REMOVE);
                         }
-
                     }
 
                     items.add(new Item(value, actionBuilder.range(range).build()));
@@ -156,35 +165,35 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
         return items;
     }
 
-    private Optional<String> getUpdatedToken(String token) {
-        DesignToken deprecatedToken = cssValidationUtilities.getDesignTokenByName(token, DEPRECATED_DESIGN_TOKENS);
+    private Optional<DesignToken> getUpdatedToken(String token) {
+        DesignToken designToken = DESIGN_TOKENS.get(token);
         String updatedToken = null;
 
-        if (deprecatedToken != null && deprecatedToken.getComment() != null) {
-            updatedToken = cssValidationUtilities.getTokenNameFromComment(deprecatedToken.getComment());
+        if (designToken != null && designToken.getDeprecated() != null && designToken.getComment() != null) {
+            updatedToken = cssValidationUtilities.getTokenNameFromComment(designToken.getComment());
         }
 
         if (updatedToken == null && DEPRECATED_TOKENS_FROM_RESOURCES.containsKey(token)) {
             updatedToken = DEPRECATED_TOKENS_FROM_RESOURCES.get(token);
         }
 
-        if (updatedToken != null && VALID_DESIGN_TOKEN_NAMES.contains(updatedToken)) {
-            return Optional.of(updatedToken);
+        if (updatedToken != null) {
+            return Optional.ofNullable(DESIGN_TOKENS.get(updatedToken));
         }
 
         return Optional.empty();
     }
 
-    com.salesforce.slds.validation.validators.models.Properties buildEntries() {
-        com.salesforce.slds.validation.validators.models.Properties properties = new com.salesforce.slds.validation.validators.models.Properties();
-        List<com.salesforce.slds.validation.validators.models.Properties.Item> items = new ArrayList<>();
+    Properties buildEntries() {
+        Properties properties = new Properties();
+        List<Properties.Item> items = new ArrayList<>();
         Yaml yaml = new Yaml();
 
 
         ResourceUtilities.getResources(PriorityValidator.class,"/validation/validators/designTokens")
                 .forEach(path -> {
                     try (InputStream inputStream = PriorityValidator.class.getResourceAsStream(path)) {
-                        com.salesforce.slds.validation.validators.models.Properties prop = yaml.loadAs(inputStream, Properties.class);
+                        Properties prop = yaml.loadAs(inputStream, Properties.class);
 
                         items.addAll(prop.getItems());
                     } catch (Exception ex) {

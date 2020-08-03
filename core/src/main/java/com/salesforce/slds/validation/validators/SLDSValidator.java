@@ -21,8 +21,7 @@ public abstract class SLDSValidator implements InitializingBean {
     @Autowired
     TokenRegistry tokenRegistry;
 
-    protected final Set<String> VALID_DESIGN_TOKEN_NAMES = new LinkedHashSet<>();
-    protected final List<DesignToken> DEPRECATED_DESIGN_TOKENS = new ArrayList<>();
+    protected final Map<String, DesignToken> DESIGN_TOKENS = new LinkedHashMap<>();
     protected final Set<String> VALID_UTILITY_CLASSES = new LinkedHashSet<>();
 
     static Pattern SLDS = Pattern.compile("slds-[^\\s,\\[:\\]\\.\";]*");
@@ -62,12 +61,7 @@ public abstract class SLDSValidator implements InitializingBean {
     private void setDesignTokenLists() {
 
         tokenRegistry.getDesignTokens().forEach(designToken -> {
-            if (designToken.getDeprecated() == null) {
-                VALID_DESIGN_TOKEN_NAMES.add(designToken.getName());
-            } else {
-                DEPRECATED_DESIGN_TOKENS.add(designToken);
-            }
-
+            DESIGN_TOKENS.put(designToken.getName(), designToken);
         });
 
     }
