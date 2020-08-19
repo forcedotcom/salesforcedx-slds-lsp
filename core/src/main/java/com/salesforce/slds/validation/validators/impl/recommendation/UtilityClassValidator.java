@@ -79,7 +79,7 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
 
             recommendations.addAll(entry.getInputs().stream()
                     .filter(input -> input.getType() == Input.Type.STYLE)
-                    .map(input -> match(entry.getComponentName(), input.asRuleSet(), elements))
+                    .map(input -> match(entry, input.asRuleSet(), elements))
                     .filter(Objects::nonNull).collect(Collectors.toList()));
 
         }
@@ -87,7 +87,7 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
         return recommendations;
     }
 
-    Recommendation match(String componentName, RuleSet ruleSet, List<HTMLElement> elements) {
+    Recommendation match(Entry entry, RuleSet ruleSet, List<HTMLElement> elements) {
         /**
          * For ruleSet,
          * - determines which utility classes are applicable
@@ -98,7 +98,7 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
          *      - update elements with corresponding update
          */
 
-        final Map<Selector, List<HTMLElement>> selectedElements = sort(componentName, ruleSet, elements);
+        final Map<Selector, List<HTMLElement>> selectedElements = sort(entry, ruleSet, elements);
 
         Set<Item> items =
                 classes.stream()
@@ -263,12 +263,12 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
         return styles;
     }
 
-    protected Map<Selector, List<HTMLElement>> sort(String componentName, RuleSet ruleSet, List<HTMLElement> elements) {
+    protected Map<Selector, List<HTMLElement>> sort(Entry entry, RuleSet ruleSet, List<HTMLElement> elements) {
         Map<Selector, List<HTMLElement>> results = new LinkedHashMap<>();
 
         for (Selector selector : ruleSet.getRule().selectors()) {
             List<HTMLElement> selectedElements =
-                    utilities.select(componentName, selector.toString(false), elements);
+                    utilities.select(entry, selector.toString(false), elements);
 
             if (selectedElements.isEmpty() == false) {
                 results.put(selector, selectedElements);
