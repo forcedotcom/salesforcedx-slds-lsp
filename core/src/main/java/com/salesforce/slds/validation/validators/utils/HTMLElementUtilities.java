@@ -93,34 +93,17 @@ public class HTMLElementUtilities {
     }
 
     boolean containsChildOrTypeSelector(String selector) {
-        return CHILD_OR_TYPE_PSEUDO_SELECTORS.stream().anyMatch(clazz -> selector.contains(clazz));
+        return CHILD_OR_TYPE_PSEUDO_SELECTORS.stream().anyMatch(selector::contains);
     }
 
     String cleanse(String selector) {
         return selector
-                .replaceAll("(?i)::?-ms[-\\w]+", "")
-                .replaceAll("(?i)::?-webkit[-\\w]+", "")
-                .replaceAll("(?i)::?-moz[-\\w]+", "")
                 .replaceAll("(?i)\\.this", "")
-                .replaceAll("(?i):active", "")
-                .replaceAll("(?i):hover", "")
-                .replaceAll("(?i):disabled", "")
-                .replaceAll("(?i):focus", "")
-                .replaceAll("(?i):checked", "")
-                .replaceAll("(?i):link", "")
-                .replaceAll("(?i):visited", "")
-                .replaceAll("(?i)::?before", "")
-                .replaceAll("(?i)::?after", "")
-                .replaceAll("(?i)::selection", "")
-                .replaceAll("(?i):vertical", "")
-                .replaceAll("(?i):horizontal", "")
-                .replaceAll("(?i):first-letter", "")
-                .replaceAll("\n", "")
-                .replaceAll("(?i):not\\([:\\w]*\\)", "").trim();
+                .replaceAll("\n", "").trim();
     }
 
     static final List<String> CHILD_OR_TYPE_PSEUDO_SELECTORS = ImmutableList.of(
        ":first-child", ":first-of-type", ":last-child", ":last-of-type",
        ":nth-child", ":nth-last-child", ":nth-last-of-type", ":nth-of-type",
-            ":only-of-type", ":only-child");
+            ":only-of-type", ":only-child", ":empty");
 }
