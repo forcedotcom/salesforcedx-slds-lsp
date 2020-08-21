@@ -1,11 +1,14 @@
 package com.salesforce.slds.validation.validators.utils;
 
+import com.google.common.collect.Lists;
+import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.HTMLElement;
 import com.salesforce.slds.shared.parsers.markup.MarkupParser;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.Collections;
 import java.util.List;
@@ -49,7 +52,11 @@ public class HTMLElementUtilitiesTests {
             List<String> html = Collections.singletonList("<aura:component><div>Test</div><span>SPAN</span></aura:component>");
             List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
 
-            List<HTMLElement> results = utilities.select("test",".THIS div", elements);
+            Entry entry = Mockito.mock(Entry.class);
+            Mockito.when(entry.getComponentName()).thenReturn("test");
+            Mockito.when(entry.getEntityType()).thenReturn(Entry.EntityType.AURA);
+
+            List<HTMLElement> results = utilities.select(entry,".THIS div", elements);
             assertThat(results, Matchers.iterableWithSize(1));
             assertThat(results.get(0).getContent().tagName(), Matchers.is("div"));
         }
@@ -59,7 +66,11 @@ public class HTMLElementUtilitiesTests {
             List<String> html = Collections.singletonList("<aura:component><div>Test<span>Inner Child</span></div><span>SPAN</span></aura:component>");
             List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
 
-            List<HTMLElement> results = utilities.select("test",".THIS", elements);
+            Entry entry = Mockito.mock(Entry.class);
+            Mockito.when(entry.getComponentName()).thenReturn("test");
+            Mockito.when(entry.getEntityType()).thenReturn(Entry.EntityType.AURA);
+
+            List<HTMLElement> results = utilities.select(entry,".THIS", elements);
             assertThat(results, Matchers.iterableWithSize(2));
             assertThat(results.get(0).getContent().tagName(), Matchers.is("div"));
             assertThat(results.get(1).getContent().tagName(), Matchers.is("span"));
@@ -70,10 +81,43 @@ public class HTMLElementUtilitiesTests {
             List<String> html = Collections.singletonList("<aura:component><div>FIRST</div><div>SECOND</div></aura:component>");
             List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
 
-            List<HTMLElement> results = utilities.select("test",".THIS div:first-child", elements);
+            Entry entry = Mockito.mock(Entry.class);
+            Mockito.when(entry.getComponentName()).thenReturn("test");
+            Mockito.when(entry.getEntityType()).thenReturn(Entry.EntityType.AURA);
+
+            List<HTMLElement> results = utilities.select(entry,".THIS div:first-child", elements);
             assertThat(results, Matchers.iterableWithSize(1));
             assertThat(results.get(0).getContent().text(), Matchers.is("FIRST"));
         }
 
+        @Test
+        void dynamic() {
+            List<String> html = Collections.singletonList("<aura:component><aura:iteration><div>FIRST</div></aura:iteration></aura:component>");
+            List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
+
+            Entry entry = Mockito.mock(Entry.class);
+            Mockito.when(entry.getComponentName()).thenReturn("test");
+            Mockito.when(entry.getEntityType()).thenReturn(Entry.EntityType.AURA);
+
+            List<HTMLElement> results = utilities.select(entry,".THIS div:first-child", elements);
+            assertThat(results, Matchers.iterableWithSize(0));
+        }
+
+        @Test
+        void lwcLoop() {
+            List<String> html = Lists.newArrayList(
+                    "<template><ui>",
+                    "<template for:each={contacts} for:item=\"contact\">",
+                    "<div>{contact.Name}</div></template></ui>",
+                    "</template>");
+            List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
+
+            Entry entry = Mockito.mock(Entry.class);
+            Mockito.when(entry.getComponentName()).thenReturn("test");
+            Mockito.when(entry.getEntityType()).thenReturn(Entry.EntityType.LWC);
+
+            List<HTMLElement> results = utilities.select(entry,"ui div:first-child", elements);
+            assertThat(results, Matchers.iterableWithSize(0));
+        }
     }
 }

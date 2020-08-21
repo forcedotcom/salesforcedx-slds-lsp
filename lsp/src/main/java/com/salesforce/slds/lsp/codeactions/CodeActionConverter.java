@@ -50,7 +50,7 @@ public class CodeActionConverter {
                     .filter(result -> result.getDiagnostic().equals(diagnostic)).findFirst();
 
             if (info.isPresent()) {
-                DiagnosticCode code = DiagnosticCode.getCode(diagnostic.getCode());
+                DiagnosticCode code = DiagnosticCode.getCode(diagnostic.getCode().getLeft());
 
                 switch (code) {
                     case INVALID_TOKENS:
