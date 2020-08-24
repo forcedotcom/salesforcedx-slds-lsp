@@ -7,20 +7,16 @@
 
 package com.salesforce.slds.validation.utils;
 
-import com.salesforce.slds.shared.RegexPattern;
-import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.Entry;
-import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
+import com.salesforce.slds.tokens.models.DesignToken;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Component
@@ -39,7 +35,7 @@ public class ActionUtilities {
     public Action converts(DesignToken token, Range range) {
         return Action.builder()
                 .name(token.getName())
-                .value(token.getValue())
+                .value(token.getName())
                 .cssProperties(token.getCssProperties())
                 .range(range)
                 .description(token.getComment())
