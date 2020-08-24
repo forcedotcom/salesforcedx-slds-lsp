@@ -114,7 +114,7 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
 
                             Action.ActionBuilder builder = Action.builder()
                                     .name(utilityClass.getName())
-                                    .value(utilityClass.displayAsBlock())
+                                    .value(utilityClass.getName())
                                     .actionType(ActionType.REPLACE)
                                     .relatedInformation(relatedInformation);
 

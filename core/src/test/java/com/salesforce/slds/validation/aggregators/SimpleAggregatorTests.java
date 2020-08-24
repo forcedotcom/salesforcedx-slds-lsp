@@ -34,7 +34,7 @@ public class SimpleAggregatorTests {
     public void setup() {
         Set<Action> actionsForItem1 = new TreeSet<>();
         actionsForItem1.add(Action.builder()
-                .name("bcd").value("100px").actionType(ActionType.REPLACE).range(Range.EMPTY_RANGE).build());
+                .name("bcd").value("abc").actionType(ActionType.REPLACE).range(Range.EMPTY_RANGE).build());
         actionsForItem1.add(Action.builder()
                 .name("bcd").actionType(ActionType.REMOVE).range(Range.EMPTY_RANGE).build());
         actionsForItem1.add(Action.builder()
@@ -43,7 +43,7 @@ public class SimpleAggregatorTests {
 
         Set<Action> actionsForItem2 = new TreeSet<>();
         actionsForItem2.add(Action.builder()
-                        .name("abc").value("100px").actionType(ActionType.REPLACE).range(Range.EMPTY_RANGE).build());
+                        .name("abc").value("bcd").actionType(ActionType.REPLACE).range(Range.EMPTY_RANGE).build());
         actionsForItem2.add(Action.builder()
                         .name("abc").actionType(ActionType.REMOVE).range(Range.EMPTY_RANGE).build());
         actionsForItem2.add(Action.builder()

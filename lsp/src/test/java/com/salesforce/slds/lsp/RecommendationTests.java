@@ -55,12 +55,28 @@ public class RecommendationTests {
     }
 
     @Nested
+    class Javascript {
+        @Test
+        void markupClass() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("({ getStyle: function() { return 'slds-border--right'; } })");
+            Entry entry = createJavascriptEntry( Entry.EntityType.AURA, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = diagnosticResults.get(0).getDiagnostic().getRange();
+
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
+        }
+    }
+
+    @Nested
     class LWC {
         @Test
         void deprecatedTokens() {
             StringBuilder builder = new StringBuilder();
             builder.append(".clazz {font-size: var(--lwc-fontSizeSmall);}");
-            Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
@@ -72,7 +88,7 @@ public class RecommendationTests {
         void staticValueToDesignToken() {
             StringBuilder builder = new StringBuilder();
             builder.append(".clazz {font-size: 0.75rem;}");
-            Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
@@ -85,12 +101,25 @@ public class RecommendationTests {
         void invalidDesignToken() {
             StringBuilder builder = new StringBuilder();
             builder.append(".clazz {font-size: var(--lwc-testing, 0.6rem)}");
-            Entry entry = createEntry( Entry.EntityType.LWC, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
             CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "0.6rem");
+        }
+
+        @Test
+        void markupClassRecommendation() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><div class=\"slds-border--right\">Hello World</div></template>");
+            Entry entry = createMarkupEntry( Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = diagnosticResults.get(0).getDiagnostic().getRange();
+
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
         }
     }
 
@@ -100,7 +129,7 @@ public class RecommendationTests {
         void deprecatedTokens() {
             StringBuilder builder = new StringBuilder();
             builder.append(".THIS {font-size: t(fontSizeSmall);}");
-            Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
@@ -112,7 +141,7 @@ public class RecommendationTests {
         void staticValueToDesignToken() {
             StringBuilder builder = new StringBuilder();
             builder.append(".THIS {font-size: 0.75rem;}");
-            Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
@@ -124,12 +153,25 @@ public class RecommendationTests {
         void invalidDesignToken() {
             StringBuilder builder = new StringBuilder();
             builder.append(".THIS {font-size: t(testing);}");
-            Entry entry = createEntry( Entry.EntityType.AURA, builder.toString());
+            Entry entry = createCssEntry( Entry.EntityType.AURA, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
             CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "");
+        }
+
+        @Test
+        void markupClassRecommendation() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<aura:component><div class=\"slds-border--right\">Hello World</div></aura:component>");
+            Entry entry = createMarkupEntry( Entry.EntityType.AURA, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = diagnosticResults.get(0).getDiagnostic().getRange();
+
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
         }
     }
 
@@ -173,8 +215,20 @@ public class RecommendationTests {
         return diagnostics;
     }
 
-    private Entry createEntry(Entry.EntityType type, String content) {
-        Entry entry = Entry.builder().path("test.css").entityType(type).rawContent(
+    private Entry createJavascriptEntry(Entry.EntityType type, String content) {
+        return createEntry("test.js", type, content);
+    }
+
+    private Entry createMarkupEntry(Entry.EntityType type, String content) {
+        return createEntry("test.cmp", type, content);
+    }
+
+    private Entry createCssEntry(Entry.EntityType type, String content) {
+        return createEntry("test.css", type, content);
+    }
+
+    private Entry createEntry(String name, Entry.EntityType type, String content ) {
+        Entry entry = Entry.builder().path(name).entityType(type).rawContent(
                 Arrays.asList(StringUtils.delimitedListToStringArray(content, System.lineSeparator()))).build();
 
         runner.setEntry(entry);
