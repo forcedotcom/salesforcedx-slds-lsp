@@ -7,6 +7,7 @@
 
 package com.salesforce.slds.lsp.diagnostics;
 
+import com.google.common.collect.ImmutableList;
 import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
@@ -87,7 +88,7 @@ public class Diagnoser {
 
         File originalFile = new File(URI.create(entry.getUri()));
 
-        for (File f : originalFile.getParentFile().listFiles()) {
+        for (File f : originalFile.getParentFile().listFiles(Diagnoser::isLightningComponentFiles)) {
             if (f.isFile() && f.equals(originalFile) == false) {
                 TextDocumentItem item = documentRegistry.get(f.toURI().toString());
                 if (item != null) {
@@ -101,4 +102,16 @@ public class Diagnoser {
         return bundle;
     }
 
+    private static boolean isLightningComponentFiles(File file) {
+        String fileName = file.getName();
+        int position = fileName.lastIndexOf('.');
+        if (position != -1) {
+            String fileExtension = fileName.substring(position);
+            return SUPPORTED_FILE_EXTENSIONS.contains(fileExtension.toLowerCase());
+        }
+
+        return false;
+    }
+
+    private static List<String> SUPPORTED_FILE_EXTENSIONS = ImmutableList.of(".html", ".js", ".css", ".cmp", ".app");
 }

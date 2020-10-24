@@ -1,11 +1,13 @@
 package com.salesforce.slds.lsp.services;
 
+import com.google.common.collect.Lists;
 import com.salesforce.slds.lsp.codeactions.CodeActionConverter;
 import com.salesforce.slds.lsp.diagnostics.Diagnoser;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.lsp.services.interfaces.StateService;
 import com.salesforce.slds.shared.models.context.ContextKey;
 import org.eclipse.lsp4j.*;
+import org.eclipse.lsp4j.jsonrpc.CompletableFutures;
 import org.eclipse.lsp4j.jsonrpc.messages.Either;
 import org.eclipse.lsp4j.services.LanguageClient;
 import org.eclipse.lsp4j.services.TextDocumentService;
@@ -41,9 +43,10 @@ public class TextDocumentServiceImpl implements TextDocumentService {
 
     @Override
     public CompletableFuture<List<Either<Command, CodeAction>>> codeAction(CodeActionParams params) {
-        return stateService.isEnabled(ContextKey.GLOBAL) ?
-                CompletableFuture.completedFuture(codeActionConverter.convert(params)) :
-                CompletableFuture.completedFuture(new ArrayList<>());
+        return CompletableFutures.computeAsync(token ->
+                    token.isCanceled() == false && stateService.isEnabled(ContextKey.GLOBAL) ?
+                            codeActionConverter.convert(params) : Lists.newArrayList()
+        );
     }
 
     @Override
