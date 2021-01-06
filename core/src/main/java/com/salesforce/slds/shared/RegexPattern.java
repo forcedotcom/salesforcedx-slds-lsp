@@ -41,11 +41,6 @@ public class RegexPattern {
     public static final String NUMERIC_PATTERN = "[-|+]?" + NUMBER_FRAGMENT + "\\s*[a-zA-Z]+" + "|" +
             PERCENT_PATTERN + "|" + "[-|+]?" + NUMBER_FRAGMENT;
 
-    public static final String START_TAG_PATTERN =
-            "(?<start><(?<startComment>!--)|<(?<startTag>[\\w-]+(:?[\\w-]+)?)|(?<startSkip>\\{|[\\\\]?['\"]+))";
-    public static final String END_TAG_PATTERN =
-            "(?<end>/?>|(?<endComment>--\\s*>)|</(?<endTag>[\\w-]+(:?[\\w-]+)?)\\s*>|(?<endSkip>\\}))";
-
     public static final String AURA_TOKEN_FUNCTION = "t(?:oken)?\\((?<token>[\\w\\d]+)\\)";
     public static final String VAR_FUNCTION = "var\\(\\s*--lwc-(?<token>[\\w\\d-]+)\\s*(,\\s*(?<fallback>"+
             COLOR_PATTERN + "|" + NUMERIC_PATTERN + "|" + WORD_FRAGMENT + ")\\s*)?\\)";
