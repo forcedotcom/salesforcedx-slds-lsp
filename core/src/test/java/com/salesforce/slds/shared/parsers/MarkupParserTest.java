@@ -235,4 +235,27 @@ class MarkupParserTest {
             assertThat(elements.size(), Matchers.is(1));
         }
     }
+
+
+    @Test
+    void brTagWithNoTrailingTagsOrText() {
+        List<String> html = Lists.newArrayList("<template><tbody><tr><td><i>This</i> is a sample text <br>");
+        List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
+        String parsedContent = elements.get(0).getContent().text();
+        assertThat(parsedContent, Matchers.is("This is a sample text"));
+    }
+    @Test
+    void brTagWithTrailingTags() {
+        List<String> html = Lists.newArrayList("<template><tbody><tr><td><i>This</i> is a <br>sample <b>text</b></td></tr></tbody></template>");
+        List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
+        String parsedContent = elements.get(0).getContent().text();
+        assertThat(parsedContent, Matchers.is("This is a sample text"));
+    }
+    @Test
+    void brTagWithTrailingText() {
+        List<String> html = Lists.newArrayList("<template><tbody><tr><td><i>This</i> is a <br>sample text");
+        List<HTMLElement> elements = MarkupParser.parse("test.cmp", html);
+        String parsedContent = elements.get(0).getContent().text();
+        assertThat(parsedContent, Matchers.is("This is a sample text"));
+    }
 }
