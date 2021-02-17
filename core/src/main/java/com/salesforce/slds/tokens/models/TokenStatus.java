@@ -13,7 +13,8 @@ public enum TokenStatus {
     ACTIVE_NEW("active-new"),
     ACTIVE("active"),
     ACTIVE_CHANGED("active-changed"),
-    DEPRECATED("deprecated");
+    DEPRECATED("deprecated"),
+    DELETED("deleted");
     private final String value;
 
     TokenStatus(String v) {
