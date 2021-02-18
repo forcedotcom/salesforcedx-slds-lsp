@@ -23,6 +23,7 @@ import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 import com.salesforce.slds.shared.utils.ResourceUtilities;
 import com.salesforce.slds.tokens.models.DesignToken;
+import com.salesforce.slds.tokens.models.TokenStatus;
 import com.salesforce.slds.validation.utils.CSSValidationUtilities;
 import com.salesforce.slds.validation.validators.SLDSValidator;
 import com.salesforce.slds.validation.validators.interfaces.RecommendationValidator;
@@ -113,7 +114,7 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
             for (String value : values) {
 
                 DesignToken designToken = DESIGN_TOKENS.get(value);
-                if (designToken == null || designToken.getDeprecated() != null) {
+                if (designToken == null || designToken.getDeprecated() != null || designToken.getStatus() == TokenStatus.DELETED ) {
                     Range range = cssValidationUtilities.getValueSpecificRange(originalValue, style, rawContents);
                     Action.ActionBuilder actionBuilder = Action.builder().range(range).fileType(Input.Type.STYLE);
                     Optional<DesignToken> updatedToken = getUpdatedToken(value);
