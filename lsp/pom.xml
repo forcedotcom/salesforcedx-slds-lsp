@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.salesforce.slds</groupId>
         <artifactId>common</artifactId>
-        <version>0.0.7</version>
+        <version>0.0.8</version>
     </parent>
 
     <groupId>com.salesforce.slds</groupId>
     <artifactId>lsp</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
 
     <dependencies>
         <!-- Google Collection -->
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.salesforce.slds</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.8</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.lsp4j</groupId>
