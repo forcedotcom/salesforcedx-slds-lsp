@@ -9,6 +9,7 @@ package com.salesforce.slds.validation.validators;
 
 import com.salesforce.slds.configuration.SldsConfiguration;
 import com.salesforce.slds.shared.models.annotations.Annotation;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 import com.salesforce.slds.validation.runners.ValidateRunner;
@@ -71,11 +72,12 @@ public class AnnotationTest {
         Entry entry = Entry.builder().path(path)
                 .rawContent(Arrays.asList(StringUtils.delimitedListToStringArray(content, "\n")))
                 .build();
-        runner.setEntry(entry);
+        Bundle bundle = new Bundle(entry);
+        runner.setBundle(bundle);
 
         runner.run();
 
-        return runner.getEntry();
+        return runner.getBundle().getEntries().get(0);
     }
 
 }

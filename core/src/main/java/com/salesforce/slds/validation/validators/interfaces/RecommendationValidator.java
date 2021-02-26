@@ -8,11 +8,12 @@
 package com.salesforce.slds.validation.validators.interfaces;
 
 import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 
 import java.util.List;
 
 public interface RecommendationValidator extends Validator {
-    List<Recommendation> matches(Entry entry, Context context);
+    List<Recommendation> matches(Entry entry, Bundle bundle, Context context);
 }

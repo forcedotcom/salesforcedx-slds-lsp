@@ -38,7 +38,7 @@ public class ValidateRunner implements Runnable {
     private final Processor processor;
 
     private Context context = new Context();
-    private Entry entry;
+    private Bundle bundle;
     protected boolean completed = false;
 
     @Autowired
@@ -49,12 +49,12 @@ public class ValidateRunner implements Runnable {
         this.processor = processor;
     }
 
-    public Entry getEntry() {
-        return entry;
+    public Bundle getBundle() {
+        return bundle;
     }
 
-    public void setEntry(Entry entry) {
-        this.entry = entry;
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
     }
 
     public Context getContext() {
@@ -70,33 +70,32 @@ public class ValidateRunner implements Runnable {
     }
 
     protected void setup() {
-        entry.setInputs(getInputs(entry));
         setupBundle();
-        setupContext();
-    }
-
-    protected void setupContext() {
-        if (entry.getComponentName() == null) {
-            entry.setComponentName(getComponentName(entry));
-        }
-
-        if (entry.getEntityType() == null) {
-            entry.setEntityType(getType(entry));
-        }
     }
 
     protected void setupBundle() {
-        entry.getBundle().getEntries().forEach(e ->
-                e.setInputs(getInputs(e))
-        );
+        getBundle().getEntries().forEach(e -> e.setInputs(getInputs(e)));
+
+        String componentName = getComponentName(getBundle());
+        Entry.EntityType type = getType(getBundle());
+
+        getBundle().getEntries().forEach(entry -> {
+            if (entry.getComponentName() == null) {
+                entry.setComponentName(componentName);
+            }
+
+            if (entry.getEntityType() == null) {
+                entry.setEntityType(type);
+            }
+        });
     }
 
-    protected String getComponentName(Entry entry) {
-        return EntryUtilities.getComponentName(entry);
+    protected String getComponentName(Bundle bundle) {
+        return EntryUtilities.getComponentName(bundle);
     }
 
-    protected Entry.EntityType getType(Entry entry) {
-        return EntryUtilities.getType(entry);
+    protected Entry.EntityType getType(Bundle bundle) {
+        return EntryUtilities.getType(bundle);
     }
 
     @Override
@@ -104,30 +103,29 @@ public class ValidateRunner implements Runnable {
         if (context.isEnabled(ContextKey.GLOBAL)) {
             setup();
 
-            List<Recommendation> recommendations = validators.parallelStream()
-                    .filter(validator -> validator instanceof RecommendationValidator)
-                    .map(validator -> (RecommendationValidator) validator)
-                    .map(validator -> validator.matches(entry, context))
-                    .flatMap(List::stream)
-                    .collect(aggregator.toList());
+            for (Entry entry : bundle.getEntries()) {
 
-            entry.setRecommendation(processor.process(recommendations));
+                List<Recommendation> recommendations = validators.parallelStream()
+                        .filter(validator -> validator instanceof RecommendationValidator)
+                        .map(validator -> (RecommendationValidator) validator)
+                        .map(validator -> validator.matches(entry, bundle, context))
+                        .flatMap(List::stream)
+                        .collect(aggregator.toList());
 
-            List<ComponentOverride> overrides = validators.parallelStream()
-                    .filter(validator -> validator instanceof OverrideValidator)
-                    .map(validator -> (OverrideValidator) validator)
-                    .map(validator -> validator.getOverrides(entry, context))
-                    .flatMap(List::stream)
-                    .collect(Collectors.toList());
+                entry.setRecommendation(processor.process(recommendations));
 
-            entry.setOverrides(overrides);
+                List<ComponentOverride> overrides = validators.parallelStream()
+                        .filter(validator -> validator instanceof OverrideValidator)
+                        .map(validator -> (OverrideValidator) validator)
+                        .map(validator -> validator.getOverrides(entry, bundle, context))
+                        .flatMap(List::stream)
+                        .collect(Collectors.toList());
+
+                entry.setOverrides(overrides);
+            }
         }
 
         completed = true;
-    }
-
-    public List<Input> getInputs() {
-        return getInputs(entry);
     }
 
     protected List<Input> getInputs(Entry entry) {

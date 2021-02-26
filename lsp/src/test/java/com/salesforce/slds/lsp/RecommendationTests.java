@@ -6,6 +6,7 @@ import com.salesforce.slds.lsp.diagnostics.DiagnosticConverter;
 import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.validation.runners.ValidateRunner;
 import org.eclipse.lsp4j.*;
@@ -231,7 +232,7 @@ public class RecommendationTests {
         Entry entry = Entry.builder().path(name).entityType(type).rawContent(
                 Arrays.asList(StringUtils.delimitedListToStringArray(content, System.lineSeparator()))).build();
 
-        runner.setEntry(entry);
+        runner.setBundle(new Bundle(entry));
         runner.run();
 
         return entry;

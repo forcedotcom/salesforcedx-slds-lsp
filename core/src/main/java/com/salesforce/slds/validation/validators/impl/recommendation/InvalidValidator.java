@@ -11,19 +11,15 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.context.ContextKey;
-import com.salesforce.slds.shared.models.core.Block;
-import com.salesforce.slds.shared.models.core.Entry;
-import com.salesforce.slds.shared.models.core.HTMLElement;
-import com.salesforce.slds.shared.models.core.Input;
+import com.salesforce.slds.shared.models.core.*;
 import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
+import com.salesforce.slds.tokens.registry.TokenRegistry;
 import com.salesforce.slds.validation.utils.JavascriptValidationUtilities;
-import com.salesforce.slds.validation.validators.SLDSValidator;
 import com.salesforce.slds.validation.validators.interfaces.RecommendationValidator;
 import com.salesforce.slds.validation.validators.models.ProcessingItem;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -38,13 +34,16 @@ import java.util.stream.Collectors;
  * Invalid CSS is processed within @{@link DesignTokenValidator}
  */
 @Component
-public class InvalidValidator extends SLDSValidator implements RecommendationValidator, InitializingBean {
+public class InvalidValidator implements RecommendationValidator {
 
     @Autowired
     JavascriptValidationUtilities javascriptValidationUtilities;
 
+    @Autowired
+    TokenRegistry tokenRegistry;
+
     @Override
-    public List<Recommendation> matches(Entry entry, Context context) {
+    public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         List<Recommendation> recommendations = new ArrayList<>();
 
         if (context.isEnabled(ContextKey.INVALID)) {
@@ -134,7 +133,7 @@ public class InvalidValidator extends SLDSValidator implements RecommendationVal
             return PASS_THROUGH.matcher(s.getValue()).matches();
         }).collect(Collectors.groupingBy(ProcessingItem::getValue));
 
-        return Sets.difference(filtered.keySet(), VALID_UTILITY_CLASSES)
+        return Sets.difference(filtered.keySet(), tokenRegistry.getValidUtilityClasses())
                 .stream()
                 .map(s -> {
                     List<ProcessingItem> items = filtered.get(s);

@@ -45,5 +45,5 @@ public class RegexPattern {
     public static final String VAR_FUNCTION = "var\\(\\s*--lwc-(?<token>[\\w\\d-]+)\\s*(,\\s*(?<fallback>"+
             COLOR_PATTERN + "|" + NUMERIC_PATTERN + "|" + WORD_FRAGMENT + ")\\s*)?\\)";
 
-    public static final String IMPORT_AND_EXPORT_TOKENS = "(:?\\s+|^)import\\s+|(:?\\s+|^)export\\s+";
+    public static final String IMPORT_AND_EXPORT_TOKENS = "(:?^\\s*)import\\s+|(:?^\\s*)export\\s+";
 }

@@ -26,26 +26,18 @@ public class Entry {
 
     private String path;
     private final List<String> rawContent;
-    private Bundle bundle;
 
     private String componentName;
     private EntityType entityType;
 
-    private Entry(List<Recommendation> recommendation, List<ComponentOverride> overrides,
+    private Entry(
                   List<Input> inputs, String path, List<String> rawContent,
                   EntityType entityType, String componentName) {
-
-        this.overrides = overrides;
-        this.recommendation = recommendation;
         this.inputs = inputs;
         this.path = path;
         this.rawContent = rawContent;
         this.entityType = entityType;
         this.componentName = componentName;
-    }
-
-    public boolean hasRecommendation() {
-        return this.getRecommendation().isEmpty() == false;
     }
 
     public List<Recommendation> getRecommendation() {
@@ -58,10 +50,6 @@ public class Entry {
 
     public void setRecommendation(List<Recommendation> recommendation) {
         this.recommendation = recommendation;
-    }
-
-    public boolean hasOverrides() {
-        return this.getOverrides().isEmpty() == false;
     }
 
     public List<ComponentOverride> getOverrides() {
@@ -108,18 +96,6 @@ public class Entry {
         return this.rawContent;
     }
 
-    public void setBundle(Bundle bundle) {
-        this.bundle = bundle;
-    }
-
-    public Bundle getBundle() {
-        if (this.bundle == null) {
-            this.bundle = new Bundle();
-        }
-
-        return this.bundle;
-    }
-
     public void setComponentName(String componentName) {
         this.componentName = componentName;
     }
@@ -141,24 +117,16 @@ public class Entry {
     }
 
     public static class EntryBuilder {
-        private List<Recommendation> recommendation;
         private List<Input> inputs;
         private String path;
         private List<String> rawContent;
-        private List<ComponentOverride> overrides;
         private EntityType entityType;
         private String componentName;
-
-        public EntryBuilder recommendation(List<Recommendation> recommendation) {
-            this.recommendation = recommendation;
-            return this;
-        }
 
         public EntryBuilder inputs(List<Input> inputs) {
             this.inputs = inputs;
             return this;
         }
-
 
         public EntryBuilder path(String path) {
             this.path = path;
@@ -167,11 +135,6 @@ public class Entry {
 
         public EntryBuilder rawContent(List<String> rawContent) {
             this.rawContent = rawContent;
-            return this;
-        }
-
-        public EntryBuilder overrides(List<ComponentOverride> overrides) {
-            this.overrides = overrides;
             return this;
         }
 
@@ -186,7 +149,7 @@ public class Entry {
         }
 
         public Entry build() {
-            return new Entry(recommendation, overrides, inputs, path, rawContent, entityType, componentName);
+            return new Entry(inputs, path, rawContent, entityType, componentName);
         }
     }
 }

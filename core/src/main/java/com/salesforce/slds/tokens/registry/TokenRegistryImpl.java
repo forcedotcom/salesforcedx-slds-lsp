@@ -24,9 +24,12 @@ import com.salesforce.slds.tokens.models.UtilityClass;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -37,6 +40,33 @@ public class TokenRegistryImpl implements TokenRegistry, InitializingBean {
     @Override
     public Set<ComponentBlueprint> getComponentBlueprints() {
         return getComponentsInternal();
+    }
+
+    @Override
+    public Set<String> getValidUtilityClasses() {
+        if (this.validUtilityClasses == null) {
+            this.validUtilityClasses = new HashSet<>();
+
+            getComponentBlueprints().stream()
+                    .forEach(componentBlueprint -> {
+                        componentBlueprint.getSelectors().forEach(selector ->
+                                validUtilityClasses.addAll(processTokens(selector)));
+
+                        componentBlueprint.getTokens().forEach((name, componentDesignToken) -> {
+                           componentDesignToken.getCssSelectors().forEach(selector ->
+                                   validUtilityClasses.addAll(processTokens(selector)));
+                        });
+                    });
+
+            getUtilityClasses().stream()
+                    .map(utilityClass -> Arrays.asList(utilityClass.getName().split(" ")))
+                    .flatMap(List::stream)
+                    .forEach(s ->
+                        validUtilityClasses.addAll(processTokens(s.trim()))
+                    );
+        }
+
+        return this.validUtilityClasses;
     }
 
     @Override
@@ -93,8 +123,10 @@ public class TokenRegistryImpl implements TokenRegistry, InitializingBean {
     private Set<ComponentBlueprint> components;
     private Map<String, DesignToken> tokens;
     private List<UtilityClass> utilityClasses;
+    private Set<String> validUtilityClasses;
     private ObjectMapper mapper = new ObjectMapper();
-
+    private static final String SLDS = "slds-[^\\s,\\[:\\]\\.\";]*";
+    private static final Pattern SLDSPattern = Pattern.compile(SLDS);
 
     private Set<ComponentBlueprint> getComponentsInternal() {
         if (this.components == null) {
@@ -146,6 +178,18 @@ public class TokenRegistryImpl implements TokenRegistry, InitializingBean {
 
         return this.tokens;
     }
+
+    private Set<String> processTokens(String tokens) {
+        Set<String> possibleTokens = new HashSet<>();
+
+        Matcher matcher = SLDSPattern.matcher(tokens);
+
+        while(matcher.find()) {
+            possibleTokens.add(matcher.group());
+        }
+
+        return possibleTokens;
+     }
 
     private static class TokenStatusDeserializer extends StdDeserializer<TokenStatus> {
 

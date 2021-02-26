@@ -13,6 +13,7 @@ import com.salesforce.slds.shared.converters.TypeConverters;
 import com.salesforce.slds.shared.converters.tokens.TokenType;
 import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.context.ContextKey;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.Input;
 import com.salesforce.slds.shared.models.core.Style;
@@ -24,8 +25,8 @@ import com.salesforce.slds.shared.models.recommendation.Recommendation;
 import com.salesforce.slds.shared.utils.ResourceUtilities;
 import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.tokens.models.TokenStatus;
+import com.salesforce.slds.tokens.registry.TokenRegistry;
 import com.salesforce.slds.validation.utils.CSSValidationUtilities;
-import com.salesforce.slds.validation.validators.SLDSValidator;
 import com.salesforce.slds.validation.validators.interfaces.RecommendationValidator;
 import com.salesforce.slds.validation.validators.models.Properties;
 import org.springframework.beans.factory.InitializingBean;
@@ -40,15 +41,13 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Component
-public class DesignTokenValidator extends SLDSValidator implements RecommendationValidator, InitializingBean {
+public class DesignTokenValidator implements RecommendationValidator, InitializingBean {
 
     private Pattern VAR_FUNCTION_PATTERN = Pattern.compile(RegexPattern.VAR_FUNCTION, Pattern.CASE_INSENSITIVE);
     private Map<String, String> DEPRECATED_TOKENS_FROM_RESOURCES = new LinkedHashMap<>();
 
     @Override
     public void afterPropertiesSet() {
-        super.afterPropertiesSet();
-
         buildEntries().asTokens().forEach(designToken ->
                 DEPRECATED_TOKENS_FROM_RESOURCES.put(designToken.getValue(), designToken.getName())
         );
@@ -57,8 +56,11 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
     @Autowired
     CSSValidationUtilities cssValidationUtilities;
 
+    @Autowired
+    TokenRegistry tokenRegistry;
+
     @Override
-    public List<Recommendation> matches(Entry entry, Context context) {
+    public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         List<Recommendation> recommendations = new ArrayList<>();
 
         if (context.isEnabled(ContextKey.DESIGN_TOKEN) && (context.isEnabled(ContextKey.DEPRECATED) ||
@@ -113,8 +115,9 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
 
             for (String value : values) {
 
-                DesignToken designToken = DESIGN_TOKENS.get(value);
-                if (designToken == null || designToken.getDeprecated() != null || designToken.getStatus() == TokenStatus.DELETED ) {
+                Optional<DesignToken> designToken = tokenRegistry.getDesignToken(value);
+                if (designToken.isPresent() == false || designToken.get().getDeprecated() != null
+                        || designToken.get().getStatus() == TokenStatus.DELETED ) {
                     Range range = cssValidationUtilities.getValueSpecificRange(originalValue, style, rawContents);
                     Action.ActionBuilder actionBuilder = Action.builder().range(range).fileType(Input.Type.STYLE);
                     Optional<DesignToken> updatedToken = getUpdatedToken(value);
@@ -167,11 +170,11 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
     }
 
     private Optional<DesignToken> getUpdatedToken(String token) {
-        DesignToken designToken = DESIGN_TOKENS.get(token);
+        Optional<DesignToken> designToken = tokenRegistry.getDesignToken(token);
         String updatedToken = null;
 
-        if (designToken != null && designToken.getDeprecated() != null && designToken.getComment() != null) {
-            updatedToken = cssValidationUtilities.getTokenNameFromComment(designToken.getComment());
+        if (designToken.isPresent() && designToken.get().getDeprecated() != null && designToken.get().getComment() != null) {
+            updatedToken = cssValidationUtilities.getTokenNameFromComment(designToken.get().getComment());
         }
 
         if (updatedToken == null && DEPRECATED_TOKENS_FROM_RESOURCES.containsKey(token)) {
@@ -179,7 +182,7 @@ public class DesignTokenValidator extends SLDSValidator implements Recommendatio
         }
 
         if (updatedToken != null) {
-            return Optional.ofNullable(DESIGN_TOKENS.get(updatedToken));
+            return tokenRegistry.getDesignToken(updatedToken);
         }
 
         return Optional.empty();

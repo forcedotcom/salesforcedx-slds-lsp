@@ -30,6 +30,7 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class Diagnoser {
@@ -59,13 +60,15 @@ public class Diagnoser {
 
             runner.setContext(stateService.getContext());
 
-            Entry entry = createEntry(item);
-            entry.setBundle(getBundle(item));
+            Bundle bundle = getBundle(item);
+            runner.setBundle(bundle);
 
-            runner.setEntry(entry);
             runner.run();
 
-            List<DiagnosticResult> diagnostics = converter.convert(entry);
+            Optional<Entry> result = bundle.getEntries().stream()
+                    .filter(entry -> entry.getPath().equalsIgnoreCase(item.getUri())).findFirst();
+
+            List<DiagnosticResult> diagnostics = converter.convert(result.get());
             diagnosticRegistry.put(item.getUri(), diagnostics);
 
         } catch (Exception ex) {
@@ -89,7 +92,7 @@ public class Diagnoser {
         File originalFile = new File(URI.create(entry.getUri()));
 
         for (File f : originalFile.getParentFile().listFiles(Diagnoser::isLightningComponentFiles)) {
-            if (f.isFile() && f.equals(originalFile) == false) {
+            if (f.isFile()) {
                 TextDocumentItem item = documentRegistry.get(f.toURI().toString());
                 if (item != null) {
                     bundle.getEntries().add(createEntry(item));

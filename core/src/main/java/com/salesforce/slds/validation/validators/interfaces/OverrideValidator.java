@@ -8,6 +8,7 @@
 package com.salesforce.slds.validation.validators.interfaces;
 
 import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.override.ComponentOverride;
 
@@ -15,5 +16,5 @@ import java.util.List;
 
 public interface OverrideValidator extends Validator {
 
-    List<ComponentOverride> getOverrides(Entry entry, Context context);
+    List<ComponentOverride> getOverrides(Entry entry, Bundle bundle, Context context);
 }

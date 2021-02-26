@@ -8,6 +8,7 @@
 package com.salesforce.slds.validation.validators;
 
 import com.salesforce.slds.configuration.SldsConfiguration;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
@@ -24,6 +25,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -59,13 +61,15 @@ public class ComponentOverrideTest {
         Entry entry = Entry.builder().path("test.css")
                 .rawContent(Arrays.asList(StringUtils.delimitedListToStringArray(builder.toString(), "\n")))
                 .build();
-        runner.setEntry(entry);
+        Bundle bundle = new Bundle(entry);
+        runner.setBundle(bundle);
         runner.run();
 
     }
 
     public List<ComponentOverride> getComponentOverrides() {
-        return runner.getEntry().getOverrides();
+        return runner.getBundle().getEntries().stream().map(Entry::getOverrides)
+                .flatMap(List::stream).collect(Collectors.toList());
     }
 
     @Test
