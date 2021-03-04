@@ -12,28 +12,26 @@ import com.google.common.collect.Lists;
 import com.salesforce.omakase.ast.Rule;
 import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.context.ContextKey;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.Input;
-import com.salesforce.slds.shared.models.locations.Location;
-import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.override.ComponentOverride;
 import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
-import com.salesforce.slds.shared.models.recommendation.Item;
-import com.salesforce.slds.shared.models.recommendation.RelatedInformation;
-import com.salesforce.slds.validation.validators.SLDSValidator;
+import com.salesforce.slds.tokens.registry.TokenRegistry;
 import com.salesforce.slds.validation.validators.interfaces.OverrideValidator;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.util.*;
 
 @Component
-public class ComponentOverrideValidator extends SLDSValidator implements OverrideValidator, InitializingBean {
+public class ComponentOverrideValidator implements OverrideValidator {
 
+    @Autowired
+    TokenRegistry tokenRegistry;
     @Override
-    public List<ComponentOverride> getOverrides(Entry entry, Context context){
+    public List<ComponentOverride> getOverrides(Entry entry, Bundle bundle, Context context){
         List<ComponentOverride> componentOverrides = Lists.newArrayList();
 
         if (context.isEnabled(ContextKey.OVERRIDE)) {
@@ -89,7 +87,7 @@ public class ComponentOverrideValidator extends SLDSValidator implements Overrid
         return null;
     }
 
-    // Find occurence of .slds in selector any location
+    // Find occurrence of .slds in selector any location
     Boolean componentOverrideSoftMatch(String selector){
         String[] selectorsArr = selector.split(" ");
         if (selectorsArr[selectorsArr.length-1].contains(".slds")){
@@ -100,6 +98,7 @@ public class ComponentOverrideValidator extends SLDSValidator implements Overrid
     }
 
     public Boolean componentOverrideSLDSMatch(String selector){
-        return componentOverrideSoftMatch(selector) && VALID_UTILITY_CLASSES.contains(getSldsClassAsString(selector));
+        return componentOverrideSoftMatch(selector) &&
+                tokenRegistry.getValidUtilityClasses().contains(getSldsClassAsString(selector));
     }
 }

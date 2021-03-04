@@ -83,9 +83,9 @@ public class CSSValidationTest {
         builder.append(".THIS .gridContainer {width:100%}");
 
         Entry css = createEntry(CSS_PATH, builder.toString());
-        css.setBundle(new Bundle(getComponentEntry()));
+        Bundle bundle = new Bundle(css, getComponentEntry());
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(css);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
 
         assertThat(groupedRecommendation.get(".THIS .gridContainer {width:100%}"), Matchers.iterableWithSize(1));
 
@@ -144,9 +144,9 @@ public class CSSValidationTest {
                 .append(".THIS thead { display: block; }");
 
         Entry css = createEntry(CSS_PATH, builder.toString());
-        css.setBundle(new Bundle(getComponentEntry()));
+        Bundle bundle = new Bundle(css, getComponentEntry());
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(css);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
         assertThat(groupedRecommendation, Matchers.aMapWithSize(1));
     }
 
@@ -216,9 +216,9 @@ public class CSSValidationTest {
                 .append("}");
 
         Entry cssEntry = createEntry(CSS_PATH, builder.toString());
-        cssEntry.setBundle(new Bundle(getComponentEntry()));
+        Bundle bundle = new Bundle(cssEntry, getComponentEntry());
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(cssEntry);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
 
         assertThat(cssEntry.getRecommendation(), Matchers.iterableWithSize(4));
         assertThat(groupedRecommendation.get(".THIS thead, .THIS .hideSpinner {display:none}"), Matchers.iterableWithSize(1));
@@ -242,9 +242,9 @@ public class CSSValidationTest {
                 .append("}");
 
         Entry cssEntry = createEntry(CSS_PATH, builder.toString());
-        cssEntry.setBundle(new Bundle(getComponentEntry()));
+        Bundle bundle = new Bundle(cssEntry, getComponentEntry());
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(cssEntry);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
 
         assertThat(cssEntry.getRecommendation(), Matchers.iterableWithSize(1));
         Recommendation recommendation = groupedRecommendation.get(".THIS thead {margin-left:auto; margin-right:auto; display:table}").get(0);
@@ -276,9 +276,9 @@ public class CSSValidationTest {
                 .append(System.lineSeparator())
                 .append("</aura:component>");
 
-        cssEntry.setBundle(new Bundle(createEntry("modalContainer.cmp", component.toString())));
+        Bundle bundle = new Bundle(cssEntry, createEntry("modalContainer.cmp", component.toString()));
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(cssEntry);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
 
         assertThat(groupedRecommendation.get(".cModalContainer {display:none}"), Matchers.iterableWithSize(1));
     }
@@ -300,9 +300,10 @@ public class CSSValidationTest {
                 .append(System.lineSeparator())
                 .append("</aura:component>");
 
-        cssEntry.setBundle(new Bundle(createEntry("modalContainer.cmp", component.toString())));
+        Bundle bundle = new Bundle(cssEntry,
+                createEntry("modalContainer.cmp", component.toString()));
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(cssEntry);
+        Map<String, List<Recommendation>> groupedRecommendation = process(bundle);
 
         assertThat(groupedRecommendation.get(".cModalContainer.cModalContainer__wrapper {display:none}"), Matchers.iterableWithSize(1));
     }
@@ -392,10 +393,15 @@ public class CSSValidationTest {
     }
 
     private Map<String, List<Recommendation>> process(Entry entry) {
-        runner.setEntry(entry);
+        return process(new Bundle(entry));
+    }
+
+    private Map<String, List<Recommendation>> process(Bundle bundle) {
+        runner.setBundle(bundle);
         runner.run();
 
-        List<Recommendation> recommendations = runner.getEntry().getRecommendation();
+        List<Recommendation> recommendations = runner.getBundle().getEntries().stream().map(Entry::getRecommendation)
+                .flatMap(List::stream).collect(Collectors.toList());
         return
                 recommendations.stream().collect(Collectors.groupingBy(o ->
                         o.getStyle() != null ? o.getStyle().getValue() : o.getRuleSet().toString()

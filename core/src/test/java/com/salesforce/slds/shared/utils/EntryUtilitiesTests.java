@@ -53,7 +53,8 @@ public class EntryUtilitiesTests {
 
         private void verify(String expected, String path) {
             Entry entry = Entry.builder().path(path).entityType(Entry.EntityType.OTHER).build();
-            assertThat(EntryUtilities.getComponentName(entry), Matchers.is(expected));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getComponentName(bundle), Matchers.is(expected));
         }
     }
 
@@ -69,8 +70,8 @@ public class EntryUtilitiesTests {
 
             Entry entry = Entry.builder().inputs(inputs).entityType(Entry.EntityType.AURA)
                     .path(COMPONENT_NAME + ".cmp").build();
-
-            assertThat(EntryUtilities.getComponentName(entry), Matchers.is(COMPONENT_NAME));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getComponentName(bundle), Matchers.is(COMPONENT_NAME));
         }
 
         @Test
@@ -81,8 +82,8 @@ public class EntryUtilitiesTests {
 
             Entry entry = Entry.builder().inputs(inputs).entityType(Entry.EntityType.LWC)
                     .path(File.separator + generatePath(COMPONENT_NAME, "test.html")).build();
-
-            assertThat(EntryUtilities.getComponentName(entry), Matchers.is(COMPONENT_NAME));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getComponentName(bundle), Matchers.is(COMPONENT_NAME));
         }
 
         @Test
@@ -95,10 +96,8 @@ public class EntryUtilitiesTests {
                     generatePath(COMPONENT_NAME, "test.html")).build();
 
             Bundle bundle = new Bundle(bundledEntry);
-            Entry entry = Entry.builder().inputs(new ArrayList<>()).entityType(Entry.EntityType.LWC).build();
-            entry.setBundle(bundle);
 
-            assertThat(EntryUtilities.getComponentName(entry), Matchers.is(COMPONENT_NAME));
+            assertThat(EntryUtilities.getComponentName(bundle), Matchers.is(COMPONENT_NAME));
         }
 
         @Test
@@ -110,10 +109,8 @@ public class EntryUtilitiesTests {
             Entry bundledEntry = Entry.builder().inputs(inputs).path(COMPONENT_NAME + ".css").build();
 
             Bundle bundle = new Bundle(bundledEntry);
-            Entry entry = Entry.builder().inputs(new ArrayList<>()).entityType(Entry.EntityType.LWC).build();
-            entry.setBundle(bundle);
 
-            assertThat(EntryUtilities.getComponentName(entry), Matchers.is(COMPONENT_NAME));
+            assertThat(EntryUtilities.getComponentName(bundle), Matchers.is(COMPONENT_NAME));
         }
     }
 
@@ -128,7 +125,8 @@ public class EntryUtilitiesTests {
             content.add("}");
 
             Entry entry = Entry.builder().rawContent(content).path("component.js").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.LWC));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.LWC));
         }
 
         @Test
@@ -137,7 +135,8 @@ public class EntryUtilitiesTests {
             content.add("function test() {}");
 
             Entry entry = Entry.builder().inputs(new ArrayList<>()).rawContent(content).path("component.js").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.OTHER));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.OTHER));
         }
 
         @Test
@@ -149,7 +148,8 @@ public class EntryUtilitiesTests {
             inputs.addAll(MarkupParser.parse( COMPONENT_NAME + ".html", content));
 
             Entry entry = Entry.builder().inputs(inputs).rawContent(content).path(COMPONENT_NAME + ".html").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.LWC));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.LWC));
         }
 
         @Test
@@ -161,7 +161,8 @@ public class EntryUtilitiesTests {
             inputs.addAll(MarkupParser.parse( COMPONENT_NAME + ".html", content));
 
             Entry entry = Entry.builder().inputs(inputs).rawContent(content).path(COMPONENT_NAME + ".html").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.AURA));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.AURA));
         }
 
         @Test
@@ -173,7 +174,8 @@ public class EntryUtilitiesTests {
             inputs.addAll(MarkupParser.parse( COMPONENT_NAME + ".html", content));
 
             Entry entry = Entry.builder().inputs(inputs).rawContent(content).path(COMPONENT_NAME + ".html").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.AURA));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.AURA));
         }
 
         @Test
@@ -185,7 +187,8 @@ public class EntryUtilitiesTests {
             inputs.addAll(CSSParser.parse(content));
 
             Entry entry = Entry.builder().inputs(inputs).rawContent(content).path(COMPONENT_NAME + ".css").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.AURA));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.AURA));
         }
 
         @Test
@@ -198,7 +201,8 @@ public class EntryUtilitiesTests {
 
             Entry entry = Entry.builder().inputs(inputs).componentName(COMPONENT_NAME)
                     .rawContent(content).path(COMPONENT_NAME + ".css").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.AURA));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.AURA));
         }
 
 
@@ -213,7 +217,8 @@ public class EntryUtilitiesTests {
             Entry entry = Entry.builder().inputs(inputs).rawContent(content)
                     .componentName(COMPONENT_NAME)
                     .path(COMPONENT_NAME + ".css").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.LWC));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.LWC));
         }
 
         @Test
@@ -227,7 +232,8 @@ public class EntryUtilitiesTests {
             Entry entry = Entry.builder().inputs(inputs).rawContent(content)
                     .componentName(COMPONENT_NAME)
                     .path(COMPONENT_NAME + ".css").build();
-            assertThat(EntryUtilities.getType(entry), Matchers.is(Entry.EntityType.LWC));
+            Bundle bundle = new Bundle(entry);
+            assertThat(EntryUtilities.getType(bundle), Matchers.is(Entry.EntityType.LWC));
         }
     }
 }

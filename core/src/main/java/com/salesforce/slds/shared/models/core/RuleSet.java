@@ -31,6 +31,7 @@ public class RuleSet extends Input implements Comparable<RuleSet>, RangeProvider
     private final Range range;
     private final List<String> raw;
     private final List<Style> styles;
+    private List<Style> stylesWithAnnotationType;
 
     private RuleSet(Rule rule, Range range, List<String> raw) {
         this.rule = rule;
@@ -48,28 +49,32 @@ public class RuleSet extends Input implements Comparable<RuleSet>, RangeProvider
     }
 
     public List<Style> getStylesWithAnnotationType() {
-        Optional<AnnotationType> ruleAnnotationType = getAnnotationType();
-        List<Style> annotatedStyles = new ArrayList<>();
+        if (stylesWithAnnotationType == null) {
+            Optional<AnnotationType> ruleAnnotationType = getAnnotationType();
+            List<Style> annotatedStyles = new ArrayList<>();
 
-        for (Style style : getStyles()) {
-            Style.StyleBuilder styleBuilder = Style.builder();
-            styleBuilder
-                    .property(style.getProperty())
-                    .value(style.getValue())
-                    .range(style.getRange())
-                    .declaration(style.getDeclaration())
-                    .condition(style.getCondition());
+            for (Style style : getStyles()) {
+                Style.StyleBuilder styleBuilder = Style.builder();
+                styleBuilder
+                        .property(style.getProperty())
+                        .value(style.getValue())
+                        .range(style.getRange())
+                        .declaration(style.getDeclaration())
+                        .condition(style.getCondition());
 
-            if (style.getAnnotationType() == null) {
-                styleBuilder.annotationType(ruleAnnotationType.orElse(AnnotationType.NONE));
-            } else {
-                styleBuilder.annotationType(style.getAnnotationType());
+                if (style.getAnnotationType() == null) {
+                    styleBuilder.annotationType(ruleAnnotationType.orElse(AnnotationType.NONE));
+                } else {
+                    styleBuilder.annotationType(style.getAnnotationType());
+                }
+
+                annotatedStyles.add(styleBuilder.build());
             }
 
-            annotatedStyles.add(styleBuilder.build());
+            stylesWithAnnotationType = annotatedStyles;
         }
 
-        return annotatedStyles;
+        return stylesWithAnnotationType;
     }
 
     public List<Annotation> getAnnotations() {

@@ -8,6 +8,8 @@
 package com.salesforce.slds.lsp.registries;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +54,12 @@ public class DiagnosticResultRegistry {
     }
 
     private String translate(String uri) {
-        return new File(uri).toURI().toString();
+        try {
+            URI result = new URI(uri);
+            return result.toString();
+        } catch (URISyntaxException e) {
+            return new File(uri).toURI().toString();
+        }
     }
 
     void clear() {

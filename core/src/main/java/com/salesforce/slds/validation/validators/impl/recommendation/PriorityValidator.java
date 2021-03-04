@@ -9,6 +9,7 @@ package com.salesforce.slds.validation.validators.impl.recommendation;
 
 import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.context.ContextKey;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.utils.ResourceUtilities;
 import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.shared.models.core.Entry;
@@ -54,7 +55,7 @@ public class PriorityValidator implements RecommendationValidator, InitializingB
     }
 
     @Override
-    public List<Recommendation> matches(Entry entry, Context context) {
+    public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
 
         List<DesignToken> tokens = new ArrayList<>();
         if (context.isEnabled(ContextKey.BEM)) {

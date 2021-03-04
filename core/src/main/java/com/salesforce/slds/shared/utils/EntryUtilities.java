@@ -7,42 +7,42 @@
 package com.salesforce.slds.shared.utils;
 
 import com.salesforce.slds.shared.RegexPattern;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.Input;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class EntryUtilities {
 
     private static Pattern IMPORT_AND_EXPORT_PATTERN = Pattern.compile(RegexPattern.IMPORT_AND_EXPORT_TOKENS);
 
-    public static Entry.EntityType getType(Entry entry) {
+    public static Entry.EntityType getType(Bundle bundle) {
+        List<Entry.EntityType> types = bundle.getEntries().stream()
+                .map(entry -> {
 
-        if (entry.getPath().endsWith(".js")) {
-            if (entry.getRawContent().stream()
-                    .anyMatch(content -> IMPORT_AND_EXPORT_PATTERN.matcher(content).find())) {
-                return Entry.EntityType.LWC;
-            }
-        }
+                    if (entry.getPath().endsWith(".js")) {
+                        if (entry.getRawContent().stream()
+                                .anyMatch(content -> IMPORT_AND_EXPORT_PATTERN.matcher(content).find())) {
+                            return Entry.EntityType.LWC;
+                        }
+                    }
 
-        for (Input input : entry.getInputs()) {
-            Optional<Entry.EntityType> type = getType(entry.getComponentName(), input);
-            if (type.isPresent()) {
-                return type.get();
-            }
-        }
+                    for (Input input : entry.getInputs()) {
+                        Optional<Entry.EntityType> type = getType(entry.getComponentName(), input);
+                        if (type.isPresent()) {
+                            return type.get();
+                        }
+                    }
 
-        for (Entry bundledEntry : entry.getBundle().getEntries()) {
-            for (Input input : bundledEntry.getInputs()) {
-                Optional<Entry.EntityType> type = getType(bundledEntry.getComponentName(), input);
-                if (type.isPresent()) {
-                    return type.get();
-                }
-            }
-        }
+                    return Entry.EntityType.OTHER;
+                }).filter(entityType -> entityType != Entry.EntityType.OTHER)
+                .distinct().collect(Collectors.toList());
 
-        return Entry.EntityType.OTHER;
+        return types.isEmpty() ? Entry.EntityType.OTHER : types.get(0);
     }
 
     static Optional<Entry.EntityType> getType(String componentName, Input input) {
@@ -79,27 +79,22 @@ public class EntryUtilities {
         return Optional.empty();
     }
 
-    public static String getComponentName(Entry entry) {
-        if (entry.getEntityType() != Entry.EntityType.OTHER) {
-            boolean containMarkupOrStyle = entry.getInputs().stream()
-                    .anyMatch(input -> input.getType() == Input.Type.MARKUP || input.getType() == Input.Type.STYLE);
+    public static String getComponentName(Bundle bundle) {
+        List<String> possibleName = bundle.getEntries().stream()
+                .map(entry -> {
+                    if (entry.getEntityType() != Entry.EntityType.OTHER) {
+                        boolean containMarkupOrStyle = entry.getInputs().stream()
+                                .anyMatch(input -> input.getType() == Input.Type.MARKUP || input.getType() == Input.Type.STYLE);
 
-            if (containMarkupOrStyle) {
-                return extractComponentName(entry.getPath());
-            }
+                        if (containMarkupOrStyle) {
+                            return extractComponentName(entry.getPath());
+                        }
+                    }
 
-            for (Entry bundledEntry : entry.getBundle().getEntries()) {
-                containMarkupOrStyle = bundledEntry.getInputs().stream()
-                        .anyMatch(input -> input.getType() == Input.Type.MARKUP || input.getType() == Input.Type.STYLE);
+                    return extractComponentName(entry.getPath());
+                }).distinct().collect(Collectors.toList());
 
-                if (containMarkupOrStyle) {
-                    return extractComponentName(bundledEntry.getPath());
-                }
-            }
-        }
-
-
-        return extractComponentName(entry.getPath());
+        return possibleName.get(0);
     }
 
     private static String extractComponentName(String path) {

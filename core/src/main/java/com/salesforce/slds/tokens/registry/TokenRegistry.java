@@ -31,4 +31,6 @@ public interface TokenRegistry {
 
     List<DesignToken> getDesignTokens();
 
+    Set<String> getValidUtilityClasses();
+
 }

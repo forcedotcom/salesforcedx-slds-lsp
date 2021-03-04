@@ -69,11 +69,11 @@ public class UtilityClassValidator implements RecommendationValidator, Initializ
     }
 
     @Override
-    public List<Recommendation> matches(Entry entry, Context context) {
+    public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         List<Recommendation> recommendations = new ArrayList<>();
 
         if (context.isEnabled(ContextKey.UTILITY_CLASS)) {
-            final List<HTMLElement> elements = entry.getBundle().getInputs().stream()
+            final List<HTMLElement> elements = bundle.getInputs().stream()
                     .sequential().map(Input::asElement).filter(Objects::nonNull)
                     .collect(Collectors.toList());
 

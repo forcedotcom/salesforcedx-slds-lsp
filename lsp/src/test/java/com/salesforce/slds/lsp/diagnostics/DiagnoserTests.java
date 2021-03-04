@@ -73,7 +73,7 @@ public class DiagnoserTests {
 
         Bundle bundle = diagnoser.getBundle(item);
 
-        assertThat(bundle.getEntries(), Matchers.hasSize(2));
+        assertThat(bundle.getEntries(), Matchers.hasSize(3));
 
         Optional<Entry> actualStyleEntry = getEntry(bundle, STYLE);
         assertStyle(actualStyleEntry);

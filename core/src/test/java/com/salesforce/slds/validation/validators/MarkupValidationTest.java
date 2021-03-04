@@ -8,9 +8,8 @@
 package com.salesforce.slds.validation.validators;
 
 import com.salesforce.slds.configuration.SldsConfiguration;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
-import com.salesforce.slds.shared.models.core.HTMLElement;
-import com.salesforce.slds.shared.models.core.Input;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.recommendation.Action;
@@ -48,11 +47,13 @@ public class MarkupValidationTest {
         File f = new File(resource.getFile());
 
         Entry entry = Entry.builder().path(f.getPath()).rawContent(Files.readAllLines(f.toPath())).build();
-        runner.setEntry(entry);
+        Bundle bundle = new Bundle(entry);
+        runner.setBundle(bundle);
 
         runner.run();
 
-        List<Recommendation> recommendations = runner.getEntry().getRecommendation();
+        List<Recommendation> recommendations = runner.getBundle().getEntries().stream().map(Entry::getRecommendation)
+                .flatMap(List::stream).collect(Collectors.toList());
         assertThat(recommendations, Matchers.hasSize(1));
 
         Recommendation recommendation = recommendations.get(0);
@@ -78,13 +79,15 @@ public class MarkupValidationTest {
         File f = new File(resource.getFile());
 
         Entry entry = Entry.builder().path(f.getPath()).rawContent(Files.readAllLines(f.toPath())).build();
-        runner.setEntry(entry);
+        Bundle bundle = new Bundle(entry);
+        runner.setBundle(bundle);
 
         runner.run();
 
-        assertThat(runner.getInputs(), Matchers.hasSize(14));
+        assertThat(runner.getBundle().getInputs(), Matchers.hasSize(14));
 
-        List<Recommendation> recommendations = runner.getEntry().getRecommendation();
+        List<Recommendation> recommendations = runner.getBundle().getEntries().stream().map(Entry::getRecommendation)
+                .flatMap(List::stream).collect(Collectors.toList());
         assertThat(recommendations, Matchers.hasSize(6));
     }
 }

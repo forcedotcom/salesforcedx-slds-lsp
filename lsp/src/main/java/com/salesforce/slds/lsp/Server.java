@@ -5,6 +5,7 @@ import com.salesforce.slds.lsp.diagnostics.Diagnoser;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.lsp.services.TextDocumentServiceImpl;
 import com.salesforce.slds.lsp.services.interfaces.StateService;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.utils.EntryUtilities;
 import org.eclipse.lsp4j.*;
@@ -75,10 +76,8 @@ public class Server implements LanguageServer, LanguageClientAware {
 
         try {
 
-            Entry entry = diagnoser.createEntry(item);
-            entry.setBundle(diagnoser.getBundle(item));
-
-            Entry.EntityType type = EntryUtilities.getType(entry);
+            Bundle bundle = diagnoser.getBundle(item);
+            Entry.EntityType type = EntryUtilities.getType(bundle);
 
             return CompletableFuture.completedFuture(type == Entry.EntityType.AURA ? "aura" : "other");
 

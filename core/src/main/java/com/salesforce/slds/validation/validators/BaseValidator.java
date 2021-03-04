@@ -9,6 +9,7 @@ package com.salesforce.slds.validation.validators;
 
 import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.context.ContextKey;
+import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.tokens.registry.TokenRegistry;
 import com.salesforce.slds.shared.models.core.Entry;
@@ -49,7 +50,7 @@ public abstract class BaseValidator implements RecommendationValidator, Initiali
     }
 
     @Override
-    public List<Recommendation> matches(Entry entry, Context context) {
+    public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         if (context.isEnabled(ContextKey.DESIGN_TOKEN)) {
             return entry.getInputs().stream()
                     .filter(input -> input.getType() == Input.Type.STYLE)
