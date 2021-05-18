@@ -161,18 +161,42 @@ public class RecommendationTests {
             CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "");
         }
+    }
 
+    @Nested
+    class MOBILE {
         @Test
-        void markupClassRecommendation() {
+        void nonMobileFriendlyToken() {
             StringBuilder builder = new StringBuilder();
-            builder.append("<aura:component><div class=\"slds-border--right\">Hello World</div></aura:component>");
-            Entry entry = createMarkupEntry( Entry.EntityType.AURA, builder.toString());
+            builder.append("<template><lightning-datatable></lightning-datatable></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = diagnosticResults.get(0).getDiagnostic().getRange();
-
+            Range range = new Range(new Position(0,10), new Position(0, 53));
             CodeAction action = getCodeAction(range, diagnosticResults);
-            assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
+            assertAction(action, "lightning-datatable is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-datatable></lightning-datatable>");
+        }
+
+        @Test
+        void nonMobileFriendlyKebabCaseToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><lightning-tree-grid></lightning-tree-grid></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = new Range(new Position(0,10), new Position(0, 53));
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "lightning-tree-grid is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-tree-grid></lightning-tree-grid>");
+        }
+
+        @Test
+        void mobileFriendlyToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><lightning-accordion></lightning-accordion></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
         }
     }
 

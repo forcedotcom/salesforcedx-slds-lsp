@@ -16,6 +16,7 @@ public class Identifier {
         ALTERNATIVE_TOKENS,
         UTILITY_TOKENS,
         COMPONENT_OVERRIDE,
+        NON_MOBILE_FRIENDLY,
         DEFAULT;
 
         public String toString() {

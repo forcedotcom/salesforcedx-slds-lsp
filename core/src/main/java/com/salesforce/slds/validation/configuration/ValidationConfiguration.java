@@ -16,6 +16,7 @@ import com.salesforce.slds.validation.utils.JavascriptValidationUtilities;
 import com.salesforce.slds.validation.utils.MarkupValidationUtilities;
 import com.salesforce.slds.validation.validators.ValidatorFactories;
 import com.salesforce.slds.validation.validators.impl.override.ComponentOverrideValidator;
+import com.salesforce.slds.validation.validators.impl.recommendation.*;
 import com.salesforce.slds.validation.validators.impl.recommendation.DesignTokenValidator;
 import com.salesforce.slds.validation.validators.impl.recommendation.InvalidValidator;
 import com.salesforce.slds.validation.validators.impl.recommendation.PriorityValidator;
@@ -32,7 +33,8 @@ import org.springframework.context.annotation.Import;
         InvalidValidator.class, PriorityValidator.class,
         UtilityClassValidator.class, ValidatorFactories.class,
         ValidateRunner.class, ComponentOverrideValidator.class,
-        HTMLElementUtilities.class, DesignTokenValidator.class
+        HTMLElementUtilities.class, DesignTokenValidator.class,
+        MobileFriendlyValidator.class
 })
 public class ValidationConfiguration {
 }

@@ -59,6 +59,8 @@ public class CodeActionConverter {
                         return createAlternativeTokenCodeAction(params, info.get());
                     case UTILITY_TOKENS:
                         return createUtilityTokenCodeAction(params, info.get());
+                    case NON_MOBILE_FRIENDLY:
+                        return createNonMobileFriendlyBaseComponentCodeAction(params, info.get());
                     default:
                         break;
                 }
@@ -115,30 +117,47 @@ public class CodeActionConverter {
         return actions;
     }
 
+    private CodeAction buildCodeAction(CodeActionParams params, Action action, Diagnostic diagnostic, String codeActionTitle, Range textEditRange, String textEditNewText) {
+        CodeAction codeAction = new CodeAction(codeActionTitle);
+        codeAction.setKind(CodeActionKind.QuickFix);
+        codeAction.setDiagnostics(Lists.newArrayList(diagnostic));
+
+        TextEdit edit = new TextEdit(textEditRange, textEditNewText);
+        WorkspaceEdit workspaceEdit = new WorkspaceEdit();
+
+        Map<String, List<TextEdit>> changes = Maps.newLinkedHashMap();
+        changes.put(params.getTextDocument().getUri(), Lists.newArrayList(edit));
+        workspaceEdit.setChanges(changes);
+
+        codeAction.setEdit(workspaceEdit);
+        return codeAction;
+    }
+
+    private List<Either<Command, CodeAction>> createNonMobileFriendlyBaseComponentCodeAction(CodeActionParams params,
+                                                                               DiagnosticResult diagnosticResult) {
+        List<Either<Command, CodeAction>> actions = Lists.newArrayList();
+
+        for (Item item : diagnosticResult.getItems()) {
+            for (Action action : item.getActions()) {
+                Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+                CodeAction codeAction = buildCodeAction(params, action, diagnostic, action.getDescription(), diagnostic.getRange(), action.getValue());
+                actions.add(Either.forRight(codeAction));
+            }
+        }
+
+        return actions;
+    }
+
     private List<Either<Command, CodeAction>> createAlternativeTokenCodeAction(CodeActionParams params,
                                                                                DiagnosticResult diagnosticResult) {
         List<Either<Command, CodeAction>> actions = Lists.newArrayList();
 
         for (Item item : diagnosticResult.getItems()) {
-
             for (Action action : item.getActions()) {
                 if (withinRange(diagnosticResult.getDiagnostic().getRange(), convertRange(action.getRange()))) {
-
-                    String replacement = action.getName();
-
-                    CodeAction codeAction = new CodeAction("Update token to \'" + replacement + "\'");
-                    codeAction.setKind(CodeActionKind.QuickFix);
-                    codeAction.setDiagnostics(Lists.newArrayList(diagnosticResult.getDiagnostic()));
-
-                    TextEdit edit = new TextEdit(diagnosticResult.getDiagnostic().getRange(), action.getValue());
-                    WorkspaceEdit workspaceEdit = new WorkspaceEdit();
-
-                    Map<String, List<TextEdit>> changes = Maps.newLinkedHashMap();
-                    changes.put(params.getTextDocument().getUri(), Lists.newArrayList(edit));
-                    workspaceEdit.setChanges(changes);
-
-                    codeAction.setEdit(workspaceEdit);
-
+                    String title = "Update token to \'" + action.getName() + "\'";
+                    Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+                    CodeAction codeAction = buildCodeAction(params, action, diagnostic, title, diagnostic.getRange(), action.getValue());
                     actions.add(Either.forRight(codeAction));
                 }
             }
@@ -148,28 +167,18 @@ public class CodeActionConverter {
     }
 
     private List<Either<Command, CodeAction>> createDeprecatedTokenCodeAction(CodeActionParams params,
-                                                                              DiagnosticResult diagnostic) {
+                                                                              DiagnosticResult diagnosticResult) {
         List<Either<Command, CodeAction>> actions = Lists.newArrayList();
 
-        for (Item item : diagnostic.getItems()) {
-            Action action = item.getActions().iterator().next();
-
-            String type = (action.getFileType().orElse(MARKUP).equals(STYLE)) ? "design token" : "utility class";
-
-            CodeAction codeAction = new CodeAction("Remove " + type + " \'" + action.getName() + "\'");
-            codeAction.setKind(CodeActionKind.QuickFix);
-            codeAction.setDiagnostics(Lists.newArrayList(diagnostic.getDiagnostic()));
-
-            TextEdit edit = new TextEdit(diagnostic.getDiagnostic().getRange(),
-                    action.getValue() == null ? "" : action.getValue());
-            WorkspaceEdit workspaceEdit = new WorkspaceEdit();
-
-            Map<String, List<TextEdit>> changes = Maps.newLinkedHashMap();
-            changes.put(params.getTextDocument().getUri(), Lists.newArrayList(edit));
-            workspaceEdit.setChanges(changes);
-
-            codeAction.setEdit(workspaceEdit);
-            actions.add(Either.forRight(codeAction));
+        for (Item item : diagnosticResult.getItems()) {
+            for (Action action : item.getActions()) {
+                String type = (action.getFileType().orElse(MARKUP).equals(STYLE)) ? "design token" : "utility class";
+                String title = "Remove " + type + " \'" + action.getName() + "\'";
+                Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+                CodeAction codeAction = buildCodeAction(params, action, diagnostic, title, diagnostic.getRange(), action.getValue() == null ? "" : action.getValue());
+                actions.add(Either.forRight(codeAction));
+                actions.add(Either.forRight(codeAction));
+            }
         }
         return actions;
     }
