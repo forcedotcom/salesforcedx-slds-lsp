@@ -176,6 +176,43 @@ public class RecommendationTests {
         }
     }
 
+    @Nested
+    class MOBILE {
+        @Test
+        void nonMobileFriendlyToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><lightning-datatable></lightning-datatable></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = new Range(new Position(0,10), new Position(0, 53));
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "lightning-datatable is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-datatable></lightning-datatable>");
+        }
+
+        @Test
+        void nonMobileFriendlyKebabCaseToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><lightning-tree-grid></lightning-tree-grid></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = new Range(new Position(0,10), new Position(0, 53));
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "lightning-tree-grid is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-tree-grid></lightning-tree-grid>");
+        }
+
+        @Test
+        void mobileFriendlyToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template><lightning-accordion></lightning-accordion></template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
+        }
+    }
+
     private void assertAction(CodeAction action, String expectedTitle, String expectedNewText) {
         assertThat(action.getTitle(), Matchers.is(expectedTitle));
         assertThat(action.getKind(), Matchers.is(CodeActionKind.QuickFix));
