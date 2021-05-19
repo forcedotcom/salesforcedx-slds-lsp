@@ -161,6 +161,19 @@ public class RecommendationTests {
             CodeAction action = getCodeAction(RANGE, diagnosticResults);
             assertAction(action, "Remove design token 'testing'", "");
         }
+
+        @Test
+        void markupClassRecommendation() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<aura:component><div class=\"slds-border--right\">Hello World</div></aura:component>");
+            Entry entry = createMarkupEntry( Entry.EntityType.AURA, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            Range range = diagnosticResults.get(0).getDiagnostic().getRange();
+
+            CodeAction action = getCodeAction(range, diagnosticResults);
+            assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
+        }
     }
 
     @Nested
