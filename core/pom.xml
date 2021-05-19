@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.salesforce.slds</groupId>
         <artifactId>common</artifactId>
-        <version>0.0.8</version>
+        <version>0.0.9</version>
     </parent>
 
     <groupId>com.salesforce.slds</groupId>
     <artifactId>core</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
 
     <dependencies>
         <dependency>
