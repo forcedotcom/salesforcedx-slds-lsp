@@ -12,9 +12,9 @@ import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.lsp.services.interfaces.StateService;
-import com.salesforce.slds.validation.aggregators.SimpleAggregator;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
+import com.salesforce.slds.validation.aggregators.SimpleAggregator;
 import com.salesforce.slds.validation.processors.SortAndFilterProcessor;
 import com.salesforce.slds.validation.runners.ValidateRunner;
 import com.salesforce.slds.validation.validators.interfaces.Validator;
@@ -24,16 +24,13 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.print.DocFlavor;
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class Diagnoser {
