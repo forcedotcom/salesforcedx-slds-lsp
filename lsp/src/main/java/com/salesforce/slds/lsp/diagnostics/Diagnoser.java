@@ -12,9 +12,9 @@ import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.lsp.services.interfaces.StateService;
-import com.salesforce.slds.validation.aggregators.SimpleAggregator;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
+import com.salesforce.slds.validation.aggregators.SimpleAggregator;
 import com.salesforce.slds.validation.processors.SortAndFilterProcessor;
 import com.salesforce.slds.validation.runners.ValidateRunner;
 import com.salesforce.slds.validation.validators.interfaces.Validator;
@@ -65,8 +65,17 @@ public class Diagnoser {
 
             runner.run();
 
+            /**
+             * Handles URI variation between different FileSystem format.
+             * `file:///c%3A/...` - Windows OS
+             * `file:/c:/...` - Windows OS
+             * `file:///...` - Mac OS
+             * `file:/...` - Mac OS
+             */
+            File itemFile = new File(URI.create(item.getUri()).getPath());
+
             Optional<Entry> result = bundle.getEntries().stream()
-                    .filter(entry -> entry.getPath().equalsIgnoreCase(item.getUri())).findFirst();
+                    .filter(entry -> new File(URI.create(entry.getPath()).getPath()).equals(itemFile)).findFirst();
 
             List<DiagnosticResult> diagnostics = converter.convert(result.get());
             diagnosticRegistry.put(item.getUri(), diagnostics);
@@ -97,7 +106,7 @@ public class Diagnoser {
                 if (item != null) {
                     bundle.getEntries().add(createEntry(item));
                 } else {
-                    bundle.getEntries().add(createEntry( f.toURI().toString(), Files.readAllLines(f.toPath())));
+                    bundle.getEntries().add(createEntry(f.toURI().toString(), Files.readAllLines(f.toPath())));
                 }
             }
         }
