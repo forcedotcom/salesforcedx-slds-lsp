@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static com.salesforce.slds.validation.validators.impl.recommendation.MobileFriendlyValidator.NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ServerConfiguration.class)
@@ -187,7 +188,7 @@ public class RecommendationTests {
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
             Range range = new Range(new Position(0,10), new Position(0, 53));
             CodeAction action = getCodeAction(range, diagnosticResults);
-            assertAction(action, "lightning-datatable is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-datatable></lightning-datatable>");
+            assertAction(action, "lightning-datatable" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE, "<lightning-datatable></lightning-datatable>");
         }
 
         @Test
@@ -199,7 +200,7 @@ public class RecommendationTests {
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
             Range range = new Range(new Position(0,10), new Position(0, 53));
             CodeAction action = getCodeAction(range, diagnosticResults);
-            assertAction(action, "lightning-tree-grid is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead.", "<lightning-tree-grid></lightning-tree-grid>");
+            assertAction(action, "lightning-tree-grid" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE, "<lightning-tree-grid></lightning-tree-grid>");
         }
 
         @Test

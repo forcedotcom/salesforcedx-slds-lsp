@@ -30,6 +30,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static com.salesforce.slds.validation.validators.impl.recommendation.MobileFriendlyValidator.NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = SldsConfiguration.class)
@@ -74,9 +75,9 @@ public class MobileValidationTest {
         assertThat(results.get("lightning-flow-support"),
                 Matchers.hasItem(new Range(new Location(3, 4), new Location(3, 53))));
         assertThat(messages.get("lightning-datatable"),
-                Matchers.equalTo("lightning-datatable is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead."));
+                Matchers.equalTo("lightning-datatable" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
         assertThat(messages.get("lightning-flow-support"),
-                Matchers.equalTo("lightning-flow-support is known to have issues on mobile devices. Consider using a replacement or create a custom component to use instead."));
+                Matchers.equalTo("lightning-flow-support" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
     }
 
     @Test
