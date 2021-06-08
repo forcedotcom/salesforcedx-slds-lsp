@@ -34,6 +34,11 @@ import java.util.stream.IntStream;
 @Component
 @Lazy
 public class MobileFriendlyValidator implements RecommendationValidator, InitializingBean {
+    public static final String NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE =
+            " is known to have issues on mobile devices. Consider these options:\n" +
+            "• Find a mobile-ready replacement in the Component Reference of the Lightning Web Components Dev Guide. Filter the list using \"Salesforce Mobile App\" as the target.\n"+
+            "• Create a custom component that complies with \"Follow Accessible Mobile Design Guidelines\" in the Lightning Web Components Dev Guide.";
+
     Map<String, List<String>> componentsRegistry;
 
     @Override
@@ -53,9 +58,7 @@ public class MobileFriendlyValidator implements RecommendationValidator, Initial
 
                     Action action = Action.builder()
                             .value(htmlElement.getContent().outerHtml()).range(htmlElement.getRange())
-                            .description(tag
-                                    + " is known to have issues on mobile devices. Consider using a replacement " +
-                                    "or create a custom component to use instead.")
+                            .description(tag + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE)
                             .name(tag)
                             .actionType(ActionType.NONE)
                             .build();
