@@ -68,22 +68,61 @@ public abstract class NumberType implements Type {
     private Set<String> generateNumbers(Optional<String> sign, String number, Optional<String> unit) {
         Set<String> results = new LinkedHashSet<>();
 
-        if (unit.isPresent() && unit.get().contentEquals("px")) {
-            Double num = Double.parseDouble(number) / 16.0;
+        // Using size conversion from this website:
+        // https://websemantics.uk/tools/font-size-conversion-pixel-point-em-rem-percent/
+        if (unit.isPresent()) {
+            String unitContent = unit.get();
             DecimalFormat df = new DecimalFormat();
             df.setMaximumFractionDigits(3);
             df.setMinimumFractionDigits(0);
+            Double parsedNumber = Double.parseDouble(number);
 
-            results.add(generateString(sign, df.format(num), Optional.of("rem")));
-        }
+            if (unitContent.contentEquals("px")) {
+                Double num = parsedNumber / 16.0;
+                results.add(generateString(sign, df.format(num), Optional.of("rem")));
+                results.add(generateString(sign, df.format(num), Optional.of("em")));
 
-        if (unit.isPresent() && unit.get().contentEquals("rem")) {
-            Double num = Double.parseDouble(number) * 16;
-            DecimalFormat df = new DecimalFormat();
-            df.setMaximumFractionDigits(3);
-            df.setMinimumFractionDigits(0);
+                num = num * 100;
+                results.add(generateString(sign, df.format(num), Optional.of("%")));
 
-            results.add(generateString(sign, df.format(num), Optional.of("px")));
+                num = parsedNumber * 0.75;
+                results.add(generateString(sign, df.format(num), Optional.of("pt")));
+            }
+
+            if (unitContent.contentEquals("rem") || unit.get().contentEquals("em")) {
+                Double num = parsedNumber * 16;
+                results.add(generateString(sign, df.format(num), Optional.of("px")));
+
+                num = num * 0.75;
+                results.add(generateString(sign, df.format(num), Optional.of("pt")));
+
+                num = parsedNumber * 100;
+                results.add(generateString(sign, df.format(num), Optional.of("%")));
+            }
+
+            if (unitContent.contentEquals("pt")) {
+                Double num = parsedNumber / 0.75;
+                results.add(generateString(sign, df.format(num), Optional.of("px")));
+
+                num = num * 0.75;
+                results.add(generateString(sign, df.format(num), Optional.of("pt")));
+
+                num = parsedNumber * 100;
+                results.add(generateString(sign, df.format(num), Optional.of("%")));
+            }
+
+            if (unitContent.contentEquals("%")) {
+                Double num = parsedNumber / 100;
+                results.add(generateString(sign, df.format(num), Optional.of("rem")));
+                results.add(generateString(sign, df.format(num), Optional.of("em")));
+
+                Double numInRem = num;
+                num = numInRem * 16;
+                results.add(generateString(sign, df.format(num), Optional.of("px")));
+
+                num = numInRem * 0.75;
+                results.add(generateString(sign, df.format(num), Optional.of("pt")));
+            }
         }
 
         results.add(generateString(sign, number, unit));

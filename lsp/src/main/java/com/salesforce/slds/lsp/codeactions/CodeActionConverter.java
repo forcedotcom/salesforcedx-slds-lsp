@@ -17,7 +17,7 @@ import com.salesforce.slds.lsp.diagnostics.Identifier.DiagnosticCode;
 import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.shared.models.recommendation.Action;
-
+import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import org.eclipse.lsp4j.CodeAction;
 import org.eclipse.lsp4j.CodeActionKind;
@@ -59,8 +59,9 @@ public class CodeActionConverter {
                         return createAlternativeTokenCodeAction(params, info.get());
                     case UTILITY_TOKENS:
                         return createUtilityTokenCodeAction(params, info.get());
-                    case NON_MOBILE_FRIENDLY:
-                        return createNonMobileFriendlyBaseComponentCodeAction(params, info.get());
+                    case MOBILE_SLDS:
+                        // Validation for mobile should only show warning and not
+                        // try to recommend any overriding code action.
                     default:
                         break;
                 }
@@ -133,21 +134,6 @@ public class CodeActionConverter {
         return codeAction;
     }
 
-    private List<Either<Command, CodeAction>> createNonMobileFriendlyBaseComponentCodeAction(CodeActionParams params,
-                                                                               DiagnosticResult diagnosticResult) {
-        List<Either<Command, CodeAction>> actions = Lists.newArrayList();
-
-        for (Item item : diagnosticResult.getItems()) {
-            for (Action action : item.getActions()) {
-                Diagnostic diagnostic = diagnosticResult.getDiagnostic();
-                CodeAction codeAction = buildCodeAction(params, action, diagnostic, action.getDescription(), diagnostic.getRange(), action.getValue());
-                actions.add(Either.forRight(codeAction));
-            }
-        }
-
-        return actions;
-    }
-
     private List<Either<Command, CodeAction>> createAlternativeTokenCodeAction(CodeActionParams params,
                                                                                DiagnosticResult diagnosticResult) {
         List<Either<Command, CodeAction>> actions = Lists.newArrayList();
@@ -155,10 +141,12 @@ public class CodeActionConverter {
         for (Item item : diagnosticResult.getItems()) {
             for (Action action : item.getActions()) {
                 if (withinRange(diagnosticResult.getDiagnostic().getRange(), convertRange(action.getRange()))) {
-                    String title = "Update token to \'" + action.getName() + "\'";
-                    Diagnostic diagnostic = diagnosticResult.getDiagnostic();
-                    CodeAction codeAction = buildCodeAction(params, action, diagnostic, title, diagnostic.getRange(), action.getValue());
-                    actions.add(Either.forRight(codeAction));
+                    if (action.getActionType() != ActionType.NONE) {
+                        String title = "Update token to \'" + action.getName() + "\'";
+                        Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+                        CodeAction codeAction = buildCodeAction(params, action, diagnostic, title, diagnostic.getRange(), action.getValue());
+                        actions.add(Either.forRight(codeAction));
+                    }
                 }
             }
         }

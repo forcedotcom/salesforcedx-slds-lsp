@@ -17,6 +17,7 @@ import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 import com.salesforce.slds.validation.runners.ValidateRunner;
+import com.salesforce.slds.validation.validators.impl.recommendation.MobileSLDS_CSSValidator;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -373,6 +374,145 @@ public class CSSValidationTest {
             assertThat(action.getValue(), Matchers.is("var(--lwc-spacingNone, 0)"));
             assertThat(action.getRange().getStart().getColumn(), Matchers.greaterThan(100));
         });
+    }
+
+    @Test
+    void lwcVarTokenSmallerThanFontSize4() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(".cssClazz1 {font-size: var(--lwc-fontSize3, 0.25rem);}")
+                .append(System.lineSeparator())
+                .append(".cssClazz2 {font-size: var(--lwc-fontSize2);}")
+                .append(System.lineSeparator())
+                .append(".cssClazz2 {font-size: var(--lwc-fontSize4);}")
+                .append(System.lineSeparator())
+                .append(".cssClazz2 {font-size: var(--lwc-fontSize5);}");
+        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+
+        // Test with a fallback value
+        List<Recommendation> recommendations = groupedRecommendation.get("var(--lwc-fontSize3, 0.25rem)");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        Set<Action> actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        Action action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(0, 33), new Location(0, 42))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_4_OR_LARGER));
+
+        // Test with only a specific value
+        recommendations = groupedRecommendation.get("var(--lwc-fontSize2)");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(1, 33), new Location(1, 42))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_4_OR_LARGER));
+
+        // No recommendation because size is fontSize4
+        recommendations = groupedRecommendation.get("var(--lwc-fontSize4)");
+        assertThat(recommendations, Matchers.nullValue());
+
+        // No recommendation because size is bigger than fontSize4
+        recommendations = groupedRecommendation.get("var(--lwc-fontSize5)");
+        assertThat(recommendations, Matchers.nullValue());
+    }
+
+    @Test
+    void fontSmallerThan14px() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(".cssClazz1 {font-size: 13px;}");
+        builder.append(System.lineSeparator());
+        builder.append(".cssClazz2 {font: italic small-caps bold 13px Georgia, serif;}");
+        builder.append(System.lineSeparator());
+        builder.append(".cssClazz3 {font-size: 14px;}");
+        builder.append(System.lineSeparator());
+        builder.append(".cssClazz4 {font: italic small-caps bold 14px Georgia, serif;}");
+        builder.append(System.lineSeparator());
+        builder.append(".cssClazz5 {font: italic small-caps bold large Georgia, serif;}");
+        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+
+        List<Recommendation> recommendations = groupedRecommendation.get("13px");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        Set<Action> actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        Action action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(0, 23), new Location(0, 25))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_14PX_OR_LARGER));
+
+        recommendations = groupedRecommendation.get("italic small-caps bold 13px Georgia, serif");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(1, 41), new Location(1, 43))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_14PX_OR_LARGER));
+
+        recommendations = groupedRecommendation.get("14px");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        // Recommendations from other validators besides Mobile SLDS validator
+        actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(3));
+
+        // Recommendations from other validators besides Mobile SLDS validator
+        recommendations = groupedRecommendation.get("italic small-caps bold 14px Georgia, serif");
+        actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(3));
+
+        // "large" won't trigger any validator to issue a warning
+        recommendations = groupedRecommendation.get("italic small-caps bold large Georgia, serif");
+        assertThat(recommendations, Matchers.nullValue());
+    }
+
+    @Test
+    void noTruncation() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(".cssClazz1 {text-overflow: ellipsis;}")
+                .append(System.lineSeparator())
+                .append(".cssClazz2 {white-space: nowrap;}")
+                .append(System.lineSeparator())
+                .append(".cssClazz3 {text-overflow: clip;}")
+                .append(System.lineSeparator())
+                .append(".cssClazz4 {white-space: normal;}");
+        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+
+        List<Recommendation> recommendations = groupedRecommendation.get("nowrap");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        Set<Action> actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        Action action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(1, 25), new Location(1, 31))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.AVOID_TRUNCATION));
+
+        recommendations = groupedRecommendation.get("ellipsis");
+        assertThat(recommendations, Matchers.iterableWithSize(1));
+
+        actions = extractActions(recommendations);
+        assertThat(actions, Matchers.iterableWithSize(1));
+        action = actions.iterator().next();
+        assertThat(action.getRange(),
+                Matchers.is(new Range(new Location(0, 27), new Location(0, 35))));
+        assertThat(action.getDescription(),
+                Matchers.equalTo(MobileSLDS_CSSValidator.AVOID_TRUNCATION));
+
+        recommendations = groupedRecommendation.get("clip");
+        assertThat(recommendations, Matchers.nullValue());
+
+        recommendations = groupedRecommendation.get("normal");
+        assertThat(recommendations, Matchers.nullValue());
     }
 
     private Entry createEntry(String path, String content) {

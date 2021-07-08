@@ -52,31 +52,28 @@ public class DiagnosticConverter {
         diagnostics.addAll(createInvalidTokenDiagnostics(entityType, recommendation));
         diagnostics.addAll(createUtilityTokenDiagnostics(entityType, recommendation));
         diagnostics.addAll(createDesignTokenDiagnostics(entityType, recommendation));
-        diagnostics.addAll(createMobileDiagnostics(entityType, recommendation));
+        diagnostics.addAll(createMobileSLDSDiagnostics(entityType, recommendation));
 
         return new ArrayList<>(diagnostics);
     }
 
-    private List<DiagnosticResult> createMobileDiagnostics(Entry.EntityType entityType, Recommendation recommendation) {
+    private List<DiagnosticResult> createMobileSLDSDiagnostics(Entry.EntityType entityType, Recommendation recommendation) {
         Set<DiagnosticResult> diagnostics = new LinkedHashSet<>();
 
         DiagnosticBuilder diagnosticBuilder = new DiagnosticBuilder().source(Identifier.SOURCE)
                 .severity(DiagnosticSeverity.Warning)
-                .code(DiagnosticCode.NON_MOBILE_FRIENDLY.toString());
+                .code(DiagnosticCode.MOBILE_SLDS.toString());
 
-        if (recommendation.getElement() != null) {
+        for (Item item : recommendation.getItems()) {
+            for (Action action : item.getActions()) {
+                if (action.getActionType().equals(ActionType.NONE)) {
+                    diagnosticBuilder.message(action.getDescription())
+                            .start(action.getRange().getStart().getLine(), action.getRange().getStart().getColumn())
+                            .end(action.getRange().getEnd().getLine(), action.getRange().getEnd().getColumn());
 
-            for (Item item : recommendation.getItems()) {
-                for (Action action : item.getActions()) {
-                    if (action.getActionType().equals(ActionType.NONE)) {
-                        diagnosticBuilder.message(action.getDescription())
-                                .start(action.getRange().getStart().getLine(), action.getRange().getStart().getColumn())
-                                .end(action.getRange().getEnd().getLine(), action.getRange().getEnd().getColumn());
-
-                        DiagnosticResult diagnosticResult = new DiagnosticResult(diagnosticBuilder.build(), recommendation,
-                                null, entityType, Lists.newArrayList(item));
-                        diagnostics.add(diagnosticResult);
-                    }
+                    DiagnosticResult diagnosticResult = new DiagnosticResult(diagnosticBuilder.build(), recommendation,
+                            null, entityType, Lists.newArrayList(item));
+                    diagnostics.add(diagnosticResult);
                 }
             }
         }

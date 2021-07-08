@@ -8,7 +8,11 @@ import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
+import com.salesforce.slds.shared.models.recommendation.Action;
+import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.validation.runners.ValidateRunner;
+import com.salesforce.slds.validation.validators.impl.recommendation.MobileSLDS_MarkupLabelValidator;
+import com.salesforce.slds.validation.validators.impl.recommendation.MobileSLDS_CSSValidator;
 import org.eclipse.lsp4j.*;
 import org.eclipse.lsp4j.jsonrpc.messages.Either;
 import org.hamcrest.Matchers;
@@ -24,10 +28,11 @@ import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static com.salesforce.slds.validation.validators.impl.recommendation.MobileFriendlyValidator.NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE;
+import static com.salesforce.slds.validation.validators.impl.recommendation.MobileSLDS_MarkupFriendlyValidator.NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ServerConfiguration.class)
@@ -186,9 +191,13 @@ public class RecommendationTests {
             Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = new Range(new Position(0,10), new Position(0, 53));
-            CodeAction action = getCodeAction(range, diagnosticResults);
-            assertAction(action, "lightning-datatable" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE, "<lightning-datatable></lightning-datatable>");
+            assertThat(diagnosticResults.size(), Matchers.equalTo(1));
+
+            DiagnosticResult diagnosticResult = diagnosticResults.get(0);
+            Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+            Range range = diagnostic.getRange();
+            assertThat(range, Matchers.equalTo(new Range(new Position(0,10), new Position(0, 53))));
+            assertThat(diagnostic.getMessage(), Matchers.equalTo("lightning-datatable" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
         }
 
         @Test
@@ -198,9 +207,20 @@ public class RecommendationTests {
             Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
-            Range range = new Range(new Position(0,10), new Position(0, 53));
-            CodeAction action = getCodeAction(range, diagnosticResults);
-            assertAction(action, "lightning-tree-grid" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE, "<lightning-tree-grid></lightning-tree-grid>");
+            DiagnosticResult diagnosticResult = diagnosticResults.get(0);
+            Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+            Range range = diagnostic.getRange();
+            assertThat(range, Matchers.equalTo(new Range(new Position(0,10), new Position(0, 53))));
+
+            List<Item> items = diagnosticResults.get(0).getItems();
+            assertThat(items.size(), Matchers.equalTo(1));
+
+            Set<Action> actions = items.get(0).getActions();
+            assertThat(actions.size(), Matchers.equalTo(1));
+            Action action = actions.stream().findFirst().get();
+
+            String description = action.getDescription();
+            assertThat(description, Matchers.equalTo("lightning-tree-grid" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
         }
 
         @Test
@@ -210,6 +230,159 @@ public class RecommendationTests {
             Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
+        }
+
+        @Test
+        void elementsWithoutLabels() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template>")
+                    .append("   <input>")
+                    .append("   <a><img></a>")
+                    .append("   <lightning-button-icon></lightning-button-icon>")
+                    .append("</template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            assertThat(diagnosticResults.size(), Matchers.equalTo(3));
+            diagnosticResults.forEach(diagnosticResult -> {
+                List<Item> items = diagnosticResult.getItems();
+                assertThat(items, Matchers.hasSize(1));
+                Set<Action> actions = items.get(0).getActions();
+                assertThat(actions, Matchers.hasSize(1));
+                Action action = actions.iterator().next();
+                String description = action.getDescription();
+                assertThat(description, Matchers.equalTo(MobileSLDS_MarkupLabelValidator.REQUIRE_LABELS));
+            });
+        }
+
+        @Test
+        void elementsWithLabels() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("<template>")
+                    .append("   <label><input></label>")
+                    .append("   <label for=\"myImg\"></label><a><img id=\"myImg\"></a>")
+                    .append("   <label><lightning-button-icon></lightning-button-icon></label>")
+                    .append("</template>");
+            Entry entry = createEntry("test.html", Entry.EntityType.LWC, builder.toString());
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
+        }
+
+        @Test
+        void smallFontSizeToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {font-size: var(--lwc-fontSize3);}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
+            assertThat(diagnosticResults.size(), Matchers.equalTo(1));
+            diagnosticResults.forEach(diagnosticResult -> {
+                List<Item> items = diagnosticResult.getItems();
+                assertThat(items, Matchers.hasSize(1));
+                Set<Action> actions = items.get(0).getActions();
+                assertThat(actions, Matchers.hasSize(1));
+                Action action = actions.iterator().next();
+                String description = action.getDescription();
+                assertThat(description, Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_4_OR_LARGER));
+            });
+        }
+
+        @Test
+        void acceptableFontSizeToken() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {font-size: var(--lwc-fontSize4);}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
+        }
+
+        @Test
+        void smallFontSize() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {")
+                    .append(System.lineSeparator())
+                    .append(    "font-size: 13px;")
+                    .append(System.lineSeparator())
+                    .append(    "font: italic small-caps bold 13px Georgia, serif;")
+                    .append(System.lineSeparator())
+                    .append("}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
+            assertThat(diagnosticResults.size(), Matchers.equalTo(2));
+            diagnosticResults.forEach(diagnosticResult -> {
+                List<Item> items = diagnosticResult.getItems();
+                assertThat(items, Matchers.hasSize(1));
+                Set<Action> actions = items.get(0).getActions();
+                assertThat(actions, Matchers.hasSize(1));
+                Action action = actions.iterator().next();
+                String description = action.getDescription();
+                assertThat(description, Matchers.equalTo(MobileSLDS_CSSValidator.USE_FONT_SIZE_14PX_OR_LARGER));
+            });
+        }
+
+        @Test
+        void acceptableFontSize() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {")
+                    .append(System.lineSeparator())
+                    .append("font-size: 15px;")
+                    .append(System.lineSeparator())
+                    .append("font: italic small-caps bold 15px Georgia, serif;")
+                    .append(System.lineSeparator())
+                    .append("}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
+            assertThat(diagnosticResults.size(), Matchers.equalTo(0));
+        }
+
+        @Test
+        void explicitTruncation() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {")
+                    .append(System.lineSeparator())
+                    .append(    "white-space: nowrap;")
+                    .append(System.lineSeparator())
+                    .append(    "text-overflow: ellipsis;")
+                    .append(System.lineSeparator())
+                    .append("}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
+            assertThat(diagnosticResults.size(), Matchers.equalTo(2));
+            diagnosticResults.forEach(diagnosticResult -> {
+                List<Item> items = diagnosticResult.getItems();
+                assertThat(items, Matchers.hasSize(1));
+                Set<Action> actions = items.get(0).getActions();
+                assertThat(actions, Matchers.hasSize(1));
+                Action action = actions.iterator().next();
+                String description = action.getDescription();
+                assertThat(description, Matchers.equalTo(MobileSLDS_CSSValidator.AVOID_TRUNCATION));
+            });
+        }
+
+        @Test
+        void noTruncation() {
+            String warning = "Avoid truncating labels on mobile.";
+            StringBuilder builder = new StringBuilder();
+            builder.append(".THIS {")
+                    .append(System.lineSeparator())
+                    .append(    "white-space: normal;")
+                    .append(System.lineSeparator())
+                    .append(    "text-overflow: clip;")
+                    .append(System.lineSeparator())
+                    .append("}");
+            Entry entry = createEntry("test.css", Entry.EntityType.LWC, builder.toString());
+
+            List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
+
             assertThat(diagnosticResults.size(), Matchers.equalTo(0));
         }
     }
