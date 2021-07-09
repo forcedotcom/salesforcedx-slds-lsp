@@ -9,8 +9,9 @@ package com.salesforce.slds.shared.models.annotations;
 
 public enum AnnotationType {
 
-    ALLOW("sldsValidatorAllow"),
-    IGNORE("sldsValidatorIgnore"),
+    ALLOW("sldsValidatorAllow"), // enables recommendation validation
+    IGNORE("sldsValidatorIgnore"), // disables recommendation validation
+    IGNORE_NEXT_LINE("sldsValidatorIgnoreNextLine"), // disables recommendation validation only for the next immediate line (even if an element is defined across multiple lines)
     WARN("sldsValidatorWarn"),
     NONE(null);
 
@@ -25,7 +26,7 @@ public enum AnnotationType {
     }
 
     public boolean validate() {
-        return this != ALLOW;
+        return this != IGNORE && this != IGNORE_NEXT_LINE;
     }
 
 }

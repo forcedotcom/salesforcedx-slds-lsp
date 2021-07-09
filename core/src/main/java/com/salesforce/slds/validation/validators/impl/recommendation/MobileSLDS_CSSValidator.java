@@ -12,13 +12,16 @@ import com.salesforce.slds.shared.RegexPattern;
 import com.salesforce.slds.shared.converters.Converter;
 import com.salesforce.slds.shared.converters.TypeConverters;
 import com.salesforce.slds.shared.converters.tokens.VarTokenType;
+import com.salesforce.slds.shared.models.annotations.AnnotationType;
 import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.*;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
+import com.salesforce.slds.shared.models.recommendation.RelatedInformation;
 import com.salesforce.slds.shared.utils.CssFontShortHandUtilities;
 import com.salesforce.slds.tokens.models.DesignToken;
 import com.salesforce.slds.tokens.registry.TokenRegistry;
@@ -53,6 +56,10 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
     public List<Recommendation> matches(Entry entry, Bundle  bundle, Context context) {
         List<Recommendation> recommendations = new ArrayList<>();
 
+        if (!context.isEnabled(ContextKey.SLDS_MOBILE_VALIDATION)) {
+            return recommendations;
+        }
+
         List<Input> inputs = entry.getInputs().stream()
                 .filter(input -> input.getType() == Input.Type.STYLE).collect(Collectors.toList());
 
@@ -60,7 +67,7 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
             List<Style> styles = input.asRuleSet().getStylesWithAnnotationType();
             recommendations.addAll(styles.stream()
                     .filter(Style::validate)
-                    .map(style -> process(style, context, entry.getEntityType(), entry.getRawContent()))
+                    .map(style -> process(style, context, entry.getRawContent()))
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList()));
         }
@@ -71,11 +78,12 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
     /**
      * Process CSS RuleSet
      * @param style
+     * @param context
      * @param rawContents
      * @return Recommendation
      */
-    private Recommendation process(Style style, Context context, Entry.EntityType entityType, List<String> rawContents) {
-        Set<Item> items = provideRecommendations(style, context, entityType, rawContents);
+    private Recommendation process(Style style, Context context, List<String> rawContents) {
+        Set<Item> items = provideRecommendations(style, context, rawContents);
         if (items.isEmpty() == false) {
             Recommendation.RecommendationBuilder builder = Recommendation.builder();
             builder.input(style).items(items);
@@ -103,12 +111,12 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
     /**
      * Provide recommendations
      * @param style
+     * @param context
      * @param rawContents
      * @return
      */
-    private Set<Item> provideRecommendations(Style style, Context context, Entry.EntityType entityType, List<String> rawContents) {
+    private Set<Item> provideRecommendations(Style style, Context context, List<String> rawContents) {
         Set<Item> items = new LinkedHashSet<>();
-        Action.ActionBuilder actionBuilder = Action.builder().fileType(Input.Type.STYLE);
         String styleValue = style.getValue();
 
         // Check that SLDS token font size smaller than 14px(fontSize4) is not used.
@@ -129,11 +137,7 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
                     String size = matcher.group("size");
                     int fontSize = Integer.parseInt(size);
                     if (fontSize > 0 && fontSize < 4) {
-                        Range range = cssValidationUtilities.getValueSpecificRange(value, style, rawContents);
-                        actionBuilder.name(ACTION_NAME)
-                                .description(USE_FONT_SIZE_4_OR_LARGER)
-                                .actionType(ActionType.NONE);
-                        items.add(new Item(style.getValue(), actionBuilder.range(range).build()));
+                        addActionItemsForSmallTokenFont(value, styleValue, style, rawContents, items);
                     }
                 }
             }
@@ -141,30 +145,31 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
 
         // Check that font size smaller than 14px is not used.
         if (style.getProperty().equals("font-size")) {
-            addActionItemsForSmallFonts(styleValue, style, rawContents, actionBuilder, items);
+            addActionItemsForSmallFonts(styleValue, style, rawContents, items);
         }
 
         if (style.getProperty().equals("font")) {
             CssFontShortHandUtilities fontShortHandUtilities = new CssFontShortHandUtilities(styleValue);
             String fontSize = fontShortHandUtilities.getFontSize();
             if (fontSize != null) {
-                addActionItemsForSmallFonts(fontSize, style, rawContents, actionBuilder, items);
+                addActionItemsForSmallFonts(fontSize, style, rawContents, items);
             }
         }
 
         // Check that word wrapping is not explicitly specified.
         if (isTextOverflowEllipsis(style) || isWhiteSpaceNowrap(style)) {
-            Range range = cssValidationUtilities.getValueSpecificRange(styleValue, style, rawContents);
-            actionBuilder.name(ACTION_NAME)
-                    .description(AVOID_TRUNCATION)
-                    .actionType(ActionType.NONE);
-            items.add(new Item(style.getValue(), actionBuilder.range(range).build()));
+            addActionItemsForWordWrapping(styleValue, style, rawContents, items);
         }
 
         return items;
     }
 
-    private void addActionItemsForSmallFonts(String cssValue, Style style, List<String> rawContents, Action.ActionBuilder actionBuilder, Set<Item> items) {
+    private void addActionItemsForSmallTokenFont(String value, String cssValue, Style style, List<String> rawContents, Set<Item> items) {
+        Range range = cssValidationUtilities.getValueSpecificRange(value, style, rawContents);
+        addActionItems(cssValue, style, rawContents, items, USE_FONT_SIZE_4_OR_LARGER, range);
+    }
+
+    private void addActionItemsForSmallFonts(String cssValue, Style style, List<String> rawContents, Set<Item> items) {
         Range range;
         String fontAbsoluteSize = "((?:xx?-)?small)";
         Pattern pattern = Pattern.compile(fontAbsoluteSize);
@@ -177,12 +182,32 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
         }
 
         if (!range.equals(Range.EMPTY_RANGE)) {
-            actionBuilder.name(ACTION_NAME)
-                    .description(USE_FONT_SIZE_14PX_OR_LARGER)
-                    .actionType(ActionType.NONE);
-            items.add(new Item(style.getValue(), actionBuilder.range(range).build()));
+            addActionItems(cssValue, style, rawContents, items, USE_FONT_SIZE_14PX_OR_LARGER, range);
         }
     }
+
+    private void addActionItemsForWordWrapping(String cssValue, Style style, List<String> rawContents, Set<Item> items) {
+            Range range = cssValidationUtilities.getValueSpecificRange(cssValue, style, rawContents);
+            addActionItems(cssValue, style, rawContents, items, AVOID_TRUNCATION, range);
+    }
+
+    private void addActionItems(String cssValue, Style style, List<String> rawContents, Set<Item> items, String description, Range range) {
+        List<RelatedInformation> fullRangeInfo = new ArrayList<>();
+        fullRangeInfo.add(RelatedInformation.builder().range(style.getRange()).build());
+
+        Action action = Action.builder()
+                .value(cssValue)
+                .range(range)
+                .description(description)
+                .name(ACTION_NAME)
+                .relatedInformation(fullRangeInfo)
+                .actionType(ActionType.NONE)
+                .fileType(Input.Type.STYLE)
+                .build();
+        Item item = new Item(cssValue, action);
+        items.add(item);
+    }
+
     private Range getRangeForSmallFonts(String cssValue, Style style, List<String> rawContents) {
         Pattern pattern = Pattern.compile(RegexPattern.FONT_SIZE_PATTERN);
         Matcher matcher = pattern.matcher(cssValue);

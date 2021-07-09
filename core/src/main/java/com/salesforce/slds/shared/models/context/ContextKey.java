@@ -17,7 +17,8 @@ public enum ContextKey {
     INVALID,
     OVERRIDE,
     UTILITY_CLASS,
-    DESIGN_TOKEN;
+    DESIGN_TOKEN,
+    SLDS_MOBILE_VALIDATION;
 
     public static Optional<ContextKey> get(String name) {
         for (ContextKey key : values()) {

@@ -16,6 +16,8 @@ import com.salesforce.slds.lsp.diagnostics.Identifier;
 import com.salesforce.slds.lsp.diagnostics.Identifier.DiagnosticCode;
 import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
+import com.salesforce.slds.shared.models.annotations.AnnotationType;
+import com.salesforce.slds.shared.models.core.Input;
 import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
@@ -42,6 +44,9 @@ public class CodeActionConverter {
     @Autowired
     private TextDocumentRegistry documentRegistry;
 
+    public static final String FILE_IGNORE_SLDS_VALIDATION = "Ignore mobile SLDS validation for this file";
+    public static final String LINE_IGNORE_SLDS_VALIDATION = "Ignore mobile SLDS validation for this line";
+
     public List<Either<Command, CodeAction>> convert(CodeActionParams params) {
         List<DiagnosticResult> diagnosticResults = documentRegistry.getDiagnosticResults(params.getTextDocument().getUri());
 
@@ -60,8 +65,7 @@ public class CodeActionConverter {
                     case UTILITY_TOKENS:
                         return createUtilityTokenCodeAction(params, info.get());
                     case MOBILE_SLDS:
-                        // Validation for mobile should only show warning and not
-                        // try to recommend any overriding code action.
+                        return createNonMobileFriendlyCodeAction(params, info.get());
                     default:
                         break;
                 }
@@ -132,6 +136,46 @@ public class CodeActionConverter {
 
         codeAction.setEdit(workspaceEdit);
         return codeAction;
+    }
+
+    private List<Either<Command, CodeAction>> createNonMobileFriendlyCodeAction(CodeActionParams params, DiagnosticResult diagnosticResult) {
+        List<Either<Command, CodeAction>> actions = Lists.newArrayList();
+
+        for (Item item : diagnosticResult.getItems()) {
+            for (Action action : item.getActions()) {
+                Diagnostic diagnostic = diagnosticResult.getDiagnostic();
+                Optional<Input.Type> fileType = action.getFileType();
+                Boolean isStyle = fileType.isPresent() && fileType.get() == Input.Type.STYLE;
+
+                // Adding ignore action for entire file
+                if (!isStyle) {
+                    CodeAction ignoreFileCodeAction = buildCodeAction(
+                        params,
+                        action,
+                        diagnostic,
+                        CodeActionConverter.FILE_IGNORE_SLDS_VALIDATION,
+                        new Range(new Position(0,0), new Position(0, 0)),
+                        "<!-- " + AnnotationType.IGNORE.value() + " -->\n");
+                    actions.add(Either.forRight(ignoreFileCodeAction));
+                }
+
+                // Adding ignore action for a specific line
+                Range range = isStyle ? convertRange(action.getInformation().get(0).getRange()) : diagnostic.getRange();
+                int startColumn = range.getStart().getCharacter();
+                String indent = (startColumn > 0) ? String.format("%" + startColumn + "c", ' ') : "";
+                String ignoreNextLine = isStyle ?  "/* @" + AnnotationType.IGNORE.value() + " */" : "<!-- " + AnnotationType.IGNORE_NEXT_LINE.value() + " -->";
+                CodeAction ignoreLineCodeAction = buildCodeAction(
+                        params,
+                        action,
+                        diagnostic,
+                        CodeActionConverter.LINE_IGNORE_SLDS_VALIDATION,
+                        new Range(range.getStart(), range.getStart()),
+                        ignoreNextLine + "\n" + indent);
+                actions.add(Either.forRight(ignoreLineCodeAction));
+            }
+        }
+
+        return actions;
     }
 
     private List<Either<Command, CodeAction>> createAlternativeTokenCodeAction(CodeActionParams params,

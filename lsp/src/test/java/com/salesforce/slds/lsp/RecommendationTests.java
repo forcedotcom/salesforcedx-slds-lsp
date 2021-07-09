@@ -6,6 +6,7 @@ import com.salesforce.slds.lsp.diagnostics.DiagnosticConverter;
 import com.salesforce.slds.lsp.models.DiagnosticResult;
 import com.salesforce.slds.lsp.registries.DiagnosticResultRegistry;
 import com.salesforce.slds.lsp.registries.TextDocumentRegistry;
+import com.salesforce.slds.shared.models.annotations.AnnotationType;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.recommendation.Action;
@@ -32,6 +33,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static com.salesforce.slds.lsp.codeactions.CodeActionConverter.FILE_IGNORE_SLDS_VALIDATION;
+import static com.salesforce.slds.lsp.codeactions.CodeActionConverter.LINE_IGNORE_SLDS_VALIDATION;
 import static com.salesforce.slds.validation.validators.impl.recommendation.MobileSLDS_MarkupFriendlyValidator.NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE;
 
 @ExtendWith(SpringExtension.class)
@@ -72,7 +75,7 @@ public class RecommendationTests {
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
             Range range = diagnosticResults.get(0).getDiagnostic().getRange();
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(range, diagnosticResults).get(0);
             assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
         }
     }
@@ -87,7 +90,7 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Update token to 'fontSize2'", "var(--lwc-fontSize2)");
         }
 
@@ -99,7 +102,7 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Update token to 'fontSize2'",
                     "var(--lwc-fontSize2, 0.75rem)");
         }
@@ -112,7 +115,7 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Remove design token 'testing'", "0.6rem");
         }
 
@@ -125,7 +128,7 @@ public class RecommendationTests {
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
             Range range = diagnosticResults.get(0).getDiagnostic().getRange();
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(range, diagnosticResults).get(0);
             assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
         }
     }
@@ -140,7 +143,7 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Update token to 'fontSize2'", "t(fontSize2)");
         }
 
@@ -152,7 +155,7 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Update token to 'fontSize2'", "t(fontSize2)");
         }
 
@@ -164,10 +167,9 @@ public class RecommendationTests {
 
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
 
-            CodeAction action = getCodeAction(RANGE, diagnosticResults);
+            CodeAction action = getCodeAction(RANGE, diagnosticResults).get(0);
             assertAction(action, "Remove design token 'testing'", "");
         }
-
         @Test
         void markupClassRecommendation() {
             StringBuilder builder = new StringBuilder();
@@ -177,7 +179,7 @@ public class RecommendationTests {
             List<DiagnosticResult> diagnosticResults = getDiagnosticResult(entry);
             Range range = diagnosticResults.get(0).getDiagnostic().getRange();
 
-            CodeAction action = getCodeAction(range, diagnosticResults);
+            CodeAction action = getCodeAction(range, diagnosticResults).get(0);
             assertAction(action, "Update token to 'slds-border_right'", "slds-border_right");
         }
     }
@@ -198,6 +200,11 @@ public class RecommendationTests {
             Range range = diagnostic.getRange();
             assertThat(range, Matchers.equalTo(new Range(new Position(0,10), new Position(0, 53))));
             assertThat(diagnostic.getMessage(), Matchers.equalTo("lightning-datatable" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
+
+            List<CodeAction> actions = getCodeAction(range, diagnosticResults);
+            assertThat(actions.size(), Matchers.equalTo(2));
+            assertAction(actions.get(0), FILE_IGNORE_SLDS_VALIDATION, "<!-- " + AnnotationType.IGNORE.value() + " -->\n");
+            assertAction(actions.get(1), LINE_IGNORE_SLDS_VALIDATION, "<!-- " + AnnotationType.IGNORE_NEXT_LINE.value() + " -->\n          ");
         }
 
         @Test
@@ -215,12 +222,10 @@ public class RecommendationTests {
             List<Item> items = diagnosticResults.get(0).getItems();
             assertThat(items.size(), Matchers.equalTo(1));
 
-            Set<Action> actions = items.get(0).getActions();
-            assertThat(actions.size(), Matchers.equalTo(1));
-            Action action = actions.stream().findFirst().get();
-
-            String description = action.getDescription();
-            assertThat(description, Matchers.equalTo("lightning-tree-grid" + NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE));
+            List<CodeAction> actions = getCodeAction(range, diagnosticResults);
+            assertThat(actions.size(), Matchers.equalTo(2));
+            assertAction(actions.get(0), FILE_IGNORE_SLDS_VALIDATION, "<!-- " + AnnotationType.IGNORE.value() + " -->\n");
+            assertAction(actions.get(1), LINE_IGNORE_SLDS_VALIDATION, "<!-- " + AnnotationType.IGNORE_NEXT_LINE.value() + " -->\n          ");
         }
 
         @Test
@@ -396,12 +401,12 @@ public class RecommendationTests {
         assertThat(edits.get(0).getNewText(), Matchers.is(expectedNewText));
     }
 
-    private CodeAction getCodeAction(Range range, List<DiagnosticResult> diagnosticResults) {
+    private List<CodeAction> getCodeAction(Range range, List<DiagnosticResult> diagnosticResults) {
         CodeActionParams params = createCodeActionParams(range, diagnosticResults);
 
         List<Either<Command, CodeAction>> results = codeActionConverter.convert(params);
         assertThat(results.size(), Matchers.greaterThan(0));
-        return results.get(0).getRight();
+        return results.stream().map(item -> item.getRight()).collect(Collectors.toList());
     }
 
     private CodeActionParams createCodeActionParams(Range range,
