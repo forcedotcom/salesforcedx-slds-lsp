@@ -41,6 +41,18 @@ public class RegexPattern {
     public static final String NUMERIC_PATTERN = "[-|+]?" + NUMBER_FRAGMENT + "\\s*[a-zA-Z]+" + "|" +
             PERCENT_PATTERN + "|" + "[-|+]?" + NUMBER_FRAGMENT;
 
+    public static final String FONT_STYLE_PATTERN = "(?=(?:(?:[-a-z]+\\s*){0,2}(italic|oblique))?)";
+
+    public static final String FONT_VARIANT_PATTERN = "(?=(?:(?:[-a-z]+\\s*){0,2}(small-caps))?)";
+
+    public static final String FONT_WEIGHT_PATTERN = "(?=(?:(?:[-a-z]+\\s*){0,2}(bold(?:er)?|lighter|[1-9]00))?)(?:(?:normal|\\1|\\2|\\3)\\s*){0,3}";
+
+    public static final String FONT_SIZE_PATTERN = "((?:xx?-)?(?:small\\s|large)|medium|smaller|larger|(?<value>[.\\d]+)(?<unit>(?:\\%|in|[cem]m|ex|p[ctx])))";
+
+    public static final String LINE_HEIGHT_PATTERN = "(?:\\s*\\/\\s*(normal|[.\\d]+(?:\\%|in|[cem]m|ex|p[ctx])))?";
+
+    public static final String FONT_FAMILY_PATTERN = "([-,\"\\sa-zA-Z]*)";
+
     public static final String AURA_TOKEN_FUNCTION = "t(?:oken)?\\((?<token>[\\w\\d]+)\\)";
     public static final String VAR_FUNCTION = "var\\(\\s*--lwc-(?<token>[\\w\\d-]+)\\s*(,\\s*(?<fallback>"+
             COLOR_PATTERN + "|" + NUMERIC_PATTERN + "|" + WORD_FRAGMENT + ")\\s*)?\\)";

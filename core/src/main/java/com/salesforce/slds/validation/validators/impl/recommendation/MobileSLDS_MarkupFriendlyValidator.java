@@ -33,7 +33,7 @@ import java.util.stream.IntStream;
 
 @Component
 @Lazy
-public class MobileFriendlyValidator implements RecommendationValidator, InitializingBean {
+public class MobileSLDS_MarkupFriendlyValidator implements RecommendationValidator, InitializingBean {
     public static final String NON_MOBILE_FRIENDLY_MESSAGE_TEMPLATE =
             " is known to have issues on mobile devices. Consider these options:\n" +
             "• Find a mobile-ready replacement in the Component Reference of the Lightning Web Components Dev Guide. Filter the list using \"Salesforce Mobile App\" as the target.\n"+

@@ -1,2611 +1,4 @@
 [ {
-  "name" : ".slds-nowrap_small, .slds-nowrap--small",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-nowrap_medium, .slds-nowrap--medium",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-nowrap_large, .slds-nowrap--large",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-col_padded, .slds-col--padded",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-col_padded-medium, .slds-col--padded-medium",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-col_padded-large, .slds-col--padded-large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-col_padded-around, .slds-col--padded-around",
-  "settings" : [ {
-    "property" : "padding",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-col_padded-around-medium, .slds-col--padded-around-medium",
-  "settings" : [ {
-    "property" : "padding",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-col_padded-around-large, .slds-col--padded-around-large",
-  "settings" : [ {
-    "property" : "padding",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-col-rule_top, .slds-col-rule--top",
-  "settings" : [ {
-    "property" : "border-top",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col-rule_right, .slds-col-rule--right",
-  "settings" : [ {
-    "property" : "border-right",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col-rule_bottom, .slds-col-rule--bottom",
-  "settings" : [ {
-    "property" : "border-bottom",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col-rule_left, .slds-col-rule--left",
-  "settings" : [ {
-    "property" : "border-left",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-align-content-center",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1"
-  }, {
-    "property" : "align-self",
-    "value" : "center"
-  }, {
-    "property" : "justify-content",
-    "value" : "center"
-  } ]
-}, {
-  "name" : ".slds-grid",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "flex"
-  } ]
-}, {
-  "name" : ".slds-grid_frame, .slds-grid--frame",
-  "settings" : [ {
-    "property" : "min-width",
-    "value" : "100vw"
-  }, {
-    "property" : "min-height",
-    "value" : "100vh"
-  }, {
-    "property" : "overflow",
-    "value" : "hidden"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical, .slds-grid--vertical",
-  "settings" : [ {
-    "property" : "flex-direction",
-    "value" : "column"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical-reverse, .slds-grid--vertical-reverse",
-  "settings" : [ {
-    "property" : "flex-direction",
-    "value" : "column-reverse"
-  } ]
-}, {
-  "name" : ".slds-grid_reverse, .slds-grid--reverse",
-  "settings" : [ {
-    "property" : "flex-direction",
-    "value" : "row-reverse"
-  } ]
-}, {
-  "name" : ".slds-wrap",
-  "settings" : [ {
-    "property" : "flex-wrap",
-    "value" : "wrap"
-  }, {
-    "property" : "align-items",
-    "value" : "flex-start"
-  } ]
-}, {
-  "name" : ".slds-nowrap",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-x-small-nowrap",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-small-nowrap",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-medium-nowrap",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-large-nowrap",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  }, {
-    "property" : "flex-wrap",
-    "value" : "nowrap"
-  }, {
-    "property" : "align-items",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-gutters",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_xxx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_xxx-small .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_xx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_xx-small .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_x-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_x-small .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_small .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_medium",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-gutters_medium .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-gutters_large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_large .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_x-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_x-large .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_xx-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_xx-large .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xxx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xxx-small > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xx-small > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-x-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-x-small > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-small > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-medium",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-medium > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-large > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-x-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-x-large > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xx-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-gutters_direct-xx-large > .slds-col",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "padding-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded, .slds-grid--pull-padded",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-xxx-small, .slds-grid--pull-padded-xxx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-xx-small, .slds-grid--pull-padded-xx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-x-small, .slds-grid--pull-padded-x-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-small, .slds-grid--pull-padded-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-medium, .slds-grid--pull-padded-medium",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-large, .slds-grid--pull-padded-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-x-large, .slds-grid--pull-padded-x-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-grid_pull-padded-xx-large, .slds-grid--pull-padded-xx-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "margin-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-col, [class*=slds-col_padded], [class*=slds-col--padded]",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 auto"
-  } ]
-}, {
-  "name" : ".slds-col_rule-top, .slds-col--rule-top",
-  "settings" : [ {
-    "property" : "border-top",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col_rule-right, .slds-col--rule-right",
-  "settings" : [ {
-    "property" : "border-right",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col_rule-bottom, .slds-col--rule-bottom",
-  "settings" : [ {
-    "property" : "border-bottom",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-col_rule-left, .slds-col--rule-left",
-  "settings" : [ {
-    "property" : "border-left",
-    "value" : "1px solid $colorBorderSeparator"
-  } ]
-}, {
-  "name" : ".slds-has-flexi-truncate",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1 1 0%"
-  }, {
-    "property" : "min-width",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-no-flex",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-no-space",
-  "settings" : [ {
-    "property" : "min-width",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-grow",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "1"
-  } ]
-}, {
-  "name" : ".slds-grow-none",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-shrink",
-  "settings" : [ {
-    "property" : "flex-shrink",
-    "value" : "1"
-  } ]
-}, {
-  "name" : ".slds-shrink-none",
-  "settings" : [ {
-    "property" : "flex-shrink",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-text-longform ul.slds-grid",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "0"
-  }, {
-    "property" : "list-style",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-grid_align-center, .slds-grid--align-center",
-  "settings" : [ {
-    "property" : "justify-content",
-    "value" : "center"
-  } ]
-}, {
-  "name" : ".slds-grid_align-center .slds-col, .slds-grid_align-center [class*=slds-col_padded], .slds-grid_align-center [class*=slds-col--padded], .slds-grid--align-center .slds-col, .slds-grid--align-center [class*=slds-col_padded], .slds-grid--align-center [class*=slds-col--padded]",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-grid_align-space, .slds-grid--align-space",
-  "settings" : [ {
-    "property" : "justify-content",
-    "value" : "space-around"
-  } ]
-}, {
-  "name" : ".slds-grid_align-space .slds-col, .slds-grid_align-space [class*=slds-col_padded], .slds-grid_align-space [class*=slds-col--padded], .slds-grid--align-space .slds-col, .slds-grid--align-space [class*=slds-col_padded], .slds-grid--align-space [class*=slds-col--padded]",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-grid_align-spread, .slds-grid--align-spread",
-  "settings" : [ {
-    "property" : "justify-content",
-    "value" : "space-between"
-  } ]
-}, {
-  "name" : ".slds-grid_align-spread .slds-col, .slds-grid_align-spread [class*=slds-col_padded], .slds-grid_align-spread [class*=slds-col--padded], .slds-grid--align-spread .slds-col, .slds-grid--align-spread [class*=slds-col_padded], .slds-grid--align-spread [class*=slds-col--padded]",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-grid_align-end, .slds-grid--align-end",
-  "settings" : [ {
-    "property" : "justify-content",
-    "value" : "flex-end"
-  } ]
-}, {
-  "name" : ".slds-grid_align-end .slds-col, .slds-grid_align-end [class*=slds-col_padded], .slds-grid_align-end [class*=slds-col--padded], .slds-grid--align-end .slds-col, .slds-grid--align-end [class*=slds-col_padded], .slds-grid--align-end [class*=slds-col--padded]",
-  "settings" : [ {
-    "property" : "flex-grow",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical-align-start, .slds-grid--vertical-align-start",
-  "settings" : [ {
-    "property" : "align-items",
-    "value" : "flex-start"
-  }, {
-    "property" : "align-content",
-    "value" : "flex-start"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical-align-center, .slds-grid--vertical-align-center",
-  "settings" : [ {
-    "property" : "align-items",
-    "value" : "center"
-  }, {
-    "property" : "align-content",
-    "value" : "center"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical-align-end, .slds-grid--vertical-align-end",
-  "settings" : [ {
-    "property" : "align-items",
-    "value" : "flex-end"
-  }, {
-    "property" : "align-content",
-    "value" : "flex-end"
-  } ]
-}, {
-  "name" : ".slds-align-top",
-  "settings" : [ {
-    "property" : "vertical-align",
-    "value" : "top"
-  }, {
-    "property" : "align-self",
-    "value" : "flex-start"
-  } ]
-}, {
-  "name" : ".slds-align-middle",
-  "settings" : [ {
-    "property" : "vertical-align",
-    "value" : "middle"
-  }, {
-    "property" : "align-self",
-    "value" : "center"
-  } ]
-}, {
-  "name" : ".slds-align-bottom",
-  "settings" : [ {
-    "property" : "vertical-align",
-    "value" : "bottom"
-  }, {
-    "property" : "align-self",
-    "value" : "flex-end"
-  } ]
-}, {
-  "name" : ".slds-col_bump-top, .slds-col--bump-top",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-col_bump-right, .slds-col--bump-right",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-col_bump-bottom, .slds-col--bump-bottom",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-col_bump-left, .slds-col--bump-left",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-grid_vertical-stretch, .slds-grid--vertical-stretch",
-  "settings" : [ {
-    "property" : "align-items",
-    "value" : "stretch"
-  }, {
-    "property" : "align-content",
-    "value" : "stretch"
-  } ]
-}, {
-  "name" : ".slds-container_small, .slds-container--small",
-  "settings" : [ {
-    "property" : "max-width",
-    "value" : "30rem"
-  } ]
-}, {
-  "name" : ".slds-container_medium, .slds-container--medium",
-  "settings" : [ {
-    "property" : "max-width",
-    "value" : "48rem"
-  } ]
-}, {
-  "name" : ".slds-container_large, .slds-container--large",
-  "settings" : [ {
-    "property" : "max-width",
-    "value" : "64rem"
-  } ]
-}, {
-  "name" : ".slds-container_x-large, .slds-container--x-large",
-  "settings" : [ {
-    "property" : "max-width",
-    "value" : "80rem"
-  } ]
-}, {
-  "name" : ".slds-container_fluid, .slds-container--fluid",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "100%"
-  } ]
-}, {
-  "name" : ".slds-container_center, .slds-container--center",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "auto"
-  }, {
-    "property" : "margin-right",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-container_left, .slds-container--left",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-container_right, .slds-container--right",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-grid_overflow, .slds-grid--overflow",
-  "settings" : [ {
-    "property" : "flex-flow",
-    "value" : "row nowrap"
-  } ]
-}, {
-  "name" : ".slds-grid_overflow .slds-col, .slds-grid--overflow .slds-col",
-  "settings" : [ {
-    "property" : "min-width",
-    "value" : "11.25em"
-  }, {
-    "property" : "max-width",
-    "value" : "22.5em"
-  } ]
-}, {
-  "name" : ".slds-align_absolute-center, .slds-align--absolute-center",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "flex"
-  }, {
-    "property" : "justify-content",
-    "value" : "center"
-  }, {
-    "property" : "align-content",
-    "value" : "center"
-  }, {
-    "property" : "align-items",
-    "value" : "center"
-  }, {
-    "property" : "margin",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-media_reverse > .slds-media__figure, .slds-media--reverse > .slds-media__figure",
-  "settings" : [ {
-    "property" : "order",
-    "value" : "1"
-  } ]
-}, {
-  "name" : ".slds-media_reverse.slds-media_small .slds-media__figure, .slds-media_reverse.slds-media--small .slds-media__figure, .slds-media--reverse.slds-media_small .slds-media__figure, .slds-media--reverse.slds-media--small .slds-media__figure",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-media_double > .slds-media__figure, .slds-media--double > .slds-media__figure",
-  "settings" : [ {
-    "property" : "order",
-    "value" : "1"
-  } ]
-}, {
-  "name" : ".slds-media_double .slds-media__figure_reverse, .slds-media_double .slds-media__figure--reverse, .slds-media--double .slds-media__figure_reverse, .slds-media--double .slds-media__figure--reverse",
-  "settings" : [ {
-    "property" : "order",
-    "value" : "3"
-  }, {
-    "property" : "margin",
-    "value" : "0 0 0 $spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-media_double .slds-media__body, .slds-media--double .slds-media__body",
-  "settings" : [ {
-    "property" : "order",
-    "value" : "2"
-  } ]
-}, {
-  "name" : ".slds-media",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "flex"
-  }, {
-    "property" : "align-items",
-    "value" : "flex-start"
-  } ]
-}, {
-  "name" : ".slds-media__figure",
-  "settings" : [ {
-    "property" : "flex-shrink",
-    "value" : "0"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-media__figure_fixed-width",
-  "settings" : [ {
-    "property" : "min-width",
-    "value" : "$squareIconLargeBoundary"
-  } ]
-}, {
-  "name" : ".slds-media__body",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "1"
-  }, {
-    "property" : "min-width",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-media__body, .slds-media__body > :last-child",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-media-body-iefix",
-  "settings" : [ {
-    "property" : "flex-shrink",
-    "value" : "0"
-  }, {
-    "property" : "flex-basis",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-media_small .slds-media__figure, .slds-media--small .slds-media__figure",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-media_small .slds-media__figure_reverse, .slds-media--small .slds-media__figure--reverse",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-media_large .slds-media__figure, .slds-media--large .slds-media__figure",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-media_large .slds-media__figure_reverse, .slds-media--large .slds-media__figure--reverse",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-media_inline .slds-media__body",
-  "settings" : [ {
-    "property" : "flex",
-    "value" : "0 1 auto"
-  } ]
-}, {
-  "name" : ".slds-media_center, .slds-media--center",
-  "settings" : [ {
-    "property" : "align-items",
-    "value" : "center"
-  } ]
-}, {
-  "name" : ".slds-media__figure_reverse, .slds-media__figure--reverse",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "0 0 0 $spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-media_responsive, .slds-media--responsive",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "block"
-  } ]
-}, {
-  "name" : ".slds-media_responsive .slds-media__figure, .slds-media--responsive .slds-media__figure",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "0 0 $spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-top_none, .slds-m-top--none",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-top_xxx-small, .slds-m-top--xxx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-top_xx-small, .slds-m-top--xx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-top_x-small, .slds-m-top--x-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-top_small, .slds-m-top--small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-top_medium, .slds-m-top--medium",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-top_large, .slds-m-top--large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-top_x-large, .slds-m-top--x-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-top_xx-large, .slds-m-top--xx-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_xxx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_xx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_x-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_medium",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_x-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-top_xx-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-right_none, .slds-m-right--none",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-right_xxx-small, .slds-m-right--xxx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-right_xx-small, .slds-m-right--xx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-right_x-small, .slds-m-right--x-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-right_small, .slds-m-right--small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-right_medium, .slds-m-right--medium",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-right_large, .slds-m-right--large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-right_x-large, .slds-m-right--x-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-right_xx-large, .slds-m-right--xx-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_xxx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_xx-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_x-small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_small",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_medium",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_x-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-right_xx-large",
-  "settings" : [ {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_none, .slds-m-bottom--none",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_xxx-small, .slds-m-bottom--xxx-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_xx-small, .slds-m-bottom--xx-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_x-small, .slds-m-bottom--x-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_small, .slds-m-bottom--small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_medium, .slds-m-bottom--medium",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_large, .slds-m-bottom--large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_x-large, .slds-m-bottom--x-large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-bottom_xx-large, .slds-m-bottom--xx-large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_xxx-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_xx-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_x-small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_small",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_medium",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_x-large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-bottom_xx-large",
-  "settings" : [ {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-left_none, .slds-m-left--none",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-left_xxx-small, .slds-m-left--xxx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-left_xx-small, .slds-m-left--xx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-left_x-small, .slds-m-left--x-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-left_small, .slds-m-left--small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-left_medium, .slds-m-left--medium",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-left_large, .slds-m-left--large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-left_x-large, .slds-m-left--x-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-left_xx-large, .slds-m-left--xx-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_xxx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_xx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_x-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_medium",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_x-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-left_xx-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_none, .slds-m-horizontal--none",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "0"
-  }, {
-    "property" : "margin-right",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_xxx-small, .slds-m-horizontal--xxx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_xx-small, .slds-m-horizontal--xx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_x-small, .slds-m-horizontal--x-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_small, .slds-m-horizontal--small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_medium, .slds-m-horizontal--medium",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_large, .slds-m-horizontal--large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_x-large, .slds-m-horizontal--x-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-horizontal_xx-large, .slds-m-horizontal--xx-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_xxx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_xx-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_x-small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_small",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalSmall"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_medium",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalMedium"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_x-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-horizontal_xx-large",
-  "settings" : [ {
-    "property" : "margin-left",
-    "value" : "$varSpacingHorizontalXxLarge"
-  }, {
-    "property" : "margin-right",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_none, .slds-m-vertical--none",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "0"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_xxx-small, .slds-m-vertical--xxx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_xx-small, .slds-m-vertical--xx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_x-small, .slds-m-vertical--x-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_small, .slds-m-vertical--small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_medium, .slds-m-vertical--medium",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_large, .slds-m-vertical--large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_x-large, .slds-m-vertical--x-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-vertical_xx-large, .slds-m-vertical--xx-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_xxx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxxSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_xx-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_x-small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_small",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalSmall"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_medium",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalMedium"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_x-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-vertical_xx-large",
-  "settings" : [ {
-    "property" : "margin-top",
-    "value" : "$varSpacingVerticalXxLarge"
-  }, {
-    "property" : "margin-bottom",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-m-around_none, .slds-m-around--none",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-m-around_xxx-small, .slds-m-around--xxx-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-around_xx-small, .slds-m-around--xx-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-m-around_x-small, .slds-m-around--x-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-m-around_small, .slds-m-around--small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-m-around_medium, .slds-m-around--medium",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-m-around_large, .slds-m-around--large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-m-around_x-large, .slds-m-around--x-large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-m-around_xx-large, .slds-m-around--xx-large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_xxx-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_xx-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_x-small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_small",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingSmall"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_medium",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingMedium"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_x-large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-m-around_xx-large",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "$varSpacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-has-cushion",
-  "settings" : [ {
-    "property" : "padding",
-    "value" : "$componentSpacingPadding"
-  } ]
-}, {
-  "name" : ".slds-p-top_none, .slds-p-top--none",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-top_xxx-small, .slds-p-top--xxx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-top_xx-small, .slds-p-top--xx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-top_x-small, .slds-p-top--x-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-top_small, .slds-p-top--small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-top_medium, .slds-p-top--medium",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-top_large, .slds-p-top--large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-top_x-large, .slds-p-top--x-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-top_xx-large, .slds-p-top--xx-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_xxx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_xx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_x-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_medium",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_x-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-top_xx-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-right_none, .slds-p-right--none",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-right_xxx-small, .slds-p-right--xxx-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-right_xx-small, .slds-p-right--xx-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-right_x-small, .slds-p-right--x-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-right_small, .slds-p-right--small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-right_medium, .slds-p-right--medium",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-right_large, .slds-p-right--large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-right_x-large, .slds-p-right--x-large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-right_xx-large, .slds-p-right--xx-large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_xxx-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_xx-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_x-small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_small",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_medium",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_x-large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-right_xx-large",
-  "settings" : [ {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_none, .slds-p-bottom--none",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_xxx-small, .slds-p-bottom--xxx-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_xx-small, .slds-p-bottom--xx-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_x-small, .slds-p-bottom--x-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_small, .slds-p-bottom--small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_medium, .slds-p-bottom--medium",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_large, .slds-p-bottom--large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_x-large, .slds-p-bottom--x-large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-bottom_xx-large, .slds-p-bottom--xx-large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_xxx-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_xx-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_x-small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_small",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_medium",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_x-large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-bottom_xx-large",
-  "settings" : [ {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-left_none, .slds-p-left--none",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-left_xxx-small, .slds-p-left--xxx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-left_xx-small, .slds-p-left--xx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-left_x-small, .slds-p-left--x-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-left_small, .slds-p-left--small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-left_medium, .slds-p-left--medium",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-left_large, .slds-p-left--large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-left_x-large, .slds-p-left--x-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-left_xx-large, .slds-p-left--xx-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_xxx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_xx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_x-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_medium",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_x-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-left_xx-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_none, .slds-p-horizontal--none",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "0"
-  }, {
-    "property" : "padding-right",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_xxx-small, .slds-p-horizontal--xxx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_xx-small, .slds-p-horizontal--xx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_x-small, .slds-p-horizontal--x-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_small, .slds-p-horizontal--small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_medium, .slds-p-horizontal--medium",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_large, .slds-p-horizontal--large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_x-large, .slds-p-horizontal--x-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-horizontal_xx-large, .slds-p-horizontal--xx-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_xxx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_xx-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_x-small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_small",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalSmall"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_medium",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalMedium"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_x-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-horizontal_xx-large",
-  "settings" : [ {
-    "property" : "padding-left",
-    "value" : "$varSpacingHorizontalXxLarge"
-  }, {
-    "property" : "padding-right",
-    "value" : "$varSpacingHorizontalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_none, .slds-p-vertical--none",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "0"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_xxx-small, .slds-p-vertical--xxx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxxSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_xx-small, .slds-p-vertical--xx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxSmall"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_x-small, .slds-p-vertical--x-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingXSmall"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_small, .slds-p-vertical--small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingSmall"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_medium, .slds-p-vertical--medium",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingMedium"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingMedium"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_large, .slds-p-vertical--large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingLarge"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_x-large, .slds-p-vertical--x-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingXLarge"
-  } ]
-}, {
-  "name" : ".slds-p-vertical_xx-large, .slds-p-vertical--xx-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$spacingXxLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$spacingXxLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_xxx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxxSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_xx-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_x-small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_small",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalSmall"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalSmall"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_medium",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalMedium"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalMedium"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_x-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXLarge"
-  } ]
-}, {
-  "name" : ".slds-var-p-vertical_xx-large",
-  "settings" : [ {
-    "property" : "padding-top",
-    "value" : "$varSpacingVerticalXxLarge"
-  }, {
-    "property" : "padding-bottom",
-    "value" : "$varSpacingVerticalXxLarge"
-  } ]
-}, {
-  "name" : ".slds-p-around_none, .slds-p-around--none",
-  "settings" : [ {
-    "property" : "padding",
-    "value" : "0"
-  } ]
-}, {
   "name" : ".slds-p-around_xxx-small, .slds-p-around--xxx-small",
   "settings" : [ {
     "property" : "padding",
@@ -4189,9 +1582,6 @@
 }, {
   "name" : ".slds-text-heading_large, .slds-text-heading--large",
   "settings" : [ {
-    "property" : "font-weight",
-    "value" : "$fontWeightLight"
-  }, {
     "property" : "font-size",
     "value" : "$fontSize9"
   }, {
@@ -4201,9 +1591,6 @@
 }, {
   "name" : ".slds-text-heading_medium, .slds-text-heading--medium",
   "settings" : [ {
-    "property" : "font-weight",
-    "value" : "$fontWeightLight"
-  }, {
     "property" : "font-size",
     "value" : "$fontSize7"
   }, {
@@ -9039,5 +6426,2612 @@
   }, {
     "property" : "white-space",
     "value" : "pre-line"
+  } ]
+}, {
+  "name" : ".slds-nowrap_small, .slds-nowrap--small",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-nowrap_medium, .slds-nowrap--medium",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-nowrap_large, .slds-nowrap--large",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-col_padded, .slds-col--padded",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-col_padded-medium, .slds-col--padded-medium",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-col_padded-large, .slds-col--padded-large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-col_padded-around, .slds-col--padded-around",
+  "settings" : [ {
+    "property" : "padding",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-col_padded-around-medium, .slds-col--padded-around-medium",
+  "settings" : [ {
+    "property" : "padding",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-col_padded-around-large, .slds-col--padded-around-large",
+  "settings" : [ {
+    "property" : "padding",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-col-rule_top, .slds-col-rule--top",
+  "settings" : [ {
+    "property" : "border-top",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col-rule_right, .slds-col-rule--right",
+  "settings" : [ {
+    "property" : "border-right",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col-rule_bottom, .slds-col-rule--bottom",
+  "settings" : [ {
+    "property" : "border-bottom",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col-rule_left, .slds-col-rule--left",
+  "settings" : [ {
+    "property" : "border-left",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-align-content-center",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1"
+  }, {
+    "property" : "align-self",
+    "value" : "center"
+  }, {
+    "property" : "justify-content",
+    "value" : "center"
+  } ]
+}, {
+  "name" : ".slds-grid",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "flex"
+  } ]
+}, {
+  "name" : ".slds-grid_frame, .slds-grid--frame",
+  "settings" : [ {
+    "property" : "min-width",
+    "value" : "100vw"
+  }, {
+    "property" : "min-height",
+    "value" : "100vh"
+  }, {
+    "property" : "overflow",
+    "value" : "hidden"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical, .slds-grid--vertical",
+  "settings" : [ {
+    "property" : "flex-direction",
+    "value" : "column"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical-reverse, .slds-grid--vertical-reverse",
+  "settings" : [ {
+    "property" : "flex-direction",
+    "value" : "column-reverse"
+  } ]
+}, {
+  "name" : ".slds-grid_reverse, .slds-grid--reverse",
+  "settings" : [ {
+    "property" : "flex-direction",
+    "value" : "row-reverse"
+  } ]
+}, {
+  "name" : ".slds-wrap",
+  "settings" : [ {
+    "property" : "flex-wrap",
+    "value" : "wrap"
+  }, {
+    "property" : "align-items",
+    "value" : "flex-start"
+  } ]
+}, {
+  "name" : ".slds-nowrap",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-x-small-nowrap",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-small-nowrap",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-medium-nowrap",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-large-nowrap",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  }, {
+    "property" : "flex-wrap",
+    "value" : "nowrap"
+  }, {
+    "property" : "align-items",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-gutters",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_xxx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_xxx-small .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_xx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_xx-small .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_x-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_x-small .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_small .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_medium",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-gutters_medium .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-gutters_large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_large .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_x-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_x-large .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_xx-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_xx-large .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xxx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xxx-small > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xx-small > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-x-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-x-small > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-small > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-medium",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-medium > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-large > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-x-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-x-large > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xx-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-gutters_direct-xx-large > .slds-col",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "padding-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded, .slds-grid--pull-padded",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-xxx-small, .slds-grid--pull-padded-xxx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-xx-small, .slds-grid--pull-padded-xx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-x-small, .slds-grid--pull-padded-x-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-small, .slds-grid--pull-padded-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-medium, .slds-grid--pull-padded-medium",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-large, .slds-grid--pull-padded-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-x-large, .slds-grid--pull-padded-x-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-grid_pull-padded-xx-large, .slds-grid--pull-padded-xx-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "margin-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-col, [class*=slds-col_padded], [class*=slds-col--padded]",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 auto"
+  } ]
+}, {
+  "name" : ".slds-col_rule-top, .slds-col--rule-top",
+  "settings" : [ {
+    "property" : "border-top",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col_rule-right, .slds-col--rule-right",
+  "settings" : [ {
+    "property" : "border-right",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col_rule-bottom, .slds-col--rule-bottom",
+  "settings" : [ {
+    "property" : "border-bottom",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-col_rule-left, .slds-col--rule-left",
+  "settings" : [ {
+    "property" : "border-left",
+    "value" : "1px solid $colorBorderSeparator"
+  } ]
+}, {
+  "name" : ".slds-has-flexi-truncate",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1 1 0%"
+  }, {
+    "property" : "min-width",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-no-flex",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-no-space",
+  "settings" : [ {
+    "property" : "min-width",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-grow",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "1"
+  } ]
+}, {
+  "name" : ".slds-grow-none",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-shrink",
+  "settings" : [ {
+    "property" : "flex-shrink",
+    "value" : "1"
+  } ]
+}, {
+  "name" : ".slds-shrink-none",
+  "settings" : [ {
+    "property" : "flex-shrink",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-text-longform ul.slds-grid",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "0"
+  }, {
+    "property" : "list-style",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-grid_align-center, .slds-grid--align-center",
+  "settings" : [ {
+    "property" : "justify-content",
+    "value" : "center"
+  } ]
+}, {
+  "name" : ".slds-grid_align-center .slds-col, .slds-grid_align-center [class*=slds-col_padded], .slds-grid_align-center [class*=slds-col--padded], .slds-grid--align-center .slds-col, .slds-grid--align-center [class*=slds-col_padded], .slds-grid--align-center [class*=slds-col--padded]",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-grid_align-space, .slds-grid--align-space",
+  "settings" : [ {
+    "property" : "justify-content",
+    "value" : "space-around"
+  } ]
+}, {
+  "name" : ".slds-grid_align-space .slds-col, .slds-grid_align-space [class*=slds-col_padded], .slds-grid_align-space [class*=slds-col--padded], .slds-grid--align-space .slds-col, .slds-grid--align-space [class*=slds-col_padded], .slds-grid--align-space [class*=slds-col--padded]",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-grid_align-spread, .slds-grid--align-spread",
+  "settings" : [ {
+    "property" : "justify-content",
+    "value" : "space-between"
+  } ]
+}, {
+  "name" : ".slds-grid_align-spread .slds-col, .slds-grid_align-spread [class*=slds-col_padded], .slds-grid_align-spread [class*=slds-col--padded], .slds-grid--align-spread .slds-col, .slds-grid--align-spread [class*=slds-col_padded], .slds-grid--align-spread [class*=slds-col--padded]",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-grid_align-end, .slds-grid--align-end",
+  "settings" : [ {
+    "property" : "justify-content",
+    "value" : "flex-end"
+  } ]
+}, {
+  "name" : ".slds-grid_align-end .slds-col, .slds-grid_align-end [class*=slds-col_padded], .slds-grid_align-end [class*=slds-col--padded], .slds-grid--align-end .slds-col, .slds-grid--align-end [class*=slds-col_padded], .slds-grid--align-end [class*=slds-col--padded]",
+  "settings" : [ {
+    "property" : "flex-grow",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical-align-start, .slds-grid--vertical-align-start",
+  "settings" : [ {
+    "property" : "align-items",
+    "value" : "flex-start"
+  }, {
+    "property" : "align-content",
+    "value" : "flex-start"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical-align-center, .slds-grid--vertical-align-center",
+  "settings" : [ {
+    "property" : "align-items",
+    "value" : "center"
+  }, {
+    "property" : "align-content",
+    "value" : "center"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical-align-end, .slds-grid--vertical-align-end",
+  "settings" : [ {
+    "property" : "align-items",
+    "value" : "flex-end"
+  }, {
+    "property" : "align-content",
+    "value" : "flex-end"
+  } ]
+}, {
+  "name" : ".slds-align-top",
+  "settings" : [ {
+    "property" : "vertical-align",
+    "value" : "top"
+  }, {
+    "property" : "align-self",
+    "value" : "flex-start"
+  } ]
+}, {
+  "name" : ".slds-align-middle",
+  "settings" : [ {
+    "property" : "vertical-align",
+    "value" : "middle"
+  }, {
+    "property" : "align-self",
+    "value" : "center"
+  } ]
+}, {
+  "name" : ".slds-align-bottom",
+  "settings" : [ {
+    "property" : "vertical-align",
+    "value" : "bottom"
+  }, {
+    "property" : "align-self",
+    "value" : "flex-end"
+  } ]
+}, {
+  "name" : ".slds-col_bump-top, .slds-col--bump-top",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-col_bump-right, .slds-col--bump-right",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-col_bump-bottom, .slds-col--bump-bottom",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-col_bump-left, .slds-col--bump-left",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-grid_vertical-stretch, .slds-grid--vertical-stretch",
+  "settings" : [ {
+    "property" : "align-items",
+    "value" : "stretch"
+  }, {
+    "property" : "align-content",
+    "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-container_small, .slds-container--small",
+  "settings" : [ {
+    "property" : "max-width",
+    "value" : "30rem"
+  } ]
+}, {
+  "name" : ".slds-container_medium, .slds-container--medium",
+  "settings" : [ {
+    "property" : "max-width",
+    "value" : "48rem"
+  } ]
+}, {
+  "name" : ".slds-container_large, .slds-container--large",
+  "settings" : [ {
+    "property" : "max-width",
+    "value" : "64rem"
+  } ]
+}, {
+  "name" : ".slds-container_x-large, .slds-container--x-large",
+  "settings" : [ {
+    "property" : "max-width",
+    "value" : "80rem"
+  } ]
+}, {
+  "name" : ".slds-container_fluid, .slds-container--fluid",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "100%"
+  } ]
+}, {
+  "name" : ".slds-container_center, .slds-container--center",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "auto"
+  }, {
+    "property" : "margin-right",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-container_left, .slds-container--left",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-container_right, .slds-container--right",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-grid_overflow, .slds-grid--overflow",
+  "settings" : [ {
+    "property" : "flex-flow",
+    "value" : "row nowrap"
+  } ]
+}, {
+  "name" : ".slds-grid_overflow .slds-col, .slds-grid--overflow .slds-col",
+  "settings" : [ {
+    "property" : "min-width",
+    "value" : "11.25em"
+  }, {
+    "property" : "max-width",
+    "value" : "22.5em"
+  } ]
+}, {
+  "name" : ".slds-align_absolute-center, .slds-align--absolute-center",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "flex"
+  }, {
+    "property" : "justify-content",
+    "value" : "center"
+  }, {
+    "property" : "align-content",
+    "value" : "center"
+  }, {
+    "property" : "align-items",
+    "value" : "center"
+  }, {
+    "property" : "margin",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-media_reverse > .slds-media__figure, .slds-media--reverse > .slds-media__figure",
+  "settings" : [ {
+    "property" : "order",
+    "value" : "1"
+  } ]
+}, {
+  "name" : ".slds-media_reverse.slds-media_small .slds-media__figure, .slds-media_reverse.slds-media--small .slds-media__figure, .slds-media--reverse.slds-media_small .slds-media__figure, .slds-media--reverse.slds-media--small .slds-media__figure",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-media_double > .slds-media__figure, .slds-media--double > .slds-media__figure",
+  "settings" : [ {
+    "property" : "order",
+    "value" : "1"
+  } ]
+}, {
+  "name" : ".slds-media_double .slds-media__figure_reverse, .slds-media_double .slds-media__figure--reverse, .slds-media--double .slds-media__figure_reverse, .slds-media--double .slds-media__figure--reverse",
+  "settings" : [ {
+    "property" : "order",
+    "value" : "3"
+  }, {
+    "property" : "margin",
+    "value" : "0 0 0 $spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-media_double .slds-media__body, .slds-media--double .slds-media__body",
+  "settings" : [ {
+    "property" : "order",
+    "value" : "2"
+  } ]
+}, {
+  "name" : ".slds-media",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "flex"
+  }, {
+    "property" : "align-items",
+    "value" : "flex-start"
+  } ]
+}, {
+  "name" : ".slds-media__figure",
+  "settings" : [ {
+    "property" : "flex-shrink",
+    "value" : "0"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-media__figure_fixed-width",
+  "settings" : [ {
+    "property" : "min-width",
+    "value" : "$squareIconLargeBoundary"
+  } ]
+}, {
+  "name" : ".slds-media__body",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "1"
+  }, {
+    "property" : "min-width",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-media__body, .slds-media__body > :last-child",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-media-body-iefix",
+  "settings" : [ {
+    "property" : "flex-shrink",
+    "value" : "0"
+  }, {
+    "property" : "flex-basis",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-media_small .slds-media__figure, .slds-media--small .slds-media__figure",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-media_small .slds-media__figure_reverse, .slds-media--small .slds-media__figure--reverse",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_xx-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-media_large .slds-media__figure, .slds-media--large .slds-media__figure",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-media_large .slds-media__figure_reverse, .slds-media--large .slds-media__figure--reverse",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-media_inline .slds-media__body",
+  "settings" : [ {
+    "property" : "flex",
+    "value" : "0 1 auto"
+  } ]
+}, {
+  "name" : ".slds-media_center, .slds-media--center",
+  "settings" : [ {
+    "property" : "align-items",
+    "value" : "center"
+  } ]
+}, {
+  "name" : ".slds-media__figure_reverse, .slds-media__figure--reverse",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "0 0 0 $spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-media_responsive, .slds-media--responsive",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "block"
+  } ]
+}, {
+  "name" : ".slds-media_responsive .slds-media__figure, .slds-media--responsive .slds-media__figure",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "0 0 $spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-top_none, .slds-m-top--none",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-top_xxx-small, .slds-m-top--xxx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-top_xx-small, .slds-m-top--xx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-top_x-small, .slds-m-top--x-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-top_small, .slds-m-top--small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-top_medium, .slds-m-top--medium",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-top_large, .slds-m-top--large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-top_x-large, .slds-m-top--x-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-top_xx-large, .slds-m-top--xx-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_xxx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_xx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_x-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_medium",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_x-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-top_xx-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-right_none, .slds-m-right--none",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-right_xxx-small, .slds-m-right--xxx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-right_xx-small, .slds-m-right--xx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-right_x-small, .slds-m-right--x-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-right_small, .slds-m-right--small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-right_medium, .slds-m-right--medium",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-right_large, .slds-m-right--large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-right_x-large, .slds-m-right--x-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-right_xx-large, .slds-m-right--xx-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_xxx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_xx-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_x-small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_small",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_medium",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_x-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-right_xx-large",
+  "settings" : [ {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_none, .slds-m-bottom--none",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_xxx-small, .slds-m-bottom--xxx-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_xx-small, .slds-m-bottom--xx-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_x-small, .slds-m-bottom--x-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_small, .slds-m-bottom--small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_medium, .slds-m-bottom--medium",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_large, .slds-m-bottom--large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_x-large, .slds-m-bottom--x-large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-bottom_xx-large, .slds-m-bottom--xx-large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_xxx-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_x-small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_small",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_medium",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_x-large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-bottom_xx-large",
+  "settings" : [ {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-left_none, .slds-m-left--none",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-left_xxx-small, .slds-m-left--xxx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-left_xx-small, .slds-m-left--xx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-left_x-small, .slds-m-left--x-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-left_small, .slds-m-left--small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-left_medium, .slds-m-left--medium",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-left_large, .slds-m-left--large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-left_x-large, .slds-m-left--x-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-left_xx-large, .slds-m-left--xx-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_xxx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_xx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_x-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_medium",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_x-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-left_xx-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_none, .slds-m-horizontal--none",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "0"
+  }, {
+    "property" : "margin-right",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_xxx-small, .slds-m-horizontal--xxx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_xx-small, .slds-m-horizontal--xx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_x-small, .slds-m-horizontal--x-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_small, .slds-m-horizontal--small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_medium, .slds-m-horizontal--medium",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_large, .slds-m-horizontal--large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_x-large, .slds-m-horizontal--x-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-horizontal_xx-large, .slds-m-horizontal--xx-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_xxx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_xx-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_x-small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_small",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalSmall"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_medium",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalMedium"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_x-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-horizontal_xx-large",
+  "settings" : [ {
+    "property" : "margin-left",
+    "value" : "$varSpacingHorizontalXxLarge"
+  }, {
+    "property" : "margin-right",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_none, .slds-m-vertical--none",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "0"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_xxx-small, .slds-m-vertical--xxx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_xx-small, .slds-m-vertical--xx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_xx-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_x-small, .slds-m-vertical--x-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_small, .slds-m-vertical--small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_medium, .slds-m-vertical--medium",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_large, .slds-m-vertical--large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_x-large, .slds-m-vertical--x-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-vertical_xx-large, .slds-m-vertical--xx-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_xxx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxxSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_xx-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_x-small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_small",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalSmall"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_medium",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalMedium"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_x-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-vertical_xx-large",
+  "settings" : [ {
+    "property" : "margin-top",
+    "value" : "$varSpacingVerticalXxLarge"
+  }, {
+    "property" : "margin-bottom",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-m-around_none, .slds-m-around--none",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-m-around_xxx-small, .slds-m-around--xxx-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-around_xx-small, .slds-m-around--xx-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-m-around_x-small, .slds-m-around--x-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-m-around_small, .slds-m-around--small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-m-around_medium, .slds-m-around--medium",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-m-around_large, .slds-m-around--large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-m-around_x-large, .slds-m-around--x-large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-m-around_xx-large, .slds-m-around--xx-large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_xxx-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_xx-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_x-small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_small",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingSmall"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_medium",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingMedium"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_x-large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-m-around_xx-large",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "$varSpacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-has-cushion",
+  "settings" : [ {
+    "property" : "padding",
+    "value" : "$componentSpacingPadding"
+  } ]
+}, {
+  "name" : ".slds-p-top_none, .slds-p-top--none",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-top_xxx-small, .slds-p-top--xxx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-top_xx-small, .slds-p-top--xx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-top_x-small, .slds-p-top--x-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-top_small, .slds-p-top--small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-top_medium, .slds-p-top--medium",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-top_large, .slds-p-top--large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-top_x-large, .slds-p-top--x-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-top_xx-large, .slds-p-top--xx-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_xxx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_xx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_x-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_medium",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-top_x-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-right_none, .slds-p-right--none",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-right_xxx-small, .slds-p-right--xxx-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-right_xx-small, .slds-p-right--xx-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-right_x-small, .slds-p-right--x-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-right_small, .slds-p-right--small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-right_medium, .slds-p-right--medium",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-right_large, .slds-p-right--large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-right_x-large, .slds-p-right--x-large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-right_xx-large, .slds-p-right--xx-large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_xxx-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_xx-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_x-small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_small",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_medium",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_x-large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-right_xx-large",
+  "settings" : [ {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_none, .slds-p-bottom--none",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_xxx-small, .slds-p-bottom--xxx-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_xx-small, .slds-p-bottom--xx-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_x-small, .slds-p-bottom--x-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_small, .slds-p-bottom--small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_medium, .slds-p-bottom--medium",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_large, .slds-p-bottom--large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_x-large, .slds-p-bottom--x-large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-bottom_xx-large, .slds-p-bottom--xx-large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_xxx-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_xx-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_x-small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_small",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_medium",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_x-large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-bottom_xx-large",
+  "settings" : [ {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-p-left_none, .slds-p-left--none",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-left_xxx-small, .slds-p-left--xxx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-left_xx-small, .slds-p-left--xx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-left_x-small, .slds-p-left--x-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-left_small, .slds-p-left--small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-left_medium, .slds-p-left--medium",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-left_large, .slds-p-left--large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-left_x-large, .slds-p-left--x-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-left_xx-large, .slds-p-left--xx-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_xxx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_xx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_x-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_medium",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_x-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-left_xx-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_none, .slds-p-horizontal--none",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "0"
+  }, {
+    "property" : "padding-right",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_xxx-small, .slds-p-horizontal--xxx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_xx-small, .slds-p-horizontal--xx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_x-small, .slds-p-horizontal--x-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_small, .slds-p-horizontal--small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_medium, .slds-p-horizontal--medium",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_large, .slds-p-horizontal--large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_x-large, .slds-p-horizontal--x-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-horizontal_xx-large, .slds-p-horizontal--xx-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_xxx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_xx-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_x-small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_small",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalSmall"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_medium",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalMedium"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_x-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-horizontal_xx-large",
+  "settings" : [ {
+    "property" : "padding-left",
+    "value" : "$varSpacingHorizontalXxLarge"
+  }, {
+    "property" : "padding-right",
+    "value" : "$varSpacingHorizontalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_none, .slds-p-vertical--none",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "0"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_xxx-small, .slds-p-vertical--xxx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxxSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_xx-small, .slds-p-vertical--xx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxSmall"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_x-small, .slds-p-vertical--x-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingXSmall"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_small, .slds-p-vertical--small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingSmall"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_medium, .slds-p-vertical--medium",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingMedium"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingMedium"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_large, .slds-p-vertical--large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingLarge"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_x-large, .slds-p-vertical--x-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingXLarge"
+  } ]
+}, {
+  "name" : ".slds-p-vertical_xx-large, .slds-p-vertical--xx-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$spacingXxLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$spacingXxLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_xxx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxxSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_xx-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_x-small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_small",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalSmall"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalSmall"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_medium",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalMedium"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalMedium"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_x-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXLarge"
+  } ]
+}, {
+  "name" : ".slds-var-p-vertical_xx-large",
+  "settings" : [ {
+    "property" : "padding-top",
+    "value" : "$varSpacingVerticalXxLarge"
+  }, {
+    "property" : "padding-bottom",
+    "value" : "$varSpacingVerticalXxLarge"
+  } ]
+}, {
+  "name" : ".slds-p-around_none, .slds-p-around--none",
+  "settings" : [ {
+    "property" : "padding",
+    "value" : "0"
   } ]
 } ]

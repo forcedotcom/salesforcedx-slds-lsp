@@ -34,7 +34,9 @@ import org.springframework.context.annotation.Import;
         UtilityClassValidator.class, ValidatorFactories.class,
         ValidateRunner.class, ComponentOverrideValidator.class,
         HTMLElementUtilities.class, DesignTokenValidator.class,
-        MobileFriendlyValidator.class
+        MobileSLDS_MarkupFriendlyValidator.class,
+        MobileSLDS_MarkupLabelValidator.class,
+        MobileSLDS_CSSValidator.class
 })
 public class ValidationConfiguration {
 }

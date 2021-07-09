@@ -35,7 +35,7 @@ public class NumberConverterTests {
 
         state = converters.process(state);
         Set<String> values = state.getValues().values().iterator().next();
-        assertThat(values, Matchers.containsInAnyOrder("0.825rem", "13.2px"));
+        assertThat(values, Matchers.containsInAnyOrder("0.825rem", "13.2px", "9.9pt", "82.5%"));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class NumberConverterTests {
 
         state = converters.process(state);
         Set<String> values = state.getValues().values().iterator().next();
-        assertThat(values, Matchers.containsInAnyOrder("0.812rem", "13px"));
+        assertThat(values, Matchers.containsInAnyOrder("0.812rem", "13px", "0.812em", "81.25%", "9.75pt"));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class NumberConverterTests {
 
         state = converters.process(state);
         Set<String> values = state.getValues().values().iterator().next();
-        assertThat(values, Matchers.containsInAnyOrder("0.123%"));
+        assertThat(values, Matchers.containsInAnyOrder("0.123%", "0.001rem", "0.001em", "0.02px", "0.001pt"));
     }
 
     @Test
@@ -74,7 +74,7 @@ public class NumberConverterTests {
         Iterator<Set<String>> results = state.getValues().values().iterator();
 
         Set<String> values = results.next();
-        assertThat(values, Matchers.containsInAnyOrder("1rem", "16px"));
+        assertThat(values, Matchers.containsInAnyOrder("1rem", "1em", "16px", "100%", "12pt"));
 
         values = results.next();
         assertThat(values, Matchers.containsInAnyOrder("12"));
