@@ -35,7 +35,7 @@ public class AnnotationTest {
 
     @Test
     public void blockAnnotationWithUtilityClasses() {
-        String declaration = " /*@sldsValidatorAllow*/ .THIS {\n" +
+        String declaration = " /*@sldsValidatorIgnore*/ .THIS {\n" +
                 "        overflow: hidden;\n" +
                 "    }";
 
@@ -51,10 +51,10 @@ public class AnnotationTest {
 
     @Test
     public void inlineAnnotation() {
-        String declaration = "/*@sldsValidatorIgnore*/\n" +
+        String declaration = "/*@sldsValidatorAllow*/\n" +
                 ".THIS .shareColumn .disabledPicklist {\n" +
                 "    min-width: 150px;\n" +
-                "    /*@sldsValidatorAllow*/ max-width: 240px;\n" +
+                "    /*@sldsValidatorIgnore*/ max-width: 240px;\n" +
                 "    margin-left: t(spacingLarge);\n" +
                 "    padding: 0 t(spacingMedium) 0 t(spacingMedium);\n" +
                 "    border: t(borderWidthThin) solid t(colorBorderInput);\n" +

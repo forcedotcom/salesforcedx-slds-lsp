@@ -10,6 +10,7 @@ package com.salesforce.slds.validation.validators.impl.recommendation;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.HTMLElement;
@@ -75,7 +76,8 @@ public class MobileSLDS_MarkupLabelValidator implements RecommendationValidator,
     @Override
     public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         // Only validate for LWC source code.
-        if (entry.getEntityType() != Entry.EntityType.LWC) {
+        if (!context.isEnabled(ContextKey.SLDS_MOBILE_VALIDATION) ||
+            entry.getEntityType() != Entry.EntityType.LWC) {
             return Lists.newArrayList();
         }
 
@@ -107,7 +109,8 @@ public class MobileSLDS_MarkupLabelValidator implements RecommendationValidator,
                     String tag = htmlElement.getContent().tagName();
 
                     Action action = Action.builder()
-                            .value(htmlElement.getContent().outerHtml()).range(htmlElement.getRange())
+                            .value(htmlElement.getContent().outerHtml())
+                            .range(htmlElement.getRange())
                             .description(REQUIRE_LABELS)
                             .name(tag)
                             .actionType(ActionType.NONE)

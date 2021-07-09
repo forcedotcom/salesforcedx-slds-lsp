@@ -140,7 +140,7 @@ public class CSSValidationTest {
     @Test
     public void blockAnnotation() {
         StringBuilder builder = new StringBuilder();
-        builder.append("/* @sldsValidatorAllow */ .THIS { padding: 0; }")
+        builder.append("/* @sldsValidatorIgnore */ .THIS { padding: 0; }")
                 .append(System.lineSeparator())
                 .append(".THIS thead { display: block; }");
 
@@ -155,7 +155,7 @@ public class CSSValidationTest {
     @Test
     public void inlineAnnotation() {
         StringBuilder builder = new StringBuilder();
-        builder.append(".THIS { /* @sldsValidatorAllow */ padding: 0;")
+        builder.append(".THIS { /* @sldsValidatorIgnore */ padding: 0;")
                 .append(System.lineSeparator())
                 .append("padding: 0; }");
 

@@ -8,6 +8,9 @@
 package com.salesforce.slds.shared.models.core;
 
 import com.salesforce.slds.shared.models.annotations.Annotation;
+import com.salesforce.slds.shared.models.annotations.AnnotationType;
+import com.salesforce.slds.shared.models.locations.Location;
+import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.override.ComponentOverride;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 
@@ -90,6 +93,84 @@ public class Entry {
                 .map(Input::asRuleSet)
                 .map(RuleSet::getAnnotations)
                 .flatMap(List::stream).collect(Collectors.toList());
+    }
+
+    /*
+     * Searches through the content of an entry to determine the ranges (if any) where
+     * our linting rules should be ignored. Take the following content for example, with
+     * the line numbers (zero-based) in the first column followed by the content of that line:
+     *
+     * 0  a
+     * 1  b
+     * 2  sldsValidatorIgnore
+     * 3  c
+     * 4  d
+     * 5  sldsValidatorAllow
+     * 6  e
+     * 7  f
+     * 8  sldsValidatorIgnore
+     * 9  g
+     * 10 h
+     * 11 sldsValidatorAllow
+     * 12 i
+     * 13 sldsValidatorIgnoreNextLine
+     * 14 j
+     * 15 k
+     *
+     * In the above example, any content between sldsValidatorIgnore & sldsValidatorAllow (i.e 3-4, 9-10)
+     * should be exempt from validation rules. Also the line immediately following
+     * sldsValidatorIgnoreNextLine (i.e 14) should also be exempt from validation rules.
+     */
+    public List<Range> getRecommendationSuppressionRanges() {
+        ArrayList<Range> lintingIgnoreRanges = new ArrayList<Range>();
+        for (int i = 0; rawContent != null && i < rawContent.size(); i++) {
+            String lineStr = rawContent.get(i);
+            int startColumnIgnore = lineStr.indexOf(AnnotationType.IGNORE.value());
+            int startColumnIgnoreNextLine = lineStr.indexOf(AnnotationType.IGNORE_NEXT_LINE.value());
+            if (startColumnIgnore >= 0 && startColumnIgnore != startColumnIgnoreNextLine) {
+                // we found a sldsValidatorIgnore
+                int j = i;
+                int endColumn = -1;
+                for (; j < rawContent.size(); j++) {
+                    int column = rawContent.get(j).indexOf(AnnotationType.ALLOW.value());
+                    if (column >= 0) {
+                        endColumn = column + AnnotationType.ALLOW.value().length();
+                        break;
+                    }
+                }
+                if (endColumn == -1) {
+                    // we found a sldsValidatorIgnore with no sldsValidatorAllow after it
+                    // so we should exempt the rest of the lines.
+                    lintingIgnoreRanges.add(
+                            new Range(
+                                    new Location(i, startColumnIgnore),
+                                    new Location(Integer.MAX_VALUE, Integer.MAX_VALUE)
+                            )
+                    );
+                    i = rawContent.size(); // skip to the end
+                } else {
+                    // we found a sldsValidatorIgnore with sldsValidatorAllow after it
+                    // so we should exempt the lines in between.
+                    lintingIgnoreRanges.add(
+                            new Range(
+                                    new Location(i, startColumnIgnore),
+                                    new Location(j, endColumn)
+                            )
+                    );
+                    i = j; // skip to the next block
+                }
+            } else if (startColumnIgnoreNextLine >= 0) {
+                // we found a sldsValidatorIgnoreNextLine so we should exempt the next line.
+                lintingIgnoreRanges.add(
+                        new Range(
+                                new Location(i + 1, 0),
+                                new Location(i + 1, Integer.MAX_VALUE)
+                        )
+                );
+                i++; // skip the next line
+            }
+        }
+        return lintingIgnoreRanges;
     }
 
     public List<String> getRawContent() {
