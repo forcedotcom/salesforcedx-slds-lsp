@@ -104,7 +104,6 @@ public class ValidateRunner implements Runnable {
             setup();
 
             for (Entry entry : bundle.getEntries()) {
-
                 List<Recommendation> recommendations = validators.parallelStream()
                         .filter(validator -> validator instanceof RecommendationValidator)
                         .map(validator -> (RecommendationValidator) validator)
@@ -112,7 +111,7 @@ public class ValidateRunner implements Runnable {
                         .flatMap(List::stream)
                         .collect(aggregator.toList());
 
-                entry.setRecommendation(processor.process(recommendations));
+                entry.setRecommendation(processor.process(entry, recommendations));
 
                 List<ComponentOverride> overrides = validators.parallelStream()
                         .filter(validator -> validator instanceof OverrideValidator)

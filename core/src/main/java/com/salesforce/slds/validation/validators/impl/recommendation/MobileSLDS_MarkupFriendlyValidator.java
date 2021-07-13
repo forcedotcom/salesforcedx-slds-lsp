@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.HTMLElement;
@@ -43,7 +44,8 @@ public class MobileSLDS_MarkupFriendlyValidator implements RecommendationValidat
 
     @Override
     public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
-        if (entry.getEntityType() != Entry.EntityType.LWC) {
+        if (!context.isEnabled(ContextKey.SLDS_MOBILE_VALIDATION) ||
+            entry.getEntityType() != Entry.EntityType.LWC) {
             return Lists.newArrayList();
         }
 
