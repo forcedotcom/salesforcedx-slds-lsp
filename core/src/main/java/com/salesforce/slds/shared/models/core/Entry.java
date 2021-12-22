@@ -33,6 +33,8 @@ public class Entry {
     private String componentName;
     private EntityType entityType;
 
+    private List<Range> recommendationSuppressionRanges;
+
     private Entry(
                   List<Input> inputs, String path, List<String> rawContent,
                   EntityType entityType, String componentName) {
@@ -122,7 +124,11 @@ public class Entry {
      * sldsValidatorIgnoreNextLine (i.e 14) should also be exempt from validation rules.
      */
     public List<Range> getRecommendationSuppressionRanges() {
-        ArrayList<Range> lintingIgnoreRanges = new ArrayList<Range>();
+        if (this.recommendationSuppressionRanges != null) {
+            return this.recommendationSuppressionRanges;
+        }
+
+        this.recommendationSuppressionRanges = new ArrayList<>();
         for (int i = 0; rawContent != null && i < rawContent.size(); i++) {
             String lineStr = rawContent.get(i);
             int startColumnIgnore = lineStr.indexOf(AnnotationType.IGNORE.value());
@@ -141,17 +147,17 @@ public class Entry {
                 if (endColumn == -1) {
                     // we found a sldsValidatorIgnore with no sldsValidatorAllow after it
                     // so we should exempt the rest of the lines.
-                    lintingIgnoreRanges.add(
+                    this.recommendationSuppressionRanges.add(
                             new Range(
                                     new Location(i, startColumnIgnore),
-                                    new Location(Integer.MAX_VALUE, Integer.MAX_VALUE)
+                                    new Location(i, Integer.MAX_VALUE)
                             )
                     );
                     i = rawContent.size(); // skip to the end
                 } else {
                     // we found a sldsValidatorIgnore with sldsValidatorAllow after it
                     // so we should exempt the lines in between.
-                    lintingIgnoreRanges.add(
+                    this.recommendationSuppressionRanges.add(
                             new Range(
                                     new Location(i, startColumnIgnore),
                                     new Location(j, endColumn)
@@ -161,7 +167,7 @@ public class Entry {
                 }
             } else if (startColumnIgnoreNextLine >= 0) {
                 // we found a sldsValidatorIgnoreNextLine so we should exempt the next line.
-                lintingIgnoreRanges.add(
+                this.recommendationSuppressionRanges.add(
                         new Range(
                                 new Location(i + 1, 0),
                                 new Location(i + 1, Integer.MAX_VALUE)
@@ -170,7 +176,7 @@ public class Entry {
                 i++; // skip the next line
             }
         }
-        return lintingIgnoreRanges;
+        return this.recommendationSuppressionRanges;
     }
 
     public List<String> getRawContent() {
