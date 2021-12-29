@@ -140,7 +140,7 @@ public class CSSValidationTest {
     @Test
     public void blockAnnotation() {
         StringBuilder builder = new StringBuilder();
-        builder.append("/* @sldsValidatorIgnore */ .THIS { padding: 0; }")
+        builder.append("/* @sldsValidatorIgnore */ .THIS { padding: 0; } /* @sldsValidatorAllow */")
                 .append(System.lineSeparator())
                 .append(".THIS thead { display: block; }");
 
@@ -156,6 +156,19 @@ public class CSSValidationTest {
     public void inlineAnnotation() {
         StringBuilder builder = new StringBuilder();
         builder.append(".THIS { /* @sldsValidatorIgnore */ padding: 0;")
+                .append(System.lineSeparator())
+                .append("padding: 0; }");
+
+        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+        assertThat(groupedRecommendation, Matchers.aMapWithSize(1));
+    }
+
+    @Test
+    public void ignoreNextLineAnnotation() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(".THIS { /* @sldsValidatorIgnoreNextLine */ ")
+                .append(System.lineSeparator())
+                .append("padding: 0;")
                 .append(System.lineSeparator())
                 .append("padding: 0; }");
 
