@@ -8,6 +8,8 @@
 package com.salesforce.slds.validation.validators;
 
 import com.salesforce.slds.configuration.SldsConfiguration;
+import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.locations.Location;
@@ -153,14 +155,22 @@ public class CSSValidationTest {
 
 
     @Test
-    public void inlineAnnotation() {
+    public void v1InlineAnnotation() {
         StringBuilder builder = new StringBuilder();
-        builder.append(".THIS { /* @sldsValidatorIgnore */ padding: 0;")
+        builder.append(".THIS { /* @sldsValidatorAllow */ margin: 0;")
                 .append(System.lineSeparator())
-                .append("padding: 0; }");
+                .append("font: 14px; }");
 
-        Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
-        assertThat(groupedRecommendation, Matchers.aMapWithSize(1));
+        Context context = new Context();
+        context.setState(ContextKey.V2_ANNOTATION.name(), false);
+        runner.setContext(context);
+
+        try {
+            Map<String, List<Recommendation>> groupedRecommendation = process(builder.toString());
+            assertThat(groupedRecommendation, Matchers.aMapWithSize(1));
+        } finally {
+            runner.setContext(new Context());
+        }
     }
 
     @Test
@@ -168,7 +178,7 @@ public class CSSValidationTest {
         StringBuilder builder = new StringBuilder();
         builder.append(".THIS { /* @sldsValidatorIgnoreNextLine */ ")
                 .append(System.lineSeparator())
-                .append("padding: 0;")
+                .append("margin: 0;")
                 .append(System.lineSeparator())
                 .append("padding: 0; }");
 

@@ -7,34 +7,36 @@
 
 package com.salesforce.slds.validation.processors;
 
+import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.Entry;
-import com.salesforce.slds.shared.models.core.HTMLElement;
 import com.salesforce.slds.shared.models.core.Input;
 import com.salesforce.slds.shared.models.locations.Range;
-import com.salesforce.slds.shared.models.locations.RangeProvider;
 import com.salesforce.slds.shared.models.recommendation.Action;
-import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 @Lazy
 public class SortAndFilterProcessor implements Processor {
 
     @Override
-    public List<Recommendation> process(Entry entry, List<Recommendation> recommendations) {
+    public List<Recommendation> process(Context context, Entry entry, List<Recommendation> recommendations) {
         List<Range> ranges = extractUtilitiesRange(recommendations);
         List<Range> recommendationSuppressionRanges = entry.getRecommendationSuppressionRanges();
 
         return recommendations.stream()
                 .filter(recommendation -> containItems(recommendation) && filter(recommendation, ranges))
-                .filter(recommendation -> !shouldSkipRecommendation(recommendationSuppressionRanges, recommendation))
+                .filter(recommendation -> !shouldSkipRecommendation(context,
+                        recommendationSuppressionRanges, recommendation))
                 .map(this::sort)
                 .sorted(Recommendation::compareTo)
                 .collect(Collectors.toList());
@@ -69,19 +71,25 @@ public class SortAndFilterProcessor implements Processor {
         return recommendation;
     }
 
-    private boolean shouldSkipRecommendation(List<Range> recommendationSuppressionRanges, Recommendation recommendation) {
-        Input input = recommendation.getInput();
-        RangeProvider provider = input instanceof  RangeProvider ? (RangeProvider) input : null;
+    private boolean shouldSkipRecommendation(Context context,
+                                             List<Range> recommendationSuppressionRanges,
+                                             Recommendation recommendation) {
+        Set<Item> items = recommendation.getItems();
+        Input.Type inputType  = recommendation.getInput().getType();
 
-        if (provider == null) {return false;}
+        if (!context.isEnabled(ContextKey.V2_ANNOTATION) && inputType != Input.Type.MARKUP) {
+            return false;
+        }
 
         return recommendationSuppressionRanges.stream().anyMatch(range ->
-            range.within(provider.getRange()) || // completely contained withing the ignore range
+                        items.stream().anyMatch( item -> item.getActions().stream().anyMatch( action ->
+
+            range.within(action.getRange()) || // completely contained withing the ignore range
             (
                     // next line is meant to be ignored and the element indeed starts as the next line
                     range.getStart().getLine() == range.getEnd().getLine() &&
-                    range.getStart().getLine() == provider.getRange().getStart().getLine()
-            )
+                    range.getStart().getLine() == action.getRange().getStart().getLine()
+            )))
         );
     }
 }

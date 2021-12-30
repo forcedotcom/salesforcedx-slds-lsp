@@ -1,6 +1,7 @@
 package com.salesforce.slds.shared.models.core;
 
 import com.google.common.collect.Lists;
+import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.parsers.css.CSSParser;

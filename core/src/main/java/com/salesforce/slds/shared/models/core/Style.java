@@ -8,6 +8,8 @@
 package com.salesforce.slds.shared.models.core;
 
 import com.salesforce.slds.shared.models.annotations.AnnotationType;
+import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.locations.Range;
 import com.salesforce.slds.shared.models.locations.RangeProvider;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -52,10 +54,14 @@ public class Style extends Input implements RangeProvider {
 
     public AnnotationType getAnnotationType() {return annotationType;}
 
-    public Boolean validate() {
+    public Boolean validate(Context context) {
 
-        if (getAnnotationType() != null && getAnnotationType().validate() == false) {
-            return false;
+        if (getAnnotationType() != null) {
+            if (context.isEnabled(ContextKey.V2_ANNOTATION)) {
+                return getAnnotationType().validate();
+            } else {
+                return getAnnotationType() != AnnotationType.ALLOW;
+            }
         }
 
         return true;
