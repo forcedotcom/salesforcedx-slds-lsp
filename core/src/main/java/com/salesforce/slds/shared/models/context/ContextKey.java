@@ -18,7 +18,8 @@ public enum ContextKey {
     OVERRIDE,
     UTILITY_CLASS,
     DESIGN_TOKEN,
-    SLDS_MOBILE_VALIDATION;
+    SLDS_MOBILE_VALIDATION,
+    HIDE_INTERNAL_TOKENS;
 
     public static Optional<ContextKey> get(String name) {
         for (ContextKey key : values()) {
