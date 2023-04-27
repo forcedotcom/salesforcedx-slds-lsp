@@ -20,6 +20,7 @@ public enum ContextKey {
     DESIGN_TOKEN,
     SLDS_MOBILE_VALIDATION,
     V2_ANNOTATION;
+    HIDE_INTERNAL_TOKENS;
 
     public static Optional<ContextKey> get(String name) {
         for (ContextKey key : values()) {

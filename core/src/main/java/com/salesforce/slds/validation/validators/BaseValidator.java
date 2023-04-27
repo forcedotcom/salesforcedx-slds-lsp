@@ -36,7 +36,7 @@ public abstract class BaseValidator implements RecommendationValidator, Initiali
 
     protected abstract List<String> getProperties();
 
-    private Set<DesignToken> DESIGN_TOKENS = new LinkedHashSet<>();
+    private final Set<DesignToken> DESIGN_TOKENS = new LinkedHashSet<>();
 
     @Override
     public void afterPropertiesSet() {
@@ -52,14 +52,20 @@ public abstract class BaseValidator implements RecommendationValidator, Initiali
     @Override
     public List<Recommendation> matches(Entry entry, Bundle bundle, Context context) {
         if (context.isEnabled(ContextKey.DESIGN_TOKEN)) {
+            List<DesignToken> applicableTokens = DESIGN_TOKENS.stream()
+                    .filter(designToken ->
+                            context.isEnabled(ContextKey.HIDE_INTERNAL_TOKENS) == false ||
+                                    (designToken.getScope() != null &&
+                                            designToken.getScope().equalsIgnoreCase("global")))
+                    .collect(Collectors.toList());
+
             return entry.getInputs().stream()
                     .filter(input -> input.getType() == Input.Type.STYLE)
                     .map(Input::asRuleSet)
                     .map(RuleSet::getStylesWithAnnotationType)
                     .flatMap(List::stream)
                     .filter(style -> utilities.filter(style, getProperties()))
-                    .map(style -> utilities.match(context, style,
-                            new ArrayList<>(DESIGN_TOKENS), entry.getEntityType(), entry.getRawContent()))
+                    .map(style -> utilities.match(context, style, applicableTokens, entry.getEntityType(), entry.getRawContent()))
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
         }
