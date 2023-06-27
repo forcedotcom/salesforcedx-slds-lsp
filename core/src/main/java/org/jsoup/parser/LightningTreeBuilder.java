@@ -62,7 +62,7 @@ public class LightningTreeBuilder extends XmlTreeBuilder {
         return true;
     }
 
-    private void popStackToClose(Token.EndTag endTag) {
+    protected void popStackToClose(Token.EndTag endTag) {
         String elName = settings.normalizeTag(endTag.tagName);
         Element firstFound = null;
 
@@ -168,7 +168,7 @@ public class LightningTreeBuilder extends XmlTreeBuilder {
         return new Location(line, col);
     }
 
-    private void insertNode(Node node) {
+    protected void insertNode(Node node) {
         currentElement().appendChild(node);
     }
 }
