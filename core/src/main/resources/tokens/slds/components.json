@@ -1165,7 +1165,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-timeline__item_email:before", ".slds-timeline__media_email:before, .slds-timeline__media--email:before" ],
       "sassTokenName" : "$email",
-      "value" : "#95AEC5",
+      "value" : "#939393",
       "yamlTokenName" : "EMAIL",
       "scope" : null
     },
@@ -1174,7 +1174,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-timeline__item_event:before", ".slds-timeline__media_event:before, .slds-timeline__media--event:before" ],
       "sassTokenName" : "$event",
-      "value" : "#EB7092",
+      "value" : "#FF538A",
       "yamlTokenName" : "EVENT",
       "scope" : null
     },
@@ -1192,7 +1192,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-timeline__item_call:before", ".slds-timeline__media_call:before, .slds-timeline__media--call:before" ],
       "sassTokenName" : "$log-a-call",
-      "value" : "#48C3CC",
+      "value" : "#06A59A",
       "yamlTokenName" : "LOG_A_CALL",
       "scope" : null
     },
@@ -1255,7 +1255,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-timeline__item_task:before", ".slds-timeline__media_task:before, .slds-timeline__media--task:before" ],
       "sassTokenName" : "$task",
-      "value" : "#4BC076",
+      "value" : "#3BA755",
       "yamlTokenName" : "TASK",
       "scope" : null
     }
@@ -2656,7 +2656,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_group-image-large", ".slds-avatar" ],
       "sassTokenName" : "$group-default-avatar",
-      "value" : "/assets/images/group_avatar_200.png",
+      "value" : "/group_avatar_200.png",
       "yamlTokenName" : "GROUP_DEFAULT_AVATAR",
       "scope" : null
     },
@@ -2665,7 +2665,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_group-image-medium", ".slds-avatar" ],
       "sassTokenName" : "$group-default-avatar-medium",
-      "value" : "/assets/images/group_avatar_160.png",
+      "value" : "/group_avatar_160.png",
       "yamlTokenName" : "GROUP_DEFAULT_AVATAR_MEDIUM",
       "scope" : null
     },
@@ -2674,7 +2674,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_group-image-small", ".slds-avatar" ],
       "sassTokenName" : "$group-default-avatar-small",
-      "value" : "/assets/images/group_avatar_96.png",
+      "value" : "/group_avatar_96.png",
       "yamlTokenName" : "GROUP_DEFAULT_AVATAR_SMALL",
       "scope" : null
     },
@@ -2696,12 +2696,21 @@
       "yamlTokenName" : "LINE_HEIGHT_RESET",
       "scope" : null
     },
+    "staticImagePath" : {
+      "auraTokenName" : "staticImagePath",
+      "cssProperties" : [ "background" ],
+      "cssSelectors" : [ "&.slds-avatar_group-image-large", "&.slds-avatar_group-image-medium", "&.slds-avatar_group-image-small", "&.slds-avatar_profile-image-large", "&.slds-avatar_profile-image-medium", "&.slds-avatar_profile-image-small", ".slds-avatar" ],
+      "sassTokenName" : "$static-image-path",
+      "value" : null,
+      "yamlTokenName" : "STATIC_IMAGE_PATH",
+      "scope" : null
+    },
     "userDefaultAvatar" : {
       "auraTokenName" : "userDefaultAvatar",
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_profile-image-large", ".slds-avatar" ],
       "sassTokenName" : "$user-default-avatar",
-      "value" : "/assets/images/profile_avatar_200.png",
+      "value" : "/profile_avatar_200.png",
       "yamlTokenName" : "USER_DEFAULT_AVATAR",
       "scope" : null
     },
@@ -2710,7 +2719,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_profile-image-medium", ".slds-avatar" ],
       "sassTokenName" : "$user-default-avatar-medium",
-      "value" : "/assets/images/profile_avatar_160.png",
+      "value" : "/profile_avatar_160.png",
       "yamlTokenName" : "USER_DEFAULT_AVATAR_MEDIUM",
       "scope" : null
     },
@@ -2719,7 +2728,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-avatar_profile-image-small", ".slds-avatar" ],
       "sassTokenName" : "$user-default-avatar-small",
-      "value" : "/assets/images/profile_avatar_96.png",
+      "value" : "/profile_avatar_96.png",
       "yamlTokenName" : "USER_DEFAULT_AVATAR_SMALL",
       "scope" : null
     }
@@ -3176,7 +3185,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-avatar-grouped" ],
       "sassTokenName" : "$user",
-      "value" : "#34BECD",
+      "value" : "#06A59A",
       "yamlTokenName" : "USER",
       "scope" : null
     }
@@ -3871,7 +3880,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ "&.slds-brand-band_group:before", ".slds-brand-band" ],
       "sassTokenName" : "$banner-group-default-image",
-      "value" : "/assets/images/themes/oneSalesforce/banner-group-public-default.png",
+      "value" : "/themes/oneSalesforce/banner-group-public-default.png",
       "yamlTokenName" : "BANNER_GROUP_DEFAULT_IMAGE",
       "scope" : null
     },
@@ -3880,7 +3889,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ "&.slds-brand-band_user:before", ".slds-brand-band" ],
       "sassTokenName" : "$banner-user-default-image",
-      "value" : "/assets/images/themes/oneSalesforce/banner-user-default.png",
+      "value" : "/themes/oneSalesforce/banner-user-default.png",
       "yamlTokenName" : "BANNER_USER_DEFAULT_IMAGE",
       "scope" : null
     },
@@ -3925,7 +3934,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ "&:before", ".slds-brand-band" ],
       "sassTokenName" : "$brand-band-default-image",
-      "value" : "/assets/images/themes/oneSalesforce/banner-brand-default.png",
+      "value" : "/themes/oneSalesforce/banner-brand-default.png",
       "yamlTokenName" : "BRAND_BAND_DEFAULT_IMAGE",
       "scope" : null
     },
@@ -3981,6 +3990,15 @@
       "sassTokenName" : "$color-background-alt",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_BACKGROUND_ALT",
+      "scope" : null
+    },
+    "staticImagePath" : {
+      "auraTokenName" : "staticImagePath",
+      "cssProperties" : [ "background-image" ],
+      "cssSelectors" : [ "&.slds-brand-band_group:before", "&.slds-brand-band_user:before", "&:before", ".slds-brand-band" ],
+      "sassTokenName" : "$static-image-path",
+      "value" : null,
+      "yamlTokenName" : "STATIC_IMAGE_PATH",
       "scope" : null
     },
     "templateGutters" : {
@@ -5875,24 +5893,6 @@
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_DISABLED",
       "scope" : null
     },
-    "colorBackgroundButtonInverse" : {
-      "auraTokenName" : "colorBackgroundButtonInverse",
-      "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-button_icon-border-inverse, .slds-button--icon-border-inverse" ],
-      "sassTokenName" : "$color-background-button-inverse",
-      "value" : "transparent",
-      "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_INVERSE",
-      "scope" : null
-    },
-    "colorBackgroundButtonInverseDisabled" : {
-      "auraTokenName" : "colorBackgroundButtonInverseDisabled",
-      "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-button_icon-border-inverse, .slds-button--icon-border-inverse" ],
-      "sassTokenName" : "$color-background-button-inverse-disabled",
-      "value" : "transparent",
-      "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_INVERSE_DISABLED",
-      "scope" : null
-    },
     "colorBorderButtonInverseDisabled" : {
       "auraTokenName" : "colorBorderButtonInverseDisabled",
       "cssProperties" : [ "border-color" ],
@@ -7495,7 +7495,7 @@
     "buttonColorBorderPrimary" : {
       "auraTokenName" : "buttonColorBorderPrimary",
       "cssProperties" : [ "--slds-c-button-color-border", "--slds-c-button-color-border-active", "--slds-c-button-color-border-hover", "border-color" ],
-      "cssSelectors" : [ "&:active", "&:hover, &:focus", "&[disabled], &:disabled", ".slds-button_inverse, .slds-button--inverse", ".slds-button_neutral, .slds-button--neutral", ".slds-button_text-destructive", "[kx-scope=\"button-neutral\"], [kx-scope=\"button-outline\"]" ],
+      "cssSelectors" : [ "&:active", "&:hover, &:focus", "&[disabled], &:disabled", ".slds-button_inverse, .slds-button--inverse", ".slds-button_neutral, .slds-button--neutral", ".slds-button_outline-brand", ".slds-button_text-destructive", "[kx-scope=\"button-neutral\"], [kx-scope=\"button-outline\"]" ],
       "sassTokenName" : "$button-color-border-primary",
       "value" : "#c9c9c9",
       "yamlTokenName" : "BUTTON_COLOR_BORDER_PRIMARY",
@@ -7526,24 +7526,6 @@
       "sassTokenName" : "$color-background-button-default-hover",
       "value" : "#f3f3f3",
       "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_DEFAULT_HOVER",
-      "scope" : null
-    },
-    "colorBackgroundButtonInverse" : {
-      "auraTokenName" : "colorBackgroundButtonInverse",
-      "cssProperties" : [ "--slds-c-button-color-background" ],
-      "cssSelectors" : [ ".slds-button_inverse, .slds-button--inverse" ],
-      "sassTokenName" : "$color-background-button-inverse",
-      "value" : "transparent",
-      "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_INVERSE",
-      "scope" : null
-    },
-    "colorBackgroundButtonInverseDisabled" : {
-      "auraTokenName" : "colorBackgroundButtonInverseDisabled",
-      "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-button_inverse, .slds-button--inverse" ],
-      "sassTokenName" : "$color-background-button-inverse-disabled",
-      "value" : "transparent",
-      "yamlTokenName" : "COLOR_BACKGROUND_BUTTON_INVERSE_DISABLED",
       "scope" : null
     },
     "colorBackgroundButtonSuccess" : {
@@ -7609,15 +7591,6 @@
       "yamlTokenName" : "COLOR_BACKGROUND_LIGHT",
       "scope" : null
     },
-    "colorBorder" : {
-      "auraTokenName" : "colorBorder",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-button_outline-brand" ],
-      "sassTokenName" : "$color-border",
-      "value" : "#e5e5e5",
-      "yamlTokenName" : "COLOR_BORDER",
-      "scope" : null
-    },
     "colorBorderButtonFocusInverse" : {
       "auraTokenName" : "colorBorderButtonFocusInverse",
       "cssProperties" : [ "--slds-c-button-color-border" ],
@@ -7674,7 +7647,7 @@
     },
     "colorTextBrandPrimary" : {
       "auraTokenName" : "colorTextBrandPrimary",
-      "cssProperties" : [ "--slds-c-button-dual-stateful-text-color-selected", "--slds-c-button-text-color", "--slds-c-button-text-color-active", "--slds-c-button-text-color-hover", "color" ],
+      "cssProperties" : [ "--slds-c-button-dual-stateful-text-color-selected", "--slds-c-button-dual-stateful-text-color-selected-hover", "--slds-c-button-text-color", "--slds-c-button-text-color-active", "--slds-c-button-text-color-hover", "color" ],
       "cssSelectors" : [ "&:active", "&:focus, &:hover", "&:hover, &:focus", ".slds-button_brand, .slds-button--brand", ".slds-button_dual-stateful.slds-is-pressed", "a.slds-button_brand:hover, a.slds-button--brand:hover, a.slds-button_brand:focus, a.slds-button--brand:focus" ],
       "sassTokenName" : "$color-text-brand-primary",
       "value" : "#FFFFFF",
@@ -22521,7 +22494,7 @@
     "spacingSmall" : {
       "auraTokenName" : "spacingSmall",
       "cssProperties" : [ "padding", "padding-left" ],
-      "cssSelectors" : [ ".slds-listbox__option_entity, .slds-listbox__option--entity", ".slds-listbox__option_plain, .slds-listbox__option--plain", ".slds-listbox__option_term", ".slds-listbox_vertical, .slds-listbox--vertical", "[class*=\"slds-input-has-icon_left\"] .slds-combobox__input[value], [class*=\"slds-input-has-icon--left\"] .slds-combobox__input[value], [class*=\"slds-input-has-icon_left\"] .slds-combobox__input.slds-combobox__input-value, [class*=\"slds-input-has-icon--left\"] .slds-combobox__input.slds-combobox__input-value", "[role=\"combobox\"] input[readonly], input[readonly][role=\"combobox\"]" ],
+      "cssSelectors" : [ "& .slds-combobox__input[value], & .slds-combobox__input.slds-combobox__input-value", ".slds-input-has-icon_left, .slds-input-has-icon_left-right, .slds-input-has-icon--left, .slds-input-has-icon--left-right", ".slds-listbox__option_entity, .slds-listbox__option--entity", ".slds-listbox__option_plain, .slds-listbox__option--plain", ".slds-listbox__option_term", ".slds-listbox_vertical, .slds-listbox--vertical", "[role=\"combobox\"] input[readonly], input[readonly][role=\"combobox\"]" ],
       "sassTokenName" : "$spacing-small",
       "value" : "0.75rem",
       "yamlTokenName" : "SPACING_SMALL",
@@ -22566,7 +22539,7 @@
     "squareIconSmallBoundary" : {
       "auraTokenName" : "squareIconSmallBoundary",
       "cssProperties" : [ "padding-left", "width" ],
-      "cssSelectors" : [ ".slds-listbox__option-icon", "[class*=\"slds-input-has-icon_left\"] .slds-combobox__input[value], [class*=\"slds-input-has-icon--left\"] .slds-combobox__input[value], [class*=\"slds-input-has-icon_left\"] .slds-combobox__input.slds-combobox__input-value, [class*=\"slds-input-has-icon--left\"] .slds-combobox__input.slds-combobox__input-value" ],
+      "cssSelectors" : [ "& .slds-combobox__input[value], & .slds-combobox__input.slds-combobox__input-value", ".slds-input-has-icon_left, .slds-input-has-icon_left-right, .slds-input-has-icon--left, .slds-input-has-icon--left-right", ".slds-listbox__option-icon" ],
       "sassTokenName" : "$square-icon-small-boundary",
       "value" : "1.5rem",
       "yamlTokenName" : "SQUARE_ICON_SMALL_BOUNDARY",
@@ -24589,8 +24562,8 @@
     },
     "colorTextIconDefault" : {
       "auraTokenName" : "colorTextIconDefault",
-      "cssProperties" : [ "fill" ],
-      "cssSelectors" : [ "&.slds-has-focus .slds-button__icon_edit, &.slds-has-focus .slds-button__icon--edit", ".slds-hint-parent .slds-cell-edit", ".slds-is-sortable__icon", ".slds-is-sorted.slds-has-focus", ".slds-no-cell-focus" ],
+      "cssProperties" : [ "color", "fill" ],
+      "cssSelectors" : [ "&.slds-has-focus .slds-button__icon_edit, &.slds-has-focus .slds-button__icon--edit", "&[disabled], &:disabled", ".slds-cell-edit__button", ".slds-hint-parent .slds-cell-edit", ".slds-is-sortable__icon", ".slds-is-sorted.slds-has-focus", ".slds-no-cell-focus" ],
       "sassTokenName" : "$color-text-icon-default",
       "value" : "#747474",
       "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT",
@@ -33210,7 +33183,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border", "border-left", "border-right", "border-top", "margin-right" ],
-      "cssSelectors" : [ "&:after", "&:before", ".slds-utility-bar__item", ".slds-utility-bar__item_pop-out", ".slds-utility-panel" ],
+      "cssSelectors" : [ "&:after", "&:before", ".slds-indicator_unread, .slds-indicator--unread", ".slds-utility-bar", ".slds-utility-bar__item", ".slds-utility-bar__item_pop-out", ".slds-utility-panel" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -36964,7 +36937,7 @@
     "borderRadiusCircle" : {
       "auraTokenName" : "borderRadiusCircle",
       "cssProperties" : [ "border-radius" ],
-      "cssSelectors" : [ ".slds-icon-typing__dot", ".slds-icon-waffle", "[class*=\"slds-r\"]" ],
+      "cssSelectors" : [ "#{all-slds-r()}", ".slds-icon-typing__dot", ".slds-icon-waffle" ],
       "sassTokenName" : "$border-radius-circle",
       "value" : "50%",
       "yamlTokenName" : "BORDER_RADIUS_CIRCLE",
@@ -37000,7 +36973,7 @@
     "colorBackgroundIconWaffle" : {
       "auraTokenName" : "colorBackgroundIconWaffle",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-icon-waffle", "[class*=\"slds-r\"]" ],
+      "cssSelectors" : [ "#{all-slds-r()}", ".slds-icon-waffle" ],
       "sassTokenName" : "$color-background-icon-waffle",
       "value" : "#747474",
       "yamlTokenName" : "COLOR_BACKGROUND_ICON_WAFFLE",
@@ -50976,7 +50949,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ ".slds-global-header__logo" ],
       "sassTokenName" : "$brand-logo-image",
-      "value" : "/assets/images/logo-noname.svg",
+      "value" : "/logo-noname.svg",
       "yamlTokenName" : "BRAND_LOGO_IMAGE",
       "scope" : null
     },
@@ -51104,6 +51077,15 @@
       "sassTokenName" : "$spacing-xxx-small",
       "value" : "0.125rem",
       "yamlTokenName" : "SPACING_XXX_SMALL",
+      "scope" : null
+    },
+    "staticImagePath" : {
+      "auraTokenName" : "staticImagePath",
+      "cssProperties" : [ "background-image" ],
+      "cssSelectors" : [ ".slds-global-header__logo" ],
+      "sassTokenName" : "$static-image-path",
+      "value" : null,
+      "yamlTokenName" : "STATIC_IMAGE_PATH",
       "scope" : null
     },
     "zIndexSticky" : {
@@ -53436,7 +53418,7 @@
     "borderRadiusCircle" : {
       "auraTokenName" : "borderRadiusCircle",
       "cssProperties" : [ "--slds-c-icon-radius-border", "border-radius" ],
-      "cssSelectors" : [ ".slds-icon_container_circle, .slds-icon__container_circle, .slds-icon_container--circle, .slds-icon__container--circle", "[class*='slds-icon-action-']" ],
+      "cssSelectors" : [ "#{action-icons()}", ".slds-icon_container_circle, .slds-icon__container_circle, .slds-icon_container--circle, .slds-icon__container--circle" ],
       "sassTokenName" : "$border-radius-circle",
       "value" : "50%",
       "yamlTokenName" : "BORDER_RADIUS_CIRCLE",
@@ -53544,7 +53526,7 @@
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
       "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-icon_container_circle, .slds-icon__container_circle, .slds-icon_container--circle, .slds-icon__container--circle", "[class*='slds-icon-action-']" ],
+      "cssSelectors" : [ "#{action-icons()}", ".slds-icon_container_circle, .slds-icon__container_circle, .slds-icon_container--circle, .slds-icon__container--circle" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -63200,7 +63182,7 @@
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-bottom-left-radius", "border-bottom-right-radius", "border-radius", "border-top-left-radius", "border-top-right-radius" ],
-      "cssSelectors" : [ ".slds-modal__container", ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content, .slds-modal__header--empty + .slds-modal__content", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu" ],
+      "cssSelectors" : [ ".slds-modal__container", ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content, .slds-modal__header--empty + .slds-modal__content", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu", ".slds-modal_full" ],
       "sassTokenName" : "$border-radius-medium",
       "value" : "0.25rem",
       "yamlTokenName" : "BORDER_RADIUS_MEDIUM",
@@ -63227,7 +63209,7 @@
     "colorBackgroundAlt" : {
       "auraTokenName" : "colorBackgroundAlt",
       "cssProperties" : [ "background-color" ],
-      "cssSelectors" : [ ".slds-modal__content", ".slds-modal__header" ],
+      "cssSelectors" : [ ".slds-modal__container", ".slds-modal__content", ".slds-modal__header", ".slds-modal_full" ],
       "sassTokenName" : "$color-background-alt",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_BACKGROUND_ALT",
@@ -63240,6 +63222,51 @@
       "sassTokenName" : "$color-border",
       "value" : "#e5e5e5",
       "yamlTokenName" : "COLOR_BORDER",
+      "scope" : null
+    },
+    "colorBorderButtonInverseDisabled" : {
+      "auraTokenName" : "colorBorderButtonInverseDisabled",
+      "cssProperties" : [ "border-color" ],
+      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$color-border-button-inverse-disabled",
+      "value" : "rgba(255, 255, 255, 0.15)",
+      "yamlTokenName" : "COLOR_BORDER_BUTTON_INVERSE_DISABLED",
+      "scope" : null
+    },
+    "colorTextLinkInverse" : {
+      "auraTokenName" : "colorTextLinkInverse",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$color-text-link-inverse",
+      "value" : "#FFFFFF",
+      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE",
+      "scope" : null
+    },
+    "colorTextLinkInverseActive" : {
+      "auraTokenName" : "colorTextLinkInverseActive",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ "&:active", ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$color-text-link-inverse-active",
+      "value" : "rgba(255, 255, 255, 0.50)",
+      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_ACTIVE",
+      "scope" : null
+    },
+    "colorTextLinkInverseDisabled" : {
+      "auraTokenName" : "colorTextLinkInverseDisabled",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$color-text-link-inverse-disabled",
+      "value" : "rgba(255, 255, 255, 0.15)",
+      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_DISABLED",
+      "scope" : null
+    },
+    "colorTextLinkInverseHover" : {
+      "auraTokenName" : "colorTextLinkInverseHover",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ "&:hover, &:focus", ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$color-text-link-inverse-hover",
+      "value" : "rgba(255, 255, 255, 0.75)",
+      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_HOVER",
       "scope" : null
     },
     "durationPromptly" : {
@@ -63308,7 +63335,7 @@
     "shadowDropDown" : {
       "auraTokenName" : "shadowDropDown",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__footer" ],
+      "cssSelectors" : [ ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__footer", ".slds-modal_full" ],
       "sassTokenName" : "$shadow-drop-down",
       "value" : "0 2px 3px 0 rgba(0, 0, 0, 0.16)",
       "yamlTokenName" : "SHADOW_DROP_DOWN",
@@ -63316,8 +63343,8 @@
     },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
-      "cssProperties" : [ "padding", "padding-bottom", "padding-left", "padding-right", "padding-top", "transform" ],
-      "cssSelectors" : [ ".slds-modal__container-reset", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu", ".slds-slide-down-cancel", ".slds-slide-up-open", ".slds-slide-up-saving" ],
+      "cssProperties" : [ "padding", "padding-bottom", "padding-left", "padding-right", "padding-top", "right", "transform" ],
+      "cssSelectors" : [ ".slds-modal__close", ".slds-modal__container", ".slds-modal__container-reset", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu", ".slds-modal_full", ".slds-slide-down-cancel", ".slds-slide-up-open", ".slds-slide-up-saving" ],
       "sassTokenName" : "$spacing-medium",
       "value" : "1rem",
       "yamlTokenName" : "SPACING_MEDIUM",
@@ -63344,7 +63371,7 @@
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
       "cssProperties" : [ "bottom", "margin-left", "right" ],
-      "cssSelectors" : [ ".slds-button + .slds-button", ".slds-modal__close", ".slds-modal__footer" ],
+      "cssSelectors" : [ ".slds-button + .slds-button", ".slds-modal__close", ".slds-modal__footer", ".slds-modal_full" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -63362,7 +63389,7 @@
     "squareIconLargeBoundary" : {
       "auraTokenName" : "squareIconLargeBoundary",
       "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-modal__container" ],
+      "cssSelectors" : [ ".slds-modal__container", ".slds-modal_full" ],
       "sassTokenName" : "$square-icon-large-boundary",
       "value" : "3rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_BOUNDARY",
@@ -63371,7 +63398,7 @@
     "squareIconLargeBoundaryAlt" : {
       "auraTokenName" : "squareIconLargeBoundaryAlt",
       "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-modal__container" ],
+      "cssSelectors" : [ ".slds-modal__container", ".slds-modal_full" ],
       "sassTokenName" : "$square-icon-large-boundary-alt",
       "value" : "5rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_BOUNDARY_ALT",
@@ -68307,7 +68334,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&:before, &:after", ".slds-is-complete", ".slds-path__nav" ],
       "sassTokenName" : "$color-background-path-complete",
-      "value" : "#45c65a",
+      "value" : "#3ba755",
       "yamlTokenName" : "COLOR_BACKGROUND_PATH_COMPLETE",
       "scope" : null
     },
@@ -69155,8 +69182,8 @@
     },
     "colorTextError" : {
       "auraTokenName" : "colorTextError",
-      "cssProperties" : [ "color" ],
-      "cssSelectors" : [ ".slds-has-error", ".slds-pill__label" ],
+      "cssProperties" : [ "--slds-c-icon-color-foreground", "--slds-c-pill-error-text-color", "color" ],
+      "cssSelectors" : [ "&:hover", ".slds-has-error", ".slds-pill__icon_container .slds-icon-text-error", ".slds-pill__label" ],
       "sassTokenName" : "$color-text-error",
       "value" : "#ea001e",
       "yamlTokenName" : "COLOR_TEXT_ERROR",
@@ -73644,7 +73671,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ ".slds-popover_walkthrough-alt, .slds-popover_feature" ],
       "sassTokenName" : "$popover-walkthrough-alt-image",
-      "value" : "/assets/images/popovers/popover-action.png",
+      "value" : "/popovers/popover-action.png",
       "yamlTokenName" : "POPOVER_WALKTHROUGH_ALT_IMAGE",
       "scope" : null
     },
@@ -73689,7 +73716,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ ".slds-popover__header", ".slds-popover_walkthrough, .slds-popover--walkthrough" ],
       "sassTokenName" : "$popover-walkthrough-header-image",
-      "value" : "/assets/images/popovers/popover-header.png",
+      "value" : "/popovers/popover-header.png",
       "yamlTokenName" : "POPOVER_WALKTHROUGH_HEADER_IMAGE",
       "scope" : null
     },
@@ -73763,6 +73790,15 @@
       "sassTokenName" : "$spacing-xx-small",
       "value" : "0.25rem",
       "yamlTokenName" : "SPACING_XX_SMALL",
+      "scope" : null
+    },
+    "staticImagePath" : {
+      "auraTokenName" : "staticImagePath",
+      "cssProperties" : [ "background-image" ],
+      "cssSelectors" : [ ".slds-popover__header", ".slds-popover_walkthrough, .slds-popover--walkthrough", ".slds-popover_walkthrough-alt, .slds-popover_feature" ],
+      "sassTokenName" : "$static-image-path",
+      "value" : null,
+      "yamlTokenName" : "STATIC_IMAGE_PATH",
       "scope" : null
     },
     "zIndexDialog" : {
@@ -84562,6 +84598,15 @@
       "yamlTokenName" : "COLOR_BORDER",
       "scope" : null
     },
+    "colorBrand" : {
+      "auraTokenName" : "colorBrand",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus-within:before", ".slds-nav-vertical__item" ],
+      "sassTokenName" : "$color-brand",
+      "value" : "#1b96ff",
+      "yamlTokenName" : "COLOR_BRAND",
+      "scope" : null
+    },
     "colorTextDefault" : {
       "auraTokenName" : "colorTextDefault",
       "cssProperties" : [ "color" ],
@@ -87758,6 +87803,15 @@
       "yamlTokenName" : "SPACING_XX_SMALL",
       "scope" : null
     },
+    "staticImagePath" : {
+      "auraTokenName" : "staticImagePath",
+      "cssProperties" : [ "background-image" ],
+      "cssSelectors" : [ ".slds-welcome-mat__info" ],
+      "sassTokenName" : "$static-image-path",
+      "value" : null,
+      "yamlTokenName" : "STATIC_IMAGE_PATH",
+      "scope" : null
+    },
     "welcomeMatBackgroundColorInfo" : {
       "auraTokenName" : "welcomeMatBackgroundColorInfo",
       "cssProperties" : [ "background-color" ],
@@ -87772,7 +87826,7 @@
       "cssProperties" : [ "background-image" ],
       "cssSelectors" : [ ".slds-welcome-mat__info" ],
       "sassTokenName" : "$welcome-mat-background-image-info",
-      "value" : "/assets/images/welcome-mat/bg-info@2x.png",
+      "value" : "/welcome-mat/bg-info@2x.png",
       "yamlTokenName" : "WELCOME_MAT_BACKGROUND_IMAGE_INFO",
       "scope" : null
     },
