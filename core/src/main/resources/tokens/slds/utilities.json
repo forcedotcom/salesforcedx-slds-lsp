@@ -1,286 +1,4 @@
 [ {
-  "name" : ".slds-assistive-text_focus:focus, .slds-assistive-text--focus:focus",
-  "settings" : [ {
-    "property" : "margin",
-    "value" : "inherit"
-  }, {
-    "property" : "border",
-    "value" : "inherit"
-  }, {
-    "property" : "padding",
-    "value" : "inherit"
-  }, {
-    "property" : "width",
-    "value" : "auto"
-  }, {
-    "property" : "height",
-    "value" : "auto"
-  }, {
-    "property" : "overflow",
-    "value" : "visible"
-  }, {
-    "property" : "clip",
-    "value" : "auto"
-  } ]
-}, {
-  "name" : ".slds-is-collapsed",
-  "settings" : [ {
-    "property" : "height",
-    "value" : "0"
-  }, {
-    "property" : "overflow",
-    "value" : "hidden"
-  } ]
-}, {
-  "name" : ".slds-is-expanded",
-  "settings" : [ {
-    "property" : "height",
-    "value" : "auto"
-  }, {
-    "property" : "overflow",
-    "value" : "visible"
-  } ]
-}, {
-  "name" : ".slds-hidden",
-  "settings" : [ {
-    "property" : "visibility",
-    "value" : "hidden"
-  } ]
-}, {
-  "name" : ".slds-visible",
-  "settings" : [ {
-    "property" : "visibility",
-    "value" : "visible"
-  } ]
-}, {
-  "name" : ".slds-hide",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-show",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "block"
-  } ]
-}, {
-  "name" : ".slds-show_inline-block, .slds-show--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-show_inline, .slds-show--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-transition-hide",
-  "settings" : [ {
-    "property" : "opacity",
-    "value" : "0"
-  } ]
-}, {
-  "name" : ".slds-transition-show",
-  "settings" : [ {
-    "property" : "opacity",
-    "value" : "1"
-  } ]
-}, {
-  "name" : ".slds-x-small-show",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-x-small-show_inline-block, .slds-x-small-show--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-x-small-show_inline, .slds-x-small-show--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-x-small-show-only",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-x-small-show-only_inline-block, .slds-x-small-show-only--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-x-small-show-only_inline, .slds-x-small-show-only--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-max-x-small-hide",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-small-show",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-small-show_inline-block, .slds-small-show--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-small-show_inline, .slds-small-show--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-small-show-only",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-small-show-only_inline-block, .slds-small-show-only--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-small-show-only_inline, .slds-small-show-only--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-max-small-hide",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-medium-show",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-medium-show_inline-block, .slds-medium-show--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-medium-show_inline, .slds-medium-show--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-medium-show-only",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-medium-show-only_inline-block, .slds-medium-show-only--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-medium-show-only_inline, .slds-medium-show-only--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-max-medium-hide",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-large-show",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-large-show_inline-block, .slds-large-show--inline-block",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline-block"
-  } ]
-}, {
-  "name" : ".slds-large-show_inline, .slds-large-show--inline",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "inline"
-  } ]
-}, {
-  "name" : ".slds-hide_x-small, .slds-hide--x-small",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-show_x-small, .slds-show--x-small",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-hide_small, .slds-hide--small",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-show_small, .slds-show--small",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-hide_medium, .slds-hide--medium",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-show_medium, .slds-show--medium",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-hide_large, .slds-hide--large",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
-  "name" : ".slds-show_large, .slds-show--large",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
   "name" : ".slds-nowrap_small, .slds-nowrap--small",
   "settings" : [ {
     "property" : "flex",
@@ -365,25 +83,25 @@
   "name" : ".slds-col-rule_top, .slds-col-rule--top",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col-rule_right, .slds-col-rule--right",
   "settings" : [ {
     "property" : "border-right",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col-rule_bottom, .slds-col-rule--bottom",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col-rule_left, .slds-col-rule--left",
   "settings" : [ {
     "property" : "border-left",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-align-content-center",
@@ -489,6 +207,12 @@
   }, {
     "property" : "align-items",
     "value" : "stretch"
+  } ]
+}, {
+  "name" : ".slds-size_4-of-8, .slds-size--4-of-8",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "50%"
   } ]
 }, {
   "name" : ".slds-large-nowrap",
@@ -854,6 +578,12 @@
     "value" : "$spacingXxSmall"
   } ]
 }, {
+  "name" : ".slds-grid_align-end, .slds-grid--align-end",
+  "settings" : [ {
+    "property" : "justify-content",
+    "value" : "flex-end"
+  } ]
+}, {
   "name" : ".slds-grid_pull-padded-x-small, .slds-grid--pull-padded-x-small",
   "settings" : [ {
     "property" : "margin-right",
@@ -908,7 +638,7 @@
     "value" : "$spacingXxLarge"
   } ]
 }, {
-  "name" : ".slds-col, [class*=slds-col_padded], [class*=slds-col--padded]",
+  "name" : ".slds-col, .slds-col_padded-around-medium, .slds-col--padded-around-medium, .slds-col_padded-medium, .slds-col--padded-medium, .slds-col_padded-around-large, .slds-col--padded-around-large, .slds-col_padded-large, .slds-col--padded-large, .slds-col_padded-around, .slds-col--padded-around, .slds-col_padded, .slds-col--padded",
   "settings" : [ {
     "property" : "flex",
     "value" : "1 1 auto"
@@ -917,25 +647,25 @@
   "name" : ".slds-col_rule-top, .slds-col--rule-top",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col_rule-right, .slds-col--rule-right",
   "settings" : [ {
     "property" : "border-right",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col_rule-bottom, .slds-col--rule-bottom",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-col_rule-left, .slds-col--rule-left",
   "settings" : [ {
     "property" : "border-left",
-    "value" : "1px solid $colorBorderSeparator"
+    "value" : "$colorBorderSeparator"
   } ]
 }, {
   "name" : ".slds-has-flexi-truncate",
@@ -998,7 +728,7 @@
     "value" : "center"
   } ]
 }, {
-  "name" : ".slds-grid_align-center .slds-col, .slds-grid_align-center [class*=slds-col_padded], .slds-grid_align-center [class*=slds-col--padded], .slds-grid--align-center .slds-col, .slds-grid--align-center [class*=slds-col_padded], .slds-grid--align-center [class*=slds-col--padded]",
+  "name" : ".slds-grid_align-center .slds-col, .slds-grid_align-center .slds-col_padded-around-medium, .slds-grid_align-center .slds-col--padded-around-medium, .slds-grid_align-center .slds-col_padded-medium, .slds-grid_align-center .slds-col--padded-medium, .slds-grid_align-center .slds-col_padded-around-large, .slds-grid_align-center .slds-col--padded-around-large, .slds-grid_align-center .slds-col_padded-large, .slds-grid_align-center .slds-col--padded-large, .slds-grid_align-center .slds-col_padded-around, .slds-grid_align-center .slds-col--padded-around, .slds-grid_align-center .slds-col_padded, .slds-grid_align-center .slds-col--padded, .slds-grid--align-center .slds-col, .slds-grid--align-center .slds-col_padded-around-medium, .slds-grid--align-center .slds-col--padded-around-medium, .slds-grid--align-center .slds-col_padded-medium, .slds-grid--align-center .slds-col--padded-medium, .slds-grid--align-center .slds-col_padded-around-large, .slds-grid--align-center .slds-col--padded-around-large, .slds-grid--align-center .slds-col_padded-large, .slds-grid--align-center .slds-col--padded-large, .slds-grid--align-center .slds-col_padded-around, .slds-grid--align-center .slds-col--padded-around, .slds-grid--align-center .slds-col_padded, .slds-grid--align-center .slds-col--padded",
   "settings" : [ {
     "property" : "flex-grow",
     "value" : "0"
@@ -1010,7 +740,7 @@
     "value" : "space-around"
   } ]
 }, {
-  "name" : ".slds-grid_align-space .slds-col, .slds-grid_align-space [class*=slds-col_padded], .slds-grid_align-space [class*=slds-col--padded], .slds-grid--align-space .slds-col, .slds-grid--align-space [class*=slds-col_padded], .slds-grid--align-space [class*=slds-col--padded]",
+  "name" : ".slds-grid_align-space .slds-col, .slds-grid_align-space .slds-col_padded-around-medium, .slds-grid_align-space .slds-col--padded-around-medium, .slds-grid_align-space .slds-col_padded-medium, .slds-grid_align-space .slds-col--padded-medium, .slds-grid_align-space .slds-col_padded-around-large, .slds-grid_align-space .slds-col--padded-around-large, .slds-grid_align-space .slds-col_padded-large, .slds-grid_align-space .slds-col--padded-large, .slds-grid_align-space .slds-col_padded-around, .slds-grid_align-space .slds-col--padded-around, .slds-grid_align-space .slds-col_padded, .slds-grid_align-space .slds-col--padded, .slds-grid--align-space .slds-col, .slds-grid--align-space .slds-col_padded-around-medium, .slds-grid--align-space .slds-col--padded-around-medium, .slds-grid--align-space .slds-col_padded-medium, .slds-grid--align-space .slds-col--padded-medium, .slds-grid--align-space .slds-col_padded-around-large, .slds-grid--align-space .slds-col--padded-around-large, .slds-grid--align-space .slds-col_padded-large, .slds-grid--align-space .slds-col--padded-large, .slds-grid--align-space .slds-col_padded-around, .slds-grid--align-space .slds-col--padded-around, .slds-grid--align-space .slds-col_padded, .slds-grid--align-space .slds-col--padded",
   "settings" : [ {
     "property" : "flex-grow",
     "value" : "0"
@@ -1022,19 +752,13 @@
     "value" : "space-between"
   } ]
 }, {
-  "name" : ".slds-grid_align-spread .slds-col, .slds-grid_align-spread [class*=slds-col_padded], .slds-grid_align-spread [class*=slds-col--padded], .slds-grid--align-spread .slds-col, .slds-grid--align-spread [class*=slds-col_padded], .slds-grid--align-spread [class*=slds-col--padded]",
+  "name" : ".slds-grid_align-spread .slds-col, .slds-grid_align-spread .slds-col_padded-around-medium, .slds-grid_align-spread .slds-col--padded-around-medium, .slds-grid_align-spread .slds-col_padded-medium, .slds-grid_align-spread .slds-col--padded-medium, .slds-grid_align-spread .slds-col_padded-around-large, .slds-grid_align-spread .slds-col--padded-around-large, .slds-grid_align-spread .slds-col_padded-large, .slds-grid_align-spread .slds-col--padded-large, .slds-grid_align-spread .slds-col_padded-around, .slds-grid_align-spread .slds-col--padded-around, .slds-grid_align-spread .slds-col_padded, .slds-grid_align-spread .slds-col--padded, .slds-grid--align-spread .slds-col, .slds-grid--align-spread .slds-col_padded-around-medium, .slds-grid--align-spread .slds-col--padded-around-medium, .slds-grid--align-spread .slds-col_padded-medium, .slds-grid--align-spread .slds-col--padded-medium, .slds-grid--align-spread .slds-col_padded-around-large, .slds-grid--align-spread .slds-col--padded-around-large, .slds-grid--align-spread .slds-col_padded-large, .slds-grid--align-spread .slds-col--padded-large, .slds-grid--align-spread .slds-col_padded-around, .slds-grid--align-spread .slds-col--padded-around, .slds-grid--align-spread .slds-col_padded, .slds-grid--align-spread .slds-col--padded",
   "settings" : [ {
     "property" : "flex-grow",
     "value" : "0"
   } ]
 }, {
-  "name" : ".slds-grid_align-end, .slds-grid--align-end",
-  "settings" : [ {
-    "property" : "justify-content",
-    "value" : "flex-end"
-  } ]
-}, {
-  "name" : ".slds-grid_align-end .slds-col, .slds-grid_align-end [class*=slds-col_padded], .slds-grid_align-end [class*=slds-col--padded], .slds-grid--align-end .slds-col, .slds-grid--align-end [class*=slds-col_padded], .slds-grid--align-end [class*=slds-col--padded]",
+  "name" : ".slds-grid_align-end .slds-col, .slds-grid_align-end .slds-col_padded-around-medium, .slds-grid_align-end .slds-col--padded-around-medium, .slds-grid_align-end .slds-col_padded-medium, .slds-grid_align-end .slds-col--padded-medium, .slds-grid_align-end .slds-col_padded-around-large, .slds-grid_align-end .slds-col--padded-around-large, .slds-grid_align-end .slds-col_padded-large, .slds-grid_align-end .slds-col--padded-large, .slds-grid_align-end .slds-col_padded-around, .slds-grid_align-end .slds-col--padded-around, .slds-grid_align-end .slds-col_padded, .slds-grid_align-end .slds-col--padded, .slds-grid--align-end .slds-col, .slds-grid--align-end .slds-col_padded-around-medium, .slds-grid--align-end .slds-col--padded-around-medium, .slds-grid--align-end .slds-col_padded-medium, .slds-grid--align-end .slds-col--padded-medium, .slds-grid--align-end .slds-col_padded-around-large, .slds-grid--align-end .slds-col--padded-around-large, .slds-grid--align-end .slds-col_padded-large, .slds-grid--align-end .slds-col--padded-large, .slds-grid--align-end .slds-col_padded-around, .slds-grid--align-end .slds-col--padded-around, .slds-grid--align-end .slds-col_padded, .slds-grid--align-end .slds-col--padded",
   "settings" : [ {
     "property" : "flex-grow",
     "value" : "0"
@@ -1925,12 +1649,6 @@
     "value" : "$spacingXxxSmall"
   } ]
 }, {
-  "name" : ".slds-hide_x-large, .slds-hide--x-large",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
-  } ]
-}, {
   "name" : ".slds-m-vertical_xx-small, .slds-m-vertical--xx-small",
   "settings" : [ {
     "property" : "margin-top",
@@ -2280,6 +1998,12 @@
   "settings" : [ {
     "property" : "padding-right",
     "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-size_5-of-8, .slds-size--5-of-8",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "62.5%"
   } ]
 }, {
   "name" : ".slds-p-right_xxx-small, .slds-p-right--xxx-small",
@@ -3149,7 +2873,7 @@
     "value" : "$spacingXSmall"
   }, {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-list_vertical.slds-has-dividers > .slds-list__item:hover, .slds-list--vertical.slds-has-dividers > .slds-list__item:hover",
@@ -3176,7 +2900,7 @@
   "name" : ".slds-list_vertical.slds-has-dividers > .slds-list__item.slds-is-selected, .slds-list--vertical.slds-has-dividers > .slds-list__item.slds-is-selected",
   "settings" : [ {
     "property" : "box-shadow",
-    "value" : "$colorBorderSelection 0 0 0 $borderWidthThin inset"
+    "value" : "$colorBorderSelection"
   }, {
     "property" : "background-color",
     "value" : "$colorBackgroundRowSelected"
@@ -3191,7 +2915,7 @@
   "name" : ".slds-has-cards > .slds-list__item",
   "settings" : [ {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "border-radius",
     "value" : "$borderRadiusMedium"
@@ -3209,7 +2933,7 @@
   "name" : ".slds-has-cards_space > .slds-list__item, .slds-has-cards--space > .slds-list__item",
   "settings" : [ {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "border-radius",
     "value" : "$borderRadiusMedium"
@@ -3227,6 +2951,12 @@
     "value" : "$spacingXSmall"
   } ]
 }, {
+  "name" : ".slds-size_6-of-8, .slds-size--6-of-8",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "75%"
+  } ]
+}, {
   "name" : ".slds-has-divider",
   "settings" : [ {
     "property" : "margin-top",
@@ -3236,7 +2966,7 @@
     "value" : "$spacingXSmall"
   }, {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-has-block-links a",
@@ -3332,13 +3062,13 @@
   "name" : ".slds-has-dividers_top > .slds-list__item, .slds-has-dividers_top > .slds-item, .slds-has-dividers--top > .slds-list__item, .slds-has-dividers--top > .slds-item",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-has-dividers_top-space > .slds-list__item, .slds-has-dividers_top-space > .slds-item, .slds-has-dividers--top-space > .slds-list__item, .slds-has-dividers--top-space > .slds-item",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "padding",
     "value" : "$spacingSmall"
@@ -3347,13 +3077,13 @@
   "name" : ".slds-has-dividers_bottom > .slds-list__item, .slds-has-dividers_bottom > .slds-item, .slds-has-dividers--bottom > .slds-list__item, .slds-has-dividers--bottom > .slds-item",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-has-dividers_bottom-space > .slds-list__item, .slds-has-dividers_bottom-space > .slds-item, .slds-has-dividers--bottom-space > .slds-list__item, .slds-has-dividers--bottom-space > .slds-item",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "padding",
     "value" : "$spacingSmall"
@@ -3362,7 +3092,7 @@
   "name" : ".slds-has-dividers_around > .slds-item, .slds-has-dividers--around > .slds-item",
   "settings" : [ {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "border-radius",
     "value" : "$borderRadiusMedium"
@@ -3380,7 +3110,7 @@
   "name" : ".slds-has-dividers_around-space > .slds-item, .slds-has-dividers--around-space > .slds-item",
   "settings" : [ {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "border-radius",
     "value" : "$borderRadiusMedium"
@@ -3422,7 +3152,7 @@
   "name" : ".slds-has-list-interactions > .slds-list__item.slds-is-selected, .slds-has-list-interactions > .slds-item.slds-is-selected",
   "settings" : [ {
     "property" : "box-shadow",
-    "value" : "$colorBorderSelection 0 0 0 $borderWidthThin inset"
+    "value" : "$colorBorderSelection"
   }, {
     "property" : "background-color",
     "value" : "$colorBackgroundRowSelected"
@@ -3437,19 +3167,13 @@
   "name" : ".slds-has-divider_top, .slds-has-divider--top",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
-  } ]
-}, {
-  "name" : ".slds-show_x-large, .slds-show--x-large",
-  "settings" : [ {
-    "property" : "display",
-    "value" : "none"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-has-divider_top-space, .slds-has-divider--top-space",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "margin-top",
     "value" : "$spacingXSmall"
@@ -3512,13 +3236,13 @@
   "name" : ".slds-has-divider_bottom, .slds-has-divider--bottom",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-has-divider_bottom-space, .slds-has-divider--bottom-space",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "margin-bottom",
     "value" : "$spacingXSmall"
@@ -3746,15 +3470,6 @@
     "value" : "$colorBackgroundIndicatorDot"
   } ]
 }, {
-  "name" : ".slds-is-visually-empty",
-  "settings" : [ {
-    "property" : "visibility",
-    "value" : "hidden"
-  }, {
-    "property" : "width",
-    "value" : "0"
-  } ]
-}, {
   "name" : ".slds-has-dividers_right > .slds-list__item:last-child, .slds-has-dividers--right > .slds-list__item:last-child, .slds-has-dividers_right > .slds-item:last-child, .slds-has-dividers--right > .slds-item:last-child",
   "settings" : [ {
     "property" : "margin-right",
@@ -3923,25 +3638,25 @@
   "name" : ".slds-border_bottom, .slds-border--bottom",
   "settings" : [ {
     "property" : "border-bottom",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-border_left, .slds-border--left",
   "settings" : [ {
     "property" : "border-left",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-border_right, .slds-border--right",
   "settings" : [ {
     "property" : "border-right",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-border_top, .slds-border--top",
   "settings" : [ {
     "property" : "border-top",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-truncate",
@@ -4010,7 +3725,7 @@
     "value" : "$borderRadiusMedium"
   }, {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-box_xx-small, .slds-box--xx-small",
@@ -4040,7 +3755,7 @@
     "value" : "$borderRadiusMedium"
   }, {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorder"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-box_link, .slds-box_link:active, .slds-box_link:focus, .slds-box_link:hover",
@@ -4061,10 +3776,10 @@
     "value" : "0"
   }, {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorBorderSelectionHover"
+    "value" : "$borderWidthThin"
   }, {
     "property" : "box-shadow",
-    "value" : "0 0 0 1px $colorBorderSelectionHover inset"
+    "value" : "$colorBorderSelectionHover"
   } ]
 }, {
   "name" : ".slds-theme_default, .slds-theme--default",
@@ -4289,10 +4004,10 @@
   "name" : ".slds-theme_warning a:focus, .slds-theme--warning a:focus",
   "settings" : [ {
     "property" : "box-shadow",
-    "value" : "0 0 3px $colorGray10"
+    "value" : "$colorGray10"
   }, {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorGray10"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-theme_warning a:active, .slds-theme--warning a:active",
@@ -4328,10 +4043,10 @@
     "value" : "$colorGray10"
   }, {
     "property" : "box-shadow",
-    "value" : "0 0 3px $colorGray10"
+    "value" : "$colorGray10"
   }, {
     "property" : "border",
-    "value" : "$borderWidthThin solid $colorGray10"
+    "value" : "$borderWidthThin"
   } ]
 }, {
   "name" : ".slds-theme_warning button:active, .slds-theme--warning button:active",
@@ -4344,6 +4059,12 @@
   "settings" : [ {
     "property" : "fill",
     "value" : "$colorGray10"
+  } ]
+}, {
+  "name" : ".slds-text-color_weak, .slds-text-color--weak",
+  "settings" : [ {
+    "property" : "color",
+    "value" : "$colorTextWeak"
   } ]
 }, {
   "name" : ".slds-theme_error, .slds-theme--error",
@@ -4394,7 +4115,7 @@
     "value" : "$colorTextInverse"
   }, {
     "property" : "background-color",
-    "value" : "#444"
+    "value" : "var(--slds-g-color-neutral-base-30, #444)"
   } ]
 }, {
   "name" : ".slds-theme_offline a:not(.slds-button--neutral), .slds-theme--offline a:not(.slds-button--neutral)",
@@ -4602,12 +4323,6 @@
   "settings" : [ {
     "property" : "color",
     "value" : "$colorTextDefault"
-  } ]
-}, {
-  "name" : ".slds-text-color_weak, .slds-text-color--weak",
-  "settings" : [ {
-    "property" : "color",
-    "value" : "$colorTextWeak"
   } ]
 }, {
   "name" : ".slds-text-color_error, .slds-text-color--error",
@@ -5306,24 +5021,6 @@
     "value" : "37.5%"
   } ]
 }, {
-  "name" : ".slds-size_4-of-8, .slds-size--4-of-8",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "50%"
-  } ]
-}, {
-  "name" : ".slds-size_5-of-8, .slds-size--5-of-8",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "62.5%"
-  } ]
-}, {
-  "name" : ".slds-size_6-of-8, .slds-size--6-of-8",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "75%"
-  } ]
-}, {
   "name" : ".slds-size_7-of-8, .slds-size--7-of-8",
   "settings" : [ {
     "property" : "width",
@@ -5480,7 +5177,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-x-small-size_], [class*=slds-x-small-size--]",
+  "name" : ".slds-x-small-size_xxx-small, .slds-x-small-size_xx-small, .slds-x-small-size_x-small, .slds-x-small-size_small, .slds-x-small-size_medium, .slds-x-small-size_large, .slds-x-small-size_x-large, .slds-x-small-size_xx-large, .slds-x-small-size_1-of-1, .slds-x-small-size_1-of-2, .slds-x-small-size_2-of-2, .slds-x-small-size_1-of-3, .slds-x-small-size_2-of-3, .slds-x-small-size_3-of-3, .slds-x-small-size_1-of-4, .slds-x-small-size_2-of-4, .slds-x-small-size_3-of-4, .slds-x-small-size_4-of-4, .slds-x-small-size_1-of-5, .slds-x-small-size_2-of-5, .slds-x-small-size_3-of-5, .slds-x-small-size_4-of-5, .slds-x-small-size_5-of-5, .slds-x-small-size_1-of-6, .slds-x-small-size_2-of-6, .slds-x-small-size_3-of-6, .slds-x-small-size_4-of-6, .slds-x-small-size_5-of-6, .slds-x-small-size_6-of-6, .slds-x-small-size_1-of-7, .slds-x-small-size_2-of-7, .slds-x-small-size_3-of-7, .slds-x-small-size_4-of-7, .slds-x-small-size_5-of-7, .slds-x-small-size_6-of-7, .slds-x-small-size_7-of-7, .slds-x-small-size_1-of-8, .slds-x-small-size_2-of-8, .slds-x-small-size_3-of-8, .slds-x-small-size_4-of-8, .slds-x-small-size_5-of-8, .slds-x-small-size_6-of-8, .slds-x-small-size_7-of-8, .slds-x-small-size_8-of-8, .slds-x-small-size_1-of-12, .slds-x-small-size_2-of-12, .slds-x-small-size_3-of-12, .slds-x-small-size_4-of-12, .slds-x-small-size_5-of-12, .slds-x-small-size_6-of-12, .slds-x-small-size_7-of-12, .slds-x-small-size_8-of-12, .slds-x-small-size_9-of-12, .slds-x-small-size_10-of-12, .slds-x-small-size_11-of-12, .slds-x-small-size_12-of-12, .slds-x-small-size--xxx-small, .slds-x-small-size--xx-small, .slds-x-small-size--x-small, .slds-x-small-size--small, .slds-x-small-size--medium, .slds-x-small-size--large, .slds-x-small-size--x-large, .slds-x-small-size--xx-large, .slds-x-small-size--1-of-1, .slds-x-small-size--1-of-2, .slds-x-small-size--2-of-2, .slds-x-small-size--1-of-3, .slds-x-small-size--2-of-3, .slds-x-small-size--3-of-3, .slds-x-small-size--1-of-4, .slds-x-small-size--2-of-4, .slds-x-small-size--3-of-4, .slds-x-small-size--4-of-4, .slds-x-small-size--1-of-5, .slds-x-small-size--2-of-5, .slds-x-small-size--3-of-5, .slds-x-small-size--4-of-5, .slds-x-small-size--5-of-5, .slds-x-small-size--1-of-6, .slds-x-small-size--2-of-6, .slds-x-small-size--3-of-6, .slds-x-small-size--4-of-6, .slds-x-small-size--5-of-6, .slds-x-small-size--6-of-6, .slds-x-small-size--1-of-7, .slds-x-small-size--2-of-7, .slds-x-small-size--3-of-7, .slds-x-small-size--4-of-7, .slds-x-small-size--5-of-7, .slds-x-small-size--6-of-7, .slds-x-small-size--7-of-7, .slds-x-small-size--1-of-8, .slds-x-small-size--2-of-8, .slds-x-small-size--3-of-8, .slds-x-small-size--4-of-8, .slds-x-small-size--5-of-8, .slds-x-small-size--6-of-8, .slds-x-small-size--7-of-8, .slds-x-small-size--8-of-8, .slds-x-small-size--1-of-12, .slds-x-small-size--2-of-12, .slds-x-small-size--3-of-12, .slds-x-small-size--4-of-12, .slds-x-small-size--5-of-12, .slds-x-small-size--6-of-12, .slds-x-small-size--7-of-12, .slds-x-small-size--8-of-12, .slds-x-small-size--9-of-12, .slds-x-small-size--10-of-12, .slds-x-small-size--11-of-12, .slds-x-small-size--12-of-12",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -5894,7 +5591,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-max-x-small-size_], [class*=slds-max-x-small-size--]",
+  "name" : ".slds-max-x-small-size_xxx-small, .slds-max-x-small-size_xx-small, .slds-max-x-small-size_x-small, .slds-max-x-small-size_small, .slds-max-x-small-size_medium, .slds-max-x-small-size_large, .slds-max-x-small-size_x-large, .slds-max-x-small-size_xx-large, .slds-max-x-small-size--xxx-small, .slds-max-x-small-size--xx-small, .slds-max-x-small-size--x-small, .slds-max-x-small-size--small, .slds-max-x-small-size--medium, .slds-max-x-small-size--large, .slds-max-x-small-size--x-large, .slds-max-x-small-size--xx-large",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -6308,7 +6005,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-small-size_], [class*=slds-small-size--]",
+  "name" : ".slds-small-size_xxx-small, .slds-small-size_xx-small, .slds-small-size_x-small, .slds-small-size_small, .slds-small-size_medium, .slds-small-size_large, .slds-small-size_x-large, .slds-small-size_xx-large, .slds-small-size_1-of-1, .slds-small-size_1-of-2, .slds-small-size_2-of-2, .slds-small-size_1-of-3, .slds-small-size_2-of-3, .slds-small-size_3-of-3, .slds-small-size_1-of-4, .slds-small-size_2-of-4, .slds-small-size_3-of-4, .slds-small-size_4-of-4, .slds-small-size_1-of-5, .slds-small-size_2-of-5, .slds-small-size_3-of-5, .slds-small-size_4-of-5, .slds-small-size_5-of-5, .slds-small-size_1-of-6, .slds-small-size_2-of-6, .slds-small-size_3-of-6, .slds-small-size_4-of-6, .slds-small-size_5-of-6, .slds-small-size_6-of-6, .slds-small-size_1-of-7, .slds-small-size_2-of-7, .slds-small-size_3-of-7, .slds-small-size_4-of-7, .slds-small-size_5-of-7, .slds-small-size_6-of-7, .slds-small-size_7-of-7, .slds-small-size_1-of-8, .slds-small-size_2-of-8, .slds-small-size_3-of-8, .slds-small-size_4-of-8, .slds-small-size_5-of-8, .slds-small-size_6-of-8, .slds-small-size_7-of-8, .slds-small-size_8-of-8, .slds-small-size_1-of-12, .slds-small-size_2-of-12, .slds-small-size_3-of-12, .slds-small-size_4-of-12, .slds-small-size_5-of-12, .slds-small-size_6-of-12, .slds-small-size_7-of-12, .slds-small-size_8-of-12, .slds-small-size_9-of-12, .slds-small-size_10-of-12, .slds-small-size_11-of-12, .slds-small-size_12-of-12, .slds-small-size--xxx-small, .slds-small-size--xx-small, .slds-small-size--x-small, .slds-small-size--small, .slds-small-size--medium, .slds-small-size--large, .slds-small-size--x-large, .slds-small-size--xx-large, .slds-small-size--1-of-1, .slds-small-size--1-of-2, .slds-small-size--2-of-2, .slds-small-size--1-of-3, .slds-small-size--2-of-3, .slds-small-size--3-of-3, .slds-small-size--1-of-4, .slds-small-size--2-of-4, .slds-small-size--3-of-4, .slds-small-size--4-of-4, .slds-small-size--1-of-5, .slds-small-size--2-of-5, .slds-small-size--3-of-5, .slds-small-size--4-of-5, .slds-small-size--5-of-5, .slds-small-size--1-of-6, .slds-small-size--2-of-6, .slds-small-size--3-of-6, .slds-small-size--4-of-6, .slds-small-size--5-of-6, .slds-small-size--6-of-6, .slds-small-size--1-of-7, .slds-small-size--2-of-7, .slds-small-size--3-of-7, .slds-small-size--4-of-7, .slds-small-size--5-of-7, .slds-small-size--6-of-7, .slds-small-size--7-of-7, .slds-small-size--1-of-8, .slds-small-size--2-of-8, .slds-small-size--3-of-8, .slds-small-size--4-of-8, .slds-small-size--5-of-8, .slds-small-size--6-of-8, .slds-small-size--7-of-8, .slds-small-size--8-of-8, .slds-small-size--1-of-12, .slds-small-size--2-of-12, .slds-small-size--3-of-12, .slds-small-size--4-of-12, .slds-small-size--5-of-12, .slds-small-size--6-of-12, .slds-small-size--7-of-12, .slds-small-size--8-of-12, .slds-small-size--9-of-12, .slds-small-size--10-of-12, .slds-small-size--11-of-12, .slds-small-size--12-of-12",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -6722,7 +6419,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-max-small-size_], [class*=slds-max-small-size--]",
+  "name" : ".slds-max-small-size_xxx-small, .slds-max-small-size_xx-small, .slds-max-small-size_x-small, .slds-max-small-size_small, .slds-max-small-size_medium, .slds-max-small-size_large, .slds-max-small-size_x-large, .slds-max-small-size_xx-large, .slds-max-small-size--xxx-small, .slds-max-small-size--xx-small, .slds-max-small-size--x-small, .slds-max-small-size--small, .slds-max-small-size--medium, .slds-max-small-size--large, .slds-max-small-size--x-large, .slds-max-small-size--xx-large",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -7136,7 +6833,25 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-medium-size_], [class*=slds-medium-size--]",
+  "name" : ".slds-medium-size_6-of-12, .slds-medium-size--6-of-12",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "50%"
+  } ]
+}, {
+  "name" : ".slds-medium-size_7-of-12, .slds-medium-size--7-of-12",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "58.3333333333%"
+  } ]
+}, {
+  "name" : ".slds-medium-size_8-of-12, .slds-medium-size--8-of-12",
+  "settings" : [ {
+    "property" : "width",
+    "value" : "66.6666666667%"
+  } ]
+}, {
+  "name" : ".slds-medium-size_xxx-small, .slds-medium-size_xx-small, .slds-medium-size_x-small, .slds-medium-size_small, .slds-medium-size_medium, .slds-medium-size_large, .slds-medium-size_x-large, .slds-medium-size_xx-large, .slds-medium-size_1-of-1, .slds-medium-size_1-of-2, .slds-medium-size_2-of-2, .slds-medium-size_1-of-3, .slds-medium-size_2-of-3, .slds-medium-size_3-of-3, .slds-medium-size_1-of-4, .slds-medium-size_2-of-4, .slds-medium-size_3-of-4, .slds-medium-size_4-of-4, .slds-medium-size_1-of-5, .slds-medium-size_2-of-5, .slds-medium-size_3-of-5, .slds-medium-size_4-of-5, .slds-medium-size_5-of-5, .slds-medium-size_1-of-6, .slds-medium-size_2-of-6, .slds-medium-size_3-of-6, .slds-medium-size_4-of-6, .slds-medium-size_5-of-6, .slds-medium-size_6-of-6, .slds-medium-size_1-of-7, .slds-medium-size_2-of-7, .slds-medium-size_3-of-7, .slds-medium-size_4-of-7, .slds-medium-size_5-of-7, .slds-medium-size_6-of-7, .slds-medium-size_7-of-7, .slds-medium-size_1-of-8, .slds-medium-size_2-of-8, .slds-medium-size_3-of-8, .slds-medium-size_4-of-8, .slds-medium-size_5-of-8, .slds-medium-size_6-of-8, .slds-medium-size_7-of-8, .slds-medium-size_8-of-8, .slds-medium-size_1-of-12, .slds-medium-size_2-of-12, .slds-medium-size_3-of-12, .slds-medium-size_4-of-12, .slds-medium-size_5-of-12, .slds-medium-size_6-of-12, .slds-medium-size_7-of-12, .slds-medium-size_8-of-12, .slds-medium-size_9-of-12, .slds-medium-size_10-of-12, .slds-medium-size_11-of-12, .slds-medium-size_12-of-12, .slds-medium-size--xxx-small, .slds-medium-size--xx-small, .slds-medium-size--x-small, .slds-medium-size--small, .slds-medium-size--medium, .slds-medium-size--large, .slds-medium-size--x-large, .slds-medium-size--xx-large, .slds-medium-size--1-of-1, .slds-medium-size--1-of-2, .slds-medium-size--2-of-2, .slds-medium-size--1-of-3, .slds-medium-size--2-of-3, .slds-medium-size--3-of-3, .slds-medium-size--1-of-4, .slds-medium-size--2-of-4, .slds-medium-size--3-of-4, .slds-medium-size--4-of-4, .slds-medium-size--1-of-5, .slds-medium-size--2-of-5, .slds-medium-size--3-of-5, .slds-medium-size--4-of-5, .slds-medium-size--5-of-5, .slds-medium-size--1-of-6, .slds-medium-size--2-of-6, .slds-medium-size--3-of-6, .slds-medium-size--4-of-6, .slds-medium-size--5-of-6, .slds-medium-size--6-of-6, .slds-medium-size--1-of-7, .slds-medium-size--2-of-7, .slds-medium-size--3-of-7, .slds-medium-size--4-of-7, .slds-medium-size--5-of-7, .slds-medium-size--6-of-7, .slds-medium-size--7-of-7, .slds-medium-size--1-of-8, .slds-medium-size--2-of-8, .slds-medium-size--3-of-8, .slds-medium-size--4-of-8, .slds-medium-size--5-of-8, .slds-medium-size--6-of-8, .slds-medium-size--7-of-8, .slds-medium-size--8-of-8, .slds-medium-size--1-of-12, .slds-medium-size--2-of-12, .slds-medium-size--3-of-12, .slds-medium-size--4-of-12, .slds-medium-size--5-of-12, .slds-medium-size--6-of-12, .slds-medium-size--7-of-12, .slds-medium-size--8-of-12, .slds-medium-size--9-of-12, .slds-medium-size--10-of-12, .slds-medium-size--11-of-12, .slds-medium-size--12-of-12",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -7436,24 +7151,6 @@
     "value" : "41.6666666667%"
   } ]
 }, {
-  "name" : ".slds-medium-size_6-of-12, .slds-medium-size--6-of-12",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "50%"
-  } ]
-}, {
-  "name" : ".slds-medium-size_7-of-12, .slds-medium-size--7-of-12",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "58.3333333333%"
-  } ]
-}, {
-  "name" : ".slds-medium-size_8-of-12, .slds-medium-size--8-of-12",
-  "settings" : [ {
-    "property" : "width",
-    "value" : "66.6666666667%"
-  } ]
-}, {
   "name" : ".slds-medium-size_9-of-12, .slds-medium-size--9-of-12",
   "settings" : [ {
     "property" : "width",
@@ -7550,7 +7247,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-max-medium-size_], [class*=slds-max-medium-size--]",
+  "name" : ".slds-max-medium-size_xxx-small, .slds-max-medium-size_xx-small, .slds-max-medium-size_x-small, .slds-max-medium-size_small, .slds-max-medium-size_medium, .slds-max-medium-size_large, .slds-max-medium-size_x-large, .slds-max-medium-size_xx-large, .slds-max-medium-size--xxx-small, .slds-max-medium-size--xx-small, .slds-max-medium-size--x-small, .slds-max-medium-size--small, .slds-max-medium-size--medium, .slds-max-medium-size--large, .slds-max-medium-size--x-large, .slds-max-medium-size--xx-large",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -7964,7 +7661,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-large-size_], [class*=slds-large-size--]",
+  "name" : ".slds-large-size_xxx-small, .slds-large-size_xx-small, .slds-large-size_x-small, .slds-large-size_small, .slds-large-size_medium, .slds-large-size_large, .slds-large-size_x-large, .slds-large-size_xx-large, .slds-large-size_1-of-1, .slds-large-size_1-of-2, .slds-large-size_2-of-2, .slds-large-size_1-of-3, .slds-large-size_2-of-3, .slds-large-size_3-of-3, .slds-large-size_1-of-4, .slds-large-size_2-of-4, .slds-large-size_3-of-4, .slds-large-size_4-of-4, .slds-large-size_1-of-5, .slds-large-size_2-of-5, .slds-large-size_3-of-5, .slds-large-size_4-of-5, .slds-large-size_5-of-5, .slds-large-size_1-of-6, .slds-large-size_2-of-6, .slds-large-size_3-of-6, .slds-large-size_4-of-6, .slds-large-size_5-of-6, .slds-large-size_6-of-6, .slds-large-size_1-of-7, .slds-large-size_2-of-7, .slds-large-size_3-of-7, .slds-large-size_4-of-7, .slds-large-size_5-of-7, .slds-large-size_6-of-7, .slds-large-size_7-of-7, .slds-large-size_1-of-8, .slds-large-size_2-of-8, .slds-large-size_3-of-8, .slds-large-size_4-of-8, .slds-large-size_5-of-8, .slds-large-size_6-of-8, .slds-large-size_7-of-8, .slds-large-size_8-of-8, .slds-large-size_1-of-12, .slds-large-size_2-of-12, .slds-large-size_3-of-12, .slds-large-size_4-of-12, .slds-large-size_5-of-12, .slds-large-size_6-of-12, .slds-large-size_7-of-12, .slds-large-size_8-of-12, .slds-large-size_9-of-12, .slds-large-size_10-of-12, .slds-large-size_11-of-12, .slds-large-size_12-of-12, .slds-large-size--xxx-small, .slds-large-size--xx-small, .slds-large-size--x-small, .slds-large-size--small, .slds-large-size--medium, .slds-large-size--large, .slds-large-size--x-large, .slds-large-size--xx-large, .slds-large-size--1-of-1, .slds-large-size--1-of-2, .slds-large-size--2-of-2, .slds-large-size--1-of-3, .slds-large-size--2-of-3, .slds-large-size--3-of-3, .slds-large-size--1-of-4, .slds-large-size--2-of-4, .slds-large-size--3-of-4, .slds-large-size--4-of-4, .slds-large-size--1-of-5, .slds-large-size--2-of-5, .slds-large-size--3-of-5, .slds-large-size--4-of-5, .slds-large-size--5-of-5, .slds-large-size--1-of-6, .slds-large-size--2-of-6, .slds-large-size--3-of-6, .slds-large-size--4-of-6, .slds-large-size--5-of-6, .slds-large-size--6-of-6, .slds-large-size--1-of-7, .slds-large-size--2-of-7, .slds-large-size--3-of-7, .slds-large-size--4-of-7, .slds-large-size--5-of-7, .slds-large-size--6-of-7, .slds-large-size--7-of-7, .slds-large-size--1-of-8, .slds-large-size--2-of-8, .slds-large-size--3-of-8, .slds-large-size--4-of-8, .slds-large-size--5-of-8, .slds-large-size--6-of-8, .slds-large-size--7-of-8, .slds-large-size--8-of-8, .slds-large-size--1-of-12, .slds-large-size--2-of-12, .slds-large-size--3-of-12, .slds-large-size--4-of-12, .slds-large-size--5-of-12, .slds-large-size--6-of-12, .slds-large-size--7-of-12, .slds-large-size--8-of-12, .slds-large-size--9-of-12, .slds-large-size--10-of-12, .slds-large-size--11-of-12, .slds-large-size--12-of-12",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -8378,7 +8075,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-max-large-size_], [class*=slds-max-large-size--]",
+  "name" : ".slds-max-large-size_xxx-small, .slds-max-large-size_xx-small, .slds-max-large-size_x-small, .slds-max-large-size_small, .slds-max-large-size_medium, .slds-max-large-size_large, .slds-max-large-size_x-large, .slds-max-large-size_xx-large, .slds-max-large-size--xxx-small, .slds-max-large-size--xx-small, .slds-max-large-size--x-small, .slds-max-large-size--small, .slds-max-large-size--medium, .slds-max-large-size--large, .slds-max-large-size--x-large, .slds-max-large-size--xx-large",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -8792,7 +8489,7 @@
     "value" : "12"
   } ]
 }, {
-  "name" : "[class*=slds-size_], [class*=slds-size--]",
+  "name" : ".slds-size_xxx-small, .slds-size_xx-small, .slds-size_x-small, .slds-size_small, .slds-size_medium, .slds-size_large, .slds-size_x-large, .slds-size_xx-large, .slds-size_1-of-1, .slds-size_1-of-2, .slds-size_2-of-2, .slds-size_1-of-3, .slds-size_2-of-3, .slds-size_3-of-3, .slds-size_1-of-4, .slds-size_2-of-4, .slds-size_3-of-4, .slds-size_4-of-4, .slds-size_1-of-5, .slds-size_2-of-5, .slds-size_3-of-5, .slds-size_4-of-5, .slds-size_5-of-5, .slds-size_1-of-6, .slds-size_2-of-6, .slds-size_3-of-6, .slds-size_4-of-6, .slds-size_5-of-6, .slds-size_6-of-6, .slds-size_1-of-7, .slds-size_2-of-7, .slds-size_3-of-7, .slds-size_4-of-7, .slds-size_5-of-7, .slds-size_6-of-7, .slds-size_7-of-7, .slds-size_1-of-8, .slds-size_2-of-8, .slds-size_3-of-8, .slds-size_4-of-8, .slds-size_5-of-8, .slds-size_6-of-8, .slds-size_7-of-8, .slds-size_8-of-8, .slds-size_1-of-12, .slds-size_2-of-12, .slds-size_3-of-12, .slds-size_4-of-12, .slds-size_5-of-12, .slds-size_6-of-12, .slds-size_7-of-12, .slds-size_8-of-12, .slds-size_9-of-12, .slds-size_10-of-12, .slds-size_11-of-12, .slds-size_12-of-12, .slds-size--xxx-small, .slds-size--xx-small, .slds-size--x-small, .slds-size--small, .slds-size--medium, .slds-size--large, .slds-size--x-large, .slds-size--xx-large, .slds-size--1-of-1, .slds-size--1-of-2, .slds-size--2-of-2, .slds-size--1-of-3, .slds-size--2-of-3, .slds-size--3-of-3, .slds-size--1-of-4, .slds-size--2-of-4, .slds-size--3-of-4, .slds-size--4-of-4, .slds-size--1-of-5, .slds-size--2-of-5, .slds-size--3-of-5, .slds-size--4-of-5, .slds-size--5-of-5, .slds-size--1-of-6, .slds-size--2-of-6, .slds-size--3-of-6, .slds-size--4-of-6, .slds-size--5-of-6, .slds-size--6-of-6, .slds-size--1-of-7, .slds-size--2-of-7, .slds-size--3-of-7, .slds-size--4-of-7, .slds-size--5-of-7, .slds-size--6-of-7, .slds-size--7-of-7, .slds-size--1-of-8, .slds-size--2-of-8, .slds-size--3-of-8, .slds-size--4-of-8, .slds-size--5-of-8, .slds-size--6-of-8, .slds-size--7-of-8, .slds-size--8-of-8, .slds-size--1-of-12, .slds-size--2-of-12, .slds-size--3-of-12, .slds-size--4-of-12, .slds-size--5-of-12, .slds-size--6-of-12, .slds-size--7-of-12, .slds-size--8-of-12, .slds-size--9-of-12, .slds-size--10-of-12, .slds-size--11-of-12, .slds-size--12-of-12",
   "settings" : [ {
     "property" : "flex",
     "value" : "none"
@@ -8928,6 +8625,309 @@
   }, {
     "property" : "white-space",
     "value" : "nowrap"
+  } ]
+}, {
+  "name" : ".slds-assistive-text_focus:focus, .slds-assistive-text--focus:focus",
+  "settings" : [ {
+    "property" : "margin",
+    "value" : "inherit"
+  }, {
+    "property" : "border",
+    "value" : "inherit"
+  }, {
+    "property" : "padding",
+    "value" : "inherit"
+  }, {
+    "property" : "width",
+    "value" : "auto"
+  }, {
+    "property" : "height",
+    "value" : "auto"
+  }, {
+    "property" : "overflow",
+    "value" : "visible"
+  }, {
+    "property" : "clip",
+    "value" : "auto"
+  } ]
+}, {
+  "name" : ".slds-is-collapsed",
+  "settings" : [ {
+    "property" : "height",
+    "value" : "0"
+  }, {
+    "property" : "overflow",
+    "value" : "hidden"
+  } ]
+}, {
+  "name" : ".slds-is-expanded",
+  "settings" : [ {
+    "property" : "height",
+    "value" : "auto"
+  }, {
+    "property" : "overflow",
+    "value" : "visible"
+  } ]
+}, {
+  "name" : ".slds-hidden",
+  "settings" : [ {
+    "property" : "visibility",
+    "value" : "hidden"
+  } ]
+}, {
+  "name" : ".slds-visible",
+  "settings" : [ {
+    "property" : "visibility",
+    "value" : "visible"
+  } ]
+}, {
+  "name" : ".slds-hide",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "block"
+  } ]
+}, {
+  "name" : ".slds-show_inline-block, .slds-show--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-show_inline, .slds-show--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-transition-hide",
+  "settings" : [ {
+    "property" : "opacity",
+    "value" : "0"
+  } ]
+}, {
+  "name" : ".slds-transition-show",
+  "settings" : [ {
+    "property" : "opacity",
+    "value" : "1"
+  } ]
+}, {
+  "name" : ".slds-x-small-show",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-x-small-show_inline-block, .slds-x-small-show--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-x-small-show_inline, .slds-x-small-show--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-x-small-show-only",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-x-small-show-only_inline-block, .slds-x-small-show-only--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-x-small-show-only_inline, .slds-x-small-show-only--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-max-x-small-hide",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-small-show",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-small-show_inline-block, .slds-small-show--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-small-show_inline, .slds-small-show--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-small-show-only",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-small-show-only_inline-block, .slds-small-show-only--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-small-show-only_inline, .slds-small-show-only--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-max-small-hide",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-medium-show",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-medium-show_inline-block, .slds-medium-show--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-medium-show_inline, .slds-medium-show--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-medium-show-only",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-medium-show-only_inline-block, .slds-medium-show-only--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-medium-show-only_inline, .slds-medium-show-only--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-max-medium-hide",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-large-show",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-large-show_inline-block, .slds-large-show--inline-block",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline-block"
+  } ]
+}, {
+  "name" : ".slds-large-show_inline, .slds-large-show--inline",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "inline"
+  } ]
+}, {
+  "name" : ".slds-hide_x-small, .slds-hide--x-small",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show_x-small, .slds-show--x-small",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-hide_small, .slds-hide--small",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show_small, .slds-show--small",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-hide_medium, .slds-hide--medium",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show_medium, .slds-show--medium",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-hide_large, .slds-hide--large",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show_large, .slds-show--large",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-hide_x-large, .slds-hide--x-large",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-show_x-large, .slds-show--x-large",
+  "settings" : [ {
+    "property" : "display",
+    "value" : "none"
+  } ]
+}, {
+  "name" : ".slds-is-visually-empty",
+  "settings" : [ {
+    "property" : "visibility",
+    "value" : "hidden"
+  }, {
+    "property" : "width",
+    "value" : "0"
   } ]
 }, {
   "name" : ".slds-line-clamp",
