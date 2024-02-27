@@ -8,8 +8,12 @@
 package com.salesforce.slds.shared.parsers.css;
 
 import com.salesforce.omakase.Omakase;
+import com.salesforce.omakase.ast.CssAnnotation;
 import com.salesforce.omakase.ast.Rule;
 import com.salesforce.omakase.plugin.core.SyntaxTree;
+import com.salesforce.slds.shared.models.annotations.AnnotationType;
+import com.salesforce.slds.shared.models.context.Context;
+import com.salesforce.slds.shared.models.context.ContextKey;
 import com.salesforce.slds.shared.models.core.RuleSet;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;

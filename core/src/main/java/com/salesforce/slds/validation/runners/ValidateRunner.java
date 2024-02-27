@@ -111,7 +111,7 @@ public class ValidateRunner implements Runnable {
                         .flatMap(List::stream)
                         .collect(aggregator.toList());
 
-                entry.setRecommendation(processor.process(entry, recommendations));
+                entry.setRecommendation(processor.process(context, entry, recommendations));
 
                 List<ComponentOverride> overrides = validators.parallelStream()
                         .filter(validator -> validator instanceof OverrideValidator)

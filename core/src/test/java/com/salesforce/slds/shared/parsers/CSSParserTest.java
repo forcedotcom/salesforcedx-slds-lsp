@@ -7,11 +7,11 @@
 
 package com.salesforce.slds.shared.parsers;
 
-import com.salesforce.slds.shared.parsers.css.CSSParser;
 import com.salesforce.slds.shared.models.core.RuleSet;
 import com.salesforce.slds.shared.models.core.Style;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
+import com.salesforce.slds.shared.parsers.css.CSSParser;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

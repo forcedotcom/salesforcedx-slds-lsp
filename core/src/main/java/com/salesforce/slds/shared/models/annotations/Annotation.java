@@ -9,6 +9,7 @@ package com.salesforce.slds.shared.models.annotations;
 
 import com.salesforce.omakase.ast.Rule;
 import com.salesforce.slds.shared.models.core.Style;
+import com.salesforce.slds.shared.models.locations.Range;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
@@ -18,6 +19,7 @@ public class Annotation {
     private AnnotationType type;
     private Style style;
     private Rule rule;
+    private Range range;
 
     public AnnotationScope getScope() {
         return scope;
@@ -51,6 +53,13 @@ public class Annotation {
         this.style = style;
     }
 
+    public Range getRange() {
+        return range;
+    }
+
+    public void setRange(Range range) {
+        this.range = range;
+    }
 
     public static AnnotationBuilder builder() {
         return new AnnotationBuilder();
@@ -61,6 +70,7 @@ public class Annotation {
         private AnnotationType type;
         private Style style;
         private Rule rule;
+        private Range range;
 
         public AnnotationBuilder scope(AnnotationScope scope) {
             this.scope = scope;
@@ -77,6 +87,11 @@ public class Annotation {
             return this;
         }
 
+        public AnnotationBuilder range(Range range) {
+            this.range = range;
+            return this;
+        }
+
         public AnnotationBuilder rule(Rule rule) {
             this.rule = rule;
             return this;
@@ -88,6 +103,7 @@ public class Annotation {
             result.setType(type);
             result.setRule(rule);
             result.setStyle(style);
+            result.setRange(range);
 
             return result;
         }
@@ -100,6 +116,7 @@ public class Annotation {
                 .append("type", type)
                 .append("rule", rule)
                 .append("style", style)
+                .append("range", range)
                 .toString();
     }
 

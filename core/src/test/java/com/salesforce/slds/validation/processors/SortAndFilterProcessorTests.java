@@ -7,12 +7,10 @@
 
 package com.salesforce.slds.validation.processors;
 
-import com.google.common.collect.Lists;
-
 import com.salesforce.slds.configuration.SldsConfiguration;
+import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.core.Bundle;
 import com.salesforce.slds.shared.models.core.Entry;
-import com.salesforce.slds.shared.models.core.Input;
 import com.salesforce.slds.shared.models.core.RuleSet;
 import com.salesforce.slds.shared.models.core.Style;
 import com.salesforce.slds.shared.models.locations.Location;
@@ -21,12 +19,11 @@ import com.salesforce.slds.shared.models.recommendation.Action;
 import com.salesforce.slds.shared.models.recommendation.ActionType;
 import com.salesforce.slds.shared.models.recommendation.Item;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
-import com.salesforce.slds.shared.parsers.markup.MarkupParser;
 import com.salesforce.slds.validation.runners.ValidateRunner;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -47,6 +44,8 @@ class SortAndFilterProcessorTests {
     @Autowired
     private ValidateRunner runner;
 
+    Context context = new Context();
+
     private final Processor processor = new SortAndFilterProcessor();
 
     @Test
@@ -65,7 +64,7 @@ class SortAndFilterProcessorTests {
         recommendations.add(rec1);
         recommendations.add(rec2);
 
-        List<Recommendation> results = processor.process(Entry.builder().build(), recommendations);
+        List<Recommendation> results = processor.process(context, Entry.builder().build(), recommendations);
         assertThat(results, Matchers.iterableWithSize(2));
         assertThat(results.get(0).getInput().toString(),
                 Matchers.is(RuleSet.builder().content("a {padding: 0;}").build().toString()));
@@ -83,7 +82,7 @@ class SortAndFilterProcessorTests {
         List<Recommendation> recommendations = new ArrayList<>();
         recommendations.add(rec);
 
-        List<Recommendation> results = processor.process(Entry.builder().build(), recommendations);
+        List<Recommendation> results = processor.process(context, Entry.builder().build(), recommendations);
         assertThat(results, Matchers.iterableWithSize(0));
     }
 
@@ -111,7 +110,7 @@ class SortAndFilterProcessorTests {
 
         List<Recommendation> recommendations = Arrays.asList(rule, style);
 
-        List<Recommendation> results = processor.process(Entry.builder().build(), recommendations);
+        List<Recommendation> results = processor.process(context, Entry.builder().build(), recommendations);
         assertThat(results, Matchers.iterableWithSize(1));
         assertThat(results.get(0).getInput(), Matchers.is(ruleSet));
     }
@@ -140,7 +139,7 @@ class SortAndFilterProcessorTests {
 
         List<Recommendation> recommendations = Arrays.asList(rule, style);
 
-        List<Recommendation> results = processor.process(Entry.builder().build(), recommendations);
+        List<Recommendation> results = processor.process(context, Entry.builder().build(), recommendations);
         assertThat(results, Matchers.iterableWithSize(2));
         assertThat(results.get(0).getInput(), Matchers.is(ruleSet));
     }

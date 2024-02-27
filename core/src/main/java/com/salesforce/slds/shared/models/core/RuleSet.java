@@ -187,9 +187,18 @@ public class RuleSet extends Input implements Comparable<RuleSet>, RangeProvider
         AnnotationType annotationType = style.getAnnotationType();
 
         if (annotationType != null) {
+
+            String lineToCheck = raw.get(style.getRange().getStart().getLine() + 1 - getRule().line());
+
+            Location endLocation = new Location(style.getRange().getStart().getLine(),
+                    lineToCheck.lastIndexOf(annotationType.value()) + annotationType.value().length());
+            Location startLocation = new Location(endLocation.getLine(), endLocation.getColumn() -
+                    annotationType.value().length());
+
             return Annotation.builder()
                     .type(annotationType)
                     .style(style)
+                    .range(new Range(startLocation, endLocation))
                     .scope(AnnotationScope.INLINE).build();
         }
 
