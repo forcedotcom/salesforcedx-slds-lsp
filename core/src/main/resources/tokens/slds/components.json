@@ -602,7 +602,7 @@
     "spacingSmall" : {
       "auraTokenName" : "spacingSmall",
       "cssProperties" : [ "margin-bottom", "margin-left", "margin-right", "margin-top", "padding-bottom", "padding-left", "padding-right", "padding-top" ],
-      "cssSelectors" : [ ".slds-accordion__section", ".slds-accordion__summary", ".slds-accordion__summary-action" ],
+      "cssSelectors" : [ ".slds-accordion__section", ".slds-accordion__summary", ".slds-accordion__summary-action", ".slds-dropdown-trigger .slds-button" ],
       "sassTokenName" : "$spacing-small",
       "value" : "0.75rem",
       "yamlTokenName" : "SPACING_SMALL",
@@ -1174,7 +1174,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-timeline__item_event:before", ".slds-timeline__media_event:before, .slds-timeline__media--event:before" ],
       "sassTokenName" : "$event",
-      "value" : "#FF538A",
+      "value" : "#CB65FF",
       "yamlTokenName" : "EVENT",
       "scope" : null
     },
@@ -1496,15 +1496,6 @@
       "yamlTokenName" : "COLOR_BACKGROUND_WARNING",
       "scope" : null
     },
-    "colorBorderLinkFocusInverse" : {
-      "auraTokenName" : "colorBorderLinkFocusInverse",
-      "cssProperties" : [ "border-color", "box-shadow" ],
-      "cssSelectors" : [ "&:focus", ".slds-notify_alert, .slds-notify--alert", "a" ],
-      "sassTokenName" : "$color-border-link-focus-inverse",
-      "value" : "#f3f3f3",
-      "yamlTokenName" : "COLOR_BORDER_LINK_FOCUS_INVERSE",
-      "scope" : null
-    },
     "colorGray10" : {
       "auraTokenName" : "colorGray10",
       "cssProperties" : [ "fill" ],
@@ -1557,6 +1548,15 @@
       "sassTokenName" : "$palette-neutral-30",
       "value" : "#444444",
       "yamlTokenName" : "PALETTE_NEUTRAL_30",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-notify_alert, .slds-notify--alert", "a" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingSmall" : {
@@ -1966,6 +1966,15 @@
       "sassTokenName" : "$color-text-inverse",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_INVERSE",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-app-launcher__tile" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "sizeLarge" : {
@@ -3185,7 +3194,7 @@
       "cssProperties" : [ "background" ],
       "cssSelectors" : [ ".slds-avatar-grouped" ],
       "sassTokenName" : "$user",
-      "value" : "#06A59A",
+      "value" : "#107CAD",
       "yamlTokenName" : "USER",
       "scope" : null
     }
@@ -4832,6 +4841,15 @@
       "yamlTokenName" : "HEIGHT_HEADER",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-builder-header__item-action" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
       "cssProperties" : [ "padding" ],
@@ -6071,6 +6089,15 @@
       "sassTokenName" : "$line-height-reset",
       "value" : "1",
       "yamlTokenName" : "LINE_HEIGHT_RESET",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-button_icon-inverse, .slds-button--icon-inverse, .slds-button_icon-border-inverse, .slds-button--icon-border-inverse" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingXSmall" : {
@@ -7449,8 +7476,8 @@
     },
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
-      "cssProperties" : [ "--slds-c-button-color-background", "--slds-c-button-color-border", "--slds-c-button-color-border-active", "--slds-c-button-color-border-hover", "background-color", "border-color", "color" ],
-      "cssSelectors" : [ "&:active", "&:after", "&:focus, &:hover, &:active", "&:hover, &:focus", "&[kx-type=\"ripple\"]", ".slds-button", ".slds-button_brand, .slds-button--brand", ".slds-button_dual-stateful.slds-is-pressed", ".slds-button_outline-brand", "[kx-scope=\"button-brand\"]", "[kx-scope=\"button-neutral\"]", "[kx-scope=\"button-neutral\"], [kx-scope=\"button-outline\"]" ],
+      "cssProperties" : [ "--slds-c-button-color-background", "--slds-c-button-color-border", "--slds-c-button-color-border-active", "--slds-c-button-color-border-hover", "background-color", "color" ],
+      "cssSelectors" : [ "&:active", "&:after", "&:focus, &:hover, &:active", "&:hover, &:focus", "&[kx-type=\"ripple\"]", ".slds-button", ".slds-button_brand, .slds-button--brand", ".slds-button_dual-stateful.slds-is-pressed", ".slds-button_outline-brand", "[kx-scope=\"button-brand\"]", "[kx-scope=\"button-neutral\"], [kx-scope=\"button-outline\"]" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0176d3",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -7485,8 +7512,8 @@
     },
     "buttonColorBackgroundPrimary" : {
       "auraTokenName" : "buttonColorBackgroundPrimary",
-      "cssProperties" : [ "--slds-c-button-color-background", "background-color" ],
-      "cssSelectors" : [ "&:focus, &:hover, &:active", ".slds-button_neutral, .slds-button--neutral", ".slds-button_outline-brand", ".slds-button_text-destructive", "[kx-scope=\"button-neutral\"]", "[kx-scope=\"button-outline\"]" ],
+      "cssProperties" : [ "--slds-c-button-color-background" ],
+      "cssSelectors" : [ ".slds-button_neutral, .slds-button--neutral", ".slds-button_outline-brand", ".slds-button_text-destructive" ],
       "sassTokenName" : "$button-color-background-primary",
       "value" : "#ffffff",
       "yamlTokenName" : "BUTTON_COLOR_BACKGROUND_PRIMARY",
@@ -7557,8 +7584,8 @@
     },
     "colorBackgroundDestructive" : {
       "auraTokenName" : "colorBackgroundDestructive",
-      "cssProperties" : [ "--slds-c-button-color-background", "--slds-c-button-color-border", "--slds-c-button-color-border-hover" ],
-      "cssSelectors" : [ "&:hover, &:focus", ".slds-button_destructive, .slds-button--destructive" ],
+      "cssProperties" : [ "--slds-c-button-color-background", "--slds-c-button-color-border" ],
+      "cssSelectors" : [ ".slds-button_destructive, .slds-button--destructive" ],
       "sassTokenName" : "$color-background-destructive",
       "value" : "#ba0517",
       "yamlTokenName" : "COLOR_BACKGROUND_DESTRUCTIVE",
@@ -7854,8 +7881,8 @@
     },
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
-      "cssProperties" : [ "--slds-c-button-shadow-focus", "box-shadow" ],
-      "cssSelectors" : [ "&:focus", ".slds-button", "a.slds-button" ],
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-button_inverse, .slds-button--inverse" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
@@ -9316,6 +9343,15 @@
     "tokens" : { }
   } ],
   "tokens" : {
+    "borderRadiusCircle" : {
+      "auraTokenName" : "borderRadiusCircle",
+      "cssProperties" : [ "border-radius" ],
+      "cssSelectors" : [ "&:focus", ".slds-carousel__indicator-action" ],
+      "sassTokenName" : "$border-radius-circle",
+      "value" : "50%",
+      "yamlTokenName" : "BORDER_RADIUS_CIRCLE",
+      "scope" : null
+    },
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-bottom-left-radius", "border-bottom-right-radius", "border-radius", "border-top-left-radius", "border-top-right-radius" ],
@@ -9332,15 +9368,6 @@
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
-      "scope" : null
-    },
-    "brandAccessibleActive" : {
-      "auraTokenName" : "brandAccessibleActive",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&:focus", ".slds-carousel__panel-action" ],
-      "sassTokenName" : "$brand-accessible-active",
-      "value" : "#014486",
-      "yamlTokenName" : "BRAND_ACCESSIBLE_ACTIVE",
       "scope" : null
     },
     "carouselColorBackground" : {
@@ -9368,15 +9395,6 @@
       "sassTokenName" : "$carousel-indicator-color-background-active",
       "value" : "#0176d3",
       "yamlTokenName" : "CAROUSEL_INDICATOR_COLOR_BACKGROUND_ACTIVE",
-      "scope" : null
-    },
-    "carouselIndicatorColorBackgroundFocus" : {
-      "auraTokenName" : "carouselIndicatorColorBackgroundFocus",
-      "cssProperties" : [ "background-color", "border-color" ],
-      "cssSelectors" : [ "&:focus", ".slds-carousel__indicator-action" ],
-      "sassTokenName" : "$carousel-indicator-color-background-focus",
-      "value" : "#014486",
-      "yamlTokenName" : "CAROUSEL_INDICATOR_COLOR_BACKGROUND_FOCUS",
       "scope" : null
     },
     "carouselIndicatorColorBackgroundHover" : {
@@ -9415,6 +9433,15 @@
       "yamlTokenName" : "FONT_SIZE_5",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-button:focus", ".slds-carousel__autoplay" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "spacingSmall" : {
       "auraTokenName" : "spacingSmall",
       "cssProperties" : [ "padding" ],
@@ -9435,8 +9462,8 @@
     },
     "spacingXxSmall" : {
       "auraTokenName" : "spacingXxSmall",
-      "cssProperties" : [ "bottom", "margin" ],
-      "cssSelectors" : [ ".slds-carousel__autoplay", ".slds-carousel__indicator" ],
+      "cssProperties" : [ "bottom", "margin", "margin-left" ],
+      "cssSelectors" : [ ".slds-carousel__autoplay", ".slds-carousel__indicator", ".slds-carousel__panel-action" ],
       "sassTokenName" : "$spacing-xx-small",
       "value" : "0.25rem",
       "yamlTokenName" : "SPACING_XX_SMALL",
@@ -12899,6 +12926,15 @@
       "yamlTokenName" : "LINE_HEIGHT_HEADING",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus-within", ".slds-chat-message__file, .slds-chat-message__image" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "sizeSmall" : {
       "auraTokenName" : "sizeSmall",
       "cssProperties" : [ "width" ],
@@ -13183,8 +13219,8 @@
     },
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
-      "cssProperties" : [ "--slds-c-checkbox-shadow", "background", "border-bottom", "border-left" ],
-      "cssSelectors" : [ "&:after", "&:checked + .slds-checkbox_faux, &:checked + .slds-checkbox--faux, &:checked ~ .slds-checkbox_faux, &:checked ~ .slds-checkbox--faux, &:checked + .slds-checkbox__label .slds-checkbox_faux, &:checked + .slds-checkbox__label .slds-checkbox--faux", "&:focus", "&:indeterminate + .slds-checkbox_faux:after, &:indeterminate + .slds-checkbox--faux:after, &:indeterminate ~ .slds-checkbox_faux:after, &:indeterminate ~ .slds-checkbox--faux:after, &:indeterminate + .slds-checkbox__label .slds-checkbox_faux:after, &:indeterminate + .slds-checkbox__label .slds-checkbox--faux:after", "+ .slds-checkbox_faux, + .slds-checkbox--faux, ~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox__label .slds-checkbox_faux, + .slds-checkbox__label .slds-checkbox--faux", ".slds-checkbox", "[type=\"checkbox\"]" ],
+      "cssProperties" : [ "background", "border-bottom", "border-left" ],
+      "cssSelectors" : [ "&:after", "&:checked + .slds-checkbox_faux, &:checked + .slds-checkbox--faux, &:checked ~ .slds-checkbox_faux, &:checked ~ .slds-checkbox--faux, &:checked + .slds-checkbox__label .slds-checkbox_faux, &:checked + .slds-checkbox__label .slds-checkbox--faux", "&:indeterminate + .slds-checkbox_faux:after, &:indeterminate + .slds-checkbox--faux:after, &:indeterminate ~ .slds-checkbox_faux:after, &:indeterminate ~ .slds-checkbox--faux:after, &:indeterminate + .slds-checkbox__label .slds-checkbox_faux:after, &:indeterminate + .slds-checkbox__label .slds-checkbox--faux:after", ".slds-checkbox", "[type=\"checkbox\"]" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0176d3",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -13233,15 +13269,6 @@
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
-      "scope" : null
-    },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "--slds-c-checkbox-color-border" ],
-      "cssSelectors" : [ "&:checked > .slds-checkbox_faux, &:checked > .slds-checkbox--faux, &:checked ~ .slds-checkbox_faux, &:checked ~ .slds-checkbox--faux, &:checked + .slds-checkbox__label .slds-checkbox_faux, &:checked + .slds-checkbox__label .slds-checkbox--faux", "&:focus", "+ .slds-checkbox_faux, + .slds-checkbox--faux, ~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox__label .slds-checkbox_faux, + .slds-checkbox__label .slds-checkbox--faux", ".slds-checkbox", "[type=\"checkbox\"]" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
       "scope" : null
     },
     "colorBorderInputDisabled" : {
@@ -13314,6 +13341,15 @@
       "sassTokenName" : "$height-tappable",
       "value" : "2.75rem",
       "yamlTokenName" : "HEIGHT_TAPPABLE",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "--slds-c-checkbox-shadow" ],
+      "cssSelectors" : [ "&:focus", "+ .slds-checkbox_faux, + .slds-checkbox--faux, ~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox__label .slds-checkbox_faux, + .slds-checkbox__label .slds-checkbox--faux", ".slds-checkbox", "[type=\"checkbox\"]" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingXSmall" : {
@@ -13600,15 +13636,6 @@
       "yamlTokenName" : "COLOR_BORDER_BUTTON_DEFAULT",
       "scope" : null
     },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ ".slds-checkbox-button_is-focused", ".slds-checkbox_add-button, .slds-checkbox--add-button", "[type=\"checkbox\"]:focus", "~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox_faux, + .slds-checkbox--faux" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
-      "scope" : null
-    },
     "colorBrandDarker" : {
       "auraTokenName" : "colorBrandDarker",
       "cssProperties" : [ "background", "background-color", "color" ],
@@ -13652,6 +13679,15 @@
       "sassTokenName" : "$color-text-icon-default-disabled",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT_DISABLED",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-checkbox-button_is-focused", ".slds-checkbox_add-button, .slds-checkbox--add-button", "[type=\"checkbox\"]:focus", "~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox_faux, + .slds-checkbox--faux" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     }
   }
@@ -13944,6 +13980,15 @@
       "sassTokenName" : "$height-tappable",
       "value" : "2.75rem",
       "yamlTokenName" : "HEIGHT_TAPPABLE",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus + .slds-checkbox_faux, &:focus + .slds-checkbox--faux, &:focus ~ .slds-checkbox_faux, &:focus ~ .slds-checkbox--faux, &:focus + .slds-checkbox_button__label, &:focus + .slds-checkbox--button__label", ".slds-checkbox_button, .slds-checkbox--button", "[type=\"checkbox\"]" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingMedium" : {
@@ -14260,15 +14305,6 @@
       "sassTokenName" : "$color-background-toggle-hover",
       "value" : "#939393",
       "yamlTokenName" : "COLOR_BACKGROUND_TOGGLE_HOVER",
-      "scope" : null
-    },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "--slds-c-checkbox-toggle-color-border" ],
-      "cssSelectors" : [ "&:focus", "+ .slds-checkbox_faux, + .slds-checkbox--faux, ~ .slds-checkbox_faux, ~ .slds-checkbox--faux, + .slds-checkbox_faux_container .slds-checkbox_faux, + .slds-checkbox--faux_container .slds-checkbox--faux", ".slds-checkbox_toggle, .slds-checkbox--toggle", "[type='checkbox']" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
       "scope" : null
     },
     "colorBorderToggleChecked" : {
@@ -15508,7 +15544,7 @@
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-radius" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-color-picker__custom-range", ".slds-color-picker__hue-and-preview", ".slds-color-picker__hue-slider", ".slds-color-picker__swatch-trigger", ".slds-swatch" ],
+      "cssSelectors" : [ ".slds-color-picker__custom-range", ".slds-color-picker__hue-and-preview", ".slds-color-picker__hue-slider", ".slds-swatch" ],
       "sassTokenName" : "$border-radius-medium",
       "value" : "0.25rem",
       "yamlTokenName" : "BORDER_RADIUS_MEDIUM",
@@ -15517,7 +15553,7 @@
     "borderRadiusSmall" : {
       "auraTokenName" : "borderRadiusSmall",
       "cssProperties" : [ "border-radius" ],
-      "cssSelectors" : [ ".slds-color-picker__hue-slider", ".slds-swatch" ],
+      "cssSelectors" : [ "&:focus, &:active", ".slds-color-picker__hue-slider", ".slds-color-picker__swatch-trigger", ".slds-swatch" ],
       "sassTokenName" : "$border-radius-small",
       "value" : "0.125rem",
       "yamlTokenName" : "BORDER_RADIUS_SMALL",
@@ -15751,19 +15787,10 @@
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-color-picker__hue-slider", ".slds-color-picker__range-indicator", ".slds-color-picker__swatch-trigger" ],
+      "cssSelectors" : [ "&:focus, &:active", ".slds-color-picker__hue-slider", ".slds-color-picker__swatch-trigger" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
-      "scope" : null
-    },
-    "shadowInlineEdit" : {
-      "auraTokenName" : "shadowInlineEdit",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ ".slds-color-picker__range-indicator" ],
-      "sassTokenName" : "$shadow-inline-edit",
-      "value" : "0 2px 4px 4px rgba(0, 0, 0, 0.16)",
-      "yamlTokenName" : "SHADOW_INLINE_EDIT",
       "scope" : null
     },
     "sizeXxSmall" : {
@@ -22338,15 +22365,6 @@
       "yamlTokenName" : "COLOR_BORDER",
       "scope" : null
     },
-    "colorBorderBrandPrimary" : {
-      "auraTokenName" : "colorBorderBrandPrimary",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&:focus, &.slds-has-focus", "[role=\"combobox\"] input[readonly], input[readonly][role=\"combobox\"]" ],
-      "sassTokenName" : "$color-border-brand-primary",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_BRAND_PRIMARY",
-      "scope" : null
-    },
     "colorBorderInput" : {
       "auraTokenName" : "colorBorderInput",
       "cssProperties" : [ "border-color" ],
@@ -22354,15 +22372,6 @@
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
-      "scope" : null
-    },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&:focus, &.slds-has-focus", ".slds-combobox__input" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
       "scope" : null
     },
     "colorBorderInputDisabled" : {
@@ -22476,7 +22485,7 @@
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&:focus, &.slds-has-focus", ".slds-combobox__input", "[role=\"combobox\"] input[readonly], input[readonly][role=\"combobox\"]" ],
+      "cssSelectors" : [ "&:focus, &.slds-has-focus", ".slds-combobox__input", ".slds-listbox__option:focus, .slds-listbox__option.slds-has-focus", ".slds-listbox_vertical, .slds-listbox--vertical", "[role=\"combobox\"] input[readonly], input[readonly][role=\"combobox\"]" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
@@ -24428,7 +24437,7 @@
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
       "cssProperties" : [ "box-shadow", "fill" ],
-      "cssSelectors" : [ "&.slds-has-focus", "&:not(.slds-no-cell-focus) tbody tr:hover > .slds-cell-edit", ".slds-is-sortable", ".slds-is-sortable__icon", ".slds-table", ".slds-table_edit, .slds-table--edit", ".slds-th__action:hover, .slds-th__action:focus, &.slds-has-focus .slds-th__action, &.slds-has-focus .slds-th__action:hover, &.slds-has-focus .slds-th__action:focus", "th:focus, th.slds-has-focus, [role=\"gridcell\"]:focus, [role=\"gridcell\"].slds-has-focus" ],
+      "cssSelectors" : [ "&.slds-has-focus", "&:not(.slds-no-cell-focus) tbody tr:hover > .slds-cell-edit", ".slds-is-sortable", ".slds-is-sortable__icon", ".slds-table_edit, .slds-table--edit", ".slds-th__action:hover, .slds-th__action:focus, &.slds-has-focus .slds-th__action, &.slds-has-focus .slds-th__action:hover, &.slds-has-focus .slds-th__action:focus" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0176d3",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -24603,6 +24612,15 @@
       "sassTokenName" : "$font-weight-regular",
       "value" : "400",
       "yamlTokenName" : "FONT_WEIGHT_REGULAR",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-has-focus", "&:focus", "&:not(.slds-no-row-hover) tbody tr:focus", ".slds-is-resizable .slds-th__action:focus", ".slds-table", ".slds-table .slds-cell-edit", ".slds-th__action", "th:focus, th.slds-has-focus", "th:focus, th.slds-has-focus, [role=\"gridcell\"]:focus, [role=\"gridcell\"].slds-has-focus" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "sizeMedium" : {
@@ -25207,8 +25225,8 @@
     },
     "brandAccessible" : {
       "auraTokenName" : "brandAccessible",
-      "cssProperties" : [ "background", "box-shadow" ],
-      "cssSelectors" : [ "&.slds-is-selected > .slds-day", "&:focus", ".slds-datepicker", "> .slds-day", "tbody > tr > td" ],
+      "cssProperties" : [ "background" ],
+      "cssSelectors" : [ "&.slds-is-selected > .slds-day", ".slds-datepicker", "tbody > tr > td" ],
       "sassTokenName" : "$brand-accessible",
       "value" : "#0176d3",
       "yamlTokenName" : "BRAND_ACCESSIBLE",
@@ -25216,7 +25234,7 @@
     },
     "brandAccessibleActive" : {
       "auraTokenName" : "brandAccessibleActive",
-      "cssProperties" : [ "background", "box-shadow" ],
+      "cssProperties" : [ "background" ],
       "cssSelectors" : [ "&.slds-is-selected:focus > .slds-day", ".slds-datepicker", "tbody > tr > td" ],
       "sassTokenName" : "$brand-accessible-active",
       "value" : "#014486",
@@ -25311,6 +25329,15 @@
       "sassTokenName" : "$font-weight-regular",
       "value" : "400",
       "yamlTokenName" : "FONT_WEIGHT_REGULAR",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-is-selected:focus > .slds-day", ".slds-datepicker", "tbody > tr > td" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingXSmall" : {
@@ -32157,15 +32184,6 @@
       "yamlTokenName" : "BORDER_WIDTH_THIN",
       "scope" : null
     },
-    "brandAccessible" : {
-      "auraTokenName" : "brandAccessible",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&.slds-has-focus", ".slds-docked-composer" ],
-      "sassTokenName" : "$brand-accessible",
-      "value" : "#0176d3",
-      "yamlTokenName" : "BRAND_ACCESSIBLE",
-      "scope" : null
-    },
     "brandPrimary" : {
       "auraTokenName" : "brandPrimary",
       "cssProperties" : [ "border-bottom" ],
@@ -32254,6 +32272,15 @@
       "sassTokenName" : "$line-height-text",
       "value" : "1.5",
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-has-focus", ".slds-docked-composer" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "sizeXxSmall" : {
@@ -33173,8 +33200,8 @@
     },
     "borderWidthThick" : {
       "auraTokenName" : "borderWidthThick",
-      "cssProperties" : [ "border-bottom", "height" ],
-      "cssSelectors" : [ "&:focus:after", ".slds-utility-bar__action", ".slds-utility-panel__header" ],
+      "cssProperties" : [ "border-bottom" ],
+      "cssSelectors" : [ ".slds-utility-panel__header" ],
       "sassTokenName" : "$border-width-thick",
       "value" : "2px",
       "yamlTokenName" : "BORDER_WIDTH_THICK",
@@ -33192,7 +33219,7 @@
     "brandPrimary" : {
       "auraTokenName" : "brandPrimary",
       "cssProperties" : [ "background", "border-bottom" ],
-      "cssSelectors" : [ "&.slds-is-active", "&:after", "&:focus:after", ".slds-utility-bar__action", ".slds-utility-panel__header" ],
+      "cssSelectors" : [ "&.slds-is-active", "&:after", ".slds-utility-bar__action", ".slds-utility-panel__header" ],
       "sassTokenName" : "$brand-primary",
       "value" : "#1b96ff",
       "yamlTokenName" : "BRAND_PRIMARY",
@@ -39345,6 +39372,15 @@
     "tokens" : { }
   } ],
   "tokens" : {
+    "borderRadiusSmall" : {
+      "auraTokenName" : "borderRadiusSmall",
+      "cssProperties" : [ "border-radius" ],
+      "cssSelectors" : [ "&:focus", ".slds-post__footer-action" ],
+      "sassTokenName" : "$border-radius-small",
+      "value" : "0.125rem",
+      "yamlTokenName" : "BORDER_RADIUS_SMALL",
+      "scope" : null
+    },
     "borderWidthThick" : {
       "auraTokenName" : "borderWidthThick",
       "cssProperties" : [ "border" ],
@@ -40395,6 +40431,15 @@
     "tokens" : { }
   } ],
   "tokens" : {
+    "borderRadiusSmall" : {
+      "auraTokenName" : "borderRadiusSmall",
+      "cssProperties" : [ "border-radius" ],
+      "cssSelectors" : [ "&:focus", ".slds-image__crop, .slds-file__crop" ],
+      "sassTokenName" : "$border-radius-small",
+      "value" : "0.125rem",
+      "yamlTokenName" : "BORDER_RADIUS_SMALL",
+      "scope" : null
+    },
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border" ],
@@ -40456,15 +40501,6 @@
       "sassTokenName" : "$color-text-inverse",
       "value" : "#FFFFFF",
       "yamlTokenName" : "COLOR_TEXT_INVERSE",
-      "scope" : null
-    },
-    "elevationShadow4" : {
-      "auraTokenName" : "elevationShadow4",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&:focus", ".slds-image, .slds-file" ],
-      "sassTokenName" : "$elevation-shadow-4",
-      "value" : "0 4px 4px 0 rgba(0, 0, 0, 0.16)",
-      "yamlTokenName" : "ELEVATION_SHADOW_4",
       "scope" : null
     },
     "filesZIndexHover" : {
@@ -53894,7 +53930,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "--slds-c-input-shadow", "min-height" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-input", ".slds-input_height, .slds-input--height" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-input", ".slds-input_height, .slds-input--height" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -53912,7 +53948,7 @@
     "colorBorderError" : {
       "auraTokenName" : "colorBorderError",
       "cssProperties" : [ "--slds-c-input-color-border", "--slds-c-input-color-border-focus", "--slds-c-input-shadow" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-input" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-input" ],
       "sassTokenName" : "$color-border-error",
       "value" : "#ea001e",
       "yamlTokenName" : "COLOR_BORDER_ERROR",
@@ -54001,8 +54037,8 @@
     },
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
-      "cssProperties" : [ "--slds-c-input-shadow" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-input" ],
+      "cssProperties" : [ "--slds-c-input-shadow", "box-shadow" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-input", ".slds-input", ".slds-input_bare, .slds-input--bare" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
@@ -56770,6 +56806,15 @@
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus, &.slds-has-focus", ".slds-lookup__item-action" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
       "cssProperties" : [ "padding" ],
@@ -56966,6 +57011,15 @@
       "sassTokenName" : "$font-weight-bold",
       "value" : "700",
       "yamlTokenName" : "FONT_WEIGHT_BOLD",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-coordinates__item-action" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingMedium" : {
@@ -62224,6 +62278,15 @@
       "yamlTokenName" : "NUBBIN_SIZE_DEFAULT",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-dropdown__item", ".slds-dropdown__item > a", ".slds-dropdown_inverse, .slds-dropdown--inverse", "> a" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "shadowDropDown" : {
       "auraTokenName" : "shadowDropDown",
       "cssProperties" : [ "box-shadow" ],
@@ -62377,7 +62440,7 @@
   },
   "id" : "modals",
   "docPath" : "./ui/components/modals/docs.mdx",
-  "selectors" : [ ".slds-modal", ".slds-modal__menu", ".slds-modal__container", ".slds-modal__header", ".slds-modal__header_empty", ".slds-modal__title", ".slds-modal__content", ".slds-modal__content_headless", ".slds-modal__content_footless", ".slds-modal__footer", ".slds-modal__footer_directional", ".slds-modal__close", ".slds-modal_small", ".slds-modal_medium", ".slds-modal_large", ".slds-fade-in-open", ".slds-slide-up-open", ".slds-slide-up-saving", ".slds-slide-down-cancel", ".slds-backdrop", ".slds-backdrop_open" ],
+  "selectors" : [ ".slds-modal", ".slds-modal__menu", ".slds-modal__container", ".slds-modal__header", ".slds-modal__header_empty", ".slds-modal__title", ".slds-modal__content", ".slds-modal__content_headless", ".slds-modal__content_footless", ".slds-modal__footer", ".slds-modal__footer_directional", ".slds-modal__close", ".slds-modal_small", ".slds-modal_medium", ".slds-modal_large", ".slds-modal_full", ".slds-fade-in-open", ".slds-slide-up-open", ".slds-slide-up-saving", ".slds-slide-down-cancel", ".slds-backdrop", ".slds-backdrop_open" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -62627,6 +62690,23 @@
         "group" : "size"
       },
       "id" : "large",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
+      "description" : "",
+      "annotations" : {
+        "summary" : "Makes the modal full screen in small viewports",
+        "name" : "full",
+        "selector" : ".slds-modal_full",
+        "restrict" : ".slds-modal",
+        "variant" : null,
+        "support" : null,
+        "modifier" : "t",
+        "group" : "size"
+      },
+      "id" : "full",
       "docPath" : null,
       "selectors" : null,
       "restrictees" : [ ],
@@ -63059,6 +63139,23 @@
     "restrictees" : [ ],
     "tokens" : { }
   }, {
+    "description" : "",
+    "annotations" : {
+      "summary" : "Makes the modal full screen in small viewports",
+      "name" : "full",
+      "selector" : ".slds-modal_full",
+      "restrict" : ".slds-modal",
+      "variant" : null,
+      "support" : null,
+      "modifier" : "t",
+      "group" : "size"
+    },
+    "id" : "full",
+    "docPath" : null,
+    "selectors" : null,
+    "restrictees" : [ ],
+    "tokens" : { }
+  }, {
     "description" : "Allows the modal to be visible.",
     "annotations" : {
       "summary" : null,
@@ -63182,7 +63279,7 @@
     "borderRadiusMedium" : {
       "auraTokenName" : "borderRadiusMedium",
       "cssProperties" : [ "border-bottom-left-radius", "border-bottom-right-radius", "border-radius", "border-top-left-radius", "border-top-right-radius" ],
-      "cssSelectors" : [ ".slds-modal__container", ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content, .slds-modal__header--empty + .slds-modal__content", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu", ".slds-modal_full" ],
+      "cssSelectors" : [ ".slds-modal__container", ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__content_headless, .slds-modal__header_empty + .slds-modal__content, .slds-modal__header--empty + .slds-modal__content", ".slds-modal__footer", ".slds-modal__header", ".slds-modal__menu" ],
       "sassTokenName" : "$border-radius-medium",
       "value" : "0.25rem",
       "yamlTokenName" : "BORDER_RADIUS_MEDIUM",
@@ -63195,6 +63292,24 @@
       "sassTokenName" : "$border-width-thick",
       "value" : "2px",
       "yamlTokenName" : "BORDER_WIDTH_THICK",
+      "scope" : null
+    },
+    "brandAccessibleActive" : {
+      "auraTokenName" : "brandAccessibleActive",
+      "cssProperties" : [ "color" ],
+      "cssSelectors" : [ ".slds-modal__close:hover, .slds-modal__:focus", ".slds-modal_full" ],
+      "sassTokenName" : "$brand-accessible-active",
+      "value" : "#014486",
+      "yamlTokenName" : "BRAND_ACCESSIBLE_ACTIVE",
+      "scope" : null
+    },
+    "buttonColorBackgroundPrimary" : {
+      "auraTokenName" : "buttonColorBackgroundPrimary",
+      "cssProperties" : [ "--slds-c-button-color-background", "--slds-c-button-color-background-active" ],
+      "cssSelectors" : [ ".slds-modal__close", ".slds-modal_full" ],
+      "sassTokenName" : "$button-color-background-primary",
+      "value" : "#ffffff",
+      "yamlTokenName" : "BUTTON_COLOR_BACKGROUND_PRIMARY",
       "scope" : null
     },
     "colorBackground" : {
@@ -63224,49 +63339,13 @@
       "yamlTokenName" : "COLOR_BORDER",
       "scope" : null
     },
-    "colorBorderButtonInverseDisabled" : {
-      "auraTokenName" : "colorBorderButtonInverseDisabled",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-modal__close", ".slds-modal_full" ],
-      "sassTokenName" : "$color-border-button-inverse-disabled",
-      "value" : "rgba(255, 255, 255, 0.15)",
-      "yamlTokenName" : "COLOR_BORDER_BUTTON_INVERSE_DISABLED",
-      "scope" : null
-    },
-    "colorTextLinkInverse" : {
-      "auraTokenName" : "colorTextLinkInverse",
+    "colorTextIconDefault" : {
+      "auraTokenName" : "colorTextIconDefault",
       "cssProperties" : [ "color" ],
       "cssSelectors" : [ ".slds-modal__close", ".slds-modal_full" ],
-      "sassTokenName" : "$color-text-link-inverse",
-      "value" : "#FFFFFF",
-      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE",
-      "scope" : null
-    },
-    "colorTextLinkInverseActive" : {
-      "auraTokenName" : "colorTextLinkInverseActive",
-      "cssProperties" : [ "color" ],
-      "cssSelectors" : [ "&:active", ".slds-modal__close", ".slds-modal_full" ],
-      "sassTokenName" : "$color-text-link-inverse-active",
-      "value" : "rgba(255, 255, 255, 0.50)",
-      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_ACTIVE",
-      "scope" : null
-    },
-    "colorTextLinkInverseDisabled" : {
-      "auraTokenName" : "colorTextLinkInverseDisabled",
-      "cssProperties" : [ "color" ],
-      "cssSelectors" : [ "&[disabled], &:disabled", ".slds-modal__close", ".slds-modal_full" ],
-      "sassTokenName" : "$color-text-link-inverse-disabled",
-      "value" : "rgba(255, 255, 255, 0.15)",
-      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_DISABLED",
-      "scope" : null
-    },
-    "colorTextLinkInverseHover" : {
-      "auraTokenName" : "colorTextLinkInverseHover",
-      "cssProperties" : [ "color" ],
-      "cssSelectors" : [ "&:hover, &:focus", ".slds-modal__close", ".slds-modal_full" ],
-      "sassTokenName" : "$color-text-link-inverse-hover",
-      "value" : "rgba(255, 255, 255, 0.75)",
-      "yamlTokenName" : "COLOR_TEXT_LINK_INVERSE_HOVER",
+      "sassTokenName" : "$color-text-icon-default",
+      "value" : "#747474",
+      "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT",
       "scope" : null
     },
     "durationPromptly" : {
@@ -63335,7 +63414,7 @@
     "shadowDropDown" : {
       "auraTokenName" : "shadowDropDown",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__footer", ".slds-modal_full" ],
+      "cssSelectors" : [ ".slds-modal__content_footless, .slds-modal__container > .slds-modal__content:last-child, .slds-modal__content_has-hidden-footer", ".slds-modal__footer" ],
       "sassTokenName" : "$shadow-drop-down",
       "value" : "0 2px 3px 0 rgba(0, 0, 0, 0.16)",
       "yamlTokenName" : "SHADOW_DROP_DOWN",
@@ -63371,7 +63450,7 @@
     "spacingXSmall" : {
       "auraTokenName" : "spacingXSmall",
       "cssProperties" : [ "bottom", "margin-left", "right" ],
-      "cssSelectors" : [ ".slds-button + .slds-button", ".slds-modal__close", ".slds-modal__footer", ".slds-modal_full" ],
+      "cssSelectors" : [ ".slds-button + .slds-button", ".slds-modal__close", ".slds-modal__footer" ],
       "sassTokenName" : "$spacing-x-small",
       "value" : "0.5rem",
       "yamlTokenName" : "SPACING_X_SMALL",
@@ -63389,7 +63468,7 @@
     "squareIconLargeBoundary" : {
       "auraTokenName" : "squareIconLargeBoundary",
       "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-modal__container", ".slds-modal_full" ],
+      "cssSelectors" : [ ".slds-modal__container" ],
       "sassTokenName" : "$square-icon-large-boundary",
       "value" : "3rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_BOUNDARY",
@@ -63398,7 +63477,7 @@
     "squareIconLargeBoundaryAlt" : {
       "auraTokenName" : "squareIconLargeBoundaryAlt",
       "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-modal__container", ".slds-modal_full" ],
+      "cssSelectors" : [ ".slds-modal__container" ],
       "sassTokenName" : "$square-icon-large-boundary-alt",
       "value" : "5rem",
       "yamlTokenName" : "SQUARE_ICON_LARGE_BOUNDARY_ALT",
@@ -63691,6 +63770,15 @@
       "sassTokenName" : "$duration-slowly",
       "value" : "0.4s",
       "yamlTokenName" : "DURATION_SLOWLY",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-notification__close" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "shadowReminder" : {
@@ -68509,6 +68597,15 @@
       "yamlTokenName" : "MARK_COMPLETE_WIDTH_MEDIUM",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-has-overflow", "&:focus", ".slds-button", ".slds-path__scroll-controls", ".slds-path__scroller-container", ".slds-path__track" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "spacingLarge" : {
       "auraTokenName" : "spacingLarge",
       "cssProperties" : [ "margin-left" ],
@@ -68644,15 +68741,6 @@
       "sassTokenName" : "$color-background-input-disabled",
       "value" : "#f3f3f3",
       "yamlTokenName" : "COLOR_BACKGROUND_INPUT_DISABLED",
-      "scope" : null
-    },
-    "colorBorderBrandPrimary" : {
-      "auraTokenName" : "colorBorderBrandPrimary",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&:focus, &.slds-has-focus", ".slds-picklist", "input[readonly]" ],
-      "sassTokenName" : "$color-border-brand-primary",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_BRAND_PRIMARY",
       "scope" : null
     },
     "colorBorderInput" : {
@@ -69171,15 +69259,6 @@
       "yamlTokenName" : "COLOR_BORDER_ERROR",
       "scope" : null
     },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "--slds-c-pill-color-border", "border-color" ],
-      "cssSelectors" : [ "&:focus", ".slds-pill", ".slds-pill__action" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
-      "scope" : null
-    },
     "colorTextError" : {
       "auraTokenName" : "colorTextError",
       "cssProperties" : [ "--slds-c-icon-color-foreground", "--slds-c-pill-error-text-color", "color" ],
@@ -69281,8 +69360,8 @@
     },
     "spacingXxxSmall" : {
       "auraTokenName" : "spacingXxxSmall",
-      "cssProperties" : [ "left", "margin-left", "padding", "padding-bottom", "padding-left", "padding-right", "padding-top", "right" ],
-      "cssSelectors" : [ "+ .slds-pill", ".slds-pill", ".slds-pill__action", ".slds-pill__container, .slds-pill-container", ".slds-pill__container_bare, .slds-pill__container--bare, .slds-pill_container_bare, .slds-pill_container--bare", ".slds-pill__icon_container", ".slds-pill__remove", ".slds-pill_container", ".slds-pill_link, .slds-pill--link" ],
+      "cssProperties" : [ "left", "margin-left", "padding", "padding-bottom", "padding-left", "padding-right", "padding-top" ],
+      "cssSelectors" : [ "+ .slds-pill", ".slds-pill", ".slds-pill__action", ".slds-pill__container, .slds-pill-container", ".slds-pill__container_bare, .slds-pill__container--bare, .slds-pill_container_bare, .slds-pill_container--bare", ".slds-pill__icon_container", ".slds-pill_container", ".slds-pill_link, .slds-pill--link" ],
       "sassTokenName" : "$spacing-xxx-small",
       "value" : "0.125rem",
       "yamlTokenName" : "SPACING_XXX_SMALL",
@@ -74824,24 +74903,6 @@
       "yamlTokenName" : "BORDER_RADIUS_CIRCLE",
       "scope" : null
     },
-    "colorBorderBrandDark" : {
-      "auraTokenName" : "colorBorderBrandDark",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&.slds-is-active .slds-progress__marker", "&:focus", ".slds-progress__item", ".slds-progress_shade, .slds-progress--shade" ],
-      "sassTokenName" : "$color-border-brand-dark",
-      "value" : "#014486",
-      "yamlTokenName" : "COLOR_BORDER_BRAND_DARK",
-      "scope" : null
-    },
-    "colorBorderError" : {
-      "auraTokenName" : "colorBorderError",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&.slds-has-error .slds-progress__marker", "&:focus", ".slds-progress__item" ],
-      "sassTokenName" : "$color-border-error",
-      "value" : "#ea001e",
-      "yamlTokenName" : "COLOR_BORDER_ERROR",
-      "scope" : null
-    },
     "colorBorderSeparatorAlt" : {
       "auraTokenName" : "colorBorderSeparatorAlt",
       "cssProperties" : [ "border-bottom" ],
@@ -74872,7 +74933,7 @@
     "heightTappable" : {
       "auraTokenName" : "heightTappable",
       "cssProperties" : [ "height", "min-height" ],
-      "cssSelectors" : [ "&:before", ".slds-button", ".slds-progress__item" ],
+      "cssSelectors" : [ "&:before", ".slds-progress__item", ".slds-progress__marker" ],
       "sassTokenName" : "$height-tappable",
       "value" : "2.75rem",
       "yamlTokenName" : "HEIGHT_TAPPABLE",
@@ -74917,7 +74978,7 @@
     "progressColorBackground" : {
       "auraTokenName" : "progressColorBackground",
       "cssProperties" : [ "background", "border-color", "box-shadow" ],
-      "cssSelectors" : [ "&, &:hover, &:focus", "&.slds-has-error .slds-progress__marker", "&.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker, &.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker_icon, &.slds-is-completed .slds-progress__marker--icon", "&:focus", ".slds-progress__item" ],
+      "cssSelectors" : [ "&, &:hover, &:focus", "&.slds-has-error .slds-progress__marker", "&.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker, &.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker_icon, &.slds-is-completed .slds-progress__marker--icon", ".slds-progress__item" ],
       "sassTokenName" : "$progress-color-background",
       "value" : "#ffffff",
       "yamlTokenName" : "PROGRESS_COLOR_BACKGROUND",
@@ -74926,7 +74987,7 @@
     "progressColorBackgroundShade" : {
       "auraTokenName" : "progressColorBackgroundShade",
       "cssProperties" : [ "background", "border-color", "box-shadow" ],
-      "cssSelectors" : [ "&, &:hover, &:focus", "&.slds-has-error .slds-progress__marker", "&.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker, &.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker_icon, &.slds-is-completed .slds-progress__marker--icon", "&:focus", ".slds-progress__item", ".slds-progress_shade, .slds-progress--shade" ],
+      "cssSelectors" : [ "&, &:hover, &:focus", "&.slds-has-error .slds-progress__marker", "&.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker, &.slds-is-active .slds-progress__marker", "&.slds-is-completed .slds-progress__marker_icon, &.slds-is-completed .slds-progress__marker--icon", ".slds-progress__item", ".slds-progress_shade, .slds-progress--shade" ],
       "sassTokenName" : "$progress-color-background-shade",
       "value" : "#f3f3f3",
       "yamlTokenName" : "PROGRESS_COLOR_BACKGROUND_SHADE",
@@ -74968,9 +75029,27 @@
       "yamlTokenName" : "PROGRESS_COLOR_BORDER_SHADE",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-has-error .slds-progress__marker", "&.slds-is-active .slds-progress__marker", "&:focus", ".slds-progress__item", ".slds-progress__marker", ".slds-progress_shade, .slds-progress--shade" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
+    "spacingLarge" : {
+      "auraTokenName" : "spacingLarge",
+      "cssProperties" : [ "right" ],
+      "cssSelectors" : [ "&:after", "&:before", ".slds-progress__item", ".slds-progress_vertical" ],
+      "sassTokenName" : "$spacing-large",
+      "value" : "1.5rem",
+      "yamlTokenName" : "SPACING_LARGE",
+      "scope" : null
+    },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
-      "cssProperties" : [ "margin-right" ],
+      "cssProperties" : [ "margin-left", "margin-right" ],
       "cssSelectors" : [ ".slds-progress__marker", ".slds-progress_vertical" ],
       "sassTokenName" : "$spacing-medium",
       "value" : "1rem",
@@ -75823,6 +75902,15 @@
       "yamlTokenName" : "LINE_HEIGHT_TEXT",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&.slds-has-focus", ".slds-publisher_comment, .slds-publisher--comment" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "sizeSmall" : {
       "auraTokenName" : "sizeSmall",
       "cssProperties" : [ "max-height" ],
@@ -76150,6 +76238,15 @@
       "yamlTokenName" : "RADIO_BUTTON_GROUP_LINE_HEIGHT_TOUCH",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus + .slds-radio_faux, &:focus + .slds-radio--faux, &:focus ~ .slds-radio_faux, &:focus ~ .slds-radio--faux, &:focus + .slds-radio_button__label, &:focus + .slds-radio--button__label", ".slds-radio_button, .slds-radio--button", "[type='radio']" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
       "cssProperties" : [ "padding-left", "padding-right" ],
@@ -76366,19 +76463,10 @@
     "colorBorderInput" : {
       "auraTokenName" : "colorBorderInput",
       "cssProperties" : [ "border", "border-color" ],
-      "cssSelectors" : [ "&:checked + .slds-radio_faux, &:checked + .slds-radio--faux, &:checked ~ .slds-radio_faux, &:checked ~ .slds-radio--faux, &:checked + .slds-radio__label .slds-radio_faux, &:checked + .slds-radio__label .slds-radio--faux", ".slds-radio", ".slds-radio_faux, .slds-radio--faux", "[type=\"radio\"]" ],
+      "cssSelectors" : [ "&:checked + .slds-radio_faux, &:checked + .slds-radio--faux, &:checked ~ .slds-radio_faux, &:checked ~ .slds-radio--faux, &:checked + .slds-radio__label .slds-radio_faux, &:checked + .slds-radio__label .slds-radio--faux", "&:focus + .slds-radio_faux, &:focus + .slds-radio--faux, &:focus ~ .slds-radio_faux, &:focus ~ .slds-radio--faux, &:focus + .slds-radio__label .slds-radio_faux, &:focus + .slds-radio__label .slds-radio--faux", ".slds-radio", ".slds-radio_faux, .slds-radio--faux", "[type=\"radio\"]" ],
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
-      "scope" : null
-    },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ "&:focus + .slds-radio_faux, &:focus + .slds-radio--faux, &:focus ~ .slds-radio_faux, &:focus ~ .slds-radio--faux, &:focus + .slds-radio__label .slds-radio_faux, &:focus + .slds-radio__label .slds-radio--faux", ".slds-radio", "[type=\"radio\"]" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
       "scope" : null
     },
     "colorBorderInputDisabled" : {
@@ -77082,7 +77170,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border", "border-bottom", "border-top" ],
-      "cssSelectors" : [ ".slds-rich-text-editor", ".slds-rich-text-editor__toolbar", ".slds-rich-text-editor__toolbar_bottom" ],
+      "cssSelectors" : [ "&[aria-label=\"disabled\"]", ".slds-rich-text-editor", ".slds-rich-text-editor.slds-has-focus", ".slds-rich-text-editor__toolbar", ".slds-rich-text-editor__toolbar_bottom" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -77118,7 +77206,7 @@
     "colorBorder" : {
       "auraTokenName" : "colorBorder",
       "cssProperties" : [ "border", "border-bottom", "border-top" ],
-      "cssSelectors" : [ ".slds-rich-text-editor", ".slds-rich-text-editor__toolbar", ".slds-rich-text-editor__toolbar_bottom" ],
+      "cssSelectors" : [ "&[aria-label=\"disabled\"]", ".slds-rich-text-editor", ".slds-rich-text-editor.slds-has-focus", ".slds-rich-text-editor__toolbar", ".slds-rich-text-editor__toolbar_bottom" ],
       "sassTokenName" : "$color-border",
       "value" : "#e5e5e5",
       "yamlTokenName" : "COLOR_BORDER",
@@ -77140,15 +77228,6 @@
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
-      "scope" : null
-    },
-    "colorBorderInputActive" : {
-      "auraTokenName" : "colorBorderInputActive",
-      "cssProperties" : [ "border-color" ],
-      "cssSelectors" : [ ".slds-rich-text-editor.slds-has-focus" ],
-      "sassTokenName" : "$color-border-input-active",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BORDER_INPUT_ACTIVE",
       "scope" : null
     },
     "colorTextButtonDefaultDisabled" : {
@@ -77428,6 +77507,15 @@
     "tokens" : { }
   } ],
   "tokens" : {
+    "borderRadiusSmall" : {
+      "auraTokenName" : "borderRadiusSmall",
+      "cssProperties" : [ "border-radius" ],
+      "cssSelectors" : [ "&:focus", ".slds-scoped-notification", "a" ],
+      "sassTokenName" : "$border-radius-small",
+      "value" : "0.125rem",
+      "yamlTokenName" : "BORDER_RADIUS_SMALL",
+      "scope" : null
+    },
     "colorBackground" : {
       "auraTokenName" : "colorBackground",
       "cssProperties" : [ "background-color" ],
@@ -77462,6 +77550,15 @@
       "sassTokenName" : "$notification-color-background-inverse",
       "value" : "#747474",
       "yamlTokenName" : "NOTIFICATION_COLOR_BACKGROUND_INVERSE",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-scoped-notification", "a" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingSmall" : {
@@ -78055,7 +78152,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "border", "box-shadow", "height", "min-height" ],
-      "cssSelectors" : [ "&:focus, &:active", "&[size], &[multiple]", ".slds-has-error", ".slds-select" ],
+      "cssSelectors" : [ "&:active", "&:focus", "&[size], &[multiple]", ".slds-has-error", ".slds-select" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -78091,7 +78188,7 @@
     "colorBorderError" : {
       "auraTokenName" : "colorBorderError",
       "cssProperties" : [ "border-color", "box-shadow" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error", ".slds-select" ],
+      "cssSelectors" : [ "&:active", "&:focus", ".slds-has-error", ".slds-select" ],
       "sassTokenName" : "$color-border-error",
       "value" : "#ea001e",
       "yamlTokenName" : "COLOR_BORDER_ERROR",
@@ -78099,8 +78196,8 @@
     },
     "colorBorderInput" : {
       "auraTokenName" : "colorBorderInput",
-      "cssProperties" : [ "border" ],
-      "cssSelectors" : [ ".slds-select" ],
+      "cssProperties" : [ "border", "border-color" ],
+      "cssSelectors" : [ "&:focus", ".slds-select" ],
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
@@ -78163,7 +78260,7 @@
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error", ".slds-select" ],
+      "cssSelectors" : [ "&:active", "&:focus", "&:focus, &:active", ".slds-has-error", ".slds-select" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
@@ -78549,19 +78646,37 @@
       "yamlTokenName" : "FONT_WEIGHT_BOLD",
       "scope" : null
     },
+    "spacingLarge" : {
+      "auraTokenName" : "spacingLarge",
+      "cssProperties" : [ "padding-right" ],
+      "cssSelectors" : [ ".slds-setup-assistant__step-detail" ],
+      "sassTokenName" : "$spacing-large",
+      "value" : "1.5rem",
+      "yamlTokenName" : "SPACING_LARGE",
+      "scope" : null
+    },
     "spacingMedium" : {
       "auraTokenName" : "spacingMedium",
-      "cssProperties" : [ "padding" ],
-      "cssSelectors" : [ ".slds-setup-assistant" ],
+      "cssProperties" : [ "margin-right", "padding", "padding-left" ],
+      "cssSelectors" : [ ".slds-media_center", ".slds-setup-assistant", ".slds-setup-assistant__step-detail" ],
       "sassTokenName" : "$spacing-medium",
       "value" : "1rem",
       "yamlTokenName" : "SPACING_MEDIUM",
       "scope" : null
     },
+    "spacingNone" : {
+      "auraTokenName" : "spacingNone",
+      "cssProperties" : [ "margin-right" ],
+      "cssSelectors" : [ ".slds-setup-assistant__step-summary-content" ],
+      "sassTokenName" : "$spacing-none",
+      "value" : "0",
+      "yamlTokenName" : "SPACING_NONE",
+      "scope" : null
+    },
     "spacingSmall" : {
       "auraTokenName" : "spacingSmall",
-      "cssProperties" : [ "padding-left" ],
-      "cssSelectors" : [ ".slds-setup-assistant__step-detail" ],
+      "cssProperties" : [ "margin-left", "padding-left" ],
+      "cssSelectors" : [ ".slds-media__figure", ".slds-setup-assistant__step-detail", ".slds-setup-assistant__step-summary" ],
       "sassTokenName" : "$spacing-small",
       "value" : "0.75rem",
       "yamlTokenName" : "SPACING_SMALL",
@@ -79965,8 +80080,8 @@
     },
     "colorBrand" : {
       "auraTokenName" : "colorBrand",
-      "cssProperties" : [ "background", "box-shadow" ],
-      "cssSelectors" : [ "&:focus", ".slds-indicator_unread, .slds-indicator--unread", ".slds-split-view__list-item", ".slds-split-view__list-item-action" ],
+      "cssProperties" : [ "background" ],
+      "cssSelectors" : [ ".slds-indicator_unread, .slds-indicator--unread", ".slds-split-view__list-item" ],
       "sassTokenName" : "$color-brand",
       "value" : "#1b96ff",
       "yamlTokenName" : "COLOR_BRAND",
@@ -79997,6 +80112,33 @@
       "sassTokenName" : "$line-height-heading",
       "value" : "1.25",
       "yamlTokenName" : "LINE_HEIGHT_HEADING",
+      "scope" : null
+    },
+    "paletteBlue40" : {
+      "auraTokenName" : "paletteBlue40",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", "&[aria-current=\"page\"]", ".slds-split-view__list-item-action" ],
+      "sassTokenName" : "$palette-blue-40",
+      "value" : "#0b5cab",
+      "yamlTokenName" : "PALETTE_BLUE_40",
+      "scope" : null
+    },
+    "paletteNeutral100" : {
+      "auraTokenName" : "paletteNeutral100",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", "&[aria-current=\"page\"]", ".slds-split-view__list-item-action" ],
+      "sassTokenName" : "$palette-neutral-100",
+      "value" : "#ffffff",
+      "yamlTokenName" : "PALETTE_NEUTRAL_100",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-split-view__list-item-action" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingLarge" : {
@@ -80256,7 +80398,7 @@
   },
   "id" : "tabs",
   "docPath" : "./ui/components/tabs/docs.mdx",
-  "selectors" : [ ".slds-tabs_default", ".slds-tabs_default__nav", ".slds-tabs_default__item", ".slds-tabs__item_overflow", ".slds-is-active", ".slds-has-focus", ".slds-has-notification", ".slds-indicator_unread", ".slds-is-unsaved", ".slds-tabs_default__link", ".slds-tabs_default__overflow-button", ".slds-tabs__left-icon", ".slds-tabs__right-icon", ".slds-tabs_default__content", ".slds-tabs_medium", ".slds-tabs_large", ".slds-sub-tabs", ".slds-sub-tabs__item", ".slds-indicator-container", ".slds-has-success", ".slds-has-error", ".slds-has-warning", ".slds-tabs-mobile__container", ".slds-panel_animated", ".slds-tabs-mobile", ".slds-tabs-mobile__item", ".slds-tabs-mobile__group" ],
+  "selectors" : [ ".slds-tabs_default", ".slds-tabs_default__nav", ".slds-tabs_default__item", ".slds-tabs__item_overflow", ".slds-is-active", ".slds-has-focus", ".slds-has-notification", ".slds-indicator_unread", ".slds-is-unsaved", ".slds-tabs_default__link", ".slds-tabs_default__overflow-button", ".slds-tabs__left-icon", ".slds-tabs__right-icon", ".slds-tabs_default__content", ".slds-tabs_default__header", ".slds-tabs_medium", ".slds-tabs_large", ".slds-sub-tabs", ".slds-sub-tabs__item", ".slds-indicator-container", ".slds-has-success", ".slds-has-error", ".slds-has-warning", ".slds-tabs-mobile__container", ".slds-panel_animated", ".slds-tabs-mobile", ".slds-tabs-mobile__item", ".slds-tabs-mobile__group" ],
   "restrictees" : [ {
     "description" : "",
     "annotations" : {
@@ -80489,6 +80631,23 @@
         "group" : null
       },
       "id" : ".slds-tabs_default__content",
+      "docPath" : null,
+      "selectors" : null,
+      "restrictees" : [ ],
+      "tokens" : { }
+    }, {
+      "description" : "",
+      "annotations" : {
+        "summary" : "Applies bold font weight to header",
+        "name" : ".slds-tabs_default__header",
+        "selector" : ".slds-tabs_default__header",
+        "restrict" : ".slds-tabs_default div",
+        "variant" : null,
+        "support" : null,
+        "modifier" : null,
+        "group" : null
+      },
+      "id" : ".slds-tabs_default__header",
       "docPath" : null,
       "selectors" : null,
       "restrictees" : [ ],
@@ -81035,6 +81194,23 @@
       "group" : null
     },
     "id" : ".slds-tabs_default__content",
+    "docPath" : null,
+    "selectors" : null,
+    "restrictees" : [ ],
+    "tokens" : { }
+  }, {
+    "description" : "",
+    "annotations" : {
+      "summary" : "Applies bold font weight to header",
+      "name" : ".slds-tabs_default__header",
+      "selector" : ".slds-tabs_default__header",
+      "restrict" : ".slds-tabs_default div",
+      "variant" : null,
+      "support" : null,
+      "modifier" : null,
+      "group" : null
+    },
+    "id" : ".slds-tabs_default__header",
     "docPath" : null,
     "selectors" : null,
     "restrictees" : [ ],
@@ -81663,6 +81839,15 @@
       "yamlTokenName" : "COLOR_TEXT_ACTION_LABEL_ACTIVE",
       "scope" : null
     },
+    "colorTextIconDefault" : {
+      "auraTokenName" : "colorTextIconDefault",
+      "cssProperties" : [ "--slds-c-icon-color-foreground" ],
+      "cssSelectors" : [ "&.slds-has-warning", ".slds-sub-tabs__item" ],
+      "sassTokenName" : "$color-text-icon-default",
+      "value" : "#747474",
+      "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT",
+      "scope" : null
+    },
     "colorTextTabLabel" : {
       "auraTokenName" : "colorTextTabLabel",
       "cssProperties" : [ "color" ],
@@ -81771,19 +81956,55 @@
       "yamlTokenName" : "TABS_FONT_WEIGHT",
       "scope" : null
     },
+    "varFontSize2" : {
+      "auraTokenName" : "varFontSize2",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ "+ .slds-tabs_default__nav .slds-tabs_default__item", ".slds-tabs_default", ".slds-tabs_default__header:not(.slds-assistive-text)" ],
+      "sassTokenName" : "$var-font-size-2",
+      "value" : "0.75rem",
+      "yamlTokenName" : "VAR_FONT_SIZE_2",
+      "scope" : null
+    },
+    "varFontSize3" : {
+      "auraTokenName" : "varFontSize3",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ ".slds-tabs_default", ".slds-tabs_default__header:not(.slds-assistive-text)", ".slds-tabs_default__item" ],
+      "sassTokenName" : "$var-font-size-3",
+      "value" : "0.8125rem",
+      "yamlTokenName" : "VAR_FONT_SIZE_3",
+      "scope" : null
+    },
+    "varFontSize4" : {
+      "auraTokenName" : "varFontSize4",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ "+ .slds-tabs_default__nav .slds-tabs_default__item", ".slds-tabs_default.slds-tabs_medium", ".slds-tabs_default__header" ],
+      "sassTokenName" : "$var-font-size-4",
+      "value" : "0.875rem",
+      "yamlTokenName" : "VAR_FONT_SIZE_4",
+      "scope" : null
+    },
     "varFontSize5" : {
       "auraTokenName" : "varFontSize5",
       "cssProperties" : [ "font-size" ],
-      "cssSelectors" : [ ".slds-tabs_default__item", ".slds-tabs_medium" ],
+      "cssSelectors" : [ ".slds-tabs_default.slds-tabs_medium", ".slds-tabs_default__header", ".slds-tabs_default__item" ],
       "sassTokenName" : "$var-font-size-5",
       "value" : "1rem",
       "yamlTokenName" : "VAR_FONT_SIZE_5",
       "scope" : null
     },
+    "varFontSize6" : {
+      "auraTokenName" : "varFontSize6",
+      "cssProperties" : [ "font-size" ],
+      "cssSelectors" : [ "+ .slds-tabs_default__nav .slds-tabs_default__item", ".slds-tabs_default.slds-tabs_large", ".slds-tabs_default__header" ],
+      "sassTokenName" : "$var-font-size-6",
+      "value" : "1.125rem",
+      "yamlTokenName" : "VAR_FONT_SIZE_6",
+      "scope" : null
+    },
     "varFontSize7" : {
       "auraTokenName" : "varFontSize7",
       "cssProperties" : [ "font-size" ],
-      "cssSelectors" : [ ".slds-tabs_default__item", ".slds-tabs_large" ],
+      "cssSelectors" : [ ".slds-tabs_default.slds-tabs_large", ".slds-tabs_default__header", ".slds-tabs_default__item" ],
       "sassTokenName" : "$var-font-size-7",
       "value" : "1.25rem",
       "yamlTokenName" : "VAR_FONT_SIZE_7",
@@ -81839,7 +82060,7 @@
     "borderWidthThin" : {
       "auraTokenName" : "borderWidthThin",
       "cssProperties" : [ "--slds-c-textarea-shadow", "--slds-c-textarea-shadow-focus", "border" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-textarea", ".slds-textarea" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-textarea", ".slds-textarea" ],
       "sassTokenName" : "$border-width-thin",
       "value" : "1px",
       "yamlTokenName" : "BORDER_WIDTH_THIN",
@@ -81875,7 +82096,7 @@
     "colorBorderError" : {
       "auraTokenName" : "colorBorderError",
       "cssProperties" : [ "--slds-c-textarea-color-border", "--slds-c-textarea-shadow", "--slds-c-textarea-shadow-focus" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-textarea" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-textarea" ],
       "sassTokenName" : "$color-border-error",
       "value" : "#ea001e",
       "yamlTokenName" : "COLOR_BORDER_ERROR",
@@ -81883,8 +82104,8 @@
     },
     "colorBorderInput" : {
       "auraTokenName" : "colorBorderInput",
-      "cssProperties" : [ "border" ],
-      "cssSelectors" : [ ".slds-textarea" ],
+      "cssProperties" : [ "border", "border-color" ],
+      "cssSelectors" : [ "&:focus", ".slds-textarea" ],
       "sassTokenName" : "$color-border-input",
       "value" : "#c9c9c9",
       "yamlTokenName" : "COLOR_BORDER_INPUT",
@@ -81920,7 +82141,7 @@
     "shadowButtonFocus" : {
       "auraTokenName" : "shadowButtonFocus",
       "cssProperties" : [ "--slds-c-textarea-shadow-focus", "box-shadow" ],
-      "cssSelectors" : [ "&:focus, &:active", ".slds-has-error .slds-textarea", ".slds-textarea" ],
+      "cssSelectors" : [ "&:focus", "&:focus, &:active", ".slds-has-error .slds-textarea", ".slds-textarea" ],
       "sassTokenName" : "$shadow-button-focus",
       "value" : "0 0 3px #0176d3",
       "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
@@ -82436,6 +82657,15 @@
       "sassTokenName" : "$color-background-toast",
       "value" : "#747474",
       "yamlTokenName" : "COLOR_BACKGROUND_TOAST",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-notify__content a:focus", ".slds-notify_toast, .slds-notify--toast" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingLarge" : {
@@ -83848,7 +84078,7 @@
     "brandPrimary" : {
       "auraTokenName" : "brandPrimary",
       "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ ".slds-tree [role=\"treeitem\"][aria-selected=\"true\"] > .slds-tree__item" ],
+      "cssSelectors" : [ ".slds-tree [role=\"treeitem\"][aria-selected=\"true\"] > .slds-tree__item", ".slds-tree [role=\"treeitem\"][aria-selected=\"true\"]:focus", "> .slds-tree__item" ],
       "sassTokenName" : "$brand-primary",
       "value" : "#1b96ff",
       "yamlTokenName" : "BRAND_PRIMARY",
@@ -83933,6 +84163,33 @@
       "sassTokenName" : "$duration-promptly",
       "value" : "0.2s",
       "yamlTokenName" : "DURATION_PROMPTLY",
+      "scope" : null
+    },
+    "paletteBlue40" : {
+      "auraTokenName" : "paletteBlue40",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-tree [role=\"treeitem\"][aria-selected=\"true\"]:focus", "> .slds-tree__item" ],
+      "sassTokenName" : "$palette-blue-40",
+      "value" : "#0b5cab",
+      "yamlTokenName" : "PALETTE_BLUE_40",
+      "scope" : null
+    },
+    "paletteNeutral100" : {
+      "auraTokenName" : "paletteNeutral100",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-tree [role=\"treeitem\"][aria-selected=\"true\"]:focus", "> .slds-tree__item" ],
+      "sassTokenName" : "$palette-neutral-100",
+      "value" : "#ffffff",
+      "yamlTokenName" : "PALETTE_NEUTRAL_100",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-tree [role=\"treeitem\"]:focus", "> .slds-tree__item" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingMedium" : {
@@ -84043,6 +84300,15 @@
       "sassTokenName" : "$height-header",
       "value" : "3.125rem",
       "yamlTokenName" : "HEIGHT_HEADER",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ ".slds-trial-header", "button:not([class*=slds-button_]):not([class*=slds-button--]):focus" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingMedium" : {
@@ -84547,7 +84813,7 @@
     "brandPrimary" : {
       "auraTokenName" : "brandPrimary",
       "cssProperties" : [ "border-left-color", "box-shadow" ],
-      "cssSelectors" : [ "&:checked + .slds-nav-vertical__action", "&:hover", ".slds-is-active", ".slds-nav-vertical__action", ".slds-nav-vertical__item", ".slds-nav-vertical__item.slds-is-active", ".slds-navigation-list-vertical, .slds-navigation-list--vertical", ".slds-navigation-list-vertical__action, .slds-navigation-list--vertical__action", "[type=\"radio\"]" ],
+      "cssSelectors" : [ "&:checked + .slds-nav-vertical__action", "&:focus", "&:hover", ".slds-is-active", ".slds-nav-vertical__action", ".slds-nav-vertical__item", ".slds-nav-vertical__item.slds-is-active", ".slds-navigation-list-vertical, .slds-navigation-list--vertical", ".slds-navigation-list-vertical__action, .slds-navigation-list--vertical__action", "[type=\"radio\"]" ],
       "sassTokenName" : "$brand-primary",
       "value" : "#1b96ff",
       "yamlTokenName" : "BRAND_PRIMARY",
@@ -84596,15 +84862,6 @@
       "sassTokenName" : "$color-border",
       "value" : "#e5e5e5",
       "yamlTokenName" : "COLOR_BORDER",
-      "scope" : null
-    },
-    "colorBrand" : {
-      "auraTokenName" : "colorBrand",
-      "cssProperties" : [ "box-shadow" ],
-      "cssSelectors" : [ "&:focus-within:before", ".slds-nav-vertical__item" ],
-      "sassTokenName" : "$color-brand",
-      "value" : "#1b96ff",
-      "yamlTokenName" : "COLOR_BRAND",
       "scope" : null
     },
     "colorTextDefault" : {
@@ -85275,6 +85532,15 @@
       "yamlTokenName" : "COLOR_TEXT_ACTION_LABEL_ACTIVE",
       "scope" : null
     },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus-within", ".slds-vertical-tabs__nav-item" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
+      "scope" : null
+    },
     "sizeXSmall" : {
       "auraTokenName" : "sizeXSmall",
       "cssProperties" : [ "width" ],
@@ -85847,7 +86113,7 @@
     "colorBorder" : {
       "auraTokenName" : "colorBorder",
       "cssProperties" : [ "border" ],
-      "cssSelectors" : [ ".slds-visual-picker__figure" ],
+      "cssSelectors" : [ "&:focus ~ label .slds-visual-picker__figure", ".slds-visual-picker", ".slds-visual-picker__figure", "input" ],
       "sassTokenName" : "$color-border",
       "value" : "#e5e5e5",
       "yamlTokenName" : "COLOR_BORDER",
@@ -85865,7 +86131,7 @@
     "colorBorderSelectionHover" : {
       "auraTokenName" : "colorBorderSelectionHover",
       "cssProperties" : [ "border", "box-shadow" ],
-      "cssSelectors" : [ "&:active .slds-visual-picker__figure", "&:checked ~ label .slds-visual-picker__icon", "&:checked ~ label .slds-visual-picker__text", "&:focus ~ label .slds-visual-picker__figure", ".slds-visual-picker", "input", "input:not(:disabled) ~ label:hover .slds-visual-picker__figure" ],
+      "cssSelectors" : [ "&:active .slds-visual-picker__figure", "&:checked ~ label .slds-visual-picker__icon", "&:checked ~ label .slds-visual-picker__text", ".slds-visual-picker", "input", "input:not(:disabled) ~ label:hover .slds-visual-picker__figure" ],
       "sassTokenName" : "$color-border-selection-hover",
       "value" : "#1b96ff",
       "yamlTokenName" : "COLOR_BORDER_SELECTION_HOVER",
@@ -85878,6 +86144,15 @@
       "sassTokenName" : "$color-brand",
       "value" : "#1b96ff",
       "yamlTokenName" : "COLOR_BRAND",
+      "scope" : null
+    },
+    "colorTextIconDefaultDisabled" : {
+      "auraTokenName" : "colorTextIconDefaultDisabled",
+      "cssProperties" : [ "fill" ],
+      "cssSelectors" : [ "&[disabled]", ".slds-visual-picker", "input", "~label .slds-visual-picker__figure .slds-icon" ],
+      "sassTokenName" : "$color-text-icon-default-disabled",
+      "value" : "#c9c9c9",
+      "yamlTokenName" : "COLOR_TEXT_ICON_DEFAULT_DISABLED",
       "scope" : null
     },
     "colorTextInputDisabled" : {
@@ -85896,6 +86171,15 @@
       "sassTokenName" : "$elevation-shadow-4",
       "value" : "0 4px 4px 0 rgba(0, 0, 0, 0.16)",
       "yamlTokenName" : "ELEVATION_SHADOW_4",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:checked:focus ~ label .slds-visual-picker__figure", "&:focus ~ label .slds-visual-picker__figure", ".slds-visual-picker", "input" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "sizeLarge" : {
@@ -87747,6 +88031,15 @@
       "sassTokenName" : "$progress-bar-color-background-fill-success",
       "value" : "#2e844a",
       "yamlTokenName" : "PROGRESS_BAR_COLOR_BACKGROUND_FILL_SUCCESS",
+      "scope" : null
+    },
+    "shadowButtonFocus" : {
+      "auraTokenName" : "shadowButtonFocus",
+      "cssProperties" : [ "box-shadow" ],
+      "cssSelectors" : [ "&:focus", ".slds-welcome-mat__info" ],
+      "sassTokenName" : "$shadow-button-focus",
+      "value" : "0 0 3px #0176d3",
+      "yamlTokenName" : "SHADOW_BUTTON_FOCUS",
       "scope" : null
     },
     "spacingLarge" : {
