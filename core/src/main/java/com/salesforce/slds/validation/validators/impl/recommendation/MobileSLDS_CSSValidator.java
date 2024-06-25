@@ -66,7 +66,7 @@ public class MobileSLDS_CSSValidator implements RecommendationValidator {
         for (Input input : inputs) {
             List<Style> styles = input.asRuleSet().getStylesWithAnnotationType();
             recommendations.addAll(styles.stream()
-                    .filter(Style::validate)
+                    .filter(style -> style.validate(context))
                     .map(style -> process(style, context, entry.getRawContent()))
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList()));

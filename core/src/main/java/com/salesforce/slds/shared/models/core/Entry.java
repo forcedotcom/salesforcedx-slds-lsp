@@ -7,7 +7,9 @@
 
 package com.salesforce.slds.shared.models.core;
 
+import com.google.common.collect.Lists;
 import com.salesforce.slds.shared.models.annotations.Annotation;
+import com.salesforce.slds.shared.models.annotations.AnnotationScope;
 import com.salesforce.slds.shared.models.annotations.AnnotationType;
 import com.salesforce.slds.shared.models.locations.Location;
 import com.salesforce.slds.shared.models.locations.Range;
@@ -32,6 +34,8 @@ public class Entry {
 
     private String componentName;
     private EntityType entityType;
+
+    private List<Range> recommendationSuppressionRanges;
 
     private Entry(
                   List<Input> inputs, String path, List<String> rawContent,
@@ -88,11 +92,11 @@ public class Entry {
     }
 
     public List<Annotation> getAnnotations() {
-        return inputs.stream().filter(input -> input.getType() == Input.Type.STYLE)
+        return inputs != null ? inputs.stream().filter(input -> input.getType() == Input.Type.STYLE)
                 .filter(input -> input instanceof RuleSet)
                 .map(Input::asRuleSet)
                 .map(RuleSet::getAnnotations)
-                .flatMap(List::stream).collect(Collectors.toList());
+                .flatMap(List::stream).collect(Collectors.toList()) : Lists.newArrayList();
     }
 
     /*
@@ -122,7 +126,11 @@ public class Entry {
      * sldsValidatorIgnoreNextLine (i.e 14) should also be exempt from validation rules.
      */
     public List<Range> getRecommendationSuppressionRanges() {
-        ArrayList<Range> lintingIgnoreRanges = new ArrayList<Range>();
+        if (this.recommendationSuppressionRanges != null) {
+            return this.recommendationSuppressionRanges;
+        }
+
+        List<Range> recommendationSuppressionRanges = new ArrayList<>();
         for (int i = 0; rawContent != null && i < rawContent.size(); i++) {
             String lineStr = rawContent.get(i);
             int startColumnIgnore = lineStr.indexOf(AnnotationType.IGNORE.value());
@@ -141,7 +149,7 @@ public class Entry {
                 if (endColumn == -1) {
                     // we found a sldsValidatorIgnore with no sldsValidatorAllow after it
                     // so we should exempt the rest of the lines.
-                    lintingIgnoreRanges.add(
+                    recommendationSuppressionRanges.add(
                             new Range(
                                     new Location(i, startColumnIgnore),
                                     new Location(Integer.MAX_VALUE, Integer.MAX_VALUE)
@@ -151,7 +159,7 @@ public class Entry {
                 } else {
                     // we found a sldsValidatorIgnore with sldsValidatorAllow after it
                     // so we should exempt the lines in between.
-                    lintingIgnoreRanges.add(
+                    recommendationSuppressionRanges.add(
                             new Range(
                                     new Location(i, startColumnIgnore),
                                     new Location(j, endColumn)
@@ -161,7 +169,7 @@ public class Entry {
                 }
             } else if (startColumnIgnoreNextLine >= 0) {
                 // we found a sldsValidatorIgnoreNextLine so we should exempt the next line.
-                lintingIgnoreRanges.add(
+                recommendationSuppressionRanges.add(
                         new Range(
                                 new Location(i + 1, 0),
                                 new Location(i + 1, Integer.MAX_VALUE)
@@ -170,7 +178,24 @@ public class Entry {
                 i++; // skip the next line
             }
         }
-        return lintingIgnoreRanges;
+
+        /**
+         * Special Processing for CSS Annotation
+         */
+        List<Annotation> annotations = getAnnotations();
+        if (annotations.size() > 0) {
+            List<Annotation> inlineAnnotations = annotations.stream().filter(annotation ->
+                    annotation.getScope() == AnnotationScope.INLINE).collect(Collectors.toList());
+
+            this.recommendationSuppressionRanges = recommendationSuppressionRanges.stream().filter(suppressionRange ->
+                !inlineAnnotations.stream().anyMatch(inlineItem ->
+                        inlineItem.getRange().getStart().equals(suppressionRange.getStart()))
+            ).collect(Collectors.toList());
+        } else {
+            this.recommendationSuppressionRanges = recommendationSuppressionRanges;
+        }
+
+        return this.recommendationSuppressionRanges;
     }
 
     public List<String> getRawContent() {
