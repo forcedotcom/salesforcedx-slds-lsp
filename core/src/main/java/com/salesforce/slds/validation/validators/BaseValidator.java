@@ -65,7 +65,7 @@ public abstract class BaseValidator implements RecommendationValidator, Initiali
                     .map(RuleSet::getStylesWithAnnotationType)
                     .flatMap(List::stream)
                     .filter(style -> utilities.filter(style, getProperties()))
-                    .map(style -> utilities.match(style, applicableTokens, entry.getEntityType(), entry.getRawContent()))
+                    .map(style -> utilities.match(context, style, applicableTokens, entry.getEntityType(), entry.getRawContent()))
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
         }

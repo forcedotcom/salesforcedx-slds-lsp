@@ -7,6 +7,7 @@
 
 package com.salesforce.slds.validation.processors;
 
+import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.recommendation.Recommendation;
 
@@ -14,5 +15,5 @@ import java.util.List;
 
 public interface Processor {
 
-    List<Recommendation> process(Entry entry, List<Recommendation> recommendations);
+    List<Recommendation> process(Context context, Entry entry, List<Recommendation> recommendations);
 }

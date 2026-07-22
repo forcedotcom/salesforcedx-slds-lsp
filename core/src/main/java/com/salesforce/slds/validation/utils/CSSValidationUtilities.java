@@ -8,6 +8,7 @@
 package com.salesforce.slds.validation.utils;
 
 import com.salesforce.slds.shared.converters.Converter;
+import com.salesforce.slds.shared.models.context.Context;
 import com.salesforce.slds.shared.models.core.Entry;
 import com.salesforce.slds.shared.models.core.Style;
 import com.salesforce.slds.shared.models.locations.Location;
@@ -37,8 +38,9 @@ public class CSSValidationUtilities {
         this.actionUtilities = actionUtilities;
     }
 
-    public Recommendation match(Style style, List<DesignToken> tokens, Entry.EntityType entityType, List<String> rawContent) {
-        if (style.validate() == false) {
+    public Recommendation match(Context context, Style style, List<DesignToken> tokens,
+                                Entry.EntityType entityType, List<String> rawContent) {
+        if (style.validate(context) == false) {
             return null;
         }
 
